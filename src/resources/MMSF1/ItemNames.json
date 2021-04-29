@@ -1,0 +1,761 @@
+{
+    "name": "Card",
+    "types": [
+        {
+            "name": "Standard",
+            "low": 0,
+            "high": 149
+        },
+        {
+            "name": "Mega",
+            "low": 150,
+            "high": 185
+        }
+    ],
+    "Items": [
+        {
+            "name": "Cannon",
+            "id": 0
+        },
+        {
+            "name": "PlusCannon",
+            "id": 1
+        },
+        {
+            "name": "HevyCannon",
+            "id": 2
+        },
+        {
+            "name": "PlasmaGun1",
+            "id": 3
+        },
+        {
+            "name": "PlasmaGun2",
+            "id": 4
+        },
+        {
+            "name": "PlasmaGun3",
+            "id": 5
+        },
+        {
+            "name": "Gatling1",
+            "id": 6
+        },
+        {
+            "name": "Gatling2",
+            "id": 7
+        },
+        {
+            "name": "Gatling3",
+            "id": 8
+        },
+        {
+            "name": "AirSpread",
+            "id": 9
+        },
+        {
+            "name": "RdrMissil1",
+            "id": 10
+        },
+        {
+            "name": "RdrMissil2",
+            "id": 11
+        },
+        {
+            "name": "RdrMissil3",
+            "id": 12
+        },
+        {
+            "name": "HeatBall1",
+            "id": 13
+        },
+        {
+            "name": "HeatBall2",
+            "id": 14
+        },
+        {
+            "name": "HeatBall3",
+            "id": 15
+        },
+        {
+            "name": "IceMeteor1",
+            "id": 16
+        },
+        {
+            "name": "IceMeteor2",
+            "id": 17
+        },
+        {
+            "name": "IceMeteor3",
+            "id": 18
+        },
+        {
+            "name": "StunNukle",
+            "id": 19
+        },
+        {
+            "name": "PoisNukle",
+            "id": 20
+        },
+        {
+            "name": "FreezNukle",
+            "id": 21
+        },
+        {
+            "name": "Sword",
+            "id": 22
+        },
+        {
+            "name": "WideSword",
+            "id": 23
+        },
+        {
+            "name": "LongSword",
+            "id": 24
+        },
+        {
+            "name": "BlazngEdge",
+            "id": 25
+        },
+        {
+            "name": "TidalEdge",
+            "id": 26
+        },
+        {
+            "name": "StrikeEdge",
+            "id": 27
+        },
+        {
+            "name": "ArboEdge",
+            "id": 28
+        },
+        {
+            "name": "BreakSabre",
+            "id": 29
+        },
+        {
+            "name": "GrndWave1",
+            "id": 30
+        },
+        {
+            "name": "GrndWave2",
+            "id": 31
+        },
+        {
+            "name": "GrndWave3",
+            "id": 32
+        },
+        {
+            "name": "JetAttack1",
+            "id": 33
+        },
+        {
+            "name": "JetAttack2",
+            "id": 34
+        },
+        {
+            "name": "JetAttack3",
+            "id": 35
+        },
+        {
+            "name": "PowerBomb1",
+            "id": 36
+        },
+        {
+            "name": "PowerBomb2",
+            "id": 37
+        },
+        {
+            "name": "PowerBomb3",
+            "id": 38
+        },
+        {
+            "name": "GhstPulse1",
+            "id": 39
+        },
+        {
+            "name": "GhstPulse2",
+            "id": 40
+        },
+        {
+            "name": "GhstPulse3",
+            "id": 41
+        },
+        {
+            "name": "FireRing1",
+            "id": 42
+        },
+        {
+            "name": "FireRing2",
+            "id": 43
+        },
+        {
+            "name": "FireRing3",
+            "id": 44
+        },
+        {
+            "name": "TimeBomb1",
+            "id": 45
+        },
+        {
+            "name": "TimeBomb2",
+            "id": 46
+        },
+        {
+            "name": "TimeBomb3",
+            "id": 47
+        },
+        {
+            "name": "FireBzook1",
+            "id": 48
+        },
+        {
+            "name": "FireBzook2",
+            "id": 49
+        },
+        {
+            "name": "FireBzook3",
+            "id": 50
+        },
+        {
+            "name": "TailBurnr1",
+            "id": 51
+        },
+        {
+            "name": "TailBurnr2",
+            "id": 52
+        },
+        {
+            "name": "TailBurnr3",
+            "id": 53
+        },
+        {
+            "name": "WideWave1",
+            "id": 54
+        },
+        {
+            "name": "WideWave2",
+            "id": 55
+        },
+        {
+            "name": "WideWave3",
+            "id": 56
+        },
+        {
+            "name": "ChainBubl1",
+            "id": 57
+        },
+        {
+            "name": "ChainBubl2",
+            "id": 58
+        },
+        {
+            "name": "ChainBubl3",
+            "id": 59
+        },
+        {
+            "name": "GreenInk",
+            "id": 60
+        },
+        {
+            "name": "BlueInk",
+            "id": 61
+        },
+        {
+            "name": "PurpleInk",
+            "id": 62
+        },
+        {
+            "name": "StikyRain1",
+            "id": 63
+        },
+        {
+            "name": "StikyRain2",
+            "id": 64
+        },
+        {
+            "name": "StikyRain3",
+            "id": 65
+        },
+        {
+            "name": "CloudShot1",
+            "id": 66
+        },
+        {
+            "name": "CloudShot2",
+            "id": 67
+        },
+        {
+            "name": "CloudShot3",
+            "id": 68
+        },
+        {
+            "name": "ThndrBall1",
+            "id": 69
+        },
+        {
+            "name": "ThndrBall2",
+            "id": 70
+        },
+        {
+            "name": "ThndrBall3",
+            "id": 71
+        },
+        {
+            "name": "VolticEye1",
+            "id": 72
+        },
+        {
+            "name": "VolticEye2",
+            "id": 73
+        },
+        {
+            "name": "VolticEye3",
+            "id": 74
+        },
+        {
+            "name": "FlickrKck1",
+            "id": 75
+        },
+        {
+            "name": "FlickrKck2",
+            "id": 76
+        },
+        {
+            "name": "FlickrKck3",
+            "id": 77
+        },
+        {
+            "name": "JumboHmmr1",
+            "id": 78
+        },
+        {
+            "name": "JumboHmmr2",
+            "id": 79
+        },
+        {
+            "name": "JumboHmmr3",
+            "id": 80
+        },
+        {
+            "name": "MopLance1",
+            "id": 81
+        },
+        {
+            "name": "MopLance2",
+            "id": 82
+        },
+        {
+            "name": "MopLance3",
+            "id": 83
+        },
+        {
+            "name": "Fokx-Fu1",
+            "id": 84
+        },
+        {
+            "name": "Fokx-Fu2",
+            "id": 85
+        },
+        {
+            "name": "Fokx-Fu3",
+            "id": 86
+        },
+        {
+            "name": "VulcnSeed1",
+            "id": 87
+        },
+        {
+            "name": "VulcnSeed2",
+            "id": 88
+        },
+        {
+            "name": "VulcnSeed3",
+            "id": 89
+        },
+        {
+            "name": "BraveSwrd1",
+            "id": 90
+        },
+        {
+            "name": "BraveSwrd2",
+            "id": 91
+        },
+        {
+            "name": "BraveSwrd3",
+            "id": 92
+        },
+        {
+            "name": "JunkCube1",
+            "id": 93
+        },
+        {
+            "name": "JunkCube2",
+            "id": 94
+        },
+        {
+            "name": "JunkCube3",
+            "id": 95
+        },
+        {
+            "name": "SyncHook1",
+            "id": 96
+        },
+        {
+            "name": "SyncHook2",
+            "id": 97
+        },
+        {
+            "name": "SyncHook3",
+            "id": 98
+        },
+        {
+            "name": "PowerSong",
+            "id": 99
+        },
+        {
+            "name": "QuakeSong",
+            "id": 100
+        },
+        {
+            "name": "TripSong",
+            "id": 101
+        },
+        {
+            "name": "MoaiFall1",
+            "id": 102
+        },
+        {
+            "name": "MoaiFall2",
+            "id": 103
+        },
+        {
+            "name": "MoaiFall3",
+            "id": 104
+        },
+        {
+            "name": "BigAx1",
+            "id": 105
+        },
+        {
+            "name": "BigAx2",
+            "id": 106
+        },
+        {
+            "name": "BigAx3",
+            "id": 107
+        },
+        {
+            "name": "MagiCrysl1",
+            "id": 108
+        },
+        {
+            "name": "MagiCrysl2",
+            "id": 109
+        },
+        {
+            "name": "MagiCrysl3",
+            "id": 110
+        },
+        {
+            "name": "BlackHole1",
+            "id": 111
+        },
+        {
+            "name": "BlackHole2",
+            "id": 112
+        },
+        {
+            "name": "BlackHole3",
+            "id": 113
+        },
+        {
+            "name": "BrsrkSwrd1",
+            "id": 114
+        },
+        {
+            "name": "BrsrkSwrd2",
+            "id": 115
+        },
+        {
+            "name": "BrsrkSwrd3",
+            "id": 116
+        },
+        {
+            "name": "GreenBurst",
+            "id": 117
+        },
+        {
+            "name": "IceBurst",
+            "id": 118
+        },
+        {
+            "name": "PoisBurst",
+            "id": 119
+        },
+        {
+            "name": "TyphnDance",
+            "id": 120
+        },
+        {
+            "name": "JamminPnch",
+            "id": 121
+        },
+        {
+            "name": "JamMachGun",
+            "id": 122
+        },
+        {
+            "name": "Whistle",
+            "id": 123
+        },
+        {
+            "name": "Bombalizer",
+            "id": 124
+        },
+        {
+            "name": "AntiSword",
+            "id": 125
+        },
+        {
+            "name": "Recover10",
+            "id": 126
+        },
+        {
+            "name": "Recover30",
+            "id": 127
+        },
+        {
+            "name": "Recover50",
+            "id": 128
+        },
+        {
+            "name": "Recover80",
+            "id": 129
+        },
+        {
+            "name": "Recover120",
+            "id": 130
+        },
+        {
+            "name": "Recover150",
+            "id": 131
+        },
+        {
+            "name": "Recover200",
+            "id": 132
+        },
+        {
+            "name": "Recover300",
+            "id": 133
+        },
+        {
+            "name": "Barrier",
+            "id": 134
+        },
+        {
+            "name": "Barrier100",
+            "id": 135
+        },
+        {
+            "name": "Barrier200",
+            "id": 136
+        },
+        {
+            "name": "Aura",
+            "id": 137
+        },
+        {
+            "name": "Invisible",
+            "id": 138
+        },
+        {
+            "name": "SpiritFury",
+            "id": 139
+        },
+        {
+            "name": "PoisnApple",
+            "id": 140
+        },
+        {
+            "name": "DoublCross",
+            "id": 141
+        },
+        {
+            "name": "GigaMine",
+            "id": 142
+        },
+        {
+            "name": "GrassStage",
+            "id": 143
+        },
+        {
+            "name": "IceStage",
+            "id": 144
+        },
+        {
+            "name": "GraviStage",
+            "id": 145
+        },
+        {
+            "name": "GNullStage",
+            "id": 146
+        },
+        {
+            "name": "HolyPanel",
+            "id": 147
+        },
+        {
+            "name": "ParlyzPlus",
+            "id": 148
+        },
+        {
+            "name": "Attack+10",
+            "id": 149
+        },
+        {
+            "name": "TaurusFire",
+            "id": 150
+        },
+        {
+            "name": "TaursFireEX",
+            "id": 151
+        },
+        {
+            "name": "TaursFireSP",
+            "id": 152
+        },
+        {
+            "name": "CygnusWing",
+            "id": 153
+        },
+        {
+            "name": "CygnsWingEX",
+            "id": 154
+        },
+        {
+            "name": "CygnsWingSP",
+            "id": 155
+        },
+        {
+            "name": "HarpNote",
+            "id": 156
+        },
+        {
+            "name": "HarpNoteEX",
+            "id": 157
+        },
+        {
+            "name": "HarpNoteSP",
+            "id": 158
+        },
+        {
+            "name": "LibraScals",
+            "id": 159
+        },
+        {
+            "name": "LibrScalsEX",
+            "id": 160
+        },
+        {
+            "name": "LibrScalsSP",
+            "id": 161
+        },
+        {
+            "name": "QnOphiuca",
+            "id": 162
+        },
+        {
+            "name": "QnOphiucaEX",
+            "id": 163
+        },
+        {
+            "name": "QnOphiucaSP",
+            "id": 164
+        },
+        {
+            "name": "GeminSpark",
+            "id": 165
+        },
+        {
+            "name": "GemnSpkEX",
+            "id": 166
+        },
+        {
+            "name": "GemnSpkSP",
+            "id": 167
+        },
+        {
+            "name": "CancrBuble",
+            "id": 168
+        },
+        {
+            "name": "CancrBublEX",
+            "id": 169
+        },
+        {
+            "name": "CancrBublSP",
+            "id": 170
+        },
+        {
+            "name": "WolfWoods",
+            "id": 171
+        },
+        {
+            "name": "WolfWoodsEX",
+            "id": 172
+        },
+        {
+            "name": "WolfWoodsSP",
+            "id": 173
+        },
+        {
+            "name": "CrwnThundr",
+            "id": 174
+        },
+        {
+            "name": "CrwnThndrEX",
+            "id": 175
+        },
+        {
+            "name": "CrwnThndrSP",
+            "id": 176
+        },
+        {
+            "name": "PegasusMgc",
+            "id": 177
+        },
+        {
+            "name": "PegasuMgcEX",
+            "id": 178
+        },
+        {
+            "name": "PegasuMgcSP",
+            "id": 179
+        },
+        {
+            "name": "LeoKingdom",
+            "id": 180
+        },
+        {
+            "name": "LeoKingdmEX",
+            "id": 181
+        },
+        {
+            "name": "LeoKingdmSP",
+            "id": 182
+        },
+        {
+            "name": "DragonSky",
+            "id": 183
+        },
+        {
+            "name": "DragonSkyEX",
+            "id": 184
+        },
+        {
+            "name": "DragonSkySP",
+            "id": 185
+        }
+    ]
+}

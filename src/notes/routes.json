@@ -1,0 +1,74 @@
+{
+    "games": [
+        {
+            "name": "Mega Man Battle Network",
+            "value": "MMBN1"
+        },
+        {
+            "name": "Mega Man Battle Network 2",
+            "value": "MMBN2"
+        },
+        {
+            "name": "Mega Man Battle Network 3",
+            "value": "MMBN3"
+        },
+        {
+            "name": "Mega Man Battle Network 4",
+            "value": "MMBN4"
+        },
+        {
+            "name": "Mega Man Battle Network 5",
+            "value": "MMBN5"
+        },
+        {
+            "name": "Mega Man Battle Network 6",
+            "value": "MMBN6"
+        },
+        {
+            "name": "Mega Man Star Force 1",
+            "value": "MMSF1"
+        },
+        {
+            "name": "Mega Man Star Force 2",
+            "value": "MMSF2"
+        },
+        {
+            "name": "Mega Man Star Force 3",
+            "value": "MMSF3"
+        },
+        {
+            "name": "",
+            "value": "Filler"
+        }
+    ],
+    "MMBN1": [],
+    "MMBN2": [],
+    "MMBN3": [],
+    "MMBN4": [],
+    "MMBN5": [],
+    "MMBN6": [
+        {
+            "title": "Test Battle Network 6 Route",
+            "path": "test_bn6"
+        }
+    ],
+    "MMSF1": [
+        {
+            "title": "Andromeda Infinity (Taurus Fire)",
+            "path": "andromeda_infinity_tf"
+        }
+    ],
+    "MMSF2": [
+        {
+            "title": "Rogue SX (Dark Phantom)",
+            "path": "rogue_sx_dp"
+        }
+    ],
+    "MMSF3": [
+        {
+            "title": "Crimson Dragon SP (Spade Magnes)",
+            "path": "crimson_dragon_sp_sm"
+        }
+    ],
+    "Filler": []
+}

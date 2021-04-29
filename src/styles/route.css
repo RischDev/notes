@@ -1,0 +1,143 @@
+.notes {
+	overflow: scroll;
+	width: 65%;
+	height: 100vh;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: left;
+}
+
+.tracker {
+	overflow: scroll;
+	width: 35%;
+	height: 100vh;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: left;
+}
+
+.fullSize {
+    width: 100%;
+}
+
+.tracker h2 {
+	width: 100%;
+}
+
+.header {
+	width: -moz-calc(100% - 15px);
+	width: -webkit-calc(100% - 15px);
+	width: -o-calc(100% - 15px);
+	width: calc(100% - 15px);
+	margin: 5px 15px;
+	margin-top: 10px;
+	overflow: auto;
+}
+
+.col-left {
+	width: 40%;
+}
+
+.col-right {
+	width: 55%;
+}
+
+.section-image {
+	width: 100%;
+}
+
+.item-list {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.item-header {
+	width: -moz-calc(100% - 15px);
+	width: -webkit-calc(100% - 15px);
+	width: -o-calc(100% - 15px);
+	width: calc(100% - 15px);
+	margin: 5px 15px;
+	display: flex;
+	justify-content: center;
+}
+
+.modifiers {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.small-modifier:hover {
+    cursor: pointer;
+}
+
+.title {
+	padding: 5px;
+}
+
+.potential-items-list {
+    text-align: center;
+}
+
+.small-title {
+	padding: 2px;
+	text-align: center;
+}
+
+.icon, .small-icon {
+	image-rendering: -moz-crisp-edges;
+	image-rendering: pixelated;
+	display: block;
+	margin: 0px auto;
+}
+
+.found {
+	opacity: 0.35;
+}
+
+.reset {
+	width: 20%;
+	height: 30px;
+	font-size: 20px;
+	margin-top: 10px;
+}
+
+.collapse:hover, .expand:hover {
+	cursor: pointer;
+}
+
+.right {
+	display: inline-block;
+	float: right;
+}
+
+.hidden {
+	display: none;
+}
+
+.routes-list {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.route-overview {
+    font-size: 21px;
+    margin: 10px;
+}
+
+.route-overview:hover {
+    cursor: pointer;
+}
+
+.edit {
+    width: 25px;
+    height: 25px;
+    margin: 10px;
+    vertical-align: middle;
+    display: inline-block;
+}
+
+.edit:hover {
+    cursor: pointer;
+}

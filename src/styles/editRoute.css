@@ -1,0 +1,110 @@
+.container {
+
+}
+
+.sectionHeader {
+    display: inline-block;
+    margin: 10px 5px;
+    font-size: 29px;
+}
+
+.routeForm {
+    width: 100%;
+    text-align: center;
+    font-size: 24px;
+}
+
+.routeForm input[type=text] {
+    margin: 5px auto;
+    width: 360px;
+    height: 24px;
+    border-radius: 5px;
+    padding: 0 5px;
+    font-size: 16px;
+}
+
+.routeForm textarea {
+    margin: 5px;
+    width: 300px;
+    height: 28px;
+    border-radius: 5px;
+    padding: 0 5px;
+    font-size: 16px;
+    vertical-align: middle;
+}
+
+.routeForm select {
+    height: 32px;
+    margin: 5px;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.routeInfo {
+    overflow: scroll;
+    width: 25%;
+    height: 100vh;
+    padding-right: -1px;
+}
+
+.sectionInfo {
+    overflow: scroll;
+    width: 75%;
+    height: 100vh;
+}
+
+.formSection {
+    width: 100%;
+    padding: 5px  0;
+}
+
+.game-select {
+    width: 240px;
+}
+
+.item-select {
+    width: 150px;
+}
+
+.modifier-select {
+    width: 50px
+}
+
+.btn {
+    width: 192px;
+    height: 48px;
+    font-size: 20px;
+    margin: 5px;
+}
+
+.delete {
+    width: 20px;
+    height: 20px;
+    margin: 11px 5px;
+    vertical-align: middle;
+    display: inline-block;
+}
+
+.deleteSection {
+    width: 20px;
+    height: 20px;
+    margin: 0px 5px 5px 5px;
+    vertical-align: middle;
+    display: inline-block;
+}
+
+.delete:hover {
+    cursor: pointer;
+}
+
+.preview {
+    width: 95%;
+}
+
+.jsonLink {
+    color: white;
+}
+
+.jsonLink:hover {
+    color: #b3b3b3;
+}

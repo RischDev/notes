@@ -1,0 +1,785 @@
+{
+    "name": "Card",
+    "types": [
+        {
+            "name": "Standard",
+            "low": 0,
+            "high": 149
+        },
+        {
+            "name": "Mega",
+            "low": 150,
+            "high": 191
+        }
+    ],
+    "Items": [
+        {
+            "name": "Cannon",
+            "id": 0
+        },
+        {
+            "name": "PlusCanon",
+            "id": 1
+        },
+        {
+            "name": "HevyCanon",
+            "id": 2
+        },
+        {
+            "name": "PlsmaGun1",
+            "id": 3
+        },
+        {
+            "name": "PlsmaGun2",
+            "id": 4
+        },
+        {
+            "name": "PlsmaGun3",
+            "id": 5
+        },
+        {
+            "name": "AirSpred1",
+            "id": 6
+        },
+        {
+            "name": "AirSpred2",
+            "id": 7
+        },
+        {
+            "name": "AirSpred3",
+            "id": 8
+        },
+        {
+            "name": "RdrMisil1",
+            "id": 9
+        },
+        {
+            "name": "RdrMisil2",
+            "id": 10
+        },
+        {
+            "name": "RdrMisil3",
+            "id": 11
+        },
+        {
+            "name": "SyncHook1",
+            "id": 12
+        },
+        {
+            "name": "SyncHook2",
+            "id": 13
+        },
+        {
+            "name": "SyncHook3",
+            "id": 14
+        },
+        {
+            "name": "MniGrnde1",
+            "id": 15
+        },
+        {
+            "name": "MniGrnde2",
+            "id": 16
+        },
+        {
+            "name": "MniGrnde3",
+            "id": 17
+        },
+        {
+            "name": "HeatGrnde",
+            "id": 18
+        },
+        {
+            "name": "WoodGrnde",
+            "id": 19
+        },
+        {
+            "name": "IceGrnde",
+            "id": 20
+        },
+        {
+            "name": "Sword",
+            "id": 21
+        },
+        {
+            "name": "WideSword",
+            "id": 22
+        },
+        {
+            "name": "LongSword",
+            "id": 23
+        },
+        {
+            "name": "WhtMeteor",
+            "id": 24
+        },
+        {
+            "name": "SilvMteor",
+            "id": 25
+        },
+        {
+            "name": "GreatAxe",
+            "id": 26
+        },
+        {
+            "name": "DblStone",
+            "id": 27
+        },
+        {
+            "name": "Guardian",
+            "id": 28
+        },
+        {
+            "name": "Aura",
+            "id": 29
+        },
+        {
+            "name": "GrndWave1",
+            "id": 30
+        },
+        {
+            "name": "GrndWave2",
+            "id": 31
+        },
+        {
+            "name": "GrndWave3",
+            "id": 32
+        },
+        {
+            "name": "MadVulcn1",
+            "id": 33
+        },
+        {
+            "name": "MadVulcn2",
+            "id": 34
+        },
+        {
+            "name": "MadVulcn3",
+            "id": 35
+        },
+        {
+            "name": "Scythe1",
+            "id": 36
+        },
+        {
+            "name": "Scythe2",
+            "id": 37
+        },
+        {
+            "name": "Scythe3",
+            "id": 38
+        },
+        {
+            "name": "BooHat1",
+            "id": 39
+        },
+        {
+            "name": "BootHat2",
+            "id": 40
+        },
+        {
+            "name": "BootHat3",
+            "id": 41
+        },
+        {
+            "name": "JetSki1",
+            "id": 42
+        },
+        {
+            "name": "JetSki2",
+            "id": 43
+        },
+        {
+            "name": "JetSki3",
+            "id": 44
+        },
+        {
+            "name": "FireRing1",
+            "id": 45
+        },
+        {
+            "name": "FireRing2",
+            "id": 46
+        },
+        {
+            "name": "FireRing3",
+            "id": 47
+        },
+        {
+            "name": "DnceFire1",
+            "id": 48
+        },
+        {
+            "name": "DnceFire2",
+            "id": 49
+        },
+        {
+            "name": "DnceFire3",
+            "id": 50
+        },
+        {
+            "name": "HeatUppr1",
+            "id": 51
+        },
+        {
+            "name": "HeatUppr2",
+            "id": 52
+        },
+        {
+            "name": "HeatUppr3",
+            "id": 53
+        },
+        {
+            "name": "KiloBomb1",
+            "id": 54
+        },
+        {
+            "name": "KiloBomb2",
+            "id": 55
+        },
+        {
+            "name": "KiloBomb3",
+            "id": 56
+        },
+        {
+            "name": "ChainBbl1",
+            "id": 57
+        },
+        {
+            "name": "ChainBbl2",
+            "id": 58
+        },
+        {
+            "name": "ChainBbl3",
+            "id": 59
+        },
+        {
+            "name": "StkyRain1",
+            "id": 60
+        },
+        {
+            "name": "StkyRain2",
+            "id": 61
+        },
+        {
+            "name": "StkyRain3",
+            "id": 62
+        },
+        {
+            "name": "SnoBall1",
+            "id": 63
+        },
+        {
+            "name": "SnoBall2",
+            "id": 64
+        },
+        {
+            "name": "SnoBall3",
+            "id": 65
+        },
+        {
+            "name": "PiranKss1",
+            "id": 66
+        },
+        {
+            "name": "PiranKss2",
+            "id": 67
+        },
+        {
+            "name": "PiranKss3",
+            "id": 68
+        },
+        {
+            "name": "VoltcEye1",
+            "id": 69
+        },
+        {
+            "name": "VoltcEye2",
+            "id": 70
+        },
+        {
+            "name": "VoltcEye3",
+            "id": 71
+        },
+        {
+            "name": "FlckrKck1",
+            "id": 72
+        },
+        {
+            "name": "FlckrKck2",
+            "id": 73
+        },
+        {
+            "name": "FlckrKck3",
+            "id": 74
+        },
+        {
+            "name": "StlthLzr1",
+            "id": 75
+        },
+        {
+            "name": "StlthLzr2",
+            "id": 76
+        },
+        {
+            "name": "StlthLzr3",
+            "id": 77
+        },
+        {
+            "name": "MumyHand1",
+            "id": 78
+        },
+        {
+            "name": "MumyHand2",
+            "id": 79
+        },
+        {
+            "name": "MumyHand3",
+            "id": 80
+        },
+        {
+            "name": "MopLance1",
+            "id": 81
+        },
+        {
+            "name": "MopLance2",
+            "id": 82
+        },
+        {
+            "name": "MopLance3",
+            "id": 83
+        },
+        {
+            "name": "Fokx-Fu1",
+            "id": 84
+        },
+        {
+            "name": "Fokx-Fu2",
+            "id": 85
+        },
+        {
+            "name": "Fokx-Fu3",
+            "id": 86
+        },
+        {
+            "name": "Squall1",
+            "id": 87
+        },
+        {
+            "name": "Squall2",
+            "id": 88
+        },
+        {
+            "name": "Squall3",
+            "id": 89
+        },
+        {
+            "name": "NeedlAtk1",
+            "id": 90
+        },
+        {
+            "name": "NeedlAtk2",
+            "id": 91
+        },
+        {
+            "name": "NeedlAtk3",
+            "id": 92
+        },
+        {
+            "name": "GrnCarpet",
+            "id": 93
+        },
+        {
+            "name": "BlueCarpt",
+            "id": 94
+        },
+        {
+            "name": "PrplCarpt",
+            "id": 95
+        },
+        {
+            "name": "PuffBlst1",
+            "id": 96
+        },
+        {
+            "name": "PuffBlast2",
+            "id": 97
+        },
+        {
+            "name": "PuffBlst3",
+            "id": 98
+        },
+        {
+            "name": "Buki1",
+            "id": 99
+        },
+        {
+            "name": "Buki2",
+            "id": 100
+        },
+        {
+            "name": "Buki3",
+            "id": 101
+        },
+        {
+            "name": "JngleStrm",
+            "id": 102
+        },
+        {
+            "name": "SnoStorm",
+            "id": 103
+        },
+        {
+            "name": "PoisnStrm",
+            "id": 104
+        },
+        {
+            "name": "ElecSlash",
+            "id": 105
+        },
+        {
+            "name": "WoodSlash",
+            "id": 106
+        },
+        {
+            "name": "FireSlash",
+            "id": 107
+        },
+        {
+            "name": "MoaiFall1",
+            "id": 108
+        },
+        {
+            "name": "MoaiFall2",
+            "id": 109
+        },
+        {
+            "name": "MoaiFall3",
+            "id": 110
+        },
+        {
+            "name": "BlackHole1",
+            "id": 111
+        },
+        {
+            "name": "BlackHole2",
+            "id": 112
+        },
+        {
+            "name": "BlackHole3",
+            "id": 113
+        },
+        {
+            "name": "BsrkSwrd1",
+            "id": 114
+        },
+        {
+            "name": "BsrkSwrd2",
+            "id": 115
+        },
+        {
+            "name": "BsrkSwrd3",
+            "id": 116
+        },
+        {
+            "name": "TyphnDnce",
+            "id": 117
+        },
+        {
+            "name": "AtomMine1",
+            "id": 118
+        },
+        {
+            "name": "AtomMine2",
+            "id": 119
+        },
+        {
+            "name": "AtomMine3",
+            "id": 120
+        },
+        {
+            "name": "PrlyzeStg",
+            "id": 121
+        },
+        {
+            "name": "GNullStage",
+            "id": 122
+        },
+        {
+            "name": "Recover10",
+            "id": 123
+        },
+        {
+            "name": "Recover30",
+            "id": 124
+        },
+        {
+            "name": "Recover50",
+            "id": 125
+        },
+        {
+            "name": "Recover80",
+            "id": 126
+        },
+        {
+            "name": "Recover120",
+            "id": 127
+        },
+        {
+            "name": "Recover150",
+            "id": 128
+        },
+        {
+            "name": "Recover200",
+            "id": 129
+        },
+        {
+            "name": "Recover300",
+            "id": 130
+        },
+        {
+            "name": "Barrier",
+            "id": 131
+        },
+        {
+            "name": "SprBarrier",
+            "id": 132
+        },
+        {
+            "name": "AttckPanel",
+            "id": 133
+        },
+        {
+            "name": "AmbshPanel",
+            "id": 134
+        },
+        {
+            "name": "BustrPanel",
+            "id": 135
+        },
+        {
+            "name": "Invisible",
+            "id": 136
+        },
+        {
+            "name": "Whistle",
+            "id": 137
+        },
+        {
+            "name": "Bombalizr",
+            "id": 138
+        },
+        {
+            "name": "AreaEater",
+            "id": 139
+        },
+        {
+            "name": "SpritFury",
+            "id": 140
+        },
+        {
+            "name": "AntiSword",
+            "id": 141
+        },
+        {
+            "name": "PoisnApple",
+            "id": 142
+        },
+        {
+            "name": "DoubleCross",
+            "id": 143
+        },
+        {
+            "name": "GigaMine",
+            "id": 144
+        },
+        {
+            "name": "GrassStage",
+            "id": 145
+        },
+        {
+            "name": "IceStage",
+            "id": 146
+        },
+        {
+            "name": "HolyPanel",
+            "id": 147
+        },
+        {
+            "name": "ParlyzPlus",
+            "id": 148
+        },
+        {
+            "name": "Attack+10",
+            "id": 149
+        },
+        {
+            "name": "DrkPhntm",
+            "id": 150
+        },
+        {
+            "name": "DrkPhntmEX",
+            "id": 151
+        },
+        {
+            "name": "DrkPhntmSP",
+            "id": 152
+        },
+        {
+            "name": "YetiBlzzrd",
+            "id": 153
+        },
+        {
+            "name": "YtBlzzrdEX",
+            "id": 154
+        },
+        {
+            "name": "YtBlzzrdSP",
+            "id": 155
+        },
+        {
+            "name": "Rogue",
+            "id": 156
+        },
+        {
+            "name": "RogueEX",
+            "id": 157
+        },
+        {
+            "name": "RogueSP",
+            "id": 158
+        },
+        {
+            "name": "PlesioSrf",
+            "id": 159
+        },
+        {
+            "name": "PlsioSrfEX",
+            "id": 160
+        },
+        {
+            "name": "PlsioSrfSP",
+            "id": 161
+        },
+        {
+            "name": "TerraCndr",
+            "id": 162
+        },
+        {
+            "name": "TrraCndrEX",
+            "id": 163
+        },
+        {
+            "name": "TrraCndrSP",
+            "id": 164
+        },
+        {
+            "name": "Hollow",
+            "id": 165
+        },
+        {
+            "name": "HollowEX",
+            "id": 166
+        },
+        {
+            "name": "HollowSP",
+            "id": 167
+        },
+        {
+            "name": "TaurusFire",
+            "id": 168
+        },
+        {
+            "name": "TaursFireEX",
+            "id": 169
+        },
+        {
+            "name": "TaursFireSP",
+            "id": 170
+        },
+        {
+            "name": "HarpNote",
+            "id": 171
+        },
+        {
+            "name": "HarpNoteEX",
+            "id": 172
+        },
+        {
+            "name": "HarpNoteSP",
+            "id": 173
+        },
+        {
+            "name": "QnOphiuca",
+            "id": 174
+        },
+        {
+            "name": "QnOphiucaEX",
+            "id": 175
+        },
+        {
+            "name": "QnOphiucaSP",
+            "id": 176
+        },
+        {
+            "name": "GeminSpark",
+            "id": 177
+        },
+        {
+            "name": "GemnSpkEX",
+            "id": 178
+        },
+        {
+            "name": "GemnSpkSP",
+            "id": 179
+        },
+        {
+            "name": "CancrBuble",
+            "id": 180
+        },
+        {
+            "name": "CancrBublEX",
+            "id": 181
+        },
+        {
+            "name": "CancrBublSP",
+            "id": 182
+        },
+        {
+            "name": "KngFooKid",
+            "id": 183
+        },
+        {
+            "name": "KngFooKdEX",
+            "id": 184
+        },
+        {
+            "name": "KngFooKdSP",
+            "id": 185
+        },
+        {
+            "name": "GenAuriga",
+            "id": 186
+        },
+        {
+            "name": "GnAurgaEX",
+            "id": 187
+        },
+        {
+            "name": "GnAurgaSP",
+            "id": 188
+        },
+        {
+            "name": "ApolloFlm",
+            "id": 189
+        },
+        {
+            "name": "ApploFlmEX",
+            "id": 190
+        },
+        {
+            "name": "ApploFlmSP",
+            "id": 191
+        }
+    ]
+}

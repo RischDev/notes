@@ -1,0 +1,798 @@
+{
+    "name": "Card",
+    "modifier": false,
+    "types": [
+        {
+            "name": "Standard",
+            "low": 0,
+            "high": 149
+        },
+        {
+            "name": "Mega",
+            "low": 150,
+            "high": 194
+        }
+    ],
+    "Items": [
+        {
+            "name": "Cannon",
+            "id": 0
+        },
+        {
+            "name": "PlusCannon",
+            "id": 1
+        },
+        {
+            "name": "HevyCannon",
+            "id": 2
+        },
+        {
+            "name": "PlasmaGun",
+            "id": 3
+        },
+        {
+            "name": "AirSpread1",
+            "id": 4
+        },
+        {
+            "name": "AirSpread2",
+            "id": 5
+        },
+        {
+            "name": "AirSpread3",
+            "id": 6
+        },
+        {
+            "name": "MadVulcan1",
+            "id": 7
+        },
+        {
+            "name": "MadVulcan2",
+            "id": 8
+        },
+        {
+            "name": "MadVulcan3",
+            "id": 9
+        },
+        {
+            "name": "BlackInk",
+            "id": 10
+        },
+        {
+            "name": "MiniGrnade",
+            "id": 11
+        },
+        {
+            "name": "Sword",
+            "id": 12
+        },
+        {
+            "name": "WideSword",
+            "id": 13
+        },
+        {
+            "name": "LongSword",
+            "id": 14
+        },
+        {
+            "name": "Bushido1",
+            "id": 15
+        },
+        {
+            "name": "Bushido2",
+            "id": 16
+        },
+        {
+            "name": "Bushido3",
+            "id": 17
+        },
+        {
+            "name": "GreatAxe",
+            "id": 18
+        },
+        {
+            "name": "FlameAxe",
+            "id": 19
+        },
+        {
+            "name": "WindyAtk1",
+            "id": 20
+        },
+        {
+            "name": "WindyAtk2",
+            "id": 21
+        },
+        {
+            "name": "WindyAtk3",
+            "id": 22
+        },
+        {
+            "name": "SyncHook1",
+            "id": 23
+        },
+        {
+            "name": "SyncHook2",
+            "id": 24
+        },
+        {
+            "name": "SyncHook3",
+            "id": 25
+        },
+        {
+            "name": "DrillArm1",
+            "id": 26
+        },
+        {
+            "name": "DrillArm2",
+            "id": 27
+        },
+        {
+            "name": "DrillArm3",
+            "id": 28
+        },
+        {
+            "name": "TyphnDance",
+            "id": 29
+        },
+        {
+            "name": "TrnadoDnce",
+            "id": 30
+        },
+        {
+            "name": "WhtMeteor",
+            "id": 31
+        },
+        {
+            "name": "SilvMeteor",
+            "id": 32
+        },
+        {
+            "name": "GrandWave1",
+            "id": 33
+        },
+        {
+            "name": "GrandWave2",
+            "id": 34
+        },
+        {
+            "name": "GrandWave3",
+            "id": 35
+        },
+        {
+            "name": "JetAttack1",
+            "id": 36
+        },
+        {
+            "name": "JetAttack2",
+            "id": 37
+        },
+        {
+            "name": "JetAttack3",
+            "id": 38
+        },
+        {
+            "name": "Buki1",
+            "id": 39
+        },
+        {
+            "name": "Buki2",
+            "id": 40
+        },
+        {
+            "name": "Buki3",
+            "id": 41
+        },
+        {
+            "name": "SmileCoin1",
+            "id": 42
+        },
+        {
+            "name": "SmileCoin2",
+            "id": 43
+        },
+        {
+            "name": "SmileCoin3",
+            "id": 44
+        },
+        {
+            "name": "BigDrop1",
+            "id": 45
+        },
+        {
+            "name": "BigDrop2",
+            "id": 46
+        },
+        {
+            "name": "BigDrop3",
+            "id": 47
+        },
+        {
+            "name": "BuzzSaw1",
+            "id": 48
+        },
+        {
+            "name": "BuzzSaw2",
+            "id": 49
+        },
+        {
+            "name": "BuzzSaw3",
+            "id": 50
+        },
+        {
+            "name": "SkullArrw1",
+            "id": 51
+        },
+        {
+            "name": "SkullArrw2",
+            "id": 52
+        },
+        {
+            "name": "SkullArrw3",
+            "id": 53
+        },
+        {
+            "name": "MuTech1",
+            "id": 54
+        },
+        {
+            "name": "MuTech2",
+            "id": 55
+        },
+        {
+            "name": "MuTech3",
+            "id": 56
+        },
+        {
+            "name": "TimeBomb1",
+            "id": 57
+        },
+        {
+            "name": "TimeBomb2",
+            "id": 58
+        },
+        {
+            "name": "TimeBomb3",
+            "id": 59
+        },
+        {
+            "name": "HeatUppr1",
+            "id": 60
+        },
+        {
+            "name": "HeatUppr2",
+            "id": 61
+        },
+        {
+            "name": "HeatUppr3",
+            "id": 62
+        },
+        {
+            "name": "MechFlame1",
+            "id": 63
+        },
+        {
+            "name": "MechFlame2",
+            "id": 64
+        },
+        {
+            "name": "MechFlame3",
+            "id": 65
+        },
+        {
+            "name": "MadFire1",
+            "id": 66
+        },
+        {
+            "name": "MadFire2",
+            "id": 67
+        },
+        {
+            "name": "MadFire3",
+            "id": 68
+        },
+        {
+            "name": "WideWave1",
+            "id": 69
+        },
+        {
+            "name": "WideWave2",
+            "id": 70
+        },
+        {
+            "name": "WideWave3",
+            "id": 71
+        },
+        {
+            "name": "BubblHook1",
+            "id": 72
+        },
+        {
+            "name": "BubblHook2",
+            "id": 73
+        },
+        {
+            "name": "BubblHook3",
+            "id": 74
+        },
+        {
+            "name": "SharkAtk1",
+            "id": 75
+        },
+        {
+            "name": "SharkAtk2",
+            "id": 76
+        },
+        {
+            "name": "SharkAtk3",
+            "id": 77
+        },
+        {
+            "name": "IceSpin1",
+            "id": 78
+        },
+        {
+            "name": "IceSpin2",
+            "id": 79
+        },
+        {
+            "name": "IceSpin3",
+            "id": 80
+        },
+        {
+            "name": "StlthLzr1",
+            "id": 81
+        },
+        {
+            "name": "StlthLzr2",
+            "id": 82
+        },
+        {
+            "name": "StlthLzr3",
+            "id": 83
+        },
+        {
+            "name": "MummyHand1",
+            "id": 84
+        },
+        {
+            "name": "MummyHand2",
+            "id": 85
+        },
+        {
+            "name": "MummyHand3",
+            "id": 86
+        },
+        {
+            "name": "ThndrHead1",
+            "id": 87
+        },
+        {
+            "name": "ThndrHead2",
+            "id": 88
+        },
+        {
+            "name": "ThndrHead3",
+            "id": 89
+        },
+        {
+            "name": "FlashStrk1",
+            "id": 90
+        },
+        {
+            "name": "FlashStrk2",
+            "id": 91
+        },
+        {
+            "name": "FlashStrk3",
+            "id": 92
+        },
+        {
+            "name": "ArachAtk1",
+            "id": 93
+        },
+        {
+            "name": "ArachAtk2",
+            "id": 94
+        },
+        {
+            "name": "ArachAtk3",
+            "id": 95
+        },
+        {
+            "name": "Shuriken1",
+            "id": 96
+        },
+        {
+            "name": "Shuriken2",
+            "id": 97
+        },
+        {
+            "name": "Shuriken3",
+            "id": 98
+        },
+        {
+            "name": "PollenShot1",
+            "id": 99
+        },
+        {
+            "name": "PollenShot2",
+            "id": 100
+        },
+        {
+            "name": "PollenShot3",
+            "id": 101
+        },
+        {
+            "name": "AcornBomb1",
+            "id": 102
+        },
+        {
+            "name": "AcornBomb2",
+            "id": 103
+        },
+        {
+            "name": "AcornBomb3",
+            "id": 104
+        },
+        {
+            "name": "BeastSlap1",
+            "id": 105
+        },
+        {
+            "name": "BeastSlap2",
+            "id": 106
+        },
+        {
+            "name": "BeastSlap3",
+            "id": 107
+        },
+        {
+            "name": "NoiseWzrd1",
+            "id": 108
+        },
+        {
+            "name": "NoiseWzrd2",
+            "id": 109
+        },
+        {
+            "name": "NoiseWzrd3",
+            "id": 110
+        },
+        {
+            "name": "MalWizard1",
+            "id": 111
+        },
+        {
+            "name": "MalWizard2",
+            "id": 112
+        },
+        {
+            "name": "MalWizard3",
+            "id": 113
+        },
+        {
+            "name": "BlackHole1",
+            "id": 114
+        },
+        {
+            "name": "BlackHole2",
+            "id": 115
+        },
+        {
+            "name": "BlackHole3",
+            "id": 116
+        },
+        {
+            "name": "DblStone",
+            "id": 117
+        },
+        {
+            "name": "Bombalizer",
+            "id": 118
+        },
+        {
+            "name": "DivideLine",
+            "id": 119
+        },
+        {
+            "name": "DblEater",
+            "id": 120
+        },
+        {
+            "name": "PanlFormat",
+            "id": 121
+        },
+        {
+            "name": "PanicCloud",
+            "id": 122
+        },
+        {
+            "name": "Recover10",
+            "id": 123
+        },
+        {
+            "name": "Recover30",
+            "id": 124
+        },
+        {
+            "name": "Recover50",
+            "id": 125
+        },
+        {
+            "name": "Recover80",
+            "id": 126
+        },
+        {
+            "name": "Recover120",
+            "id": 127
+        },
+        {
+            "name": "Recover150",
+            "id": 128
+        },
+        {
+            "name": "Recover200",
+            "id": 129
+        },
+        {
+            "name": "Recover300",
+            "id": 130
+        },
+        {
+            "name": "Barrier",
+            "id": 131
+        },
+        {
+            "name": "SprBarrier",
+            "id": 132
+        },
+        {
+            "name": "Aura",
+            "id": 133
+        },
+        {
+            "name": "Invisible",
+            "id": 134
+        },
+        {
+            "name": "Whistle",
+            "id": 135
+        },
+        {
+            "name": "MegaCrushr",
+            "id": 136
+        },
+        {
+            "name": "SpiritFury",
+            "id": 137
+        },
+        {
+            "name": "AntiSword",
+            "id": 138
+        },
+        {
+            "name": "PoisnApple",
+            "id": 139
+        },
+        {
+            "name": "DoublCross",
+            "id": 140
+        },
+        {
+            "name": "GigaMine",
+            "id": 141
+        },
+        {
+            "name": "GrassStage",
+            "id": 142
+        },
+        {
+            "name": "IceStage",
+            "id": 143
+        },
+        {
+            "name": "PrlyzeStg",
+            "id": 144
+        },
+        {
+            "name": "HolyPanel",
+            "id": 145
+        },
+        {
+            "name": "AtkPanel",
+            "id": 146
+        },
+        {
+            "name": "GravtyPlus",
+            "id": 147
+        },
+        {
+            "name": "ParlyzPlus",
+            "id": 148
+        },
+        {
+            "name": "Attack+10",
+            "id": 149
+        },
+        {
+            "name": "SpadMgnes",
+            "id": 150
+        },
+        {
+            "name": "SpadMgnesV2",
+            "id": 151
+        },
+        {
+            "name": "SpadMgnesV3",
+            "id": 152
+        },
+        {
+            "name": "DiamndIce",
+            "id": 153
+        },
+        {
+            "name": "DiamndIceV2",
+            "id": 154
+        },
+        {
+            "name": "DiamndIceV3",
+            "id": 155
+        },
+        {
+            "name": "ClubStrng",
+            "id": 156
+        },
+        {
+            "name": "ClubStrngV2",
+            "id": 157
+        },
+        {
+            "name": "ClubStrngV3",
+            "id": 158
+        },
+        {
+            "name": "QueenVrgo",
+            "id": 159
+        },
+        {
+            "name": "QueenVrgoV2",
+            "id": 160
+        },
+        {
+            "name": "QueenVrgoV3",
+            "id": 161
+        },
+        {
+            "name": "JackCorvs",
+            "id": 162
+        },
+        {
+            "name": "JackCorvsV2",
+            "id": 163
+        },
+        {
+            "name": "JackCorvsV3",
+            "id": 164
+        },
+        {
+            "name": "DreadJokr",
+            "id": 165
+        },
+        {
+            "name": "DreadJokrV2",
+            "id": 166
+        },
+        {
+            "name": "DreadJokrV3",
+            "id": 167
+        },
+        {
+            "name": "AcidAce",
+            "id": 168
+        },
+        {
+            "name": "AcidAceV2",
+            "id": 169
+        },
+        {
+            "name": "AcidAceV3",
+            "id": 170
+        },
+        {
+            "name": "TaursFire",
+            "id": 171
+        },
+        {
+            "name": "TaursFireV2",
+            "id": 172
+        },
+        {
+            "name": "TaursFireV3",
+            "id": 173
+        },
+        {
+            "name": "CygnsWing",
+            "id": 174
+        },
+        {
+            "name": "CygnsWingV2",
+            "id": 175
+        },
+        {
+            "name": "CygnsWingV3",
+            "id": 176
+        },
+        {
+            "name": "WolfWoods",
+            "id": 177
+        },
+        {
+            "name": "WolfWoodsV2",
+            "id": 178
+        },
+        {
+            "name": "WolfWoodsV3",
+            "id": 179
+        },
+        {
+            "name": "DrkPhntm",
+            "id": 180
+        },
+        {
+            "name": "DrkPhntmV2",
+            "id": 181
+        },
+        {
+            "name": "DrkPhntmV3",
+            "id": 182
+        },
+        {
+            "name": "Rogue",
+            "id": 183
+        },
+        {
+            "name": "RogueV2",
+            "id": 184
+        },
+        {
+            "name": "RogueV3",
+            "id": 185
+        },
+        {
+            "name": "MoonDstry",
+            "id": 186
+        },
+        {
+            "name": "MoonDstryV2",
+            "id": 187
+        },
+        {
+            "name": "MoonDstryV3",
+            "id": 188
+        },
+        {
+            "name": "ApolloFlm",
+            "id": 189
+        },
+        {
+            "name": "ApolloFlmV2",
+            "id": 190
+        },
+        {
+            "name": "ApolloFlmV3",
+            "id": 191
+        },
+        {
+            "name": "Sirius",
+            "id": 192
+        },
+        {
+            "name": "SiriusV2",
+            "id": 193
+        },
+        {
+            "name": "SiriusV3",
+            "id": 194
+        }
+    ]
+}

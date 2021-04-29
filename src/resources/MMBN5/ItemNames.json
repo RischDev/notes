@@ -1,0 +1,1459 @@
+{
+    "name": "Chip",
+    "modifiers": true,
+    "modifierName": "Code",
+    "types": [
+        {
+            "name": "Standard",
+            "low": 0,
+            "high": 179
+        },
+        {
+            "name": "Mega",
+            "low": 180,
+            "high": 258
+        }
+    ],
+    "Items": [
+        {
+            "id": 0,
+            "name": "Cannon",
+            "modifiers": [ "A", "B", "C", "*" ]
+        },
+        {
+            "id": 1,
+            "name": "HiCannon",
+            "modifiers": [ "D", "E", "F" ]
+        },
+        {
+            "id": 2,
+            "name": "M-Cannon",
+            "modifiers": [ "F", "G", "H" ]
+        },
+        {
+            "id": 3,
+            "name": "AirShot",
+            "modifiers": [ "*" ]
+        },
+        {
+            "id": 4,
+            "name": "Vulcan1",
+            "modifiers": [ "C", "D", "E", "*" ]
+        },
+        {
+            "id": 5,
+            "name": "Vulcan2",
+            "modifiers": [ "A", "B", "C" ]
+        },
+        {
+            "id": 6,
+            "name": "Vulcan3",
+            "modifiers": [ "L", "M", "N" ]
+        },
+        {
+            "id": 7,
+            "name": "Spreader",
+            "modifiers": [ "C", "D", "E", "*" ]
+        },
+        {
+            "id": 8,
+            "name": "MrkCan1",
+            "modifiers": [ "K", "M", "S" ]
+        },
+        {
+            "id": 9,
+            "name": "MrkCan2",
+            "modifiers": [ "D", "F", "Z" ]
+        },
+        {
+            "id": 10,
+            "name": "MrkCan3",
+            "modifiers": [ "E", "R", "Y" ]
+        },
+        {
+            "id": 11,
+            "name": "Pulsar1",
+            "modifiers": [ "F", "P", "T" ]
+        },
+        {
+            "id": 12,
+            "name": "Pulsar2",
+            "modifiers": [ "E", "G", "M" ]
+        },
+        {
+            "id": 13,
+            "name": "Pulsar3",
+            "modifiers": [ "C", "R", "S" ]
+        },
+        {
+            "id": 14,
+            "name": "TankCan1",
+            "modifiers": [ "A", "E", "P" ]
+        },
+        {
+            "id": 15,
+            "name": "TankCan2",
+            "modifiers": [ "B", "T", "Y" ]
+        },
+        {
+            "id": 16,
+            "name": "TankCan3",
+            "modifiers": [ "F", "M", "R" ]
+        },
+        {
+            "id": 17,
+            "name": "WideSht1",
+            "modifiers": [ "L", "M", "N" ]
+        },
+        {
+            "id": 18,
+            "name": "WideSht2",
+            "modifiers": [ "E", "F", "G" ]
+        },
+        {
+            "id": 19,
+            "name": "WideSht3",
+            "modifiers": [ "S", "T", "U" ]
+        },
+        {
+            "id": 20,
+            "name": "ElcReel1",
+            "modifiers": [ "C", "V", "Z" ]
+        },
+        {
+            "id": 21,
+            "name": "ElcReel2",
+            "modifiers": [ "B", "Q", "Y" ]
+        },
+        {
+            "id": 22,
+            "name": "ElcReel3",
+            "modifiers": [ "E", "L", "R" ]
+        },
+        {
+            "id": 23,
+            "name": "CactBal1",
+            "modifiers": [ "H", "I", "J" ]
+        },
+        {
+            "id": 24,
+            "name": "CactBal2",
+            "modifiers": [ "Q", "R", "S" ]
+        },
+        {
+            "id": 25,
+            "name": "CactBal3",
+            "modifiers": [ "L", "M", "N" ]
+        },
+        {
+            "id": 26,
+            "name": "GunDelS1",
+            "modifiers": [ "A", "S", "U", "*" ]
+        },
+        {
+            "id": 27,
+            "name": "GunDelS2",
+            "modifiers": [ "G", "U", "Y" ]
+        },
+        {
+            "id": 28,
+            "name": "GunDelS3",
+            "modifiers": [ "D", "M", "O" ]
+        },
+        {
+            "id": 29,
+            "name": "ElemRage",
+            "modifiers": [ "E", "K", "W" ]
+        },
+        {
+            "id": 30,
+            "name": "Thunder",
+            "modifiers": [ "B", "L", "P", "*" ]
+        },
+        {
+            "id": 31,
+            "name": "Tornado",
+            "modifiers": [ "D", "L", "R" ]
+        },
+        {
+            "id": 32,
+            "name": "Static",
+            "modifiers": [ "N", "S", "V" ]
+        },
+        {
+            "id": 33,
+            "name": "MiniBomb",
+            "modifiers": [ "B", "G", "L", "*" ]
+        },
+        {
+            "id": 34,
+            "name": "EnergBom",
+            "modifiers": [ "E", "P", "W" ]
+        },
+        {
+            "id": 35,
+            "name": "MegEnBom",
+            "modifiers": [ "C", "K", "Z" ]
+        },
+        {
+            "id": 36,
+            "name": "CrakBom",
+            "modifiers": [ "C", "R", "V", "*" ]
+        },
+        {
+            "id": 37,
+            "name": "ParaBom",
+            "modifiers": [ "H", "N", "P" ]
+        },
+        {
+            "id": 38,
+            "name": "ResetBom",
+            "modifiers": [ "D", "I", "O" ]
+        },
+        {
+            "id": 39,
+            "name": "Quake1",
+            "modifiers": [ "A", "K", "P" ]
+        },
+        {
+            "id": 40,
+            "name": "Quake2",
+            "modifiers": [ "B", "L", "Y" ]
+        },
+        {
+            "id": 41,
+            "name": "Quake3",
+            "modifiers": [ "F", "H", "N" ]
+        },
+        {
+            "id": 42,
+            "name": "BugBomb",
+            "modifiers": [ "A", "R", "T", "*" ]
+        },
+        {
+            "id": 43,
+            "name": "CannBall",
+            "modifiers": [ "C", "T", "Z", "*" ]
+        },
+        {
+            "id": 44,
+            "name": "BlkBomb",
+            "modifiers": [ "L", "R", "Z" ]
+        },
+        {
+            "id": 45,
+            "name": "Geyser",
+            "modifiers": [ "G", "M", "S" ]
+        },
+        {
+            "id": 46,
+            "name": "LavaSeed",
+            "modifiers": [ "H", "K", "P" ]
+        },
+        {
+            "id": 47,
+            "name": "SeaSeed",
+            "modifiers": [ "D", "J", "M", "*" ]
+        },
+        {
+            "id": 48,
+            "name": "IceSeed",
+            "modifiers": [ "A", "K", "Q", "*" ]
+        },
+        {
+            "id": 49,
+            "name": "GrasSeed",
+            "modifiers": [ "A", "M", "W", "*" ]
+        },
+        {
+            "id": 50,
+            "name": "Sword",
+            "modifiers": [ "C", "L", "S" ]
+        },
+        {
+            "id": 51,
+            "name": "WideSwrd",
+            "modifiers": [ "K", "S", "Z" ]
+        },
+        {
+            "id": 52,
+            "name": "LongSwrd",
+            "modifiers": [ "C", "M", "S" ]
+        },
+        {
+            "id": 53,
+            "name": "WideBlde",
+            "modifiers": [ "A", "L", "V" ]
+        },
+        {
+            "id": 54,
+            "name": "LongBlde",
+            "modifiers": [ "E", "L", "P" ]
+        },
+        {
+            "id": 55,
+            "name": "CustSwrd",
+            "modifiers": [ "E", "L", "R" ]
+        },
+        {
+            "id": 56,
+            "name": "VarSwrd",
+            "modifiers": [ "B", "C", "V" ]
+        },
+        {
+            "id": 57,
+            "name": "Slasher",
+            "modifiers": [ "B", "I", "R" ]
+        },
+        {
+            "id": 58,
+            "name": "WindRack",
+            "modifiers": [ "B", "F", "J", "*" ]
+        },
+        {
+            "id": 59,
+            "name": "MoonBld1",
+            "modifiers": [ "A", "E", "N" ]
+        },
+        {
+            "id": 60,
+            "name": "MoonBld2",
+            "modifiers": [ "G", "O", "V" ]
+        },
+        {
+            "id": 61,
+            "name": "MoonBld3",
+            "modifiers": [ "C", "L", "T" ]
+        },
+        {
+            "id": 62,
+            "name": "Katana1",
+            "modifiers": [ "D", "H", "S" ]
+        },
+        {
+            "id": 63,
+            "name": "Katana2",
+            "modifiers": [ "B", "R", "W" ]
+        },
+        {
+            "id": 64,
+            "name": "Katana3",
+            "modifiers": [ "A", "J", "Z" ]
+        },
+        {
+            "id": 65,
+            "name": "YoYo",
+            "modifiers": [ "D", "E", "F" ]
+        },
+        {
+            "id": 66,
+            "name": "DrilArm1",
+            "modifiers": [ "A", "J", "W" ]
+        },
+        {
+            "id": 67,
+            "name": "DrilArm2",
+            "modifiers": [ "D", "L", "S" ]
+        },
+        {
+            "id": 68,
+            "name": "DrilArm3",
+            "modifiers": [ "I", "P", "Z" ]
+        },
+        {
+            "id": 69,
+            "name": "AirHoc",
+            "modifiers": [ "Q", "R", "S" ]
+        },
+        {
+            "id": 70,
+            "name": "Skully1",
+            "modifiers": [ "C", "K", "S" ]
+        },
+        {
+            "id": 71,
+            "name": "Skully2",
+            "modifiers": [ "A", "H", "V" ]
+        },
+        {
+            "id": 72,
+            "name": "Skully3",
+            "modifiers": [ "G", "N", "U" ]
+        },
+        {
+            "id": 73,
+            "name": "AqWhirl1",
+            "modifiers": [ "B", "F", "N" ]
+        },
+        {
+            "id": 74,
+            "name": "AqWhirl2",
+            "modifiers": [ "A", "H", "O" ]
+        },
+        {
+            "id": 75,
+            "name": "AqWhirl3",
+            "modifiers": [ "D", "I", "R" ]
+        },
+        {
+            "id": 76,
+            "name": "AirSpin1",
+            "modifiers": [ "C", "E", "O" ]
+        },
+        {
+            "id": 77,
+            "name": "AirSpin2",
+            "modifiers": [ "B", "H", "W" ]
+        },
+        {
+            "id": 78,
+            "name": "AirSpin3",
+            "modifiers": [ "A", "G", "J" ]
+        },
+        {
+            "id": 79,
+            "name": "FireHit1",
+            "modifiers": [ "O", "P", "Q" ]
+        },
+        {
+            "id": 80,
+            "name": "FireHit2",
+            "modifiers": [ "H", "I", "J" ]
+        },
+        {
+            "id": 81,
+            "name": "FireHit3",
+            "modifiers": [ "E", "F", "G" ]
+        },
+        {
+            "id": 82,
+            "name": "HotBody1",
+            "modifiers": [ "A", "F", "P" ]
+        },
+        {
+            "id": 83,
+            "name": "HotBody2",
+            "modifiers": [ "C", "R", "W" ]
+        },
+        {
+            "id": 84,
+            "name": "HotBody3",
+            "modifiers": [ "J", "M", "S" ]
+        },
+        {
+            "id": 85,
+            "name": "SideBub1",
+            "modifiers": [ "D", "Q", "S" ]
+        },
+        {
+            "id": 86,
+            "name": "SideBub2",
+            "modifiers": [ "H", "L", "W" ]
+        },
+        {
+            "id": 87,
+            "name": "SideBub3",
+            "modifiers": [ "E", "N", "P" ]
+        },
+        {
+            "id": 88,
+            "name": "CusVolt1",
+            "modifiers": [ "A", "V", "Y", "*" ]
+        },
+        {
+            "id": 89,
+            "name": "CusVolt2",
+            "modifiers": [ "C", "E", "G" ]
+        },
+        {
+            "id": 90,
+            "name": "CusVolt3",
+            "modifiers": [ "G", "M", "P" ]
+        },
+        {
+            "id": 91,
+            "name": "Boomer",
+            "modifiers": [ "A", "L", "V", "*" ]
+        },
+        {
+            "id": 92,
+            "name": "Astroid1",
+            "modifiers": [ "A", "Q", "T" ]
+        },
+        {
+            "id": 93,
+            "name": "Astroid2",
+            "modifiers": [ "E", "M", "U" ]
+        },
+        {
+            "id": 94,
+            "name": "Astroid3",
+            "modifiers": [ "C", "P", "Y" ]
+        },
+        {
+            "id": 95,
+            "name": "SpShake1",
+            "modifiers": [ "G", "H", "I" ]
+        },
+        {
+            "id": 96,
+            "name": "SpShake2",
+            "modifiers": [ "B", "C", "D" ]
+        },
+        {
+            "id": 97,
+            "name": "SpShake3",
+            "modifiers": [ "S", "T", "U" ]
+        },
+        {
+            "id": 98,
+            "name": "Voltz1",
+            "modifiers": [ "K", "O", "Y" ]
+        },
+        {
+            "id": 99,
+            "name": "Voltz2",
+            "modifiers": [ "J", "U", "Z" ]
+        },
+        {
+            "id": 100,
+            "name": "Voltz3",
+            "modifiers": [ "A", "H", "V" ]
+        },
+        {
+            "id": 101,
+            "name": "WoodNos1",
+            "modifiers": [ "F", "R", "W" ]
+        },
+        {
+            "id": 102,
+            "name": "WoodNos2",
+            "modifiers": [ "J", "T", "Z" ]
+        },
+        {
+            "id": 103,
+            "name": "WoodNos3",
+            "modifiers": [ "I", "S", "V" ]
+        },
+        {
+            "id": 104,
+            "name": "Lance",
+            "modifiers": [ "C", "L", "R", "*" ]
+        },
+        {
+            "id": 105,
+            "name": "WavePit",
+            "modifiers": [ "B", "E", "Z" ]
+        },
+        {
+            "id": 106,
+            "name": "RedWave",
+            "modifiers": [ "A", "F", "H" ]
+        },
+        {
+            "id": 107,
+            "name": "MudWave",
+            "modifiers": [ "D", "N", "W" ]
+        },
+        {
+            "id": 108,
+            "name": "RainyDay",
+            "modifiers": [ "B", "G", "L" ]
+        },
+        {
+            "id": 109,
+            "name": "Snake",
+            "modifiers": [ "C", "M", "Z" ]
+        },
+        {
+            "id": 110,
+            "name": "Magnum",
+            "modifiers": [ "E", "O", "V" ]
+        },
+        {
+            "id": 111,
+            "name": "CircGun",
+            "modifiers": [ "A", "C", "F" ]
+        },
+        {
+            "id": 112,
+            "name": "TimeBom1",
+            "modifiers": [ "H", "N", "T" ]
+        },
+        {
+            "id": 113,
+            "name": "TimeBom2",
+            "modifiers": [ "D", "H", "Z" ]
+        },
+        {
+            "id": 114,
+            "name": "TimeBom3",
+            "modifiers": [ "F", "H", "S" ]
+        },
+        {
+            "id": 115,
+            "name": "BoyBomb1",
+            "modifiers": [ "C", "F", "S" ]
+        },
+        {
+            "id": 116,
+            "name": "BoyBomb2",
+            "modifiers": [ "H", "P", "W" ]
+        },
+        {
+            "id": 117,
+            "name": "BoyBomb3",
+            "modifiers": [ "B", "Q", "Y" ]
+        },
+        {
+            "id": 118,
+            "name": "Mine",
+            "modifiers": [ "H", "P", "T" ]
+        },
+        {
+            "id": 119,
+            "name": "RockCube",
+            "modifiers": [ "*" ]
+        },
+        {
+            "id": 120,
+            "name": "Wind",
+            "modifiers": [ "*" ]
+        },
+        {
+            "id": 121,
+            "name": "Fan",
+            "modifiers": [ "*" ]
+        },
+        {
+            "id": 122,
+            "name": "Fanfare",
+            "modifiers": [ "F", "P", "Z", "*" ]
+        },
+        {
+            "id": 123,
+            "name": "Discord",
+            "modifiers": [ "B", "J", "Q", "*" ]
+        },
+        {
+            "id": 124,
+            "name": "Timpani",
+            "modifiers": [ "A", "L", "V", "*" ]
+        },
+        {
+            "id": 125,
+            "name": "Silence",
+            "modifiers": [ "C", "J", "N", "*" ]
+        },
+        {
+            "id": 126,
+            "name": "RedFrut1",
+            "modifiers": [ "E", "K", "Z" ]
+        },
+        {
+            "id": 127,
+            "name": "RedFrut2",
+            "modifiers": [ "F", "T", "W" ]
+        },
+        {
+            "id": 128,
+            "name": "RedFrut3",
+            "modifiers": [ "H", "O", "U" ]
+        },
+        {
+            "id": 129,
+            "name": "VDoll",
+            "modifiers": [ "O", "T", "Z" ]
+        },
+        {
+            "id": 130,
+            "name": "Guard1",
+            "modifiers": [ "A", "D", "K", "*" ]
+        },
+        {
+            "id": 131,
+            "name": "Guard2",
+            "modifiers": [ "B", "L", "Q", "*" ]
+        },
+        {
+            "id": 132,
+            "name": "Guard3",
+            "modifiers": [ "C", "M", "S", "*" ]
+        },
+        {
+            "id": 133,
+            "name": "CrsShld1",
+            "modifiers": [ "B", "F", "V" ]
+        },
+        {
+            "id": 134,
+            "name": "CrsShld2",
+            "modifiers": [ "C", "M", "R" ]
+        },
+        {
+            "id": 135,
+            "name": "CrsShld3",
+            "modifiers": [ "D", "O", "Z" ]
+        },
+        {
+            "id": 136,
+            "name": "CrakOut",
+            "modifiers": [ "*" ]
+        },
+        {
+            "id": 137,
+            "name": "DublCrak",
+            "modifiers": [ "*" ]
+        },
+        {
+            "id": 138,
+            "name": "TripCrak",
+            "modifiers": [ "*" ]
+        },
+        {
+            "id": 139,
+            "name": "Recov10",
+            "modifiers": [ "A", "C", "L", "*" ]
+        },
+        {
+            "id": 140,
+            "name": "Recov30",
+            "modifiers": [ "C", "H", "L", "*" ]
+        },
+        {
+            "id": 141,
+            "name": "Recov50",
+            "modifiers": [ "B", "H", "O", "*" ]
+        },
+        {
+            "id": 142,
+            "name": "Recov80",
+            "modifiers": [ "B", "K", "O", "*" ]
+        },
+        {
+            "id": 143,
+            "name": "Recov120",
+            "modifiers": [ "K" ]
+        },
+        {
+            "id": 144,
+            "name": "Recov150",
+            "modifiers": [ "Q" ]
+        },
+        {
+            "id": 145,
+            "name": "Recov200",
+            "modifiers": [ "I" ]
+        },
+        {
+            "id": 146,
+            "name": "Recov300",
+            "modifiers": [ "Y" ]
+        },
+        {
+            "id": 147,
+            "name": "PanlGrab",
+            "modifiers": [ "*" ]
+        },
+        {
+            "id": 148,
+            "name": "AreaGrab",
+            "modifiers": [ "A", "L", "S", "*" ]
+        },
+        {
+            "id": 149,
+            "name": "MetaGel",
+            "modifiers": [ "F", "N", "T" ]
+        },
+        {
+            "id": 150,
+            "name": "GrabBnsh",
+            "modifiers": [ "D", "L", "R" ]
+        },
+        {
+            "id": 151,
+            "name": "GrabRvng",
+            "modifiers": [ "F", "N", "P" ]
+        },
+        {
+            "id": 152,
+            "name": "PnlRetrn",
+            "modifiers": [ "*" ]
+        },
+        {
+            "id": 153,
+            "name": "Geddon1",
+            "modifiers": [ "M", "P", "Z", "*" ]
+        },
+        {
+            "id": 154,
+            "name": "Geddon2",
+            "modifiers": [ "H", "T", "W" ]
+        },
+        {
+            "id": 155,
+            "name": "Geddon3",
+            "modifiers": [ "A", "O", "V" ]
+        },
+        {
+            "id": 156,
+            "name": "SloGauge",
+            "modifiers": [ "H", "Q", "W", "*" ]
+        },
+        {
+            "id": 157,
+            "name": "FstGauge",
+            "modifiers": [ "H", "Q", "W", "*" ]
+        },
+        {
+            "id": 158,
+            "name": "BusterUp",
+            "modifiers": [ "*" ]
+        },
+        {
+            "id": 159,
+            "name": "Blinder",
+            "modifiers": [ "A", "D", "H", "*" ]
+        },
+        {
+            "id": 160,
+            "name": "NrthWind",
+            "modifiers": [ "D", "Q", "V", "*" ]
+        },
+        {
+            "id": 161,
+            "name": "HolyPanl",
+            "modifiers": [ "A", "N", "U", "*" ]
+        },
+        {
+            "id": 162,
+            "name": "Invisibl",
+            "modifiers": [ "*" ]
+        },
+        {
+            "id": 163,
+            "name": "Barrier",
+            "modifiers": [ "B", "L", "S", "*" ]
+        },
+        {
+            "id": 164,
+            "name": "Barr100",
+            "modifiers": [ "P" ]
+        },
+        {
+            "id": 165,
+            "name": "Barr200",
+            "modifiers": [ "W" ]
+        },
+        {
+            "id": 166,
+            "name": "BblWrap",
+            "modifiers": [ "Y" ]
+        },
+        {
+            "id": 167,
+            "name": "AntiFire",
+            "modifiers": [ "E", "K", "T", "*" ]
+        },
+        {
+            "id": 168,
+            "name": "AntiWatr",
+            "modifiers": [ "D", "G", "Q", "*" ]
+        },
+        {
+            "id": 169,
+            "name": "AntiElec",
+            "modifiers": [ "A", "N", "Y", "*" ]
+        },
+        {
+            "id": 170,
+            "name": "AntiWood",
+            "modifiers": [ "M", "S", "Z", "*" ]
+        },
+        {
+            "id": 171,
+            "name": "AntiDmg",
+            "modifiers": [ "C", "F", "M", "*" ]
+        },
+        {
+            "id": 172,
+            "name": "AntiSwrd",
+            "modifiers": [ "D", "O", "R" ]
+        },
+        {
+            "id": 173,
+            "name": "AntiNavi",
+            "modifiers": [ "M", "T", "V" ]
+        },
+        {
+            "id": 174,
+            "name": "AntiRecv",
+            "modifiers": [ "B", "J", "P" ]
+        },
+        {
+            "id": 175,
+            "name": "CopyDmg",
+            "modifiers": [ "*" ]
+        },
+        {
+            "id": 176,
+            "name": "LifeSync",
+            "modifiers": [ "B", "R", "S", "*" ]
+        },
+        {
+            "id": 177,
+            "name": "Attck+10",
+            "modifiers": [ "*" ]
+        },
+        {
+            "id": 178,
+            "name": "Navi+20",
+            "modifiers": [ "*" ]
+        },
+        {
+            "id": 179,
+            "name": "ColorPt",
+            "modifiers": [ "*" ]
+        },
+        {
+            "id": 180,
+            "name": "SuprVulc",
+            "modifiers": [ "S" ]
+        },
+        {
+            "id": 181,
+            "name": "NeoVari",
+            "modifiers": [ "V" ]
+        },
+        {
+            "id": 182,
+            "name": "Meteors",
+            "modifiers": [ "R" ]
+        },
+        {
+            "id": 183,
+            "name": "NumbrBl",
+            "modifiers": [ "N" ]
+        },
+        {
+            "id": 184,
+            "name": "Guardian",
+            "modifiers": [ "O" ]
+        },
+        {
+            "id": 185,
+            "name": "Jealousy",
+            "modifiers": [ "J" ]
+        },
+        {
+            "id": 186,
+            "name": "Poltrgst",
+            "modifiers": [ "P" ]
+        },
+        {
+            "id": 187,
+            "name": "BugFix",
+            "modifiers": [ "H", "*" ]
+        },
+        {
+            "id": 188,
+            "name": "BugFix",
+            "modifiers": [ "H", "*" ]
+        },
+        {
+            "id": 189,
+            "name": "FullCust",
+            "modifiers": [ "*" ]
+        },
+        {
+            "id": 190,
+            "name": "LifeAur",
+            "modifiers": [ "D" ]
+        },
+        {
+            "id": 191,
+            "name": "Snctuary",
+            "modifiers": [ "S" ]
+        },
+        {
+            "id": 192,
+            "name": "Attck+30",
+            "modifiers": [ "*" ]
+        },
+        {
+            "id": 193,
+            "name": "DblPoint",
+            "modifiers": [ "*" ]
+        },
+        {
+            "id": 194,
+            "name": "Muramasa",
+            "modifiers": [ "M" ]
+        },
+        {
+            "id": 195,
+            "name": "Anubis",
+            "modifiers": [ "A" ]
+        },
+        {
+            "id": 196,
+            "name": "BlakWing",
+            "modifiers": [ "W" ]
+        },
+        {
+            "id": 197,
+            "name": "JustcOne",
+            "modifiers": [ "J" ]
+        },
+        {
+            "id": 198,
+            "name": "Z Saver",
+            "modifiers": [ "Z" ]
+        },
+        {
+            "id": 199,
+            "name": "Roll",
+            "modifiers": [ "R" ]
+        },
+        {
+            "id": 200,
+            "name": "RollSP",
+            "modifiers": [ "R" ]
+        },
+        {
+            "id": 201,
+            "name": "RollDS",
+            "modifiers": [ "R" ]
+        },
+        {
+            "id": 202,
+            "name": "Colonel",
+            "modifiers": [ "C" ]
+        },
+        {
+            "id": 203,
+            "name": "ColonelSP",
+            "modifiers": [ "C" ]
+        },
+        {
+            "id": 204,
+            "name": "ColonelDS",
+            "modifiers": [ "C" ]
+        },
+        {
+            "id": 205,
+            "name": "ShadowMan",
+            "modifiers": [ "S" ]
+        },
+        {
+            "id": 206,
+            "name": "ShadowManSP",
+            "modifiers": [ "S" ]
+        },
+        {
+            "id": 207,
+            "name": "ShadowManDS",
+            "modifiers": [ "S" ]
+        },
+        {
+            "id": 208,
+            "name": "NumberMan",
+            "modifiers": [ "N" ]
+        },
+        {
+            "id": 209,
+            "name": "NumberManSP",
+            "modifiers": [ "N" ]
+        },
+        {
+            "id": 210,
+            "name": "NumberManDS",
+            "modifiers": [ "N" ]
+        },
+        {
+            "id": 211,
+            "name": "TomahawkMan",
+            "modifiers": [ "T" ]
+        },
+        {
+            "id": 212,
+            "name": "TomahawkManSP",
+            "modifiers": [ "T" ]
+        },
+        {
+            "id": 213,
+            "name": "TomahawkManDS",
+            "modifiers": [ "T" ]
+        },
+        {
+            "id": 214,
+            "name": "KnightMan",
+            "modifiers": [ "K" ]
+        },
+        {
+            "id": 215,
+            "name": "KnightManSP",
+            "modifiers": [ "K" ]
+        },
+        {
+            "id": 216,
+            "name": "KnightManDS",
+            "modifiers": [ "K" ]
+        },
+        {
+            "id": 217,
+            "name": "ToadMan",
+            "modifiers": [ "T" ]
+        },
+        {
+            "id": 218,
+            "name": "ToadManSP",
+            "modifiers": [ "T" ]
+        },
+        {
+            "id": 219,
+            "name": "ToadManDS",
+            "modifiers": [ "T" ]
+        },
+        {
+            "id": 220,
+            "name": "ProtoMan",
+            "modifiers": [ "B" ]
+        },
+        {
+            "id": 221,
+            "name": "ProtoManSP",
+            "modifiers": [ "B" ]
+        },
+        {
+            "id": 222,
+            "name": "ProtoManDS",
+            "modifiers": [ "B" ]
+        },
+        {
+            "id": 223,
+            "name": "GyroMan",
+            "modifiers": [ "G" ]
+        },
+        {
+            "id": 224,
+            "name": "GyromanSP",
+            "modifiers": [ "G" ]
+        },
+        {
+            "id": 225,
+            "name": "GyromanDS",
+            "modifiers": [ "G" ]
+        },
+        {
+            "id": 226,
+            "name": "SearchMan",
+            "modifiers": [ "S" ]
+        },
+        {
+            "id": 227,
+            "name": "SearchManSP",
+            "modifiers": [ "S" ]
+        },
+        {
+            "id": 228,
+            "name": "SearchManDS",
+            "modifiers": [ "S" ]
+        },
+        {
+            "id": 229,
+            "name": "NapalmMan",
+            "modifiers": [ "N" ]
+        },
+        {
+            "id": 230,
+            "name": "NapalmManSP",
+            "modifiers": [ "N" ]
+        },
+        {
+            "id": 231,
+            "name": "NapalmManDS",
+            "modifiers": [ "N" ]
+        },
+        {
+            "id": 232,
+            "name": "MagnetMan",
+            "modifiers": [ "M" ]
+        },
+        {
+            "id": 233,
+            "name": "MagnetManSP",
+            "modifiers": [ "M" ]
+        },
+        {
+            "id": 234,
+            "name": "MagnetManDS",
+            "modifiers": [ "M" ]
+        },
+        {
+            "id": 235,
+            "name": "Meddy",
+            "modifiers": [ "M" ]
+        },
+        {
+            "id": 236,
+            "name": "MeddySP",
+            "modifiers": [ "M" ]
+        },
+        {
+            "id": 237,
+            "name": "MeddyDS",
+            "modifiers": [ "M" ]
+        },
+        {
+            "id": 238,
+            "name": "BlizMan",
+            "modifiers": [ "B" ]
+        },
+        {
+            "id": 239,
+            "name": "BlizManSP",
+            "modifiers": [ "B" ]
+        },
+        {
+            "id": 240,
+            "name": "BlizManDS",
+            "modifiers": [ "B" ]
+        },
+        {
+            "id": 241,
+            "name": "ShadeMan",
+            "modifiers": [ "S" ]
+        },
+        {
+            "id": 242,
+            "name": "ShadeManSP",
+            "modifiers": [ "S" ]
+        },
+        {
+            "id": 243,
+            "name": "ShadeManDS",
+            "modifiers": [ "S" ]
+        },
+        {
+            "id": 244,
+            "name": "CloudMan",
+            "modifiers": [ "C" ]
+        },
+        {
+            "id": 245,
+            "name": "CloudManSP",
+            "modifiers": [ "C" ]
+        },
+        {
+            "id": 246,
+            "name": "CloudManDS",
+            "modifiers": [ "C" ]
+        },
+        {
+            "id": 247,
+            "name": "CosmoMan",
+            "modifiers": [ "C" ]
+        },
+        {
+            "id": 248,
+            "name": "CosmoManSP",
+            "modifiers": [ "C" ]
+        },
+        {
+            "id": 249,
+            "name": "CosmoManDS",
+            "modifiers": [ "C" ]
+        },
+        {
+            "id": 250,
+            "name": "LarkMan",
+            "modifiers": [ "S" ]
+        },
+        {
+            "id": 251,
+            "name": "LarkManSP",
+            "modifiers": [ "S" ]
+        },
+        {
+            "id": 252,
+            "name": "LarkManDS",
+            "modifiers": [ "S" ]
+        },
+        {
+            "id": 253,
+            "name": "GridMan",
+            "modifiers": [ "F" ]
+        },
+        {
+            "id": 254,
+            "name": "GridManSP",
+            "modifiers": [ "F" ]
+        },
+        {
+            "id": 255,
+            "name": "GridManDS",
+            "modifiers": [ "F" ]
+        },
+        {
+            "id": 256,
+            "name": "Django",
+            "modifiers": [ "D" ]
+        },
+        {
+            "id": 257,
+            "name": "DjangoSP",
+            "modifiers": [ "D" ]
+        },
+        {
+            "id": 258,
+            "name": "DjangoDS",
+            "modifiers": [ "D" ]
+        },
+        {
+            "id": 259,
+            "name": "CrossDiv",
+            "modifiers": [ "C" ]
+        },
+        {
+            "id": 260,
+            "name": "MetrKnuk",
+            "modifiers": [ "M" ]
+        },
+        {
+            "id": 261,
+            "name": "BassAnly",
+            "modifiers": [ "F" ]
+        },
+        {
+            "id": 262,
+            "name": "OMegaRkt",
+            "modifiers": [ "R" ]
+        },
+        {
+            "id": 263,
+            "name": "BugCharg",
+            "modifiers": [ "B" ]
+        },
+        {
+            "id": 264,
+            "name": "Phoenix",
+            "modifiers": [ "P" ]
+        },
+        {
+            "id": 265,
+            "name": "DeltaRay",
+            "modifiers": [ "Z" ]
+        },
+        {
+            "id": 266,
+            "name": "BigHook",
+            "modifiers": [ "G" ]
+        },
+        {
+            "id": 267,
+            "name": "Bass",
+            "modifiers": [ "F" ]
+        },
+        {
+            "id": 268,
+            "name": "HolyDrem",
+            "modifiers": [ "H" ]
+        },
+        {
+            "id": 269,
+            "name": "BugCurse",
+            "modifiers": [ "C" ]
+        },
+        {
+            "id": 270,
+            "name": "DethPhnx",
+            "modifiers": [ "D" ]
+        },
+        {
+            "id": 271,
+            "name": "DrkSword",
+            "modifiers": [ "Z" ]
+        },
+        {
+            "id": 272,
+            "name": "DarkTorn",
+            "modifiers": [ "T" ]
+        },
+        {
+            "id": 273,
+            "name": "DarkCirc",
+            "modifiers": [ "R" ]
+        },
+        {
+            "id": 274,
+            "name": "DarkMetr",
+            "modifiers": [ "F" ]
+        },
+        {
+            "id": 275,
+            "name": "DarkThnd",
+            "modifiers": [ "M" ]
+        },
+        {
+            "id": 276,
+            "name": "DrkRecov",
+            "modifiers": [ "H" ]
+        },
+        {
+            "id": 277,
+            "name": "DrkSonic",
+            "modifiers": [ "E" ]
+        },
+        {
+            "id": 278,
+            "name": "DarkInvs",
+            "modifiers": [ "I", "*" ]
+        },
+        {
+            "id": 279,
+            "name": "DarkInvs",
+            "modifiers": [ "I", "*" ]
+        },
+        {
+            "id": 280,
+            "name": "DarkPlus",
+            "modifiers": [ "*" ]
+        },
+        {
+            "id": 281,
+            "name": "DrkLance",
+            "modifiers": [ "W" ]
+        },
+        {
+            "id": 282,
+            "name": "DarkDril",
+            "modifiers": [ "D" ]
+        },
+        {
+            "id": 283,
+            "name": "DarkWide",
+            "modifiers": [ "T" ]
+        },
+        {
+            "id": 284,
+            "name": "Otenko",
+            "modifiers": [ "O" ]
+        },
+        {
+            "id": 285,
+            "name": "GunDelEX",
+            "modifiers": [ "G" ]
+        },
+        {
+            "id": 286,
+            "name": "LeaderR",
+            "modifiers": [ "?" ]
+        },
+        {
+            "id": 287,
+            "name": "ChaosLrd",
+            "modifiers": [ "?" ]
+        }
+    ]
+}
