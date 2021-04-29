@@ -37,13 +37,28 @@
             "value": "MMSF3"
         },
         {
-            "name": "",
-            "value": "Filler"
+            "name": "Rockman EXE: Operate Shooting Star",
+            "value": "OSS"
         }
     ],
-    "MMBN1": [],
-    "MMBN2": [],
-    "MMBN3": [],
+    "MMBN1": [
+        {
+            "title": "BN1",
+            "path": "bn1"
+        }
+    ],
+    "MMBN2": [
+        {
+            "title": "BN2",
+            "path": "bn2"
+        }
+    ],
+    "MMBN3": [
+        {
+            "title": "BN3",
+            "path": "bn3"
+        }
+    ],
     "MMBN4": [],
     "MMBN5": [],
     "MMBN6": [
@@ -70,5 +85,5 @@
             "path": "crimson_dragon_sp_sm"
         }
     ],
-    "Filler": []
+    "OSS": []
 }

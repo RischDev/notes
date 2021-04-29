@@ -75,7 +75,7 @@
     font-family: BN6FontBold;
 }
 
-.MMBN1 .Standard, .MMBN2 .Standard, .MMBN3 .Standard, .MMBN4 .Standard, .MMBN5 .Standard, .MMBN6 .Standard {
+.MMBN1 .Battlechips, .MMBN2 .Battlechips, .MMBN3 .Standard, .MMBN4 .Standard, .MMBN5 .Standard, .MMBN6 .Standard {
     background: #dedeef;
 }
 
@@ -109,10 +109,10 @@
 }
 
 .MMBN1 .modifier, .MMBN2 .modifier, .MMBN3 .modifier, .MMBN4 .modifier, .MMBN5 .modifier, .MMBN6 .modifier {
-    width: 25px;
-    height: 25px;
+    width: 22px;
+    height: 22px;
     display: inline-block;
-    margin: 5px;
+    margin: 5px 1px;
     border: 1px solid black;
     border-radius: 5px;
     background: #a6a6a6;
@@ -136,7 +136,7 @@
 }
 
 .MMBN1 .title, .MMBN2 .title, .MMBN3 .title, .MMBN4 .title, .MMBN5 .title, .MMBN6 .title {
-    font-size: 20px;
+    font-size: 18px;
 }
 
 .MMBN1 .small-title, .MMBN2 .small-title, .MMBN3 .small-title, .MMBN4 .small-title, .MMBN5 .small-title, .MMBN6 .small-title {

@@ -3034,6 +3034,13 @@
             "modifiers": [
                 "Y"
             ]
+        },
+        {
+            "id": 311,
+            "name": "BassGS",
+            "modifiers": [
+                "X"
+            ]
         }
     ]
 }

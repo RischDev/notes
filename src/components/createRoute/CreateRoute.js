@@ -299,6 +299,7 @@ class CreateRoute extends React.Component {
                             <option value="MMSF1">Mega Man Star Force 1</option>
                             <option value="MMSF2">Mega Man Star Force 2</option>
                             <option value="MMSF3">Mega Man Star Force 3</option>
+                            <option value="OSS">Rockman EXE: Operate Shooting Star</option>
                         </select>
                         <div className="row">
                             <button className="btn" onClick={this.addSection}> Add Section </button>
