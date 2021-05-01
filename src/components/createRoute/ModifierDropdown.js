@@ -46,7 +46,7 @@ class ModifierDropdown extends React.Component {
                 <select name={"textModifier-" + this.state.sectionId + "-" + this.state.textId} className="modifier-select" value={this.props.value} onChange={this.onChange}>
                     <option value=""> </option>
                     {Items.Items[this.props.itemValue].modifiers.map((modifier) =>
-                        <option value={modifier}>{modifier}</option>
+                        <option value={modifier} key={"text-modifier-" + modifier}>{modifier}</option>
                     )}
                 </select>
             );
@@ -55,7 +55,7 @@ class ModifierDropdown extends React.Component {
                 <select name={"sectionModifier-" + this.state.sectionId + "-" + this.state.itemId} className="modifier-select" value={this.props.value} onChange={this.onChange}>
                     <option value=""> </option>
                     {Items.Items[this.props.itemValue].modifiers.map((modifier) =>
-                        <option value={modifier}>{modifier}</option>
+                        <option value={modifier} key={"text-modifier-" + modifier}>{modifier}</option>
                     )}
                 </select>
             );

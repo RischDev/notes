@@ -28,6 +28,7 @@ class Notes extends React.Component {
                     </div>
                     {this.props.notes.sections.map((section) =>
                         <NoteSection
+                            key={"section-" + section.id}
                             text={section.text}
                             image={section.image}
                             items={section.items}

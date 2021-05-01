@@ -51,11 +51,11 @@ function ItemsList(props) {
         }
 
         itemsList = completedItems.map((item) =>
-                        <SmallItem id={item.value} updateTracker={props.updateTracker} game={props.game} modifiers={item.modifiers} found={props.foundItems.includes(item.value)} foundModifiers={props.foundModifiers} />
+                        <SmallItem key={"small-item-" + item.value} id={item.value} updateTracker={props.updateTracker} game={props.game} modifiers={item.modifiers} found={props.foundItems.includes(item.value)} foundModifiers={props.foundModifiers} />
                     );
     } else {
         itemsList = items.map((item) =>
-                        <SmallItem id={item.value} updateTracker={props.updateTracker} game={props.game} found={props.foundItems.includes(item.value)} foundModifiers={props.foundModifiers} />
+                        <SmallItem key={"small-item-" + item.value} id={item.value} updateTracker={props.updateTracker} game={props.game} found={props.foundItems.includes(item.value)} foundModifiers={props.foundModifiers} />
                     );
     }
 
@@ -109,7 +109,7 @@ class NoteSection extends React.Component {
                 <div className="col-4">
                     <ul>
                         {this.state.text.map((text) =>
-                            <Text text={text} foundItems={this.props.foundItems} foundModifiers={this.props.foundModifiers} />
+                            <Text key={"text-" + text.id} text={text} foundItems={this.props.foundItems} foundModifiers={this.props.foundModifiers} />
                         )}
                     </ul>
                 </div>

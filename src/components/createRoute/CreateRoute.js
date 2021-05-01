@@ -395,13 +395,13 @@ class CreateRoute extends React.Component {
 
                     <div className="sectionInfo">
                         {this.state.route.sections.map((section) =>
-                            <div id={"section-" + section.id} className="formSection border-bottom">
+                            <div id={"section-" + section.id} key={"section-" + section.id} className="formSection border-bottom">
                                 <h3 className="sectionHeader">Section {section.id + 1}</h3>
                                 <DeleteSection sectionId={section.id} onClick={this.deleteSection} />
                                 <div className="wrapper">
                                     <div className="col-6">
                                         {section.text.map((text) =>
-                                            <div>
+                                            <div key={"text-" + text.id}>
                                                 <textarea name={"textValue-" + section.id + "-" + text.id} defaultValue={text.text} placeholder="Text" onBlur={this.handleInputChange} />
                                                 <ItemDropdown type="text" sectionId={section.id} textId={text.id} value={text.item} game={this.state.route.game} onChange={this.handleInputChange} />
                                                 <ModifierDropdown type="text" sectionId={section.id} textId={text.id} itemValue={text.item} value={text.modifier} game={this.state.route.game} onChange={this.handleInputChange} />
@@ -411,7 +411,7 @@ class CreateRoute extends React.Component {
                                     </div>
                                     <div className="col-3">
                                         {section.items.map((item) =>
-                                            <div>
+                                            <div key={"item-" + item.id}>
                                                 <ItemDropdown type="section" sectionId={section.id} itemId={item.id} value={item.value} game={this.state.route.game} onChange={this.handleInputChange} />
                                                 <ModifierDropdown type="section" sectionId={section.id} itemId={item.id} itemValue={item.value} value={item.modifier} game={this.state.route.game} onChange={this.handleInputChange} />
                                                 <DeleteItem sectionId={section.id} itemId={item.id} onClick={this.deleteItem} />

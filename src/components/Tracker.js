@@ -23,13 +23,13 @@ class Tracker extends React.Component {
                     </div>
 
                     {Items.types.map((type) =>
-                        <div>
+                        <div key={"type-" + type.name}>
                             <div className="item-header">
                                 <h2>{type.name}</h2>
                             </div>
                             <div id="Items" className="item-list">
                                 {Items.Items.map((item) =>
-                                    <Item id={item.id} name={item.name} type={type} low={type.low} modifiers={item.modifiers} updateTracker={this.props.updateTracker} game={this.props.game} found={this.props.foundItems.includes(item.id)} foundModifiers={this.props.foundModifiers} />
+                                    <Item key={"item-" + item.id} id={item.id} name={item.name} type={type} low={type.low} modifiers={item.modifiers} updateTracker={this.props.updateTracker} game={this.props.game} found={this.props.foundItems.includes(item.id)} foundModifiers={this.props.foundModifiers} />
                                 )}
                             </div>
                         </div>

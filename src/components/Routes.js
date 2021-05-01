@@ -42,12 +42,12 @@ class Routes extends React.Component {
             return (
                 <div className="wrapper">
                     <h1>Routes</h1>
-                    <div class="wrapper">
+                    <div className="wrapper">
                         {routes.games.map((game) =>
-                            <div className="col-6 routes-list">
+                            <div className="col-6 routes-list" key={"routes-list-" + game.name}>
                                 <h1>{game.name}</h1>
                                 {routes[game.value].map((route) =>
-                                    <RoutesListItem route={route} selectEditRoute={this.selectEditRoute} selectRoute={this.selectRoute} />
+                                    <RoutesListItem key={"route-" + route.title} route={route} selectEditRoute={this.selectEditRoute} selectRoute={this.selectRoute} />
                                 )}
                             </div>
                         )}

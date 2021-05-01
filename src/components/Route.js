@@ -17,7 +17,6 @@ class Route extends React.Component {
         let initialFoundModifiers = JSON.parse(localStorage.getItem("foundModifiers-" + notes.game))
         if (Items.modifiers && initialFoundModifiers == null) {
             initialFoundModifiers = JSON.parse(JSON.stringify(require('../resources/' + notes.game + '/DefaultFoundModifiers.json')));
-            console.log(initialFoundModifiers);
         }
 
         this.state = {

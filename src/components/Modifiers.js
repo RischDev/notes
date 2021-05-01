@@ -25,7 +25,7 @@ class Modifiers extends React.Component {
             return(
                 <div className="modifiers">
                     {this.props.modifiers.map((modifier) =>
-                        <Modifier id={this.props.id} modifier={modifier} foundModifiers={this.props.foundModifiers} onClick={this.updateFound} />
+                        <Modifier key={"modifier-" + modifier} id={this.props.id} modifier={modifier} foundModifiers={this.props.foundModifiers} onClick={this.updateFound} />
                     )}
                 </div>
             );

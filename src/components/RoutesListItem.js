@@ -18,7 +18,7 @@ class RoutesListItem extends React.Component {
 
     render() {
         return(
-            <div class="wrapper">
+            <div className="wrapper">
                 <div className="route-overview" onClick={this.clickRoute}>{this.props.route.title}</div>
                 <img src="/notes/icons/edit.png" alt="Edit" className="edit" onClick={this.editRoute} />
             </div>
