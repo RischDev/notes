@@ -80,6 +80,9 @@ class CreateRoute extends React.Component {
         this.addText = this.addText.bind(this);
         this.addItem = this.addItem.bind(this);
         this.handleInputChange = this.handleInputChange.bind(this);
+        this.importText = this.importText.bind(this);
+        this.importJSON = this.importJSON.bind(this);
+        this.handleUpload = this.handleUpload.bind(this);
         this.getBase64 = this.getBase64.bind(this);
         this.updateImage = this.updateImage.bind(this);
         this.generateDownload = this.generateDownload.bind(this);
@@ -156,6 +159,73 @@ class CreateRoute extends React.Component {
         });
     }
 
+    importText(text) {
+        const lines = text.split("\r\n");
+        let newSections = [];
+
+        let sectionId = 0;
+
+        for (let i = 0; i < lines.length; i++) {
+            let line = lines[i];
+            const section = {
+                id: sectionId,
+                text: [],
+                items: []
+            }
+
+            let textId = 0;
+            while (line !== "") {
+                const text = {
+                    id: textId,
+                    text: line,
+                    item: -1
+                }
+
+                section.text.push(text);
+                i++;
+                textId++;
+
+                if (i < lines.length) {
+                    line = lines[i];
+                } else {
+                    line = "";
+                }
+            }
+
+            newSections.push(section);
+            sectionId++;
+        }
+
+        const newRoute = this.state.route;
+        newRoute.sections = newSections;
+
+        console.log(newRoute);
+
+        this.setState({
+            route: newRoute
+        });
+    }
+
+    importJSON(file) {
+        const newRoute = JSON.parse(file);
+
+        this.setState({
+            route: newRoute
+        });
+    }
+
+    handleUpload(file, callback) {
+        console.log(file);
+        let reader = new FileReader();
+        reader.readAsText(file, "UTF-8");
+        reader.onload = function () {
+            callback(reader.result);
+        };
+        reader.onerror = function (error) {
+            console.log('Error: ', error);
+        };
+    }
+
     handleInputChange(e) {
         const target = e.target;
         const value = target.type === 'checkbox' ? target.checked : target.value;
@@ -199,6 +269,10 @@ class CreateRoute extends React.Component {
             let itemId = parseInt(nameParts[2]);
 
             newRoute.sections[sectionId].items[itemId].modifier = value;
+        } else if (name.includes("textImport")) {
+            this.handleUpload(e.target.files[0], this.importText);
+        } else if (name.includes("jsonImport")) {
+            this.handleUpload(e.target.files[0], this.importJSON);
         } else {
             newRoute[name] = value;
         }
@@ -206,8 +280,6 @@ class CreateRoute extends React.Component {
         this.setState({
             route: newRoute
         });
-
-        console.log(newRoute);
     }
 
     deleteText(e) {
@@ -302,6 +374,8 @@ class CreateRoute extends React.Component {
                             <option value="OSS">Rockman EXE: Operate Shooting Star</option>
                         </select>
                         <div className="row">
+                            <div>Import Text: <input type="file" name={"textImport"} onChange={this.handleInputChange} /></div>
+                            <div>Import JSON: <input type="file" name={"jsonImport"} onChange={this.handleInputChange} /></div>
                             <button className="btn" onClick={this.addSection}> Add Section </button>
                             <button className="btn" onClick={this.generateDownload}>Generate JSON file</button>
                         </div>

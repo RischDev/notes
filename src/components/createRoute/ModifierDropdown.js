@@ -21,8 +21,6 @@ class ModifierDropdown extends React.Component {
             Items = require('../../resources/' + this.props.game + '/ItemNames.json');
         }
 
-        console.log(Items.modifiers);
-
         if (!Items.modifiers) {
             return null;
         }

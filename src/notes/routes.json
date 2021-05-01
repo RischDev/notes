@@ -59,7 +59,12 @@
             "path": "bn3"
         }
     ],
-    "MMBN4": [],
+    "MMBN4": [
+        {
+            "title": "BN4",
+            "path": "bn4"
+        }
+    ],
     "MMBN5": [],
     "MMBN6": [
         {
