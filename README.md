@@ -1,70 +1,62 @@
-# Getting Started with Create React App
+# TeamBN Notes Tool
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This notes tool is designed to allow runners to create routes in a JSON format that can be parsed and displayed in a neat format, and integrate their route with the tracking tool.
 
-## Available Scripts
+Below are instructions on how to submit your route for review.
 
-In the project directory, you can run:
+## Step 1: Create new branch
 
-### `npm start`
+Create a branch by going to [the repo home page](https://github.com/RischDev/notes). You will then see `master` near the top left. Click that, and type in the new for your new branch.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Step 2: Add your route to the new branch
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Upload your file into the `src/notes` directory.
 
-### `npm test`
+## Step 3: Update routes.json (Optional)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+*You may skip this step if you are only updating an existing route.*
 
-### `npm run build`
+Update the `src/notes/routes.json` file to include your route.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+For example, let's say you want to add an MMBN1 route. The `routes.json` file might look like:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```
+    "MMBN1": [
+        {
+            "title": "Example Route Title",
+            "path": "example_path"
+        }
+    ]
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+To add your route, add a comma after the last item in the game list, then add your route using this template.
 
-### `npm run eject`
+```
+        {
+            "title": "YOUR ROUTE TITLE HERE",
+            "path": "YOUR_PATH_HERE"
+        }
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+In the MMBN1 example, `routes.json` should look like this after you've updated it:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```
+    "MMBN1": [
+        {
+            "title": "Example Route Title",
+            "path": "example_path"
+        },
+        {
+            "title": "YOUR ROUTE TITLE HERE",
+            "path": "YOUR_PATH_HERE"
+        }
+    ]
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Step 3: Submit a Pull Request
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Finally, submit a pull request. You may do this by clicking "Pull Requests" in the github repo navigation, then clicking "Create pull request" button and selecting your branch under the "compare" dropdown.
 
-## Learn More
+## Step 4: Wait patiently
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Risch (or others once I eventually add additional admins) will review your request, verify the route doesn't break anything, and then accept the pull request. We will then deploy the changes to the live version so that everyone can see and use your route. If you have waited a few days and your pull request hasn't been seen yet, feel free to ping Risch on Discord. :)

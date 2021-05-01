@@ -108,3 +108,7 @@
 .jsonLink:hover {
     color: #b3b3b3;
 }
+
+.instructions {
+    font-size: 20px;
+}
