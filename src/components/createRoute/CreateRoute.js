@@ -160,7 +160,8 @@ class CreateRoute extends React.Component {
     }
 
     importText(text) {
-        const lines = text.split("\r\n");
+        text = text.replace(/(\r\n|\n|\r)/gm, "\n");
+        const lines = text.split("\n");
         let newSections = [];
 
         let sectionId = 0;
