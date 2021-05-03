@@ -3,18 +3,7 @@ import TextButton from './TextButton';
 import ItemButton from './ItemButton';
 import ItemDropdown from './ItemDropdown';
 import ModifierDropdown from './ModifierDropdown';
-
-function DeleteText(props) {
-    if (props.textId === 0) {
-        return (
-            <span className="delete"> </span>
-        );
-    }
-
-    return (
-        <img id={"deleteText-" + props.sectionId + "-" + props.textId} className="delete" onClick={props.onClick} src="/notes/icons/delete.png" alt="X" />
-    )
-}
+import SectionText from './SectionText';
 
 function DeleteSection(props) {
     if (props.sectionId === 0) {
@@ -288,13 +277,18 @@ class CreateRoute extends React.Component {
         const sectionId = parseInt(nameParts[1]);
         const textId = parseInt(nameParts[2]);
 
+        console.log("Section " + sectionId + ", Text " + textId);
+
         let newRoute = this.state.route;
 
         for (let i = textId + 1; i < newRoute.sections[sectionId].text.length; i++) {
+            console.log(newRoute.sections[sectionId].text[i].id);
             newRoute.sections[sectionId].text[i].id--;
         }
 
         newRoute.sections[sectionId].text.splice(textId, 1);
+
+        console.log(newRoute.sections[sectionId].text);
 
         this.setState({
             route: newRoute
@@ -402,12 +396,7 @@ class CreateRoute extends React.Component {
                                 <div className="wrapper">
                                     <div className="col-6">
                                         {section.text.map((text) =>
-                                            <div key={"text-" + text.id}>
-                                                <textarea name={"textValue-" + section.id + "-" + text.id} defaultValue={text.text} placeholder="Text" onBlur={this.handleInputChange} />
-                                                <ItemDropdown type="text" sectionId={section.id} textId={text.id} value={text.item} game={this.state.route.game} onChange={this.handleInputChange} />
-                                                <ModifierDropdown type="text" sectionId={section.id} textId={text.id} itemValue={text.item} value={text.modifier} game={this.state.route.game} onChange={this.handleInputChange} />
-                                                <DeleteText sectionId={section.id} textId={text.id} onClick={this.deleteText} />
-                                            </div>
+                                            <SectionText key={"text-" + text.id} sectionId={section.id} text={text} game={this.state.route.game} onChange={this.handleInputChange} deleteText={this.deleteText} />
                                         )}
                                     </div>
                                     <div className="col-3">
