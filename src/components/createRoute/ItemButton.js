@@ -1,6 +1,6 @@
 import React from 'react';
 
-class ItemButton extends React.Component {
+class ItemButton extends React.PureComponent {
     constructor(props) {
         super(props);
 
@@ -10,7 +10,7 @@ class ItemButton extends React.Component {
     addItem(e) {
         e.preventDefault();
 
-        this.props.addItem(this.props.id)
+        this.props.addItem(this.props.sectionId)
     }
 
     render() {

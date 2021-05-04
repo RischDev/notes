@@ -1,6 +1,6 @@
 import React from 'react';
 
-class TextButton extends React.Component {
+class TextButton extends React.PureComponent {
     constructor(props) {
         super(props);
 
@@ -10,7 +10,7 @@ class TextButton extends React.Component {
     addText(e) {
         e.preventDefault();
 
-        this.props.addText(this.props.id)
+        this.props.addText(this.props.sectionId)
     }
 
     render() {

@@ -1,0 +1,212 @@
+import React from 'react';
+import TextButton from './TextButton';
+import ItemButton from './ItemButton';
+import DeleteSection from './DeleteSection';
+import SectionText from './SectionText';
+import SectionItem from './SectionItem';
+import SectionImage from './SectionImage';
+
+class CreateSection extends React.Component {
+    constructor(props) {
+        super(props);
+
+        this.updateText = this.updateText.bind(this);
+        this.updateItems = this.updateItems.bind(this);
+        this.updateImage = this.updateImage.bind(this);
+        this.addText = this.addText.bind(this);
+        this.addItem = this.addItem.bind(this);
+        this.deleteText = this.deleteText.bind(this);
+        this.deleteItem = this.deleteItem.bind(this);
+    }
+
+    shouldComponentUpdate(nextProps, nextState) {
+        if (this.props.game !== nextProps.game) {
+            return true;
+        }
+
+        if (this.props.section.text.length !== nextProps.section.text.length) {
+            return true;
+        } else {
+            for (let i = 0; i < nextProps.section.text.length; i++) {
+                if (this.props.section.text[i].text !== nextProps.section.text[i].text) {
+                    return true;
+                } else if (this.props.section.text[i].item !== nextProps.section.text[i].item) {
+                   return true;
+                } else if (this.props.section.text[i].modifier !== nextProps.section.text[i].modifier) {
+                    return true;
+                }
+            }
+        }
+
+        if (this.props.section.items.length !== nextProps.section.items.length) {
+            return true;
+        } else {
+            for (let i = 0; i < nextProps.section.items.length; i++) {
+                if (this.props.section.items[i].value !== nextProps.section.items[i].value) {
+                    return true;
+                } else if (this.props.section.items[i].modifier !== nextProps.section.items[i].modifier) {
+                    return true;
+                }
+            }
+        }
+
+        if (this.props.section.image !== nextProps.section.image) {
+            return true;
+        }
+
+        return false;
+    }
+
+    updateText(sectionId, textId, textValue, itemValue, modifierValue) {
+        // Stringify then parse JSON to create deep copy.
+        let newSection = JSON.parse(JSON.stringify(this.props.section));
+
+        if (textId != null) {
+            if (textValue != null) {
+                newSection.text[textId].text = textValue;
+            }
+
+            if (itemValue != null) {
+                if (itemValue === "") {
+                    newSection.text[textId].item = null;
+                } else {
+                    newSection.text[textId].item = itemValue;
+                }
+            }
+
+            if (modifierValue != null) {
+                newSection.text[textId].modifier = modifierValue;
+            }
+        }
+
+        this.props.updateRoute(sectionId, newSection);
+    }
+
+    updateItems(sectionId, itemId, itemValue, modifierValue) {
+        // Stringify then parse JSON to create deep copy.
+        let newSection = JSON.parse(JSON.stringify(this.props.section));
+
+        if (itemId != null) {
+            if (itemValue != null) {
+                newSection.items[itemId].value = itemValue;
+            }
+
+            if (modifierValue != null) {
+                newSection.items[itemId].modifier = modifierValue;
+            }
+        }
+
+        this.props.updateRoute(sectionId, newSection);
+    }
+
+    updateImage(sectionId, image) {
+        // Stringify then parse JSON to create deep copy.
+        let newSection = JSON.parse(JSON.stringify(this.props.section));
+
+        newSection.image = image;
+
+        this.props.updateRoute(sectionId, newSection);
+    }
+
+    addText(sectionId) {
+        // Stringify then parse JSON to create deep copy.
+        let newSection = JSON.parse(JSON.stringify(this.props.section));
+
+        newSection.text.push({
+            id: newSection.text.length,
+            text: ""
+        });
+
+        this.props.updateRoute(sectionId, newSection);
+    }
+
+    addItem(sectionId) {
+        // Stringify then parse JSON to create deep copy.
+        let newSection = JSON.parse(JSON.stringify(this.props.section));
+
+        newSection.items.push({
+            id: newSection.items.length,
+            value: 0
+        });
+
+        this.props.updateRoute(sectionId, newSection);
+    }
+
+    deleteText(sectionId, textId) {
+        // Stringify then parse JSON to create deep copy.
+        let newSection = JSON.parse(JSON.stringify(this.props.section));
+
+        for (let i = textId + 1; i < newSection.text.length; i++) {
+            newSection.text[i].id--;
+        }
+
+        newSection.text.splice(textId, 1);
+
+        this.props.updateRoute(sectionId, newSection);
+    }
+
+    deleteItem(sectionId, itemId) {
+        // Stringify then parse JSON to create deep copy.
+        let newSection = JSON.parse(JSON.stringify(this.props.section));
+
+        for (let i = itemId + 1; i < newSection.items.length; i++) {
+            newSection.items[i].id--;
+        }
+
+        newSection.items.splice(itemId, 1);
+
+        this.props.updateRoute(sectionId, newSection);
+    }
+
+    render() {
+        let Items = require('../../resources/ItemNames.json');
+        if (this.props.game !== "" && this.props.game != null) {
+            Items = require('../../resources/' + this.props.game + '/ItemNames.json');
+        }
+
+        return(
+            <div id={"section-" + this.props.section.id} className="formSection border-bottom">
+                <h3 className="sectionHeader">Section {this.props.section.id + 1}</h3>
+                <DeleteSection sectionId={this.props.section.id} deleteSection={this.props.deleteSection} />
+                <div className="wrapper">
+                    <div className="col-6">
+                        {this.props.section.text.map((text) =>
+                            <SectionText
+                                key={"text-" + text.id}
+                                sectionId={this.props.section.id}
+                                text={text} game={this.props.game}
+                                updateText={this.updateText}
+                                deleteText={this.deleteText}
+                            />
+                        )}
+                    </div>
+                    <div className="col-3">
+                        {this.props.section.items.map((item) =>
+                            <SectionItem
+                                key={"item-" + item.id}
+                                sectionId={this.props.section.id}
+                                item={item} game={this.props.game}
+                                updateItems={this.updateItems}
+                                deleteItem={this.deleteItem}
+                            />
+                        )}
+                    </div>
+                    <SectionImage sectionId={this.props.section.id} image={this.props.section.image} updateImage={this.updateImage} />
+                </div>
+                <div className="wrapper">
+                    <div className="col-6">
+                        <TextButton addText={this.addText} sectionId={this.props.section.id} />
+                    </div>
+                    <div className="col-3">
+                         <ItemButton addItem={this.addItem} sectionId={this.props.section.id} itemName={Items.name} />
+                    </div>
+                    <div className="col-3">
+
+                    </div>
+                </div>
+            </div>
+        );
+    }
+}
+
+export default CreateSection;

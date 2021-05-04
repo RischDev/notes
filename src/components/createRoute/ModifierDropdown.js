@@ -1,18 +1,23 @@
 import React from 'react';
 
-class ModifierDropdown extends React.Component {
+class ModifierDropdown extends React.PureComponent {
     constructor(props) {
         super(props);
 
-        this.state = {
-            type: props.type,
-            sectionId: props.sectionId,
-            textId: props.textId,
-            itemId: props.itemId,
-            game: props.game
-        }
+        this.onChange = this.onChange.bind(this);
+    }
 
-        this.onChange = this.props.onChange.bind(this);
+    onChange(e) {
+        const value = e.target.type === 'checkbox' ? e.target.checked : e.target.value;
+        const name = e.target.name.split("-");
+        const sectionId = parseInt(name[1]);
+        const id = parseInt(name[2]);
+
+        if (this.props.type === "text") {
+            this.props.updateText(sectionId, id, null, null, value);
+        } else if (this.props.type === "section") {
+            this.props.updateItems(sectionId, id, null, value);
+        }
     }
 
     render() {
@@ -25,40 +30,42 @@ class ModifierDropdown extends React.Component {
             return null;
         }
 
-        if (Items.Items[this.props.itemValue] == null) {
-            if (this.state.type === "text") {
+        if (this.props.itemValue != null) {
+            if (Items.Items[this.props.itemValue] == null) {
+                if (this.props.type === "text") {
+                    return(
+                        <select name={"textModifier-" + this.props.sectionId + "-" + this.props.textId} className="modifier-select" value={this.props.value} onChange={this.onChange}>
+                            <option value=""> </option>
+                        </select>
+                    );
+                } else if (this.props.type === "section") {
+                    return(
+                        <select name={"sectionModifier-" + this.props.sectionId + "-" + this.props.itemId} className="modifier-select" value={this.props.value} onChange={this.onChange}>
+                            <option value=""> </option>
+                        </select>
+                    );
+                }
+            }
+
+            if (this.props.type === "text") {
                 return(
-                    <select name={"textModifier-" + this.state.sectionId + "-" + this.state.textId} className="modifier-select" value={this.props.value} onChange={this.onChange}>
+                    <select name={"textModifier-" + this.props.sectionId + "-" + this.props.textId} className="modifier-select" value={this.props.value} onChange={this.onChange}>
                         <option value=""> </option>
+                        {Items.Items[this.props.itemValue].modifiers.map((modifier) =>
+                            <option value={modifier} key={"text-modifier-" + modifier}>{modifier}</option>
+                        )}
                     </select>
                 );
-            } else if (this.state.type === "section") {
+            } else if (this.props.type === "section") {
                 return(
-                    <select name={"sectionModifier-" + this.state.sectionId + "-" + this.state.itemId} className="modifier-select" value={this.props.value} onChange={this.onChange}>
+                    <select name={"sectionModifier-" + this.props.sectionId + "-" + this.props.itemId} className="modifier-select" value={this.props.value} onChange={this.onChange}>
                         <option value=""> </option>
+                        {Items.Items[this.props.itemValue].modifiers.map((modifier) =>
+                            <option value={modifier} key={"text-modifier-" + modifier}>{modifier}</option>
+                        )}
                     </select>
                 );
             }
-        }
-
-        if (this.state.type === "text") {
-            return(
-                <select name={"textModifier-" + this.state.sectionId + "-" + this.state.textId} className="modifier-select" value={this.props.value} onChange={this.onChange}>
-                    <option value=""> </option>
-                    {Items.Items[this.props.itemValue].modifiers.map((modifier) =>
-                        <option value={modifier} key={"text-modifier-" + modifier}>{modifier}</option>
-                    )}
-                </select>
-            );
-        } else if (this.state.type === "section") {
-            return(
-                <select name={"sectionModifier-" + this.state.sectionId + "-" + this.state.itemId} className="modifier-select" value={this.props.value} onChange={this.onChange}>
-                    <option value=""> </option>
-                    {Items.Items[this.props.itemValue].modifiers.map((modifier) =>
-                        <option value={modifier} key={"text-modifier-" + modifier}>{modifier}</option>
-                    )}
-                </select>
-            );
         }
 
         return null;

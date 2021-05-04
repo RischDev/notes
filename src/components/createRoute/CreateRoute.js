@@ -1,37 +1,5 @@
 import React from 'react';
-import TextButton from './TextButton';
-import ItemButton from './ItemButton';
-import ItemDropdown from './ItemDropdown';
-import ModifierDropdown from './ModifierDropdown';
-import SectionText from './SectionText';
-
-function DeleteSection(props) {
-    if (props.sectionId === 0) {
-        return null;
-    }
-
-    return (
-        <img id={"deleteSection-" + props.sectionId + "-"} className="deleteSection" onClick={props.onClick} src="/notes/icons/delete.png" alt="X" />
-    )
-}
-
-function DeleteItem(props) {
-    return (
-        <img id={"deleteItem-" + props.sectionId + "-" + props.itemId} className="delete" onClick={props.onClick} src="/notes/icons/delete.png" alt="X"/>
-    )
-}
-
-function PreviewImage(props) {
-    if (props.image == null || props.image === "") {
-        return null;
-    }
-
-    return (
-        <div>
-            <img className="preview" src={props.image} alt="" />
-        </div>
-    );
-}
+import CreateSection from './CreateSection';
 
 class CreateRoute extends React.Component {
     constructor(props) {
@@ -42,32 +10,16 @@ class CreateRoute extends React.Component {
             path: "",
             game: "",
             version: "1.0",
-            sections: [
-                {
-                    id: 0,
-                    text: [
-                        {
-                            id: 0,
-                            text: "",
-                            item: -1
-                        }
-                    ],
-                    items: []
-                }
-            ]
+            sections: []
         }
 
         if (this.props.path != null) {
             route = require('../../notes/' + props.path + '.json');
         }
 
-        this.state = {
-            route: route
-        }
+        this.state = route;
 
         this.addSection = this.addSection.bind(this);
-        this.addText = this.addText.bind(this);
-        this.addItem = this.addItem.bind(this);
         this.handleInputChange = this.handleInputChange.bind(this);
         this.importText = this.importText.bind(this);
         this.importJSON = this.importJSON.bind(this);
@@ -75,55 +27,22 @@ class CreateRoute extends React.Component {
         this.getBase64 = this.getBase64.bind(this);
         this.updateImage = this.updateImage.bind(this);
         this.generateDownload = this.generateDownload.bind(this);
-        this.deleteText = this.deleteText.bind(this);
         this.deleteSection = this.deleteSection.bind(this);
-        this.deleteItem = this.deleteItem.bind(this);
-        this.fileInput = React.createRef();
+        this.updateRoute = this.updateRoute.bind(this);
     }
 
     addSection(e) {
         e.preventDefault();
 
-        let newRoute = this.state.route;
-        newRoute.sections.push({
-            id: newRoute.sections.length,
-            text: [
-                {
-                    id: 0,
-                    text: "",
-                    item: -1
-                }
-            ],
+        let newSections = this.state.sections;
+        newSections.push({
+            id: newSections.length,
+            text: [],
             items: []
         });
 
         this.setState({
-            route: newRoute
-        });
-    }
-
-    addText(id) {
-        let newRoute = this.state.route;
-        newRoute.sections[id].text.push({
-            id: newRoute.sections[id].text.length,
-            text: "",
-            card: -1
-        });
-
-        this.setState({
-            route: newRoute
-        });
-    }
-
-    addItem(id) {
-        let newRoute = this.state.route;
-        newRoute.sections[id].items.push({
-            id: newRoute.sections[id].items.length,
-            value: 0
-        });
-
-        this.setState({
-            route: newRoute
+            sections: newSections
         });
     }
 
@@ -189,19 +108,13 @@ class CreateRoute extends React.Component {
         const newRoute = this.state.route;
         newRoute.sections = newSections;
 
-        console.log(newRoute);
-
-        this.setState({
-            route: newRoute
-        });
+        this.setState(newRoute);
     }
 
     importJSON(file) {
         const newRoute = JSON.parse(file);
 
-        this.setState({
-            route: newRoute
-        });
+        this.setState(newRoute);
     }
 
     handleUpload(file, callback) {
@@ -221,45 +134,9 @@ class CreateRoute extends React.Component {
         const value = target.type === 'checkbox' ? target.checked : target.value;
         const name = target.name;
 
-        let newRoute = this.state.route;
+        let newRoute = this.state;
 
-        // If the input that was changed was text or map, need to update only the appropriate section info.
-        if (name.includes("textValue")) {
-            let nameParts = name.split("-");
-            let sectionId = parseInt(nameParts[1]);
-            let textId = parseInt(nameParts[2]);
-
-            newRoute.sections[sectionId].text[textId].text = value;
-        } else if (name.includes("image")) {
-            let nameParts = name.split("-");
-            let sectionId = parseInt(nameParts[1]);
-
-            this.getBase64(e.target.files[0], sectionId, this.updateImage);
-        } else if (name.includes("textItem")) {
-            let nameParts = name.split("-");
-            let sectionId = parseInt(nameParts[1]);
-            let textId = parseInt(nameParts[2]);
-
-            newRoute.sections[sectionId].text[textId].item = parseInt(value);
-        } else if (name.includes("sectionItem")) {
-            let nameParts = name.split("-");
-            let sectionId = parseInt(nameParts[1]);
-            let itemId = parseInt(nameParts[2]);
-
-            newRoute.sections[sectionId].items[itemId].value = parseInt(value);
-        } else if (name.includes("textModifier")) {
-            let nameParts = name.split("-");
-            let sectionId = parseInt(nameParts[1]);
-            let textId = parseInt(nameParts[2]);
-
-            newRoute.sections[sectionId].text[textId].modifier = value;
-        } else if (name.includes("sectionModifier")) {
-            let nameParts = name.split("-");
-            let sectionId = parseInt(nameParts[1]);
-            let itemId = parseInt(nameParts[2]);
-
-            newRoute.sections[sectionId].items[itemId].modifier = value;
-        } else if (name.includes("textImport")) {
+        if (name.includes("textImport")) {
             this.handleUpload(e.target.files[0], this.importText);
         } else if (name.includes("jsonImport")) {
             this.handleUpload(e.target.files[0], this.importJSON);
@@ -267,32 +144,7 @@ class CreateRoute extends React.Component {
             newRoute[name] = value;
         }
 
-        this.setState({
-            route: newRoute
-        });
-    }
-
-    deleteText(e) {
-        const nameParts = e.target.id.split("-");
-        const sectionId = parseInt(nameParts[1]);
-        const textId = parseInt(nameParts[2]);
-
-        console.log("Section " + sectionId + ", Text " + textId);
-
-        let newRoute = this.state.route;
-
-        for (let i = textId + 1; i < newRoute.sections[sectionId].text.length; i++) {
-            console.log(newRoute.sections[sectionId].text[i].id);
-            newRoute.sections[sectionId].text[i].id--;
-        }
-
-        newRoute.sections[sectionId].text.splice(textId, 1);
-
-        console.log(newRoute.sections[sectionId].text);
-
-        this.setState({
-            route: newRoute
-        });
+        this.setState(newRoute);
     }
 
     deleteSection(e) {
@@ -300,73 +152,53 @@ class CreateRoute extends React.Component {
         const nameParts = e.target.id.split("-");
         const sectionId = parseInt(nameParts[1]);
 
-        let newRoute = this.state.route;
+        // JSON stringify, then JSON parse to make a deep copy.
+        let newSections = JSON.parse(JSON.stringify(this.state.sections));
 
-        for (let i = sectionId + 1; i < newRoute.sections.length; i++) {
-            newRoute.sections[i].id--;
+        for (let i = sectionId + 1; i < newSections.length; i++) {
+            newSections[i].id--;
         }
 
-        newRoute.sections.splice(sectionId, 1);
+        newSections.splice(sectionId, 1);
 
         this.setState({
-            route: newRoute
-        });
-    }
-
-    deleteItem(e) {
-        const nameParts = e.target.id.split("-");
-        const sectionId = parseInt(nameParts[1]);
-        const itemId = parseInt(nameParts[2]);
-
-        let newRoute = this.state.route;
-
-        for (let i = itemId + 1; i < newRoute.sections[sectionId].items.length; i++) {
-            newRoute.sections[sectionId].items[i].id--;
-        }
-
-        newRoute.sections[sectionId].items.splice(itemId, 1);
-
-        this.setState({
-            route: newRoute
+            sections: newSections
         });
     }
 
     generateDownload(e) {
         e.preventDefault();
 
-        let jsonString = JSON.stringify(this.state.route);
+        let a = document.createElement('a');
+        a.href = "data:text/json;charset=utf-8," + JSON.stringify(this.state.route);
+        a.download = this.state.route.path + ".json";
+        a.click();
+    }
 
+    updateRoute(sectionId, section) {
+        // JSON stringify, then JSON parse to make a deep copy.
+        let newSections = JSON.parse(JSON.stringify(this.state.sections));
+        newSections[sectionId] = section;
         this.setState({
-            string: jsonString
-        });
+            sections: newSections
+        })
     }
 
     render() {
-        let downloadUrl = this.state.string == null ? "" : <a className="jsonLink" href={`data:text/json;charset=utf-8,${this.state.string}`} download={this.state.route.path + ".json"}> Create JSON </a>;
-        let Items = require('../../resources/ItemNames.json');
-        if (this.state.route.game !== "" && this.state.route.game != null) {
-            Items = require('../../resources/' + this.state.route.game + '/ItemNames.json');
-        }
+        let routes = require("../../notes/routes.json");
 
         return(
             <div className="wrapper">
                 <form className="routeForm wrapper">
                     <div className="routeInfo">
                         <h2>Update your Route</h2>
-                        <input type="text" name="title" placeholder="Title" defaultValue={this.state.route.title} onBlur={this.handleInputChange} />
-                        <input type="text" name="path" placeholder="Path" defaultValue={this.state.route.path} onBlur={this.handleInputChange} />
-                        <select name="game" className="game-select" value={this.state.route.game} onChange={this.handleInputChange}>
+                        <input type="text" name="title" placeholder="Title" defaultValue={this.state.title} onBlur={this.handleInputChange} />
+                        <input type="text" name="path" placeholder="Path" defaultValue={this.state.path} onBlur={this.handleInputChange} />
+                        <select name="game" className="game-select" value={this.state.game} onChange={this.handleInputChange}>
                             <option value="">Select a game</option>
-                            <option value="MMBN1">Mega Man Battle Network</option>
-                            <option value="MMBN2">Mega Man Battle Network 2</option>
-                            <option value="MMBN3">Mega Man Battle Network 3</option>
-                            <option value="MMBN4">Mega Man Battle Network 4</option>
-                            <option value="MMBN5">Mega Man Battle Network 5</option>
-                            <option value="MMBN6">Mega Man Battle Network 6</option>
-                            <option value="MMSF1">Mega Man Star Force 1</option>
-                            <option value="MMSF2">Mega Man Star Force 2</option>
-                            <option value="MMSF3">Mega Man Star Force 3</option>
-                            <option value="OSS">Rockman EXE: Operate Shooting Star</option>
+                            {routes.games.map((game) =>
+                                <option key={game.value} value={game.value}>{game.name}</option>
+                            )}
                         </select>
                         <div className="row">
                             <div>Import Text: <input type="file" name={"textImport"} onChange={this.handleInputChange} /></div>
@@ -374,7 +206,6 @@ class CreateRoute extends React.Component {
                             <button className="btn" onClick={this.addSection}> Add Section </button>
                             <button className="btn" onClick={this.generateDownload}>Generate JSON file</button>
                         </div>
-                        {downloadUrl}
 
                         <div className="instructions">
                             <h3>How to Use</h3>
@@ -389,43 +220,14 @@ class CreateRoute extends React.Component {
                     </div>
 
                     <div className="sectionInfo">
-                        {this.state.route.sections.map((section) =>
-                            <div id={"section-" + section.id} key={"section-" + section.id} className="formSection border-bottom">
-                                <h3 className="sectionHeader">Section {section.id + 1}</h3>
-                                <DeleteSection sectionId={section.id} onClick={this.deleteSection} />
-                                <div className="wrapper">
-                                    <div className="col-6">
-                                        {section.text.map((text) =>
-                                            <SectionText key={"text-" + text.id} sectionId={section.id} text={text} game={this.state.route.game} onChange={this.handleInputChange} deleteText={this.deleteText} />
-                                        )}
-                                    </div>
-                                    <div className="col-3">
-                                        {section.items.map((item) =>
-                                            <div key={"item-" + item.id}>
-                                                <ItemDropdown type="section" sectionId={section.id} itemId={item.id} value={item.value} game={this.state.route.game} onChange={this.handleInputChange} />
-                                                <ModifierDropdown type="section" sectionId={section.id} itemId={item.id} itemValue={item.value} value={item.modifier} game={this.state.route.game} onChange={this.handleInputChange} />
-                                                <DeleteItem sectionId={section.id} itemId={item.id} onClick={this.deleteItem} />
-                                            </div>
-                                        )}
-                                    </div>
-                                    <div className="col-3">
-                                        <label htmlFor={"image-" + section.id}>Image: </label>
-                                        <input type="file" name={"image-" + section.id} ref={this.fileInput} onChange={this.handleInputChange} />
-                                        <PreviewImage image={section.image} />
-                                    </div>
-                                </div>
-                                <div className="wrapper">
-                                    <div className="col-6">
-                                        <TextButton addText={this.addText} id={section.id} />
-                                    </div>
-                                    <div className="col-3">
-                                         <ItemButton addItem={this.addItem} id={section.id} itemName={Items.name} />
-                                    </div>
-                                    <div className="col-3">
-
-                                    </div>
-                                </div>
-                            </div>
+                        {this.state.sections.map((section) =>
+                            <CreateSection
+                                key={"section-" + section.id}
+                                section={section}
+                                game={this.state.game}
+                                updateRoute={this.updateRoute}
+                                deleteSection={this.deleteSection}
+                            />
                         )}
                         <div className="bottom-buffer"> </div>
                     </div>
