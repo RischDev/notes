@@ -69,8 +69,8 @@ class Route extends React.Component {
 
     resetTracker() {
         const newFoundItems = JSON.parse(JSON.stringify(require('../resources/' + this.state.notes.game + '/DefaultFoundItems.json')));
-        let newFoundModifiers;
-        if (this.state.foundModifiers != null)  {
+        let newFoundModifiers = this.state.foundModifiers;
+        if (newFoundModifiers != null)  {
             newFoundModifiers = JSON.parse(JSON.stringify(require('../resources/' + this.state.notes.game + '/DefaultFoundModifiers.json')));
         }
 
