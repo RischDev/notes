@@ -65,7 +65,12 @@
             "path": "bn4"
         }
     ],
-    "MMBN5": [],
+    "MMBN5": [
+        {
+            "title": "BN5",
+            "path": "bn5"
+        }
+    ],
     "MMBN6": [
         {
             "title": "Test Battle Network 6 Route",

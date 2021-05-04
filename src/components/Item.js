@@ -26,7 +26,7 @@ class Item extends React.Component {
                 <div>
                     <div id={this.state.id} className={classes} onClick={this.updateFound}>
                         <div className="title">{(this.state.id - this.props.low + 1).toString().padStart(3, "0")} {this.state.name}</div>
-                        <img className="icon" src={"/notes/items/" + this.state.game + "/" + this.state.id + ".png"} alt={this.state.name + " art"} />
+                        <img className="item-art" src={"/notes/items/" + this.state.game + "/" + this.state.id + ".png"} alt={this.state.name + " art"} />
                     </div>
                     <Modifiers id={this.state.id} modifiers={this.props.modifiers} updateTracker={this.props.updateTracker} foundModifiers={this.props.foundModifiers} />
                 </div>

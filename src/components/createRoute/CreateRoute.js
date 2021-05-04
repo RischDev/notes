@@ -206,8 +206,8 @@ class CreateRoute extends React.Component {
         e.preventDefault();
 
         let a = document.createElement('a');
-        a.href = "data:text/json;charset=utf-8," + JSON.stringify(this.state.route);
-        a.download = this.state.route.path + ".json";
+        a.href = "data:text/json;charset=utf-8," + JSON.stringify(this.state);
+        a.download = this.state.path + ".json";
         a.click();
     }
 

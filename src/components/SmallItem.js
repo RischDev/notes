@@ -40,7 +40,7 @@ class SmallItem extends React.Component {
             <div>
                 <div id={this.state.id} className={classes} onClick={this.updateFound}>
                     <div className="small-title">{this.state.name}</div>
-                    <img className="small-icon" src={"/notes/items/" + this.state.game + "/" + this.state.id + ".png"} alt={this.state.name + " art"} />
+                    <img className="small-item-art" src={"/notes/items/" + this.state.game + "/" + this.state.id + ".png"} alt={this.state.name + " art"} />
                 </div>
                 <SmallModifiers id={this.state.id} modifiers={this.props.modifiers} updateTracker={this.props.updateTracker} foundModifiers={this.props.foundModifiers} />
             </div>

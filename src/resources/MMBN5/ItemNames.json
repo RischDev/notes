@@ -11,7 +11,7 @@
         {
             "name": "Mega",
             "low": 180,
-            "high": 258
+            "high": 257
         }
     ],
     "Items": [
@@ -957,501 +957,491 @@
         },
         {
             "id": 188,
-            "name": "BugFix",
-            "modifiers": [ "H", "*" ]
-        },
-        {
-            "id": 189,
             "name": "FullCust",
             "modifiers": [ "*" ]
         },
         {
-            "id": 190,
+            "id": 189,
             "name": "LifeAur",
             "modifiers": [ "D" ]
         },
         {
-            "id": 191,
+            "id": 190,
             "name": "Snctuary",
             "modifiers": [ "S" ]
         },
         {
-            "id": 192,
+            "id": 191,
             "name": "Attck+30",
             "modifiers": [ "*" ]
         },
         {
-            "id": 193,
+            "id": 192,
             "name": "DblPoint",
             "modifiers": [ "*" ]
         },
         {
-            "id": 194,
+            "id": 193,
             "name": "Muramasa",
             "modifiers": [ "M" ]
         },
         {
-            "id": 195,
+            "id": 194,
             "name": "Anubis",
             "modifiers": [ "A" ]
         },
         {
-            "id": 196,
+            "id": 195,
             "name": "BlakWing",
             "modifiers": [ "W" ]
         },
         {
-            "id": 197,
+            "id": 196,
             "name": "JustcOne",
             "modifiers": [ "J" ]
         },
         {
-            "id": 198,
+            "id": 197,
             "name": "Z Saver",
             "modifiers": [ "Z" ]
         },
         {
-            "id": 199,
+            "id": 198,
             "name": "Roll",
             "modifiers": [ "R" ]
         },
         {
-            "id": 200,
+            "id": 199,
             "name": "RollSP",
             "modifiers": [ "R" ]
         },
         {
-            "id": 201,
+            "id": 200,
             "name": "RollDS",
             "modifiers": [ "R" ]
         },
         {
-            "id": 202,
-            "name": "Colonel",
-            "modifiers": [ "C" ]
-        },
-        {
-            "id": 203,
-            "name": "ColonelSP",
-            "modifiers": [ "C" ]
-        },
-        {
-            "id": 204,
-            "name": "ColonelDS",
-            "modifiers": [ "C" ]
-        },
-        {
-            "id": 205,
-            "name": "ShadowMan",
-            "modifiers": [ "S" ]
-        },
-        {
-            "id": 206,
-            "name": "ShadowManSP",
-            "modifiers": [ "S" ]
-        },
-        {
-            "id": 207,
-            "name": "ShadowManDS",
-            "modifiers": [ "S" ]
-        },
-        {
-            "id": 208,
-            "name": "NumberMan",
-            "modifiers": [ "N" ]
-        },
-        {
-            "id": 209,
-            "name": "NumberManSP",
-            "modifiers": [ "N" ]
-        },
-        {
-            "id": 210,
-            "name": "NumberManDS",
-            "modifiers": [ "N" ]
-        },
-        {
-            "id": 211,
-            "name": "TomahawkMan",
-            "modifiers": [ "T" ]
-        },
-        {
-            "id": 212,
-            "name": "TomahawkManSP",
-            "modifiers": [ "T" ]
-        },
-        {
-            "id": 213,
-            "name": "TomahawkManDS",
-            "modifiers": [ "T" ]
-        },
-        {
-            "id": 214,
-            "name": "KnightMan",
-            "modifiers": [ "K" ]
-        },
-        {
-            "id": 215,
-            "name": "KnightManSP",
-            "modifiers": [ "K" ]
-        },
-        {
-            "id": 216,
-            "name": "KnightManDS",
-            "modifiers": [ "K" ]
-        },
-        {
-            "id": 217,
-            "name": "ToadMan",
-            "modifiers": [ "T" ]
-        },
-        {
-            "id": 218,
-            "name": "ToadManSP",
-            "modifiers": [ "T" ]
-        },
-        {
-            "id": 219,
-            "name": "ToadManDS",
-            "modifiers": [ "T" ]
-        },
-        {
-            "id": 220,
+            "id": 201,
             "name": "ProtoMan",
             "modifiers": [ "B" ]
         },
         {
-            "id": 221,
+            "id": 202,
             "name": "ProtoManSP",
             "modifiers": [ "B" ]
         },
         {
-            "id": 222,
+            "id": 203,
             "name": "ProtoManDS",
             "modifiers": [ "B" ]
         },
         {
-            "id": 223,
+            "id": 204,
             "name": "GyroMan",
             "modifiers": [ "G" ]
         },
         {
-            "id": 224,
+            "id": 205,
             "name": "GyromanSP",
             "modifiers": [ "G" ]
         },
         {
-            "id": 225,
+            "id": 206,
             "name": "GyromanDS",
             "modifiers": [ "G" ]
         },
         {
-            "id": 226,
+            "id": 207,
             "name": "SearchMan",
             "modifiers": [ "S" ]
         },
         {
-            "id": 227,
+            "id": 208,
             "name": "SearchManSP",
             "modifiers": [ "S" ]
         },
         {
-            "id": 228,
+            "id": 209,
             "name": "SearchManDS",
             "modifiers": [ "S" ]
         },
         {
-            "id": 229,
+            "id": 210,
             "name": "NapalmMan",
             "modifiers": [ "N" ]
         },
         {
-            "id": 230,
+            "id": 211,
             "name": "NapalmManSP",
             "modifiers": [ "N" ]
         },
         {
-            "id": 231,
+            "id": 212,
             "name": "NapalmManDS",
             "modifiers": [ "N" ]
         },
         {
-            "id": 232,
+            "id": 213,
             "name": "MagnetMan",
             "modifiers": [ "M" ]
         },
         {
-            "id": 233,
+            "id": 214,
             "name": "MagnetManSP",
             "modifiers": [ "M" ]
         },
         {
-            "id": 234,
+            "id": 215,
             "name": "MagnetManDS",
             "modifiers": [ "M" ]
         },
         {
-            "id": 235,
+            "id": 216,
             "name": "Meddy",
             "modifiers": [ "M" ]
         },
         {
-            "id": 236,
+            "id": 217,
             "name": "MeddySP",
             "modifiers": [ "M" ]
         },
         {
-            "id": 237,
+            "id": 218,
             "name": "MeddyDS",
             "modifiers": [ "M" ]
         },
         {
-            "id": 238,
+            "id": 219,
+            "name": "Colonel",
+            "modifiers": [ "C" ]
+        },
+        {
+            "id": 220,
+            "name": "ColonelSP",
+            "modifiers": [ "C" ]
+        },
+        {
+            "id": 221,
+            "name": "ColonelDS",
+            "modifiers": [ "C" ]
+        },
+        {
+            "id": 222,
+            "name": "ShadowMan",
+            "modifiers": [ "S" ]
+        },
+        {
+            "id": 223,
+            "name": "ShadowManSP",
+            "modifiers": [ "S" ]
+        },
+        {
+            "id": 224,
+            "name": "ShadowManDS",
+            "modifiers": [ "S" ]
+        },
+        {
+            "id": 225,
+            "name": "NumberMan",
+            "modifiers": [ "N" ]
+        },
+        {
+            "id": 226,
+            "name": "NumberManSP",
+            "modifiers": [ "N" ]
+        },
+        {
+            "id": 227,
+            "name": "NumberManDS",
+            "modifiers": [ "N" ]
+        },
+        {
+            "id": 228,
+            "name": "TomahawkMan",
+            "modifiers": [ "T" ]
+        },
+        {
+            "id": 229,
+            "name": "TomahawkManSP",
+            "modifiers": [ "T" ]
+        },
+        {
+            "id": 230,
+            "name": "TomahawkManDS",
+            "modifiers": [ "T" ]
+        },
+        {
+            "id": 231,
+            "name": "KnightMan",
+            "modifiers": [ "K" ]
+        },
+        {
+            "id": 232,
+            "name": "KnightManSP",
+            "modifiers": [ "K" ]
+        },
+        {
+            "id": 233,
+            "name": "KnightManDS",
+            "modifiers": [ "K" ]
+        },
+        {
+            "id": 234,
+            "name": "ToadMan",
+            "modifiers": [ "T" ]
+        },
+        {
+            "id": 235,
+            "name": "ToadManSP",
+            "modifiers": [ "T" ]
+        },
+        {
+            "id": 236,
+            "name": "ToadManDS",
+            "modifiers": [ "T" ]
+        },
+        {
+            "id": 237,
             "name": "BlizMan",
             "modifiers": [ "B" ]
         },
         {
-            "id": 239,
+            "id": 238,
             "name": "BlizManSP",
             "modifiers": [ "B" ]
         },
         {
-            "id": 240,
+            "id": 239,
             "name": "BlizManDS",
             "modifiers": [ "B" ]
         },
         {
-            "id": 241,
+            "id": 240,
             "name": "ShadeMan",
             "modifiers": [ "S" ]
         },
         {
-            "id": 242,
+            "id": 241,
             "name": "ShadeManSP",
             "modifiers": [ "S" ]
         },
         {
-            "id": 243,
+            "id": 242,
             "name": "ShadeManDS",
             "modifiers": [ "S" ]
         },
         {
-            "id": 244,
+            "id": 243,
             "name": "CloudMan",
             "modifiers": [ "C" ]
         },
         {
-            "id": 245,
+            "id": 244,
             "name": "CloudManSP",
             "modifiers": [ "C" ]
         },
         {
-            "id": 246,
+            "id": 245,
             "name": "CloudManDS",
             "modifiers": [ "C" ]
         },
         {
-            "id": 247,
+            "id": 246,
             "name": "CosmoMan",
             "modifiers": [ "C" ]
         },
         {
-            "id": 248,
+            "id": 247,
             "name": "CosmoManSP",
             "modifiers": [ "C" ]
         },
         {
-            "id": 249,
+            "id": 248,
             "name": "CosmoManDS",
             "modifiers": [ "C" ]
         },
         {
-            "id": 250,
+            "id": 249,
             "name": "LarkMan",
             "modifiers": [ "S" ]
         },
         {
-            "id": 251,
+            "id": 250,
             "name": "LarkManSP",
             "modifiers": [ "S" ]
         },
         {
-            "id": 252,
+            "id": 251,
             "name": "LarkManDS",
             "modifiers": [ "S" ]
         },
         {
-            "id": 253,
+            "id": 252,
             "name": "GridMan",
             "modifiers": [ "F" ]
         },
         {
-            "id": 254,
+            "id": 253,
             "name": "GridManSP",
             "modifiers": [ "F" ]
         },
         {
-            "id": 255,
+            "id": 254,
             "name": "GridManDS",
             "modifiers": [ "F" ]
         },
         {
-            "id": 256,
+            "id": 255,
             "name": "Django",
             "modifiers": [ "D" ]
         },
         {
-            "id": 257,
+            "id": 256,
             "name": "DjangoSP",
             "modifiers": [ "D" ]
         },
         {
-            "id": 258,
+            "id": 257,
             "name": "DjangoDS",
             "modifiers": [ "D" ]
         },
         {
-            "id": 259,
-            "name": "CrossDiv",
-            "modifiers": [ "C" ]
-        },
-        {
-            "id": 260,
-            "name": "MetrKnuk",
-            "modifiers": [ "M" ]
-        },
-        {
-            "id": 261,
-            "name": "BassAnly",
-            "modifiers": [ "F" ]
-        },
-        {
-            "id": 262,
-            "name": "OMegaRkt",
-            "modifiers": [ "R" ]
-        },
-        {
-            "id": 263,
-            "name": "BugCharg",
-            "modifiers": [ "B" ]
-        },
-        {
-            "id": 264,
-            "name": "Phoenix",
-            "modifiers": [ "P" ]
-        },
-        {
-            "id": 265,
+            "id": 258,
             "name": "DeltaRay",
             "modifiers": [ "Z" ]
         },
         {
-            "id": 266,
+            "id": 259,
             "name": "BigHook",
             "modifiers": [ "G" ]
         },
         {
-            "id": 267,
+            "id": 260,
             "name": "Bass",
             "modifiers": [ "F" ]
         },
         {
-            "id": 268,
+            "id": 261,
             "name": "HolyDrem",
             "modifiers": [ "H" ]
         },
         {
-            "id": 269,
+            "id": 262,
             "name": "BugCurse",
             "modifiers": [ "C" ]
         },
         {
-            "id": 270,
+            "id": 263,
             "name": "DethPhnx",
             "modifiers": [ "D" ]
         },
         {
-            "id": 271,
+            "id": 264,
+            "name": "CrossDiv",
+            "modifiers": [ "C" ]
+        },
+        {
+            "id": 265,
+            "name": "MetrKnuk",
+            "modifiers": [ "M" ]
+        },
+        {
+            "id": 266,
+            "name": "BassAnly",
+            "modifiers": [ "F" ]
+        },
+        {
+            "id": 267,
+            "name": "OmegaRkt",
+            "modifiers": [ "R" ]
+        },
+        {
+            "id": 268,
+            "name": "BugCharg",
+            "modifiers": [ "B" ]
+        },
+        {
+            "id": 269,
+            "name": "Phoenix",
+            "modifiers": [ "P" ]
+        },
+        {
+            "id": 270,
             "name": "DrkSword",
             "modifiers": [ "Z" ]
         },
         {
-            "id": 272,
+            "id": 271,
             "name": "DarkTorn",
             "modifiers": [ "T" ]
         },
         {
-            "id": 273,
+            "id": 272,
             "name": "DarkCirc",
             "modifiers": [ "R" ]
         },
         {
-            "id": 274,
+            "id": 273,
             "name": "DarkMetr",
             "modifiers": [ "F" ]
         },
         {
-            "id": 275,
+            "id": 274,
             "name": "DarkThnd",
             "modifiers": [ "M" ]
         },
         {
-            "id": 276,
+            "id": 275,
             "name": "DrkRecov",
             "modifiers": [ "H" ]
         },
         {
-            "id": 277,
+            "id": 276,
             "name": "DrkSonic",
             "modifiers": [ "E" ]
         },
         {
+            "id": 277,
+            "name": "DarkInvs",
+            "modifiers": [ "I", "*" ]
+        },
+        {
             "id": 278,
-            "name": "DarkInvs",
-            "modifiers": [ "I", "*" ]
-        },
-        {
-            "id": 279,
-            "name": "DarkInvs",
-            "modifiers": [ "I", "*" ]
-        },
-        {
-            "id": 280,
             "name": "DarkPlus",
             "modifiers": [ "*" ]
         },
         {
-            "id": 281,
+            "id": 279,
             "name": "DrkLance",
             "modifiers": [ "W" ]
         },
         {
-            "id": 282,
+            "id": 280,
             "name": "DarkDril",
             "modifiers": [ "D" ]
         },
         {
-            "id": 283,
+            "id": 281,
             "name": "DarkWide",
             "modifiers": [ "T" ]
         },
         {
-            "id": 284,
-            "name": "Otenko",
-            "modifiers": [ "O" ]
-        },
-        {
-            "id": 285,
-            "name": "GunDelEX",
-            "modifiers": [ "G" ]
-        },
-        {
-            "id": 286,
+            "id": 282,
             "name": "LeaderR",
             "modifiers": [ "?" ]
         },
         {
-            "id": 287,
+            "id": 283,
+            "name": "Otenko",
+            "modifiers": [ "O" ]
+        },
+        {
+            "id": 284,
+            "name": "GunDelEX",
+            "modifiers": [ "G" ]
+        },
+        {
+            "id": 285,
             "name": "ChaosLrd",
             "modifiers": [ "?" ]
         }

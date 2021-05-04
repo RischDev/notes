@@ -55,11 +55,11 @@
     font-size: 20px;
 }
 
-.MMSF1 .icon, .MMSF2 .icon,.MMSF3 .icon {
+.MMSF1 .item-art, .MMSF2 .item-art,.MMSF3 .item-art {
 	width: 144px;
 }
 
-.MMSF1 .small-icon, .MMSF2 .small-icon,.MMSF3 .small-icon {
+.MMSF1 .small-item-art, .MMSF2 .small-item-art,.MMSF3 .small-item-art {
 	width: 72px;
 	font-size: 12px;
 }
@@ -143,12 +143,12 @@
     font-size: 16px;
 }
 
-.MMBN1 .icon, .MMBN2 .icon, .MMBN3 .icon, .MMBN4 .icon, .MMBN5 .icon, .MMBN6 .icon {
+.MMBN1 .item-art, .MMBN2 .item-art, .MMBN3 .item-art, .MMBN4 .item-art, .MMBN5 .item-art, .MMBN6 .item-art {
 	width: 140px;
 	border: 2px solid black;
 }
 
-.MMBN1 .small-icon, .MMBN2 .small-icon, .MMBN3 .small-icon, .MMBN4 .small-icon, .MMBN5 .small-icon, .MMBN6 .small-icon {
+.MMBN1 .small-item-art, .MMBN2 .small-item-art, .MMBN3 .small-item-art, .MMBN4 .small-item-art, .MMBN5 .small-item-art, .MMBN6 .small-item-art {
 	width: 70px;
 	border: 2px solid black;
 	font-size: 12px;

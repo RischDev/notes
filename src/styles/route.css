@@ -85,7 +85,7 @@
 	text-align: center;
 }
 
-.icon, .small-icon {
+.item-art, .small-item-art {
 	image-rendering: -moz-crisp-edges;
 	image-rendering: pixelated;
 	display: block;
