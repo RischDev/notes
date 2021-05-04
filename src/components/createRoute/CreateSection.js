@@ -29,6 +29,10 @@ class CreateSection extends React.Component {
             return true;
         }
 
+        if (this.props.max !== nextProps.max) {
+            return true;
+        }
+
         if (this.props.section.text.length !== nextProps.section.text.length) {
             return true;
         } else {
