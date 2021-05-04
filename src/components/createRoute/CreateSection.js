@@ -17,6 +17,7 @@ class CreateSection extends React.Component {
         this.addItem = this.addItem.bind(this);
         this.deleteText = this.deleteText.bind(this);
         this.deleteItem = this.deleteItem.bind(this);
+        this.deleteImage = this.deleteImage.bind(this);
     }
 
     shouldComponentUpdate(nextProps, nextState) {
@@ -158,6 +159,15 @@ class CreateSection extends React.Component {
         this.props.updateRoute(sectionId, newSection);
     }
 
+    deleteImage(sectionId) {
+        // Stringify then parse JSON to create deep copy.
+        let newSection = JSON.parse(JSON.stringify(this.props.section));
+
+        newSection.image = null;
+
+        this.props.updateRoute(sectionId, newSection);
+    }
+
     render() {
         let Items = require('../../resources/ItemNames.json');
         if (this.props.game !== "" && this.props.game != null) {
@@ -191,7 +201,7 @@ class CreateSection extends React.Component {
                             />
                         )}
                     </div>
-                    <SectionImage sectionId={this.props.section.id} image={this.props.section.image} updateImage={this.updateImage} />
+                    <SectionImage sectionId={this.props.section.id} image={this.props.section.image} updateImage={this.updateImage} deleteImage={this.deleteImage} />
                 </div>
                 <div className="wrapper">
                     <div className="col-6">

@@ -1,5 +1,6 @@
 import React from 'react';
 import PreviewImage from './PreviewImage';
+import DeleteImage from './DeleteImage';
 
 class SectionImage extends React.PureComponent {
     constructor(props) {
@@ -32,6 +33,7 @@ class SectionImage extends React.PureComponent {
             <div className="col-3">
                 <label htmlFor={"image-" + this.props.sectionId}>Image: </label>
                 <input type="file" name={"image-" + this.props.sectionId} onChange={this.onChange} />
+                <DeleteImage sectionId={this.props.sectionId} image={this.props.image} deleteImage={this.props.deleteImage} />
                 <PreviewImage image={this.props.image} />
             </div>
         );
