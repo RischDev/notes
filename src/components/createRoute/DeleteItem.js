@@ -17,7 +17,7 @@ class DeleteItem extends React.PureComponent {
 
     render() {
         return (
-            <img id={"deleteItem-" + this.props.sectionId + "-" + this.props.itemId} className="delete" onClick={this.onClick} src="/notes/icons/delete.png" alt="X"/>
+            <img id={"deleteItem-" + this.props.sectionId + "-" + this.props.itemId} className="icon" onClick={this.onClick} src="/notes/icons/delete.png" alt="X"/>
         )
     }
 }

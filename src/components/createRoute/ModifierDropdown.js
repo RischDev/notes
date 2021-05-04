@@ -68,7 +68,9 @@ class ModifierDropdown extends React.PureComponent {
             }
         }
 
-        return null;
+        return(
+            <span className="modifier-select-buffer" />
+        );
     }
 }
 

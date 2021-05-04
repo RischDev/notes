@@ -27,6 +27,8 @@ class CreateRoute extends React.Component {
         this.getBase64 = this.getBase64.bind(this);
         this.updateImage = this.updateImage.bind(this);
         this.generateDownload = this.generateDownload.bind(this);
+        this.moveSectionUp = this.moveSectionUp.bind(this);
+        this.moveSectionDown = this.moveSectionDown.bind(this);
         this.deleteSection = this.deleteSection.bind(this);
         this.updateRoute = this.updateRoute.bind(this);
     }
@@ -147,6 +149,40 @@ class CreateRoute extends React.Component {
         this.setState(newRoute);
     }
 
+    moveSectionUp(sectionId) {
+        // Stringify then parse JSON to create deep copy.
+        let newSections = JSON.parse(JSON.stringify(this.state.sections));
+
+        let chosenSection = newSections[sectionId];
+        chosenSection.id = sectionId - 1;
+        let aboveSection = newSections[sectionId - 1];
+        aboveSection.id = sectionId;
+
+        newSections[sectionId] = aboveSection;
+        newSections[sectionId - 1] = chosenSection;
+
+        this.setState({
+            sections: newSections
+        })
+    }
+
+    moveSectionDown(sectionId) {
+        // Stringify then parse JSON to create deep copy.
+        let newSections = JSON.parse(JSON.stringify(this.state.sections));
+
+        let chosenSection = newSections[sectionId];
+        chosenSection.id = sectionId + 1;
+        let belowSection = newSections[sectionId + 1];
+        belowSection.id = sectionId;
+
+        newSections[sectionId] = belowSection;
+        newSections[sectionId + 1] = chosenSection;
+
+        this.setState({
+            sections: newSections
+        })
+    }
+
     deleteSection(e) {
         e.preventDefault();
         const nameParts = e.target.id.split("-");
@@ -224,8 +260,11 @@ class CreateRoute extends React.Component {
                             <CreateSection
                                 key={"section-" + section.id}
                                 section={section}
+                                max={this.state.sections.length - 1}
                                 game={this.state.game}
                                 updateRoute={this.updateRoute}
+                                moveSectionUp={this.moveSectionUp}
+                                moveSectionDown={this.moveSectionDown}
                                 deleteSection={this.deleteSection}
                             />
                         )}

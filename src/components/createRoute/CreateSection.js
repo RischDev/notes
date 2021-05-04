@@ -1,6 +1,8 @@
 import React from 'react';
 import TextButton from './TextButton';
 import ItemButton from './ItemButton';
+import MoveSectionUp from './MoveSectionUp';
+import MoveSectionDown from './MoveSectionDown';
 import DeleteSection from './DeleteSection';
 import SectionText from './SectionText';
 import SectionItem from './SectionItem';
@@ -15,6 +17,8 @@ class CreateSection extends React.Component {
         this.updateImage = this.updateImage.bind(this);
         this.addText = this.addText.bind(this);
         this.addItem = this.addItem.bind(this);
+        this.moveTextUp = this.moveTextUp.bind(this);
+        this.moveTextDown = this.moveTextDown.bind(this);
         this.deleteText = this.deleteText.bind(this);
         this.deleteItem = this.deleteItem.bind(this);
         this.deleteImage = this.deleteImage.bind(this);
@@ -133,6 +137,36 @@ class CreateSection extends React.Component {
         this.props.updateRoute(sectionId, newSection);
     }
 
+    moveTextUp(sectionId, textId) {
+        // Stringify then parse JSON to create deep copy.
+        let newSection = JSON.parse(JSON.stringify(this.props.section));
+
+        let chosenText = newSection.text[textId];
+        chosenText.id = textId - 1;
+        let aboveText = newSection.text[textId - 1];
+        aboveText.id = textId;
+
+        newSection.text[textId] = aboveText;
+        newSection.text[textId - 1] = chosenText;
+
+        this.props.updateRoute(sectionId, newSection);
+    }
+
+    moveTextDown(sectionId, textId) {
+        // Stringify then parse JSON to create deep copy.
+        let newSection = JSON.parse(JSON.stringify(this.props.section));
+
+        let chosenText = newSection.text[textId];
+        chosenText.id = textId + 1;
+        let belowText = newSection.text[textId + 1];
+        belowText.id = textId;
+
+        newSection.text[textId] = belowText;
+        newSection.text[textId + 1] = chosenText;
+
+        this.props.updateRoute(sectionId, newSection);
+    }
+
     deleteText(sectionId, textId) {
         // Stringify then parse JSON to create deep copy.
         let newSection = JSON.parse(JSON.stringify(this.props.section));
@@ -177,6 +211,8 @@ class CreateSection extends React.Component {
         return(
             <div id={"section-" + this.props.section.id} className="formSection border-bottom">
                 <h3 className="sectionHeader">Section {this.props.section.id + 1}</h3>
+                <MoveSectionUp sectionId={this.props.section.id} moveSectionUp={this.props.moveSectionUp} />
+                <MoveSectionDown sectionId={this.props.section.id} max={this.props.max} moveSectionDown={this.props.moveSectionDown} />
                 <DeleteSection sectionId={this.props.section.id} deleteSection={this.props.deleteSection} />
                 <div className="wrapper">
                     <div className="col-6">
@@ -184,8 +220,12 @@ class CreateSection extends React.Component {
                             <SectionText
                                 key={"text-" + text.id}
                                 sectionId={this.props.section.id}
-                                text={text} game={this.props.game}
+                                text={text}
+                                max={this.props.section.text.length - 1}
+                                game={this.props.game}
                                 updateText={this.updateText}
+                                moveTextUp={this.moveTextUp}
+                                moveTextDown={this.moveTextDown}
                                 deleteText={this.deleteText}
                             />
                         )}

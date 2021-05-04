@@ -58,7 +58,9 @@ class ItemDropdown extends React.PureComponent {
         } else {
             if (this.props.type === "text") {
                 return(
-                    <img id={"addItemDropdown-" + this.props.sectionId + "-" + this.props.textId} className="addDropdown" onClick={this.addDropdown} src="/notes/icons/add.png" alt="+" />
+                    <span className="item-select-buffer">
+                        <img id={"addItemDropdown-" + this.props.sectionId + "-" + this.props.textId} className="icon" onClick={this.addDropdown} src="/notes/icons/add.png" alt="+" />
+                    </span>
                 );
             }
         }

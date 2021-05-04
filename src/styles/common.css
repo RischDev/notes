@@ -62,7 +62,7 @@ body {
 }
 
 .hidden {
-    display: hidden;
+    visibility: hidden;
 }
 
 .strikethrough {

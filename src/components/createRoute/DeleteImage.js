@@ -17,7 +17,7 @@ class DeleteImage extends React.PureComponent {
     render() {
         if (this.props.image != null) {
             return (
-                <img id={"deleteImage-" + this.props.sectionId} className="delete" onClick={this.onClick} src="/notes/icons/delete.png" alt="X"/>
+                <img id={"deleteImage-" + this.props.sectionId} className="icon" onClick={this.onClick} src="/notes/icons/delete.png" alt="X"/>
             )
         }
 
