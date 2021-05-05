@@ -29,6 +29,7 @@ class CreateRoute extends React.Component {
         this.generateDownload = this.generateDownload.bind(this);
         this.moveSectionUp = this.moveSectionUp.bind(this);
         this.moveSectionDown = this.moveSectionDown.bind(this);
+        this.loadLastRouteEdit = this.loadLastRouteEdit.bind(this);
         this.deleteSection = this.deleteSection.bind(this);
         this.updateRoute = this.updateRoute.bind(this);
     }
@@ -147,6 +148,14 @@ class CreateRoute extends React.Component {
         }
 
         this.setState(newRoute);
+
+        try {
+            localStorage.setItem("lastRouteEdit", JSON.stringify(newRoute));
+        } catch(e) {
+            console.log("Unable to save route to local storage. Route is likely too large.")
+            console.log(e);
+            localStorage.setItem("lastRouteEdit", null);
+        }
     }
 
     moveSectionUp(sectionId) {
@@ -202,6 +211,18 @@ class CreateRoute extends React.Component {
         });
     }
 
+    loadLastRouteEdit(e) {
+        e.preventDefault();
+
+        let newRoute = JSON.parse(localStorage.getItem("lastRouteEdit"));
+
+        if (newRoute != null) {
+            this.setState(newRoute);
+        } else {
+            alert("Error: No route found in local storage. Either there is nothing to load, or your route may have been too large. When your route gets large, try downloading the JSON file periodically to save your progress.");
+        }
+    }
+
     generateDownload(e) {
         e.preventDefault();
 
@@ -213,11 +234,17 @@ class CreateRoute extends React.Component {
 
     updateRoute(sectionId, section) {
         // JSON stringify, then JSON parse to make a deep copy.
-        let newSections = JSON.parse(JSON.stringify(this.state.sections));
-        newSections[sectionId] = section;
-        this.setState({
-            sections: newSections
-        })
+        let newRoute = JSON.parse(JSON.stringify(this.state));
+        newRoute.sections[sectionId] = section;
+        this.setState(newRoute)
+
+        try {
+            localStorage.setItem("lastRouteEdit", JSON.stringify(newRoute));
+        } catch(e) {
+            console.log("Unable to save route to local storage. Route is likely too large.")
+            console.log(e);
+            localStorage.setItem("lastRouteEdit", null);
+        }
     }
 
     render() {
@@ -239,6 +266,7 @@ class CreateRoute extends React.Component {
                         <div className="row">
                             <div>Import Text: <input type="file" name={"textImport"} onChange={this.handleInputChange} /></div>
                             <div>Import JSON: <input type="file" name={"jsonImport"} onChange={this.handleInputChange} /></div>
+                            <button className="btn" onClick={this.loadLastRouteEdit}>Load Last Edit</button>
                             <button className="btn" onClick={this.addSection}> Add Section </button>
                             <button className="btn" onClick={this.generateDownload}>Generate JSON file</button>
                         </div>
