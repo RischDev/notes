@@ -9,7 +9,7 @@ class ItemDropdown extends React.PureComponent {
     }
 
     onChange(e) {
-        const value = e.target.type === 'checkbox' ? e.target.checked : e.target.value;
+        const value = parseInt(e.target.value);
         const name = e.target.name.split("-");
         const sectionId = parseInt(name[1]);
         const id = parseInt(name[2]);
