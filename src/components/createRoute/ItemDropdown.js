@@ -9,10 +9,14 @@ class ItemDropdown extends React.PureComponent {
     }
 
     onChange(e) {
-        const value = parseInt(e.target.value);
+        let value = e.target.value;
         const name = e.target.name.split("-");
         const sectionId = parseInt(name[1]);
         const id = parseInt(name[2]);
+
+        if (value !== "") {
+            value = parseInt(value);
+        }
 
         if (this.props.type === "text") {
             this.props.updateText(sectionId, id, null, value, null);

@@ -89,8 +89,7 @@ class CreateRoute extends React.Component {
             while (line !== "") {
                 const text = {
                     id: textId,
-                    text: line,
-                    item: -1
+                    text: line
                 }
 
                 section.text.push(text);
@@ -121,7 +120,6 @@ class CreateRoute extends React.Component {
     }
 
     handleUpload(file, callback) {
-        console.log(file);
         let reader = new FileReader();
         reader.readAsText(file, "UTF-8");
         reader.onload = function () {
