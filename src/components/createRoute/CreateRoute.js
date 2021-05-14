@@ -108,7 +108,7 @@ class CreateRoute extends React.Component {
             sectionId++;
         }
 
-        const newRoute = this.state.route;
+        const newRoute = this.state;
         newRoute.sections = newSections;
 
         this.setState(newRoute);
