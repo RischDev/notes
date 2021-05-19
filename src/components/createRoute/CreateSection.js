@@ -7,6 +7,7 @@ import DeleteSection from './DeleteSection';
 import SectionText from './SectionText';
 import SectionItem from './SectionItem';
 import SectionImage from './SectionImage';
+import AddSection from './AddSection';
 
 class CreateSection extends React.Component {
     constructor(props) {
@@ -19,6 +20,8 @@ class CreateSection extends React.Component {
         this.addItem = this.addItem.bind(this);
         this.moveTextUp = this.moveTextUp.bind(this);
         this.moveTextDown = this.moveTextDown.bind(this);
+        this.moveItemUp = this.moveItemUp.bind(this);
+        this.moveItemDown = this.moveItemDown.bind(this);
         this.deleteText = this.deleteText.bind(this);
         this.deleteItem = this.deleteItem.bind(this);
         this.deleteImage = this.deleteImage.bind(this);
@@ -171,6 +174,36 @@ class CreateSection extends React.Component {
         this.props.updateRoute(sectionId, newSection);
     }
 
+    moveItemUp(sectionId, itemId) {
+        // Stringify then parse JSON to create deep copy.
+        let newSection = JSON.parse(JSON.stringify(this.props.section));
+
+        let chosenItem = newSection.items[itemId];
+        chosenItem.id = itemId - 1;
+        let aboveItem = newSection.items[itemId - 1];
+        aboveItem.id = itemId;
+
+        newSection.items[itemId] = aboveItem;
+        newSection.items[itemId - 1] = chosenItem;
+
+        this.props.updateRoute(sectionId, newSection);
+    }
+
+    moveItemDown(sectionId, itemId) {
+        // Stringify then parse JSON to create deep copy.
+        let newSection = JSON.parse(JSON.stringify(this.props.section));
+
+        let chosenItem = newSection.items[itemId];
+        chosenItem.id = itemId + 1;
+        let belowItem = newSection.items[itemId + 1];
+        belowItem.id = itemId;
+
+        newSection.items[itemId] = belowItem;
+        newSection.items[itemId + 1] = chosenItem;
+
+        this.props.updateRoute(sectionId, newSection);
+    }
+
     deleteText(sectionId, textId) {
         // Stringify then parse JSON to create deep copy.
         let newSection = JSON.parse(JSON.stringify(this.props.section));
@@ -213,7 +246,7 @@ class CreateSection extends React.Component {
         }
 
         return(
-            <div id={"section-" + this.props.section.id} className="formSection border-bottom">
+            <div id={"section-" + this.props.section.id} className="formSection">
                 <h3 className="sectionHeader">Section {this.props.section.id + 1}</h3>
                 <MoveSectionUp sectionId={this.props.section.id} moveSectionUp={this.props.moveSectionUp} />
                 <MoveSectionDown sectionId={this.props.section.id} max={this.props.max} moveSectionDown={this.props.moveSectionDown} />
@@ -239,8 +272,12 @@ class CreateSection extends React.Component {
                             <SectionItem
                                 key={"item-" + item.id}
                                 sectionId={this.props.section.id}
-                                item={item} game={this.props.game}
+                                item={item}
+                                game={this.props.game}
+                                max={this.props.section.items.length - 1}
                                 updateItems={this.updateItems}
+                                moveItemUp={this.moveItemUp}
+                                moveItemDown={this.moveItemDown}
                                 deleteItem={this.deleteItem}
                             />
                         )}
@@ -258,6 +295,7 @@ class CreateSection extends React.Component {
 
                     </div>
                 </div>
+                <AddSection sectionId={this.props.section.id} addSection={this.props.addSection} />
             </div>
         );
     }

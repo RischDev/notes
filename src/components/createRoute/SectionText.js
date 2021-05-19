@@ -1,8 +1,8 @@
 import React from 'react';
 import ItemDropdown from './ItemDropdown';
 import ModifierDropdown from './ModifierDropdown';
-import MoveTextUp from './MoveTextUp';
-import MoveTextDown from './MoveTextDown';
+import MoveUp from './MoveUp';
+import MoveDown from './MoveDown';
 import DeleteText from './DeleteText';
 
 class SectionText extends React.Component {
@@ -27,8 +27,8 @@ class SectionText extends React.Component {
                 <textarea name={"textValue-" + this.props.sectionId + "-" + this.props.text.id} value={this.props.text.text} placeholder="Text" onChange={this.onChange} />
                 <ItemDropdown type="text" sectionId={this.props.sectionId} textId={this.props.text.id} value={this.props.text.item} game={this.props.game} updateText={this.props.updateText} updateItems={this.props.updateItems} />
                 <ModifierDropdown type="text" sectionId={this.props.sectionId} textId={this.props.text.id} itemValue={this.props.text.item} value={this.props.text.modifier} game={this.props.game} updateText={this.props.updateText} updateItems={this.props.updateItems} />
-                <MoveTextUp sectionId={this.props.sectionId} textId={this.props.text.id} moveTextUp={this.props.moveTextUp} />
-                <MoveTextDown sectionId={this.props.sectionId} textId={this.props.text.id} max={this.props.max} moveTextDown={this.props.moveTextDown} />
+                <MoveUp sectionId={this.props.sectionId} type="text" textId={this.props.text.id} moveTextUp={this.props.moveTextUp} />
+                <MoveDown sectionId={this.props.sectionId} type="text" textId={this.props.text.id} max={this.props.max} moveTextDown={this.props.moveTextDown} />
                 <DeleteText sectionId={this.props.sectionId} textId={this.props.text.id} deleteText={this.props.deleteText} />
             </div>
         );

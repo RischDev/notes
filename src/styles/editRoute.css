@@ -97,7 +97,7 @@
     display: inline-block;
 }
 
-.deleteSection {
+.deleteSection, .addSection img {
     width: 20px;
     height: 20px;
     margin: 0px 5px 5px 5px;
@@ -105,8 +105,12 @@
     display: inline-block;
 }
 
-.icon:hover, .deleteSection:hover, .addDropdown:hover {
+.icon:hover, .deleteSection:hover, .addDropdown:hover, .addSection:hover {
     cursor: pointer;
+}
+
+.addSection {
+    margin: 20px 0;
 }
 
 .preview {

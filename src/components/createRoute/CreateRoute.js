@@ -10,7 +10,11 @@ class CreateRoute extends React.Component {
             path: "",
             game: "",
             version: "1.0",
-            sections: []
+            sections: [{
+                id: 0,
+                text: [],
+                items: []
+            }]
         }
 
         if (this.props.path != null) {
@@ -35,14 +39,21 @@ class CreateRoute extends React.Component {
     }
 
     addSection(e) {
-        e.preventDefault();
+        const nameParts = e.target.parentElement.id.split("-");
+        const sectionId = parseInt(nameParts[1]);
 
         let newSections = this.state.sections;
-        newSections.push({
-            id: newSections.length,
+        let newSection = {
+            id: sectionId,
             text: [],
             items: []
-        });
+        };
+
+        newSections.splice(sectionId, 0, newSection);
+
+        for (let i = sectionId + 1; i < newSections.length; i++) {
+            newSections[i].id++;
+        }
 
         this.setState({
             sections: newSections
@@ -265,7 +276,6 @@ class CreateRoute extends React.Component {
                             <div>Import Text: <input type="file" name={"textImport"} onChange={this.handleInputChange} /></div>
                             <div>Import JSON: <input type="file" name={"jsonImport"} onChange={this.handleInputChange} /></div>
                             <button className="btn" onClick={this.loadLastRouteEdit}>Load Last Edit</button>
-                            <button className="btn" onClick={this.addSection}> Add Section </button>
                             <button className="btn" onClick={this.generateDownload}>Generate JSON file</button>
                         </div>
 
@@ -291,6 +301,7 @@ class CreateRoute extends React.Component {
                                 updateRoute={this.updateRoute}
                                 moveSectionUp={this.moveSectionUp}
                                 moveSectionDown={this.moveSectionDown}
+                                addSection={this.addSection}
                                 deleteSection={this.deleteSection}
                             />
                         )}
