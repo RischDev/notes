@@ -5,7 +5,7 @@ class Tracker extends React.Component {
     render() {
         const fullSizeClass = this.props.fullSize ? " fullSize" : "";
 
-        let Items = require('../resources/' + this.props.game + '/ItemNames.json');
+        let Items = require('../../../resources/' + this.props.game + '/ItemNames.json');
 
         let header;
         if (this.props.fullSize) {

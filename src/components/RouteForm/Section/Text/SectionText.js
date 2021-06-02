@@ -1,8 +1,8 @@
 import React from 'react';
-import ItemDropdown from './ItemDropdown';
-import ModifierDropdown from './ModifierDropdown';
-import MoveUp from './MoveUp';
-import MoveDown from './MoveDown';
+import ItemDropdown from '../ItemDropdown';
+import ModifierDropdown from '../ModifierDropdown';
+import MoveUp from '../MoveUp';
+import MoveDown from '../MoveDown';
 import DeleteText from './DeleteText';
 
 class SectionText extends React.Component {

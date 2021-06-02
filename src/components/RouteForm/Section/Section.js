@@ -1,12 +1,12 @@
 import React from 'react';
-import TextButton from './TextButton';
-import ItemButton from './ItemButton';
-import MoveSectionUp from './MoveSectionUp';
-import MoveSectionDown from './MoveSectionDown';
+import TextButton from './Text/TextButton';
+import ItemButton from './Items/ItemButton';
+import MoveUp from './MoveUp';
+import MoveDown from './MoveDown';
 import DeleteSection from './DeleteSection';
-import SectionText from './SectionText';
-import SectionItem from './SectionItem';
-import SectionImage from './SectionImage';
+import SectionText from './Text/SectionText';
+import SectionItem from './Items/SectionItem';
+import SectionImage from './Image/SectionImage';
 import AddSection from './AddSection';
 
 class CreateSection extends React.Component {
@@ -240,16 +240,16 @@ class CreateSection extends React.Component {
     }
 
     render() {
-        let Items = require('../../resources/ItemNames.json');
+        let Items = require('../../../resources/ItemNames.json');
         if (this.props.game !== "" && this.props.game != null) {
-            Items = require('../../resources/' + this.props.game + '/ItemNames.json');
+            Items = require('../../../resources/' + this.props.game + '/ItemNames.json');
         }
 
         return(
             <div id={"section-" + this.props.section.id} className="formSection">
                 <h3 className="sectionHeader">Section {this.props.section.id + 1}</h3>
-                <MoveSectionUp sectionId={this.props.section.id} moveSectionUp={this.props.moveSectionUp} />
-                <MoveSectionDown sectionId={this.props.section.id} max={this.props.max} moveSectionDown={this.props.moveSectionDown} />
+                <MoveUp sectionId={this.props.section.id} type="section" moveSectionUp={this.props.moveSectionUp} />
+                <MoveDown sectionId={this.props.section.id} type="section" max={this.props.max} moveSectionDown={this.props.moveSectionDown} />
                 <DeleteSection sectionId={this.props.section.id} deleteSection={this.props.deleteSection} />
                 <div className="wrapper">
                     <div className="col-6">

@@ -22,7 +22,7 @@ function Text(props) {
 function ItemsList(props) {
     const items = props.items;
 
-    let Items = require('../resources/' + props.game + '/ItemNames.json');
+    let Items = require('../../../resources/' + props.game + '/ItemNames.json');
 
     let itemsList;
 

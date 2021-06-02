@@ -5,7 +5,7 @@ class SmallItem extends React.Component {
     constructor(props) {
         super(props);
 
-        let Items = require('../resources/' + props.game + '/ItemNames.json');
+        let Items = require('../../../resources/' + props.game + '/ItemNames.json');
         let name = "";
         let className = "";
         if (Items.Items[props.id] != null) {

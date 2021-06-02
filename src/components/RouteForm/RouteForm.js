@@ -1,5 +1,5 @@
 import React from 'react';
-import CreateSection from './CreateSection';
+import Section from './Section/Section';
 
 class CreateRoute extends React.Component {
     constructor(props) {
@@ -293,7 +293,7 @@ class CreateRoute extends React.Component {
 
                     <div className="sectionInfo">
                         {this.state.sections.map((section) =>
-                            <CreateSection
+                            <Section
                                 key={"section-" + section.id}
                                 section={section}
                                 max={this.state.sections.length - 1}

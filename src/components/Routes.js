@@ -1,7 +1,7 @@
 import React from 'react';
-import Route from './Route';
+import Route from './Route/Route';
 import RoutesListItem from './RoutesListItem';
-import CreateRoute from './createRoute/CreateRoute';
+import CreateRoute from './RouteForm/RouteForm';
 
 let routes = require('../notes/routes.json');
 

@@ -6,6 +6,7 @@ class MoveTextDown extends React.PureComponent {
 
         this.moveText = this.moveText.bind(this);
         this.moveItem = this.moveItem.bind(this);
+        this.moveSection = this.moveSection.bind(this);
     }
 
     moveText(e) {
@@ -22,6 +23,13 @@ class MoveTextDown extends React.PureComponent {
         const itemId = parseInt(id[2]);
 
        this.props.moveItemDown(sectionId, itemId);
+    }
+
+    moveSection(e) {
+        const id = e.target.id.split("-");
+        const sectionId = parseInt(id[1]);
+
+        this.props.moveSectionDown(sectionId);
     }
 
     render() {
@@ -41,6 +49,14 @@ class MoveTextDown extends React.PureComponent {
             }
 
             return <img id={"moveItemDown-" + this.props.sectionId + "-" + this.props.itemId} className="icon hidden" onClick={this.moveItem} src="/notes/icons/down.png" alt="Down" />;
+        } else if (this.props.type === "section") {
+            if (this.props.sectionId !== this.props.max) {
+                return (
+                    <img id={"moveSectionDown-" + this.props.sectionId} className="icon" onClick={this.moveSection} src="/notes/icons/down.png" alt="Down" />
+                )
+            }
+
+            return <img id={"moveSectionDown-" + this.props.sectionId} className="icon hidden" onClick={this.moveSection} src="/notes/icons/down.png" alt="Down" />;
         }
 
         return null;

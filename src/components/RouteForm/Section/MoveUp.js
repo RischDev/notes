@@ -6,6 +6,7 @@ class MoveTextUp extends React.PureComponent {
 
         this.moveText = this.moveText.bind(this);
         this.moveItem = this.moveItem.bind(this);
+        this.moveSection = this.moveSection.bind(this);
     }
 
     moveText(e) {
@@ -22,6 +23,13 @@ class MoveTextUp extends React.PureComponent {
         const itemId = parseInt(id[2]);
 
        this.props.moveItemUp(sectionId, itemId);
+    }
+
+    moveSection(e) {
+        const id = e.target.id.split("-");
+        const sectionId = parseInt(id[1]);
+
+        this.props.moveSectionUp(sectionId);
     }
 
     render() {
@@ -41,6 +49,14 @@ class MoveTextUp extends React.PureComponent {
             }
 
             return <img id={"moveItemUp-" + this.props.sectionId + "-" + this.props.itemId} className="icon hidden" onClick={this.moveItem} src="/notes/icons/up.png" alt="Up" />;
+        } else if (this.props.type === "section") {
+            if (this.props.sectionId !== 0) {
+                return (
+                    <img id={"moveSectionUp-" + this.props.sectionId} className="icon" onClick={this.moveSection} src="/notes/icons/up.png" alt="Up" />
+                )
+            }
+
+            return <img id={"moveSectionUp-" + this.props.sectionId} className="icon hidden" onClick={this.moveSection} src="/notes/icons/up.png" alt="Up" />;
         }
 
         return null;

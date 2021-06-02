@@ -1,22 +1,22 @@
 import React from 'react';
-import Notes from './Notes';
-import Tracker from './Tracker';
+import Notes from './Notes/Notes';
+import Tracker from './Tracker/Tracker';
 
 class Route extends React.Component {
     constructor(props) {
         super(props);
 
-        let notes = require('../notes/' + props.path + '.json');
-        let Items = require('../resources/' + notes.game + '/ItemNames.json');
+        let notes = require('../../notes/' + props.path + '.json');
+        let Items = require('../../resources/' + notes.game + '/ItemNames.json');
 
         let initialFoundItems = JSON.parse(localStorage.getItem("foundItems-" + notes.game));
         if (initialFoundItems == null || initialFoundItems.length === 0) {
-            initialFoundItems = JSON.parse(JSON.stringify(require('../resources/' + notes.game + '/DefaultFoundItems.json')));
+            initialFoundItems = JSON.parse(JSON.stringify(require('../../resources/' + notes.game + '/DefaultFoundItems.json')));
         }
 
         let initialFoundModifiers = JSON.parse(localStorage.getItem("foundModifiers-" + notes.game))
         if (Items.modifiers && initialFoundModifiers == null) {
-            initialFoundModifiers = JSON.parse(JSON.stringify(require('../resources/' + notes.game + '/DefaultFoundModifiers.json')));
+            initialFoundModifiers = JSON.parse(JSON.stringify(require('../../resources/' + notes.game + '/DefaultFoundModifiers.json')));
         }
 
         this.state = {
@@ -68,10 +68,10 @@ class Route extends React.Component {
     }
 
     resetTracker() {
-        const newFoundItems = JSON.parse(JSON.stringify(require('../resources/' + this.state.notes.game + '/DefaultFoundItems.json')));
+        const newFoundItems = JSON.parse(JSON.stringify(require('../../resources/' + this.state.notes.game + '/DefaultFoundItems.json')));
         let newFoundModifiers = this.state.foundModifiers;
         if (newFoundModifiers != null)  {
-            newFoundModifiers = JSON.parse(JSON.stringify(require('../resources/' + this.state.notes.game + '/DefaultFoundModifiers.json')));
+            newFoundModifiers = JSON.parse(JSON.stringify(require('../../resources/' + this.state.notes.game + '/DefaultFoundModifiers.json')));
         }
 
         this.setState({

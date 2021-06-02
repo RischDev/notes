@@ -34,9 +34,9 @@ class ItemDropdown extends React.PureComponent {
     }
 
     render() {
-        let Items = require('../../resources/ItemNames.json');
+        let Items = require('../../../resources/ItemNames.json');
         if (this.props.game !== "" && this.props.game != null) {
-            Items = require('../../resources/' + this.props.game + '/ItemNames.json');
+            Items = require('../../../resources/' + this.props.game + '/ItemNames.json');
         }
 
         if (this.props.value != null) {
