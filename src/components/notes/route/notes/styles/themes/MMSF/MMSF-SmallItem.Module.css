@@ -1,0 +1,26 @@
+.item {
+    font-family: SFBold;
+    font-variant-ligatures: discretionary-ligatures;
+    text-shadow: 1px 1px 0 #414951;
+    height: 75px;
+}
+
+.title {
+    font-size: 12px;
+}
+
+.itemArt {
+    width: 72px;
+}
+
+.Standard {
+	background: #fbba20;
+}
+
+.Mega {
+	background: #28aafb;
+}
+
+.Giga {
+	background: #db2020;
+}

@@ -1,0 +1,25 @@
+.item {
+    width: 78px;
+    border: 1px solid black;
+    border-radius: 5px;
+    display: inline-block;
+    margin: 5px;
+    text-shadow: 1px 1px 0 #414951;
+}
+
+.title {
+	padding: 2px;
+    text-align: center;
+}
+
+.itemArt {
+	image-rendering: -moz-crisp-edges;
+	image-rendering: pixelated;
+	display: block;
+    margin: 0px auto;
+    font-size: 12px;
+}
+
+.found {
+	opacity: 0.35;
+}

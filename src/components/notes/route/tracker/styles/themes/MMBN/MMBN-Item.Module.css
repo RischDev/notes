@@ -1,0 +1,26 @@
+.item {
+    font-family: BN6FontBold;
+    text-shadow: 1px 1px 0 #414951;
+    height: 162px;
+}
+
+.title {
+    font-size: 18px;
+}
+
+.itemArt {
+    width: 140px;
+    border: 2px solid black;
+}
+
+.BattleChip, .Standard {
+    background: #dedeef;
+}
+
+.Mega {
+    background: #adefef;
+}
+
+.Giga {
+
+}

@@ -1,0 +1,24 @@
+.header {
+    text-align: center;
+}
+
+.itemList {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+}
+
+.image {
+	width: 100%;
+}
+
+.wrapper {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	width: 100%;
+}
+
+.found {
+    text-decoration: line-through;
+}

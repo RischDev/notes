@@ -1,0 +1,13 @@
+.select {
+    width: 150px;
+    height: 32px;
+    margin: 5px;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.buffer {
+    width: 150px;
+    display: inline-block;
+    margin: 0 5px;
+}

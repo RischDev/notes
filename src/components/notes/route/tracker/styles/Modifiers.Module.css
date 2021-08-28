@@ -1,0 +1,22 @@
+.modifiers {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.found {
+	opacity: 0.35;
+}
+
+.modifier {
+    width: 22px;
+    height: 22px;
+    display: inline-block;
+    margin: 5px 1px;
+    border: 1px solid black;
+    border-radius: 5px;
+    background: #a6a6a6;
+    font-size: 16px;
+    text-align: center;
+    text-shadow: 1px 1px 0 #414951;
+}

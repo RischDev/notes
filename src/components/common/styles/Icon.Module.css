@@ -1,0 +1,19 @@
+.icon {
+    width: 20px;
+    height: 20px;
+    margin: 11px 5px;
+    vertical-align: middle;
+    display: inline-block;
+}
+
+.small {
+    width: 20px;
+}
+
+.hover {
+    cursor: pointer;
+}
+
+.hidden {
+    visibility: hidden;
+}

@@ -1,0 +1,72 @@
+@font-face {
+	font-family: 'BN6FontBold';
+	src: url('./fonts/BN6/BN6FontBold.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'SFBold';
+	src: url('./fonts/SF1/SFBold.ttf') format('truetype');
+}
+
+body {
+	margin: 0px;
+	background: #111111;
+	color: #FFF;
+	font-family: 'Source Sans Pro', sans-serif;
+}
+
+.page {
+    width: 95%;
+    margin: 20px auto;
+}
+
+.col-1 {
+    width: 8%;
+}
+
+.col-2 {
+    width: 16%;
+}
+
+.col-3 {
+    width: 24%;
+}
+
+.col-4 {
+    width: 32%;
+}
+
+.col-5 {
+    width: 41%;
+}
+
+.col-6 {
+    width: 49%;
+}
+
+.col-8 {
+    width: 66%
+}
+
+.col-9 {
+    width: 74%;
+}
+
+.col-10 {
+    width: 83%;
+}
+
+.row {
+    width: 100%;
+}
+
+.bottom-buffer {
+    width: 100%;
+    height: 200px;
+}
+
+.card {
+    background: #202020;
+    border-radius: 5px;
+    padding: 10px 0;
+}

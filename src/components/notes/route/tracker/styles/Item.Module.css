@@ -1,0 +1,22 @@
+.item {
+    width: 154px;
+    border: 1px solid black;
+    border-radius: 5px;
+    display: inline-block;
+    margin: 5px;
+}
+
+.title {
+	padding: 5px;
+}
+
+.itemArt {
+	image-rendering: -moz-crisp-edges;
+	image-rendering: pixelated;
+	display: block;
+	margin: 0px auto;
+}
+
+.found {
+	opacity: 0.35;
+}

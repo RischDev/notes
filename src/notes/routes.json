@@ -1,99 +1,87 @@
 {
-    "games": [
-        {
-            "name": "Mega Man Battle Network",
-            "value": "MMBN1"
-        },
-        {
-            "name": "Mega Man Battle Network 2",
-            "value": "MMBN2"
-        },
-        {
-            "name": "Mega Man Battle Network 3",
-            "value": "MMBN3"
-        },
-        {
-            "name": "Mega Man Battle Network 4",
-            "value": "MMBN4"
-        },
-        {
-            "name": "Mega Man Battle Network 5",
-            "value": "MMBN5"
-        },
-        {
-            "name": "Mega Man Battle Network 6",
-            "value": "MMBN6"
-        },
-        {
-            "name": "Mega Man Star Force 1",
-            "value": "MMSF1"
-        },
-        {
-            "name": "Mega Man Star Force 2",
-            "value": "MMSF2"
-        },
-        {
-            "name": "Mega Man Star Force 3",
-            "value": "MMSF3"
-        },
-        {
-            "name": "Rockman EXE: Operate Shooting Star",
-            "value": "OSS"
-        }
-    ],
-    "MMBN1": [
-        {
-            "title": "BN1",
-            "path": "bn1"
-        }
-    ],
-    "MMBN2": [
-        {
-            "title": "BN2",
-            "path": "bn2"
-        }
-    ],
-    "MMBN3": [
-        {
-            "title": "BN3",
-            "path": "bn3"
-        }
-    ],
-    "MMBN4": [
-        {
-            "title": "BN4",
-            "path": "bn4"
-        }
-    ],
-    "MMBN5": [
-        {
-            "title": "BN5",
-            "path": "bn5"
-        }
-    ],
-    "MMBN6": [
-        {
-            "title": "Test Battle Network 6 Route",
-            "path": "test_bn6"
-        }
-    ],
-    "MMSF1": [
-        {
-            "title": "Risch's Andromeda Infinity - Card Trader Manip, Gold MW Manip",
-            "path": "risch_mmsf1_ai_ctm_gmwm"
-        }
-    ],
-    "MMSF2": [
-        {
-            "title": "Risch's Rogue SX",
-            "path": "risch_mmsf2_rsx"
-        }
-    ],
-    "MMSF3": [
-        {
-            "title": "Risch's Crimson Dragon SP",
-            "path": "risch_mmsf3_cdsp"
-        }
-    ],
-    "OSS": []
+    "MMBN1": {
+        "name": "Mega Man Battle Network",
+        "routes": [
+            {
+                "title": "BN1",
+                "path": "bn1"
+            }
+        ]
+    },
+    "MMBN2": {
+        "name": "Mega Man Battle Network 2",
+        "routes": [
+            {
+                "title": "BN2",
+                "path": "bn2"
+            }
+        ]
+    },
+    "MMBN3": {
+        "name": "Mega Man Battle Network 3",
+        "routes": [
+            {
+                "title": "BN3",
+                "path": "bn3"
+            }
+        ]
+    },
+    "MMBN4": {
+        "name": "Mega Man Battle Network 4",
+        "routes": [
+            {
+                "title": "BN4",
+                "path": "bn4"
+            }
+        ]
+    },
+    "MMBN5": {
+        "name": "Mega Man Battle Network 5",
+        "routes": [
+            {
+                "title": "BN5",
+                "path": "bn5"
+            }
+        ]
+    },
+    "MMBN6": {
+        "name": "Mega Man Battle Network 6",
+        "routes": [
+            {
+                "title": "Test Battle Network 6 Route",
+                "path": "test_bn6"
+            }
+        ]
+    },
+    "MMSF1": {
+        "name": "Mega Man Star Force",
+        "routes": [
+            {
+                "title": "Risch's Andromeda Infinity - Card Trader Manip, Gold MW Manip",
+                "path": "risch_mmsf1_ai_ctm_gmwm"
+            }
+        ]
+    },
+    "MMSF2": {
+        "name": "Mega Man Star Force 2",
+        "routes": [
+            {
+                "title": "Risch's Rogue SX",
+                "path": "risch_mmsf2_rsx"
+            }
+        ]
+    },
+    "MMSF3": {
+        "name": "Mega Man Star Force 3",
+        "routes": [
+            {
+                "title": "Risch's Crimson Dragon SP",
+                "path": "risch_mmsf3_cdsp"
+            }
+        ]
+    },
+    "OSS": {
+        "name": "Rockman EXE Operate Shooting Star",
+        "routes": []
+    }
 }
