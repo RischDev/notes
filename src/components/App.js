@@ -1,4 +1,5 @@
 import React from 'react';
+import { HashRouter } from "react-router-dom";
 import { Switch } from "react-router-dom";
 import { Route as BrowserRoute } from "react-router-dom";
 import NotesTool from './notes/NotesTool';
@@ -6,9 +7,11 @@ import NotesTool from './notes/NotesTool';
 class App extends React.Component {
     render() {
         return (
-        <Switch>
-            <BrowserRoute path="/notes" component={NotesTool} />
-        </Switch>
+        <HashRouter>
+            <Switch>
+                <BrowserRoute path="/notes" component={NotesTool} />
+            </Switch>
+        </HashRouter>
         );
     }
 }
