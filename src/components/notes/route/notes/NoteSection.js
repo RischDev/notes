@@ -106,7 +106,7 @@ class NoteSection extends React.Component {
 
     render() {
         return (
-            <div id={"section-" + this.props.sectionId} className={styles.wrapper} ref={this.props.noteRef}>
+            <div id={"section-" + this.props.sectionId} className={`${styles.wrapper} card`} ref={this.props.noteRef}>
                 <div className="col-4">
                     <ul>
                         {this.state.text.map((text) =>

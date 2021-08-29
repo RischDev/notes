@@ -2,24 +2,18 @@
 	overflow-y: scroll;
 	overflow-x: hidden;
 	width: 35%;
-	height: 100vh;
+	height: 80vh;
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: left;
 }
 
-.fullSize {
-    width: 100%;
+.section {
+    margin: 5px 10px;
 }
 
-.menu {
-	width: -moz-calc(100% - 15px);
-	width: -webkit-calc(100% - 15px);
-	width: -o-calc(100% - 15px);
-	width: calc(100% - 15px);
-	margin: 5px 15px;
-	margin-top: 10px;
-	overflow: auto;
+.fullSize {
+    width: 100%;
 }
 
 .header {

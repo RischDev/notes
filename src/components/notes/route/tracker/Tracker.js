@@ -1,7 +1,6 @@
 import React from 'react';
 import styles from './styles/Tracker.Module.css';
 import Item from './Item';
-import Button from '../../../common/Button';
 
 class Tracker extends React.Component {
     render() {
@@ -9,23 +8,11 @@ class Tracker extends React.Component {
 
         let Items = require('../../../../resources/' + this.props.game + '/ItemNames.json');
 
-        let menu;
-        if (this.props.fullSize) {
-            menu = <img className="expand" src="/icons/collapse-right.png" alt="Show Notes" onClick={this.props.updateNotesDisplay} />;
-        } else {
-            menu = <img className="collapse right" src="/icons/collapse-right.png" alt="Hide Tracker" onClick={this.props.updateTrackerDisplay} />;
-        }
-
         if (this.props.display) {
             return(
                 <div className={`${styles.tracker} ${fullSizeClass}`}>
-                    <div className={styles.menu}>
-                        {menu}
-                        <Button text="Reset" size="small" onClick={this.props.resetTracker} />
-                    </div>
-
                     {Items.types.map((type) =>
-                        <div key={"type-" + type.name}>
+                        <div key={"type-" + type.name} className={`card ${styles.section}`}>
                             <div className={styles.header}>
                                 <h2>{type.name}</h2>
                             </div>

@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './styles/Route.Module.css';
+import Menu from './Menu';
 import Notes from './notes/Notes';
 import Tracker from './tracker/Tracker';
 
@@ -25,15 +26,29 @@ class Route extends React.Component {
         this.state = {
             showNotes: true,
             showTracker: true,
+            mode: "list",
             foundItems: initialFoundItems,
             foundModifiers: initialFoundModifiers,
             notes: notes
         }
 
+        this.changeMode = this.changeMode.bind(this);
         this.updateTracker = this.updateTracker.bind(this);
         this.resetTracker = this.resetTracker.bind(this);
         this.updateNotesDisplay = this.updateNotesDisplay.bind(this);
         this.updateTrackerDisplay = this.updateTrackerDisplay.bind(this);
+    }
+
+    changeMode () {
+        if (this.state.mode === "list") {
+            this.setState({
+                mode: "presenter"
+            })
+        } else if (this.state.mode === "presenter") {
+            this.setState({
+                mode: "list"
+            })
+        }
     }
 
     updateTracker(id, modifier) {
@@ -103,15 +118,23 @@ class Route extends React.Component {
     render() {
         return (
             <div className={`${styles.wrapper}`}>
+                <Menu
+                    showNotes={this.state.showNotes}
+                    showTracker={this.state.showTracker}
+                    resetTracker={this.resetTracker}
+                    mode={this.state.mode}
+                    changeMode={this.changeMode}
+                    updateNotesDisplay={this.updateNotesDisplay}
+                    updateTrackerDisplay={this.updateTrackerDisplay}
+                />
                 <Notes
                     display={this.state.showNotes}
                     fullSize={!this.state.showTracker}
+                    mode={this.state.mode}
                     notes={this.state.notes}
                     foundItems={this.state.foundItems}
                     foundModifiers={this.state.foundModifiers}
                     updateTracker={this.updateTracker}
-                    updateTrackerDisplay={this.updateTrackerDisplay}
-                    updateNotesDisplay={this.updateNotesDisplay}
                 />
 
                 <Tracker
@@ -121,9 +144,6 @@ class Route extends React.Component {
                     foundItems={this.state.foundItems}
                     foundModifiers={this.state.foundModifiers}
                     updateTracker={this.updateTracker}
-                    resetTracker={this.resetTracker}
-                    updateNotesDisplay={this.updateNotesDisplay}
-                    updateTrackerDisplay={this.updateTrackerDisplay}
                 />
             </div>
         );
