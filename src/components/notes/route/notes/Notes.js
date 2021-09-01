@@ -38,7 +38,6 @@ class Notes extends React.Component {
 
         let i = 0;
         if (scrollPosition > this.state.scrollPosition && this.state.section !== this.props.notes.sections.length) {
-            console.log(scrollPosition + " vs. " + Math.floor(newSectionTop + this.sectionRefs[this.state.section + i].current.getBoundingClientRect().height + 10))
             while (scrollPosition >= Math.floor(newSectionTop + this.sectionRefs[this.state.section + i].current.getBoundingClientRect().height + 10)) {
                 newSectionTop = newSectionTop + Math.floor(this.sectionRefs[this.state.section + i].current.getBoundingClientRect().height + 10);
                 i++;
@@ -67,6 +66,7 @@ class Notes extends React.Component {
 
     handleKeyPress(e) {
         let keyPress = e.key;
+        e.preventDefault();
 
         if (keyPress === "ArrowLeft" && this.state.section !== 0) {
             if (this.props.mode === "list") {
@@ -76,7 +76,7 @@ class Notes extends React.Component {
                     section: this.state.section - 1
                 });
             }
-        } else if (keyPress === "ArrowRight" && this.state.section !== this.props.notes.sections.length - 1) {
+        } else if ((keyPress === " " || keyPress === "ArrowRight") && this.state.section !== this.props.notes.sections.length - 1) {
             if (this.props.mode === "list") {
                 this.sectionRefs[this.state.section + 1].current.scrollIntoView({behavior: 'smooth'});
             } else if (this.props.mode === "presenter") {
