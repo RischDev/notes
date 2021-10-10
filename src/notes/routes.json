@@ -50,6 +50,10 @@
             {
                 "title": "Test Battle Network 6 Route",
                 "path": "test_bn6"
+            },
+			{
+                "title": "GregSP Route",
+                "path": "gregsp_route"
             }
         ]
     },
