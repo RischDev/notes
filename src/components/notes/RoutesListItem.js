@@ -21,11 +21,11 @@ class RoutesListItem extends React.Component {
     render() {
         return(
             <div className={styles.wrapper}>
-                <div to={"/notes/game/" + this.state.gameId + "/route/" + this.state.path} className={`${styles.link} col-5 col-m-6`}>
+                <Link to={"/notes/game/" + this.state.gameId + "/route/" + this.state.path} className={`${styles.link} col-5 col-m-6`}>
                     <div>
                         {this.state.route.title}
                     </div>
-                </div>
+                </Link>
                 <Link to={"/notes/game/" + this.state.gameId + "/route/" + this.state.path} className={`${styles.link} col-2 hidden-mobile`}>
                     <div>
                         {this.state.route.category}
