@@ -33,26 +33,26 @@ class RoutesList extends React.Component {
         return (
             <div className="page">
                 <div className={styles.wrapper}>
-                    <div className={"col-3 card"}>
+                    <div className={"col-3 col-m-12 card"}>
                         <h3>{this.state.gameName}</h3>
                         <img className={styles.gameArt} src={"/gameArt/" + this.state.gameId + ".png"} alt={this.state.gameId + ".png"} />
                     </div>
-                    <div className={"col-8 card"}>
+                    <div className={"col-8 col-m-12 card"}>
                         <h1>Routes</h1>
                         <div className={styles.wrapper + " " + styles.header}>
-                            <div className="col-5">
+                            <div className="col-5 col-m-6">
                                 Route Name
                             </div>
-                            <div className="col-2">
+                            <div className="col-2 hidden-mobile">
                                 Category
                             </div>
-                            <div className="col-2">
+                            <div className="col-2 col-m-4">
                                 Author
                             </div>
-                            <div className="col-2">
+                            <div className="col-2 hidden-mobile">
                                 Version
                             </div>
-                            <div className="col-1">
+                            <div className="col-1 col-m-2">
                                 Edit
                             </div>
                         </div>

@@ -24,7 +24,7 @@ class NotesHome extends React.Component {
                     <h1>Games</h1>
                     <div className={`${styles.wrapper}`}>
                         {games.map((gameId) =>
-                            <div className="col-2" key={"routesList" + gameId}>
+                            <div className="col-2 col-t-3 col-m-6" key={"routesList" + gameId}>
                                 <Link to={"/notes/game/" + gameId} className={`${styles.link}`}>
                                     <img className={`${styles.img}`} src={"/gameArt/" + gameId + ".png"} alt={gameId + ".png"} />
                                     <h4 className="gameLink">{routes[gameId].name}</h4>

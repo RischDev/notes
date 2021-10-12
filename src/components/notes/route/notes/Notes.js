@@ -23,11 +23,12 @@ class Notes extends React.Component {
 
         this.onScroll = this.onScroll.bind(this);
         this.handleKeyPress = this.handleKeyPress.bind(this);
+        this.previousSection = this.previousSection.bind(this);
+        this.nextSection = this.nextSection.bind(this);
     }
 
     componentDidUpdate(prevProps) {
         if (this.props.mode === "list" && this.props.mode !== prevProps.mode) {
-            console.log("test");
             this.sectionRefs[this.state.section].current.scrollIntoView({behavior: 'instant'});
         }
     }
@@ -87,6 +88,26 @@ class Notes extends React.Component {
         }
     }
 
+    previousSection(e) {
+        e.preventDefault();
+
+        if (this.state.section !== 0) {
+            this.setState({
+                section: this.state.section - 1
+            });
+        }
+    }
+
+    nextSection(e) {
+        e.preventDefault();
+
+        if (this.state.section !== this.props.notes.sections.length - 1) {
+            this.setState({
+                section: this.state.section + 1
+            });
+        }
+    }
+
     render() {
         const fullSizeClass = this.props.fullSize ? styles.fullSize : "";
 
@@ -102,6 +123,7 @@ class Notes extends React.Component {
                                 text={section.text}
                                 image={section.image}
                                 items={section.items}
+                                mode={this.props.mode}
                                 game={this.props.notes.game}
                                 foundItems={this.props.foundItems}
                                 foundModifiers={this.props.foundModifiers}
@@ -127,6 +149,8 @@ class Notes extends React.Component {
                             foundItems={this.props.foundItems}
                             foundModifiers={this.props.foundModifiers}
                             updateTracker={this.props.updateTracker}
+                            previousSection={this.previousSection}
+                            nextSection={this.nextSection}
                         />
                     </div>
                 )

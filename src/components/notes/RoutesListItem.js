@@ -20,25 +20,31 @@ class RoutesListItem extends React.Component {
 
     render() {
         return(
-            <Link to={"/notes/game/" + this.state.gameId + "/route/" + this.state.path} className={styles.wrapper}>
-                <div className="col-5">
-                    {this.state.route.title}
+            <div className={styles.wrapper}>
+                <div to={"/notes/game/" + this.state.gameId + "/route/" + this.state.path} className={`${styles.link} col-5 col-m-6`}>
+                    <div>
+                        {this.state.route.title}
+                    </div>
                 </div>
-                <div className="col-2">
-                    {this.state.route.category}
-                </div>
-                <div className="col-2">
-                    {this.state.route.author}
-                </div>
-                <div className="col-2">
-                    {this.state.route.version}
-                </div>
-                <div className="col-1">
-                    <Link to={"/notes/editRoute/" + this.state.path}>
-                        <Icon src="/icons/edit.png" size="small" altText="Edit" hover={true} hidden={false} />
-                    </Link>
-                </div>
-            </Link>
+                <Link to={"/notes/game/" + this.state.gameId + "/route/" + this.state.path} className={`${styles.link} col-2 hidden-mobile`}>
+                    <div>
+                        {this.state.route.category}
+                    </div>
+                </Link>
+                <Link to={"/notes/game/" + this.state.gameId + "/route/" + this.state.path} className={`${styles.link} col-2 col-m-4`}>
+                    <div>
+                        {this.state.route.author}
+                    </div>
+                </Link>
+                <Link to={"/notes/game/" + this.state.gameId + "/route/" + this.state.path} className={`${styles.link} col-2 hidden-mobile`}>
+                    <div>
+                        {this.state.route.version}
+                    </div>
+                </Link>
+                <Link to={"/notes/editRoute/" + this.state.path} className={`${styles.link} col-1 col-m-2`}>
+                    <Icon src="/icons/edit.png" size="small" altText="Edit" hover={true} hidden={false} />
+                </Link>
+            </div>
         );
     }
 }

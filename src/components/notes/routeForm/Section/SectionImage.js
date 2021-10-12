@@ -33,7 +33,7 @@ class SectionImage extends React.PureComponent {
             <div className="col-3">
                 <label htmlFor={"image-" + this.props.sectionId}>Image: </label>
                 <input type="file" name={"image-" + this.props.sectionId} onChange={this.onChange} />
-                <Icon src="/icons/delete.png" id={"deleteImage-" + this.props.sectionId} hover={true} hidden={this.props.image == null} altText="X" onClick={this.props.deleteImage} />
+                <Icon src="/icons/delete.png" id={"deleteImage-" + this.props.sectionId} size="small" hover={true} hidden={this.props.image == null} altText="X" onClick={this.props.deleteImage} />
                 <PreviewImage image={this.props.image} />
             </div>
         );

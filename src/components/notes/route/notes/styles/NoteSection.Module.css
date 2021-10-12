@@ -21,6 +21,13 @@
 	margin: 5px 10px;
 }
 
+/* For mobile phones: */
+@media only screen and (max-width: 600px) {
+    .wrapper {
+        align-items: flex-start;
+    }
+}
+
 .found {
     text-decoration: line-through;
 }

@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './styles/NoteSection.Module.css';
 import SmallItem from './SmallItem';
+import Icon from '../../../common/Icon';
 
 function Text(props) {
     const text = props.text;
@@ -39,7 +40,7 @@ function ItemsList(props) {
                 for (let j = 0; j < items.length; j++) {
                     let item2 = items[j];
 
-                    if (item2.value === item.value) {
+                    if (item2.value === item.value && item2.modifier && item2.modifier !== "" && item2.modifier != null) {
                         modifiers.push(item2.modifier);
                     }
                 }
@@ -62,7 +63,7 @@ function ItemsList(props) {
 
     if (items.length > 0) {
         return (
-            <div className="col-2">
+            <div className="col-2 col-m-12">
                 <div className={styles.header}>
                     Potential {Items.name + "s"}
                 </div>
@@ -73,7 +74,7 @@ function ItemsList(props) {
         );
     }
     return (
-        <div className="col-2"> </div>
+        <div className="col-2 col-m-12"> </div>
     );
 }
 
@@ -82,14 +83,14 @@ function Image(props) {
 
     if (image != null) {
         return (
-            <div className="col-6">
+            <div className="col-6 col-m-12">
                 <img className={styles.image} src={image} alt="" />
             </div>
         );
     }
 
     return (
-        <div className="col-6"> </div>
+        <div className="col-6 col-m-12"> </div>
     );
 }
 
@@ -105,19 +106,41 @@ class NoteSection extends React.Component {
     }
 
     render() {
-        return (
-            <div id={"section-" + this.props.sectionId} className={`${styles.wrapper} card`} ref={this.props.noteRef}>
-                <div className="col-4">
-                    <ul>
-                        {this.state.text.map((text) =>
-                            <Text key={"text-" + text.id} text={text} foundItems={this.props.foundItems} foundModifiers={this.props.foundModifiers} />
-                        )}
-                    </ul>
+        if (this.props.mode === "list") {
+            return (
+                <div id={"section-" + this.props.sectionId} className={`${styles.wrapper} card`} ref={this.props.noteRef}>
+                    <div className="col-4 col-m-12">
+                        <ul>
+                            {this.state.text.map((text) =>
+                                <Text key={"text-" + text.id} text={text} foundItems={this.props.foundItems} foundModifiers={this.props.foundModifiers} />
+                            )}
+                        </ul>
+                    </div>
+                    <ItemsList items={this.state.items} updateTracker={this.props.updateTracker} game={this.state.game} foundItems={this.props.foundItems} foundModifiers={this.props.foundModifiers} />
+                    <Image image={this.state.image} />
                 </div>
-                <ItemsList items={this.state.items} updateTracker={this.props.updateTracker} game={this.state.game} foundItems={this.props.foundItems} foundModifiers={this.props.foundModifiers} />
-                <Image image={this.state.image} />
-            </div>
-        );
+            );
+        } else if (this.props.mode === "presenter") {
+            return (
+                <div id={"section-" + this.props.sectionId} className={`${styles.wrapper} card`} ref={this.props.noteRef}>
+                    <div className="col-12 col-m-12">
+                        <Icon src="/icons/previous.png" size="large" altText="Previous" hover={true} hidden={false} onClick={this.props.previousSection} />
+                        <Icon src="/icons/next.png" size="large" altText="Next" hover={true} hidden={false} float={"right"} onClick={this.props.nextSection} />
+                    </div>
+                    <div className="col-4 col-m-12">
+                        <ul>
+                            {this.state.text.map((text) =>
+                                <Text key={"text-" + text.id} text={text} foundItems={this.props.foundItems} foundModifiers={this.props.foundModifiers} />
+                            )}
+                        </ul>
+                    </div>
+                    <ItemsList items={this.state.items} updateTracker={this.props.updateTracker} game={this.state.game} foundItems={this.props.foundItems} foundModifiers={this.props.foundModifiers} />
+                    <Image image={this.state.image} />
+                </div>
+            );
+        }
+
+        return null;
     }
 }
 
