@@ -24,7 +24,7 @@ class SmallItem extends React.Component {
         for (let i = 0; i < Items.types.length; i++) {
             let type = Items.types[i];
             if (props.id >= type.low && props.id <= type.high) {
-                className = type.name;
+                className = type.id;
                 break;
             }
         }

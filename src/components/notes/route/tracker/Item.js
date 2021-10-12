@@ -35,7 +35,7 @@ class Item extends React.Component {
 
             return(
                 <div>
-                    <div id={this.state.id} className={`${styles.item} ${this.theme[this.state.type.name]} ${this.theme.item} ${foundClass}`} onClick={this.updateFound}>
+                    <div id={this.state.id} className={`${styles.item} ${this.theme[this.state.type.id]} ${this.theme.item} ${foundClass}`} onClick={this.updateFound}>
                         <div className={`${styles.title} ${this.theme.title}`}>{(this.state.id - this.props.low + 1).toString().padStart(3, "0")} {this.state.name}</div>
                         <img className={`${styles.itemArt} ${this.theme.itemArt}`} src={"/items/" + this.state.game + "/" + this.state.id + ".png"} alt={this.state.name + " art"} />
                     </div>

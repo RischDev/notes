@@ -5,13 +5,27 @@
     "types": [
         {
             "name": "Standard",
+            "id": "Standard",
             "low": 0,
             "high": 199
         },
         {
             "name": "Mega",
+            "id": "Mega",
             "low": 200,
             "high": 259
+        },
+        {
+            "name": "Giga",
+            "id": "Giga",
+            "low": 263,
+            "high": 272
+        },
+        {
+            "name": "Program Advances",
+            "id": "PAs",
+            "low": 275,
+            "high": 304
         }
     ],
     "Items": [
@@ -1316,7 +1330,7 @@
             "modifiers": [ "D" ]
         },
         {
-            "name": "DunDelEX",
+            "name": "GunDelEX",
             "id": 260,
             "modifiers": [ "G" ]
         },
@@ -1389,6 +1403,156 @@
             "name": "Falzar",
             "id": 274,
             "modifiers": [ "X" ]
+        },
+        {
+            "name": "GigaCan1",
+            "id": 275,
+            "modifiers": []
+        },
+        {
+            "name": "GigaCan2",
+            "id": 276,
+            "modifiers": []
+        },
+        {
+            "name": "GigaCan3",
+            "id": 277,
+            "modifiers": []
+        },
+        {
+            "name": "WideBrn1",
+            "id": 278,
+            "modifiers": []
+        },
+        {
+            "name": "WideBrn2",
+            "id": 279,
+            "modifiers": []
+        },
+        {
+            "name": "WideBrn3",
+            "id": 280,
+            "modifiers": []
+        },
+        {
+            "name": "FlmHook1",
+            "id": 281,
+            "modifiers": []
+        },
+        {
+            "name": "FlmHook2",
+            "id": 282,
+            "modifiers": []
+        },
+        {
+            "name": "FlmHook3",
+            "id": 283,
+            "modifiers": []
+        },
+        {
+            "name": "PwrWave1",
+            "id": 284,
+            "modifiers": []
+        },
+        {
+            "name": "PwrWave2",
+            "id": 285,
+            "modifiers": []
+        },
+        {
+            "name": "PwrWave3",
+            "id": 286,
+            "modifiers": []
+        },
+        {
+            "name": "CornFsta",
+            "id": 287,
+            "modifiers": []
+        },
+        {
+            "name": "ParaShell",
+            "id": 288,
+            "modifiers": []
+        },
+        {
+            "name": "DestPuls",
+            "id": 289,
+            "modifiers": []
+        },
+        {
+            "name": "TimeBom+",
+            "id": 290,
+            "modifiers": []
+        },
+        {
+            "name": "StreamHd",
+            "id": 291,
+            "modifiers": []
+        },
+        {
+            "name": "SuperSpr",
+            "id": 292,
+            "modifiers": []
+        },
+        {
+            "name": "H-Burst",
+            "id": 293,
+            "modifiers": []
+        },
+        {
+            "name": "LifeSwrd",
+            "id": 294,
+            "modifiers": []
+        },
+        {
+            "name": "GreatYo",
+            "id": 295,
+            "modifiers": []
+        },
+        {
+            "name": "PitHocky",
+            "id": 296,
+            "modifiers": []
+        },
+        {
+            "name": "PoisPhar",
+            "id": 297,
+            "modifiers": []
+        },
+        {
+            "name": "BodyGrd",
+            "id": 298,
+            "modifiers": []
+        },
+        {
+            "name": "DublHero",
+            "id": 299,
+            "modifiers": []
+        },
+        {
+            "name": "Darkness",
+            "id": 300,
+            "modifiers": []
+        },
+        {
+            "name": "MstrCros",
+            "id": 301,
+            "modifiers": []
+        },
+        {
+            "name": "SunMoon",
+            "id": 302,
+            "modifiers": []
+        },
+        {
+            "name": "TwinLdrs",
+            "id": 303,
+            "modifiers": []
+        },
+        {
+            "name": "CrosOver",
+            "id": 304,
+            "modifiers": []
         }
     ]
 }
