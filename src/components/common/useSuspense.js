@@ -2,7 +2,6 @@ import { useMemo } from 'react';
 
 // Converts a promise into something that works with React Suspense.
 function createSuspenseResource(promise) {
-	console.log(promise);
 	let status = 'pending';
 	let result;
 	let suspender = promise.then(
