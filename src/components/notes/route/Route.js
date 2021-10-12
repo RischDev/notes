@@ -1,14 +1,30 @@
-import { useState, useCallback } from 'react';
+import { useState, useCallback, Suspense } from 'react';
 import styles from './styles/Route.Module.css';
 import Menu from './Menu';
 import Notes from './notes/Notes';
 import Tracker from './tracker/Tracker';
 import useMatchMedia from '../../common/Functions';
+import useSuspenseResource from '../../common/useSuspense';
 
 function Route(props) {
     const path = props.match.params.routePath;
+    const notesResource = useSuspenseResource(async () => {
+        const response = await fetch(
+            `${process.env.PUBLIC_URL}/notes/${path}.json`,
+        );
 
-    const notes = require('../../../notes/' + path + '.json');
+        return await response.json();
+    }, [path]);
+
+    return (
+        <Suspense fallback="Loading...">
+            <RouteImpl {...props} notesResource={notesResource} />
+        </Suspense>
+    );
+}
+
+function RouteImpl(props) {
+    const notes = props.notesResource.read();
     const Items = require('../../../resources/' + notes.game + '/ItemNames.json');
 
     let defaultMode = "list";
