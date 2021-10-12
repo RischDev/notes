@@ -10,7 +10,7 @@ Create a branch by going to [the repo home page](https://github.com/RischDev/not
 
 ## Step 2: Add your route to the new branch
 
-Upload your file into the `src/notes` directory.
+Upload your file into the `public/notes` directory.
 
 ## Step 3: Update routes.json (Optional)
 
