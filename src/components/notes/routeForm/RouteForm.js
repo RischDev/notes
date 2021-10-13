@@ -1,9 +1,28 @@
-import React from 'react';
+import React, { Suspense} from 'react';
 import styles from './styles/RouteForm.Module.css';
 import Section from './Section/Section';
 import Button from '../../common/Button';
+import useSuspenseResource from '../../common/useSuspense';
 
-class CreateRoute extends React.Component {
+function RouteForm(props) {
+    const path = props.match.params.path;
+
+    const notesResource = useSuspenseResource(async () => {
+        const response = await fetch(
+            `${process.env.PUBLIC_URL}/notes/${path}.json`,
+        );
+
+        return await response.json();
+    }, [path]);
+
+    return (
+        <Suspense fallback="Loading...">
+            <RouteFormImpl {...props} notesResource={notesResource} />
+        </Suspense>
+    );
+}
+
+class RouteFormImpl extends React.Component {
     constructor(props) {
         super(props);
 
@@ -23,7 +42,7 @@ class CreateRoute extends React.Component {
         }
 
         if (path != null) {
-            route = require('../../../notes/' + path + '.json');
+            route = props.notesResource.read();;
         }
 
         this.state = route;
@@ -332,4 +351,4 @@ class CreateRoute extends React.Component {
     }
 }
 
-export default CreateRoute;
+export default RouteForm;
