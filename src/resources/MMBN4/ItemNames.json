@@ -5,11 +5,13 @@
     "types": [
         {
             "name": "Standard",
+            "id": "Standard",
             "low": 0,
             "high": 149
         },
         {
             "name": "Mega",
+            "id": "Mega",
             "low": 150,
             "high": 227
         }

@@ -5,6 +5,7 @@
     "types": [
         {
             "name": "Battlechips",
+            "id": "Battlechips",
             "low": 0,
             "high": 179
         }
