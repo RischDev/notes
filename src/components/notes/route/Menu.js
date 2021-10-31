@@ -6,6 +6,11 @@ import useMatchMedia from '../../common/Functions';
 function Menu(props) {
     let modeText = props.mode === "presenter" ? "Swap to List Mode" : "Swap to Presenter Mode";
 
+    let previewButton = "";
+    if (props.preview) {
+        previewButton = <Button text="Edit Route" size="medium" onClick={props.swapPreview} />;
+    }
+
     // If on mobile, use a different button layout where users can only swap notes and tracker.
     if (useMatchMedia('(max-width: 600px)')) {
         let notesText = props.showNotes ? "Show Tracker" : "Show Notes";
@@ -14,6 +19,7 @@ function Menu(props) {
                 <Button text="Reset Tracker" size="medium" onClick={props.resetTracker} />
                 <Button text={notesText} size="medium" onClick={props.swapNotesAndTracker} />
                 <Button text={modeText} size="large" onClick={props.changeMode} />
+                {previewButton}
             </div>
         );
     } else {
@@ -26,6 +32,7 @@ function Menu(props) {
                 <Button text={showNotesText} size="medium" onClick={props.updateNotesDisplay} />
                 <Button text={showTrackerText} size="medium" onClick={props.updateTrackerDisplay} />
                 <Button text={modeText} size="large" onClick={props.changeMode} />
+                {previewButton}
             </div>
         );
     }

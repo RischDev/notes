@@ -7,7 +7,11 @@ import useMatchMedia from '../../common/Functions';
 import useSuspenseResource from '../../common/useSuspense';
 
 function Route(props) {
-    const path = props.match.params.routePath;
+    let path = "";
+    if (props.match != null) {
+        path = props.match.params.routePath;
+    }
+
     const notesResource = useSuspenseResource(async () => {
         const response = await fetch(
             `${process.env.PUBLIC_URL}/notes/${path}.json`,
@@ -24,7 +28,12 @@ function Route(props) {
 }
 
 function RouteImpl(props) {
-    const notes = props.notesResource.read();
+    let notes;
+    if (props.preview) {
+        notes = props.notes;
+    } else {
+        notes = props.notesResource.read();
+    }
     const Items = require('../../../resources/' + notes.game + '/ItemNames.json');
 
     let defaultMode = "list";
@@ -140,10 +149,12 @@ function RouteImpl(props) {
                 showTracker={showTracker}
                 resetTracker={resetTracker}
                 mode={mode}
+                preview={props.preview}
                 changeMode={changeMode}
                 updateNotesDisplay={updateNotesDisplay}
                 updateTrackerDisplay={updateTrackerDisplay}
                 swapNotesAndTracker={swapNotesAndTracker}
+                swapPreview={props.swapPreview}
             />
             <Notes
                 display={showNotes}
