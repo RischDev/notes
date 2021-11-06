@@ -1,17 +1,41 @@
 import React from 'react';
 import NoteSection from './NoteSection';
 import styles from './styles/Notes.Module.css';
+/*
+// Create refs for each section. Needed for observer
+    const sectionRefs = new Array(notes.sections.length);
+    notes.sections.map((section) =>
+        sectionRefs[section.id] = React.createRef()
+    );
+
+    //Display only the first 20 sections. Once the final element is in view, increase the number by 20 until all sections are rendered
+    const [numSections, setNumSections] = useState(20);
+    const renderNewSections = (entries, observer) => {
+        const [ entry ] = entries;
+
+        if (entry.isIntersecting && numSections !== notes.sections.length) {
+            setNumSections(prevNumSections => Math.min(prevNumSection + 20, notes.sections.length));
+            observer.observe(sectionRefs[numSections - 1].current);
+        }
+    }
+    const options = {
+        root: null,
+        rootMargin: "0px",
+        threshold: 0.5
+    }
+    const observer = new IntersectionObserver(renderNewSections, options);
+    observer.observe(sectionRefs[19].current);
+    */
 
 class Notes extends React.Component {
     constructor(props) {
         super(props);
 
         this.state = {
-            display: true,
-            fullSize: false,
             section: 0,
             sectionTop: 5,
             scrollPosition: 0,
+            numSections: 10
         }
 
         this.notesRef = React.createRef();
@@ -21,15 +45,45 @@ class Notes extends React.Component {
             this.sectionRefs[section.id] = React.createRef()
         );
 
+        const renderNewSections = (entries, observer) => {
+            const [ entry ] = entries;
+
+            if (entry.isIntersecting && this.state.numSections !== this.props.notes.sections.length) {
+                this.setState({
+                    numSections: Math.min(this.state.numSections + 10, this.props.notes.sections.length)
+                })
+            }
+        }
+        const options = {
+            root: null,
+            rootMargin: "0px",
+            threshold: 0.5
+        }
+
+        this.observer = new IntersectionObserver(renderNewSections, options);
+
         this.onScroll = this.onScroll.bind(this);
         this.handleKeyPress = this.handleKeyPress.bind(this);
         this.previousSection = this.previousSection.bind(this);
         this.nextSection = this.nextSection.bind(this);
     }
 
+    componentDidMount() {
+        // Update observer to the latest
+        this.observer.observe(this.sectionRefs[this.state.numSections - 1].current);
+    }
+
     componentDidUpdate(prevProps) {
         if (this.props.mode === "list" && this.props.mode !== prevProps.mode) {
             this.sectionRefs[this.state.section].current.scrollIntoView({behavior: 'instant'});
+        }
+
+        // Update observer to the latest
+        if (this.state.numSections !== this.props.notes.sections.length) {
+            if (this.state.numSections > 10) {
+                this.observer.unobserve(this.sectionRefs[this.state.numSections - 11].current);
+            }
+            this.observer.observe(this.sectionRefs[this.state.numSections - 1].current);
         }
     }
 
@@ -67,7 +121,9 @@ class Notes extends React.Component {
 
     handleKeyPress(e) {
         let keyPress = e.key;
-        e.preventDefault();
+        if (keyPress === "ArrowLeft" || keyPress === "ArrowRight" || keyPress === " ") {
+            e.preventDefault();
+        }
 
         if (keyPress === "ArrowLeft" && this.state.section !== 0) {
             if (this.props.mode === "list") {
@@ -115,7 +171,7 @@ class Notes extends React.Component {
             if (this.props.mode === "list") {
                 return(
                     <div onScroll={this.onScroll} onKeyDown={this.handleKeyPress} className={`${styles.notes} ${fullSizeClass}`} ref={this.notesRef} tabIndex="0">
-                        {this.props.notes.sections.map((section) =>
+                        {this.props.notes.sections.slice(0, this.state.numSections).map((section) =>
                             <NoteSection
                                 key={"section-" + section.id}
                                 sectionId={section.id}

@@ -279,7 +279,7 @@ class CreateSection extends React.Component {
         }
 
         return(
-            <div id={"section-" + this.props.section.id} className={`${styles.section}`}>
+            <div id={"section-" + this.props.section.id} ref={this.props.sectionRef} className={`${styles.section}`}>
                 <h3 className={`${styles.header}`}>Section {this.props.section.id + 1}</h3>
                 <Icon src="/icons/up.png" id={"moveSectionUp-" + this.props.section.id} size="small" altText="Up" hover={true} hidden={this.props.section.id === 0} onClick={this.props.moveSectionUp} />
                 <Icon src="/icons/down.png" id={"moveSectionDown-" + this.props.section.id} size="small" altText="Down" hover={true} hidden={this.props.section.id === this.props.max} onClick={this.props.moveSectionDown} />

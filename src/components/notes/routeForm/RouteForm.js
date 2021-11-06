@@ -40,15 +40,39 @@ class RouteFormImpl extends React.Component {
                 text: [],
                 items: []
             }],
-            preview: false
+            preview: false,
+            numSections: 10
         }
 
         if (path != null) {
             route = props.notesResource.read();
             route.preview  = false;
+            route.numSections =  10
         }
 
         this.state = route;
+
+        this.sectionRefs = new Array(this.state.sections.length);
+        this.state.sections.map((section) =>
+            this.sectionRefs[section.id] = React.createRef()
+        );
+
+        const renderNewSections = (entries, observer) => {
+            const [ entry ] = entries;
+
+            if (entry.isIntersecting && this.state.numSections !== this.state.sections.length) {
+                this.setState({
+                    numSections: Math.min(this.state.numSections + 10, this.state.sections.length)
+                })
+            }
+        }
+        const options = {
+            root: null,
+            rootMargin: "0px",
+            threshold: 0.3
+        }
+
+        this.observer = new IntersectionObserver(renderNewSections, options);
 
         this.addSection = this.addSection.bind(this);
         this.handleInputChange = this.handleInputChange.bind(this);
@@ -66,6 +90,24 @@ class RouteFormImpl extends React.Component {
         this.swapPreview = this.swapPreview.bind(this);
     }
 
+    componentDidMount() {
+        // Update observer to the latest
+        console.log(this.state.numSections - 1);
+        this.observer.observe(this.sectionRefs[this.state.numSections - 1].current);
+    }
+
+    componentDidUpdate(prevProps) {
+        if (this.props.mode === "list" && this.props.mode !== prevProps.mode) {
+            this.sectionRefs[this.state.section].current.scrollIntoView({behavior: 'instant'});
+        }
+
+        // Update observer to the latest
+        this.observer.disconnect();
+        if (this.state.numSections !== this.state.sections.length && !this.state.preview) {
+            this.observer.observe(this.sectionRefs[this.state.numSections - 1].current);
+        }
+    }
+
     addSection(e) {
         e.preventDefault();
 
@@ -76,7 +118,7 @@ class RouteFormImpl extends React.Component {
         let newSection = {
             id: sectionId,
             text: [],
-            items: []
+            items: [],
         };
 
         newSections.splice(sectionId, 0, newSection);
@@ -86,7 +128,8 @@ class RouteFormImpl extends React.Component {
         }
 
         this.setState({
-            sections: newSections
+            sections: newSections,
+            numSections: this.state.numSections + 1
         });
     }
 
@@ -257,7 +300,8 @@ class RouteFormImpl extends React.Component {
         newSections.splice(sectionId, 1);
 
         this.setState({
-            sections: newSections
+            sections: newSections,
+            numSections: this.state.numSections - 1
         });
     }
 
@@ -299,7 +343,8 @@ class RouteFormImpl extends React.Component {
 
     swapPreview() {
         this.setState({
-            preview: !this.state.preview
+            preview: !this.state.preview,
+            numSections: 10
         });
     }
 
@@ -348,9 +393,10 @@ class RouteFormImpl extends React.Component {
                         </div>
 
                         <div className={`${styles.sectionInfo}`}>
-                            {this.state.sections.map((section) =>
+                            {this.state.sections.slice(0, this.state.numSections).map((section) =>
                                 <Section
                                     key={"section-" + section.id}
+                                    sectionRef={this.sectionRefs[section.id]}
                                     section={section}
                                     max={this.state.sections.length - 1}
                                     game={this.state.game}
