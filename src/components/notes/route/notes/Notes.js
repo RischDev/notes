@@ -69,8 +69,10 @@ class Notes extends React.Component {
     }
 
     componentDidMount() {
-        // Update observer to the latest
-        this.observer.observe(this.sectionRefs[this.state.numSections - 1].current);
+        // Update observer to the latest. Only matter in list view
+        if (this.props.mode === "list") {
+            this.observer.observe(this.sectionRefs[this.state.numSections - 1].current);
+        }
     }
 
     componentDidUpdate(prevProps) {
@@ -78,11 +80,9 @@ class Notes extends React.Component {
             this.sectionRefs[this.state.section].current.scrollIntoView({behavior: 'instant'});
         }
 
-        // Update observer to the latest
-        if (this.state.numSections !== this.props.notes.sections.length) {
-            if (this.state.numSections > 10) {
-                this.observer.unobserve(this.sectionRefs[this.state.numSections - 11].current);
-            }
+        // Update observer to the latest. Only matter in list view
+        this.observer.disconnect();
+        if (this.state.numSections !== this.props.notes.sections.length && this.props.mode === "list") {
             this.observer.observe(this.sectionRefs[this.state.numSections - 1].current);
         }
     }
