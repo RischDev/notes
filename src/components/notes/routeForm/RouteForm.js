@@ -41,13 +41,13 @@ class RouteFormImpl extends React.Component {
                 items: []
             }],
             preview: false,
-            numSections: 10
+            numSections: 1
         }
 
         if (path != null) {
             route = props.notesResource.read();
             route.preview  = false;
-            route.numSections =  10
+            route.numSections = Math.min(10, route.sections.length)
         }
 
         this.state = route;
@@ -92,8 +92,9 @@ class RouteFormImpl extends React.Component {
 
     componentDidMount() {
         // Update observer to the latest
-        console.log(this.state.numSections - 1);
-        this.observer.observe(this.sectionRefs[this.state.numSections - 1].current);
+        if (this.state.sections.length > 10) {
+            this.observer.observe(this.sectionRefs[this.state.numSections - 1].current);
+        }
     }
 
     componentDidUpdate(prevProps) {
