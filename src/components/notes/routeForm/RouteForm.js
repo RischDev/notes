@@ -1,8 +1,8 @@
 import React, { Suspense} from 'react';
 import styles from './styles/RouteForm.Module.css';
-import Section from './Section/Section';
-import Button from '../../common/Button';
 import Route from '../route/Route';
+import SectionList from './SectionList';
+import RouteInfo from './RouteInfo';
 import useSuspenseResource from '../../common/useSuspense';
 
 function RouteForm(props) {
@@ -40,39 +40,15 @@ class RouteFormImpl extends React.Component {
                 text: [],
                 items: []
             }],
-            preview: false,
-            numSections: 1
+            preview: false
         }
 
         if (path != null) {
             route = props.notesResource.read();
             route.preview  = false;
-            route.numSections = Math.min(10, route.sections.length)
         }
 
         this.state = route;
-
-        this.sectionRefs = new Array(this.state.sections.length);
-        this.state.sections.map((section) =>
-            this.sectionRefs[section.id] = React.createRef()
-        );
-
-        const renderNewSections = (entries, observer) => {
-            const [ entry ] = entries;
-
-            if (entry.isIntersecting && this.state.numSections !== this.state.sections.length) {
-                this.setState({
-                    numSections: Math.min(this.state.numSections + 10, this.state.sections.length)
-                })
-            }
-        }
-        const options = {
-            root: null,
-            rootMargin: "0px",
-            threshold: 0.3
-        }
-
-        this.observer = new IntersectionObserver(renderNewSections, options);
 
         this.addSection = this.addSection.bind(this);
         this.handleInputChange = this.handleInputChange.bind(this);
@@ -88,25 +64,6 @@ class RouteFormImpl extends React.Component {
         this.deleteSection = this.deleteSection.bind(this);
         this.updateRoute = this.updateRoute.bind(this);
         this.swapPreview = this.swapPreview.bind(this);
-    }
-
-    componentDidMount() {
-        // Update observer to the latest
-        if (this.state.sections.length > 10) {
-            this.observer.observe(this.sectionRefs[this.state.numSections - 1].current);
-        }
-    }
-
-    componentDidUpdate(prevProps) {
-        if (this.props.mode === "list" && this.props.mode !== prevProps.mode) {
-            this.sectionRefs[this.state.section].current.scrollIntoView({behavior: 'instant'});
-        }
-
-        // Update observer to the latest
-        this.observer.disconnect();
-        if (this.state.numSections !== this.state.sections.length && !this.state.preview) {
-            this.observer.observe(this.sectionRefs[this.state.numSections - 1].current);
-        }
     }
 
     addSection(e) {
@@ -350,9 +307,6 @@ class RouteFormImpl extends React.Component {
     }
 
     render() {
-        let games = require("../../../resources/gamesList.json");
-        let routes = require("../../../notes/routes.json");
-
         if (this.state.preview) {
             return(
                 <div>
@@ -361,57 +315,27 @@ class RouteFormImpl extends React.Component {
             );
         } else {
             return(
-                <div className={`${styles.wrapper}`}>
-                    <form className={`${styles.wrapper} ${styles.form}`}>
-                        <div className={`${styles.routeInfo}`}>
-                            <h2>Update your Route</h2>
-                            <input type="text" name="title" className={`${styles.textInput}`} placeholder="Title" defaultValue={this.state.title} onBlur={this.handleInputChange} />
-                            <input type="text" name="path" className={`${styles.textInput}`} placeholder="Path" defaultValue={this.state.path} onBlur={this.handleInputChange} />
-                            <select name="game" className={`${styles.select}`} value={this.state.game} onChange={this.handleInputChange}>
-                                <option value="">Select a game</option>
-                                {games.map((game) =>
-                                    <option key={game} value={game}>{routes[game].name}</option>
-                                )}
-                            </select>
-                            <div className="row">
-                                <div>Import Text: <input type="file" name={"textImport"} onChange={this.handleInputChange} /></div>
-                                <div>Import JSON: <input type="file" name={"jsonImport"} onChange={this.handleInputChange} /></div>
-                                <Button text="Load Last Edit" size="medium" onClick={this.loadLastRouteEdit} />
-                                <Button text="Generate JSON File" size="medium" onClick={this.generateDownload} />
-                                <Button text="Preview Route" size="medium" onClick={this.swapPreview} />
-                            </div>
+                <form className={`${styles.wrapper} ${styles.form}`}>
+                    <RouteInfo
+                        title={this.state.title}
+                        path={this.state.path}
+                        game={this.state.game}
+                        handleInputChange={this.handleInputChange}
+                        loadLastRouteEdit={this.loadLastRouteEdit}
+                        generateDownload={this.generateDownload}
+                        swapPreview={this.swapPreview}
+                    />
 
-                            <div className={`${styles.instructions}`}>
-                                <h3>How to Use</h3>
-                                <ul>
-                                    <li>Fill out information about your route above.</li>
-                                    <li>If you have a text file, separate each "Section" by new lines. Upload it via the import option above.</li>
-                                    <li>If you have an existing JSON file generated by the tool, upload it via the import option above.</li>
-                                    <li>When you are done (or need to save your progress), click the Generate JSON file button, then click Create JSON link to save your file.</li>
-                                    <li>When your route is ready, create a new branch of the <a href="https://github.com/RischDev/notes" target="_blank" rel="noreferrer">notes repository</a>. Follow the instructions in the README.</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <div className={`${styles.sectionInfo}`}>
-                            {this.state.sections.slice(0, this.state.numSections).map((section) =>
-                                <Section
-                                    key={"section-" + section.id}
-                                    sectionRef={this.sectionRefs[section.id]}
-                                    section={section}
-                                    max={this.state.sections.length - 1}
-                                    game={this.state.game}
-                                    updateRoute={this.updateRoute}
-                                    moveSectionUp={this.moveSectionUp}
-                                    moveSectionDown={this.moveSectionDown}
-                                    addSection={this.addSection}
-                                    deleteSection={this.deleteSection}
-                                />
-                            )}
-                            <div className="bottom-buffer"> </div>
-                        </div>
-                    </form>
-                </div>
+                    <SectionList
+                        sections={this.state.sections}
+                        game={this.state.game}
+                        updateRoute={this.updateRoute}
+                        moveSectionUp={this.moveSectionUp}
+                        moveSectionDown={this.moveSectionDown}
+                        addSection={this.addSection}
+                        deleteSection={this.deleteSection}
+                    />
+                </form>
             );
         }
     }
