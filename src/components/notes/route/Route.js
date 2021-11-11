@@ -68,7 +68,6 @@ function RouteImpl(props) {
 
     const updateTracker = useCallback(
         (id, modifier) => {
-            console.log(id + " " + modifier);
             let newFoundItems = [...foundItems];
             let newFoundModifiers = foundModifiers !== null ? [...foundModifiers] : null;
             if (modifier == null) {

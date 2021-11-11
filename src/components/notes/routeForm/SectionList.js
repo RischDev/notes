@@ -1,23 +1,18 @@
-import { useState, useEffect, useRef, createRef } from 'react';
+import { useEffect, useCallback, useRef, createRef } from 'react';
 import Section from './Section/Section';
 
 import styles from './styles/SectionList.Module.css';
 
 function SectionList(props) {
-    const [numSections, setNumSections] = useState(10);
+    const sectionRefs = Array(props.sections.length).fill().map(() => createRef());
 
-    const sectionRefs = useRef([]);
-    props.sections.map((section) =>
-        sectionRefs.current[section.id] = createRef()
-    );
-
-    const renderNewSections = (entries, observer) => {
+    const renderNewSections = useCallback((entries, observer) => {
         const [ entry ] = entries;
 
-        if (entry.isIntersecting && numSections !== props.sections.length) {
-            setNumSections(prevNumSections => Math.min(prevNumSections + 10, props.sections.length));
+        if (entry.isIntersecting) {
+            props.updateNumSections();
         }
-    }
+    }, [props]);
     const options = {
         root: null,
         rootMargin: "0px",
@@ -28,18 +23,20 @@ function SectionList(props) {
 
     useEffect(() => {
         observer.current.disconnect();
-        if (numSections !== props.sections.length) {
-            observer.current.observe(sectionRefs.current[numSections - 1].current);
+        if (props.numSections < props.sections.length && sectionRefs[props.numSections -1].current != null) {
+            observer.current.observe(sectionRefs[props.numSections - 1].current);
         }
-    }, [numSections, props.sections, sectionRefs, observer]);
+    }, [props.numSections, props.sections, sectionRefs, observer]);
 
     return (
         <div className={`${styles.sectionList}`}>
-            {props.sections.slice(0, numSections).map((section) =>
+            {props.sections.slice(0, props.numSections).map((section) =>
                 <Section
                     key={"section-" + section.id}
-                    sectionRef={sectionRefs.current[section.id]}
+                    sectionRef={sectionRefs[section.id]}
                     section={section}
+                    sections={props.sections}
+                    initialState={props.initialState}
                     max={props.sections.length - 1}
                     game={props.game}
                     updateRoute={props.updateRoute}

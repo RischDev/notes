@@ -35,7 +35,7 @@ class Notes extends React.Component {
             section: 0,
             sectionTop: 5,
             scrollPosition: 0,
-            numSections: 10
+            numSections: Math.min(10, this.props.notes.sections.length)
         }
 
         this.notesRef = React.createRef();
@@ -70,7 +70,7 @@ class Notes extends React.Component {
 
     componentDidMount() {
         // Update observer to the latest. Only matter in list view
-        if (this.props.mode === "list") {
+        if (this.state.numSections < this.props.notes.sections.length && this.props.mode === "list") {
             this.observer.observe(this.sectionRefs[this.state.numSections - 1].current);
         }
     }
@@ -82,7 +82,7 @@ class Notes extends React.Component {
 
         // Update observer to the latest. Only matter in list view
         this.observer.disconnect();
-        if (this.state.numSections !== this.props.notes.sections.length && this.props.mode === "list") {
+        if (this.state.numSections < this.props.notes.sections.length && this.props.mode === "list") {
             this.observer.observe(this.sectionRefs[this.state.numSections - 1].current);
         }
     }
@@ -178,6 +178,7 @@ class Notes extends React.Component {
                                 noteRef={this.sectionRefs[section.id]}
                                 text={section.text}
                                 image={section.image}
+                                state={section.state}
                                 items={section.items}
                                 mode={this.props.mode}
                                 game={this.props.notes.game}
@@ -199,6 +200,7 @@ class Notes extends React.Component {
                             noteRef={this.sectionRefs[section.id]}
                             text={section.text}
                             image={section.image}
+                            state={section.state}
                             items={section.items}
                             mode={this.props.mode}
                             game={this.props.notes.game}

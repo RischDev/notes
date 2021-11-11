@@ -1,6 +1,21 @@
 {
     "MMBN1": {
         "name": "Mega Man Battle Network",
+        "initialState": {
+            "keys": ["Max HP", "Zenny", "Battlechips"],
+            "Max HP": {
+                "value": 100,
+                "shown": true
+            },
+            "Zenny": {
+                "value": 0,
+                "shown": true
+            },
+            "Battlechips": {
+                "value": 12,
+                "shown": true
+            }
+        },
         "routes": [
             {
                 "title": "BN1",
@@ -10,6 +25,25 @@
     },
     "MMBN2": {
         "name": "Mega Man Battle Network 2",
+        "initialState": {
+            "keys": ["Max HP", "Zenny", "Sneakruns", "Battlechips"],
+            "Max HP": {
+                "value": 100,
+                "shown": true
+            },
+            "Zenny": {
+                "value": 0,
+                "shown": true
+            },
+            "Sneakruns": {
+                "value": 0,
+                "shown": true
+            },
+            "Battlechips": {
+                "value": 12,
+                "shown": true
+            }
+        },
         "routes": [
             {
                 "title": "BN2",
@@ -19,6 +53,29 @@
     },
     "MMBN3": {
         "name": "Mega Man Battle Network 3",
+        "initialState": {
+            "keys": ["Max HP", "Zenny", "Standard", "Mega", "Giga"],
+            "Max HP": {
+                "value": 100,
+                "shown": true
+            },
+            "Zenny": {
+                "value": 0,
+                "shown": true
+            },
+            "Standard": {
+                "value": 12,
+                "shown": true
+            },
+            "Mega": {
+                "value": 0,
+                "shown": true
+            },
+            "Giga": {
+                "value": 0,
+                "shown": true
+            }
+        },
         "routes": [
             {
                 "title": "BN3",
@@ -28,6 +85,33 @@
     },
     "MMBN4": {
         "name": "Mega Man Battle Network 4",
+        "initialState": {
+            "keys": ["Max HP", "Zenny", "Sneakruns", "Standard", "Mega", "Giga"],
+            "Max HP": {
+                "value": 100,
+                "shown": true
+            },
+            "Zenny": {
+                "value": 0,
+                "shown": true
+            },
+            "Sneakruns": {
+                "value": 0,
+                "shown": true
+            },
+            "Standard": {
+                "value": 12,
+                "shown": true
+            },
+            "Mega": {
+                "value": 0,
+                "shown": true
+            },
+            "Giga": {
+                "value": 0,
+                "shown": true
+            }
+        },
         "routes": [
             {
                 "title": "BN4",
@@ -37,6 +121,33 @@
     },
     "MMBN5": {
         "name": "Mega Man Battle Network 5",
+        "initialState": {
+            "keys": ["Max HP", "Zenny", "Sneakruns", "Standard", "Mega", "Giga"],
+            "Max HP": {
+                "value": 100,
+                "shown": true
+            },
+            "Zenny": {
+                "value": 0,
+                "shown": true
+            },
+            "Sneakruns": {
+                "value": 0,
+                "shown": true
+            },
+            "Standard": {
+                "value": 12,
+                "shown": true
+            },
+            "Mega": {
+                "value": 0,
+                "shown": true
+            },
+            "Giga": {
+                "value": 0,
+                "shown": true
+            }
+        },
         "routes": [
             {
                 "title": "BN5",
@@ -46,6 +157,33 @@
     },
     "MMBN6": {
         "name": "Mega Man Battle Network 6",
+        "initialState": {
+            "keys": ["Max HP", "Zenny", "Sneakruns", "Standard", "Mega", "Giga"],
+            "Max HP": {
+                "value": 100,
+                "shown": true
+            },
+            "Zenny": {
+                "value": 0,
+                "shown": true
+            },
+            "Sneakruns": {
+                "value": 0,
+                "shown": true
+            },
+            "Standard": {
+                "value": 12,
+                "shown": true
+            },
+            "Mega": {
+                "value": 0,
+                "shown": true
+            },
+            "Giga": {
+                "value": 0,
+                "shown": true
+            }
+        },
         "routes": [
             {
                 "title": "Test Battle Network 6 Route",
@@ -59,6 +197,33 @@
     },
     "MMSF1": {
         "name": "Mega Man Star Force",
+        "initialState": {
+            "keys": ["Max HP", "Zenny", "Cloakers", "Standard", "Mega", "Giga"],
+            "Max HP": {
+                "value": 100,
+                "shown": true
+            },
+            "Zenny": {
+                "value": 0,
+                "shown": true
+            },
+            "Cloakers": {
+                "value": 0,
+                "shown": true
+            },
+            "Standard": {
+                "value": 12,
+                "shown": true
+            },
+            "Mega": {
+                "value": 0,
+                "shown": true
+            },
+            "Giga": {
+                "value": 0,
+                "shown": true
+            }
+        },
         "routes": [
             {
                 "title": "Risch's Andromeda Infinity - Card Trader Manip, Gold MW Manip",
@@ -68,6 +233,49 @@
     },
     "MMSF2": {
         "name": "Mega Man Star Force 2",
+        "initialState": {
+            "keys": ["Max HP", "Zenny", "Cloakers", "FireSrch", "AquaSrch", "ElecSrch", "WoodSrch", "Standard", "Mega", "Giga"],
+            "Max HP": {
+                "value": 100,
+                "shown": true
+            },
+            "Zenny": {
+                "value": 0,
+                "shown": true
+            },
+            "Cloakers": {
+                "value": 0,
+                "shown": true
+            },
+            "FireSrch": {
+                "value": 0,
+                "shown": true
+            },
+            "AquaSrch": {
+                "value": 0,
+                "shown": true
+            },
+            "ElecSrch": {
+                "value": 0,
+                "shown": true
+            },
+            "WoodSrch": {
+                "value": 0,
+                "shown": true
+            },
+            "Standard": {
+                "value": 12,
+                "shown": true
+            },
+            "Mega": {
+                "value": 0,
+                "shown": true
+            },
+            "Giga": {
+                "value": 0,
+                "shown": true
+            }
+        },
         "routes": [
             {
                 "title": "Risch's Rogue SX",
@@ -77,6 +285,33 @@
     },
     "MMSF3": {
         "name": "Mega Man Star Force 3",
+        "initialState": {
+            "keys": ["Max HP", "Zenny", "Cloakers", "Standard", "Mega", "Giga"],
+            "Max HP": {
+                "value": 100,
+                "shown": true
+            },
+            "Zenny": {
+                "value": 0,
+                "shown": true
+            },
+            "Cloakers": {
+                "value": 0,
+                "shown": true
+            },
+            "Standard": {
+                "value": 12,
+                "shown": true
+            },
+            "Mega": {
+                "value": 0,
+                "shown": true
+            },
+            "Giga": {
+                "value": 0,
+                "shown": true
+            }
+        },
         "routes": [
             {
                 "title": "Risch's Crimson Dragon SP",
@@ -86,6 +321,21 @@
     },
     "OSS": {
         "name": "Rockman EXE Operate Shooting Star",
+        "initialState": {
+            "keys": ["Max HP", "Zenny", "Battlechips"],
+            "Max HP": {
+                "value": 100,
+                "shown": true
+            },
+            "Zenny": {
+                "value": 0,
+                "shown": true
+            },
+            "Battlechips": {
+                "value": 12,
+                "shown": true
+            }
+        },
         "routes": []
     }
 }

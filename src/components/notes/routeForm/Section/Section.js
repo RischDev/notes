@@ -5,6 +5,7 @@ import Icon from '../../../common/Icon';
 import SectionText from './SectionText';
 import SectionItem from './SectionItem';
 import SectionImage from './SectionImage';
+import SectionState from './SectionState';
 
 class CreateSection extends React.Component {
     constructor(props) {
@@ -13,8 +14,10 @@ class CreateSection extends React.Component {
         this.updateText = this.updateText.bind(this);
         this.updateItems = this.updateItems.bind(this);
         this.updateImage = this.updateImage.bind(this);
+        this.updateState = this.updateState.bind(this);
         this.addText = this.addText.bind(this);
         this.addItem = this.addItem.bind(this);
+        this.addState = this.addState.bind(this);
         this.moveTextUp = this.moveTextUp.bind(this);
         this.moveTextDown = this.moveTextDown.bind(this);
         this.moveItemUp = this.moveItemUp.bind(this);
@@ -22,6 +25,7 @@ class CreateSection extends React.Component {
         this.deleteText = this.deleteText.bind(this);
         this.deleteItem = this.deleteItem.bind(this);
         this.deleteImage = this.deleteImage.bind(this);
+        this.deleteState = this.deleteState.bind(this);
     }
 
     shouldComponentUpdate(nextProps, nextState) {
@@ -60,6 +64,10 @@ class CreateSection extends React.Component {
         }
 
         if (this.props.section.image !== nextProps.section.image) {
+            return true;
+        }
+
+        if (this.props.section.state !== nextProps.section.state) {
             return true;
         }
 
@@ -117,6 +125,15 @@ class CreateSection extends React.Component {
         this.props.updateRoute(sectionId, newSection);
     }
 
+    updateState(sectionId, state) {
+        // Stringify then parse JSON to create deep copy.
+        let newSection = JSON.parse(JSON.stringify(this.props.section));
+
+        newSection.state = state;
+
+        this.props.updateRoute(sectionId, newSection);
+    }
+
     addText(e) {
         // Stringify then parse JSON to create deep copy.
         e.preventDefault();
@@ -144,6 +161,30 @@ class CreateSection extends React.Component {
 
         this.props.updateRoute(this.props.section.id, newSection);
     }
+
+    addState(e) {
+        e.preventDefault();
+
+        // Stringify then parse JSON to create deep copy.
+        let newSection = JSON.parse(JSON.stringify(this.props.section));
+
+        // Check previous sections for the last state value
+        let state = null;
+        for (let i = this.props.section.id - 1; i >= 0; i--) {
+            if (this.props.sections[i].state != null) {
+                state = this.props.sections[i].state;
+                break;
+            }
+        }
+
+        if (state == null) {
+            state = this.props.initialState;
+        }
+
+        newSection.state = state;
+
+        this.props.updateRoute(this.props.section.id, newSection);
+     }
 
     moveTextUp(e) {
         e.preventDefault();
@@ -272,11 +313,24 @@ class CreateSection extends React.Component {
         this.props.updateRoute(this.props.section.id, newSection);
     }
 
+    deleteState(e) {
+        e.preventDefault();
+
+        // Stringify then parse JSON to create deep copy.
+        let newSection = JSON.parse(JSON.stringify(this.props.section));
+
+        newSection.state = null;
+
+        this.props.updateRoute(this.props.section.id, newSection);
+    }
+
     render() {
         let Items = require('../../../../resources/ItemNames.json');
         if (this.props.game !== "" && this.props.game != null) {
             Items = require('../../../../resources/' + this.props.game + '/ItemNames.json');
         }
+
+        const addStateButton = (!this.props.section.state && this.props.game) ? <Button text="Add State" size="medium" onClick={this.addState} /> : "";
 
         return(
             <div id={"section-" + this.props.section.id} ref={this.props.sectionRef} className={`${styles.section}`}>
@@ -315,7 +369,10 @@ class CreateSection extends React.Component {
                             />
                         )}
                     </div>
-                    <SectionImage sectionId={this.props.section.id} image={this.props.section.image} updateImage={this.updateImage} deleteImage={this.deleteImage} />
+                    <div className="col-3">
+                        <SectionImage sectionId={this.props.section.id} image={this.props.section.image} updateImage={this.updateImage} deleteImage={this.deleteImage} />
+                        <SectionState sectionId={this.props.section.id} state={this.props.section.state} updateState={this.updateState} deleteState={this.deleteState} />
+                    </div>
                 </div>
                 <div className={`${styles.wrapper}`}>
                     <div className="col-6">
@@ -325,7 +382,7 @@ class CreateSection extends React.Component {
                          <Button text={"Add " + Items.name} size="medium" onClick={this.addItem} />
                     </div>
                     <div className="col-3">
-
+                        {addStateButton}
                     </div>
                 </div>
                 <Button text="Add Section" id={"addSection-" + (this.props.section.id + 1)} size="medium"onClick={this.props.addSection} />

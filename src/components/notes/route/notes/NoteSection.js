@@ -79,45 +79,54 @@ function ItemsList(props) {
 }
 
 function Image(props) {
-    const image = props.image;
-
-    if (image != null) {
+    if (props.image != null) {
         return (
-            <div className="col-6 col-m-12">
-                <img className={styles.image} src={image} alt="" />
+            <img className={styles.image} src={props.image} alt="" />
+        );
+    }
+
+    return null;
+}
+
+function State(props) {
+    if (props.state != null) {
+        console.log(props.state);
+        return (
+            <div className={styles.wrapper}>
+                {props.state.keys.map((key) =>
+                    <div className={`${styles.wrapper} ${!props.state[key].shown ? styles.hidden : ''}`} key={key}>
+                        <div className="col-3">
+                            {key}
+                        </div>
+                        <div className="col-2">
+                            {props.state[key].value}
+                        </div>
+                    </div>
+                )}
             </div>
         );
     }
 
-    return (
-        <div className="col-6 col-m-12"> </div>
-    );
+    return null;
 }
 
 class NoteSection extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            text: props.text,
-            image: props.image,
-            items: props.items,
-            game: props.game
-        }
-    }
-
     render() {
         if (this.props.mode === "list") {
             return (
                 <div id={"section-" + this.props.sectionId} className={`${styles.wrapper} card`} ref={this.props.noteRef}>
                     <div className="col-4 col-m-12">
                         <ul>
-                            {this.state.text.map((text) =>
+                            {this.props.text.map((text) =>
                                 <Text key={"text-" + text.id} text={text} foundItems={this.props.foundItems} foundModifiers={this.props.foundModifiers} />
                             )}
                         </ul>
                     </div>
-                    <ItemsList items={this.state.items} updateTracker={this.props.updateTracker} game={this.state.game} foundItems={this.props.foundItems} foundModifiers={this.props.foundModifiers} />
-                    <Image image={this.state.image} />
+                    <ItemsList items={this.props.items} updateTracker={this.props.updateTracker} game={this.props.game} foundItems={this.props.foundItems} foundModifiers={this.props.foundModifiers} />
+                    <div className="col-6 col-m-12">
+                        <Image image={this.props.image} />
+                        <State state={this.props.state} />
+                    </div>
                 </div>
             );
         } else if (this.props.mode === "presenter") {
@@ -129,13 +138,16 @@ class NoteSection extends React.Component {
                     </div>
                     <div className="col-4 col-m-12">
                         <ul>
-                            {this.state.text.map((text) =>
+                            {this.props.text.map((text) =>
                                 <Text key={"text-" + text.id} text={text} foundItems={this.props.foundItems} foundModifiers={this.props.foundModifiers} />
                             )}
                         </ul>
                     </div>
-                    <ItemsList items={this.state.items} updateTracker={this.props.updateTracker} game={this.state.game} foundItems={this.props.foundItems} foundModifiers={this.props.foundModifiers} />
-                    <Image image={this.state.image} />
+                    <ItemsList items={this.props.items} updateTracker={this.props.updateTracker} game={this.props.game} foundItems={this.props.foundItems} foundModifiers={this.props.foundModifiers} />
+                    <div className="col-6 col-m-12">
+                        <Image image={this.props.image} />
+                        <State state={this.props.state} />
+                    </div>
                 </div>
             );
         }

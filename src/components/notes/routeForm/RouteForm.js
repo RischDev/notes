@@ -5,6 +5,9 @@ import SectionList from './SectionList';
 import RouteInfo from './RouteInfo';
 import useSuspenseResource from '../../common/useSuspense';
 
+const equal = require("deep-equal");
+const routes = require("../../../notes/routes.json");
+
 function RouteForm(props) {
     const path = props.match.params.path;
 
@@ -30,22 +33,39 @@ class RouteFormImpl extends React.Component {
         let gameId = props.match.params.gameId;
         let path = props.match.params.path;
 
+        let initialState = {};
+        if (gameId != null) {
+            initialState = routes[gameId].initialState;
+        }
+
         let route = {
             title: "",
             path: "",
             game: gameId,
             version: "1.0",
+            initialState: initialState,
             sections: [{
                 id: 0,
                 text: [],
                 items: []
             }],
-            preview: false
+            preview: false,
+            numSections: 1
         }
 
         if (path != null) {
             route = props.notesResource.read();
-            route.preview  = false;
+            route.preview = false;
+            route.numSections = Math.min(10, route.sections.length);
+
+            initialState = routes[route.game].initialState;
+
+            // If initial state is different, the state variables need to be updated
+            if (!equal(initialState, route.initialState)) {
+                route.initialState = initialState;
+
+                // TODO: Update state variables in each section to add new keys.
+            }
         }
 
         this.state = route;
@@ -62,6 +82,7 @@ class RouteFormImpl extends React.Component {
         this.moveSectionDown = this.moveSectionDown.bind(this);
         this.loadLastRouteEdit = this.loadLastRouteEdit.bind(this);
         this.deleteSection = this.deleteSection.bind(this);
+        this.updateNumSections = this.updateNumSections.bind(this);
         this.updateRoute = this.updateRoute.bind(this);
         this.swapPreview = this.swapPreview.bind(this);
     }
@@ -183,6 +204,15 @@ class RouteFormImpl extends React.Component {
             this.handleUpload(e.target.files[0], this.importText);
         } else if (name.includes("jsonImport")) {
             this.handleUpload(e.target.files[0], this.importJSON);
+        } else if (name.includes("game")) {
+            newRoute[name] = value;
+
+            // Reset state for each section, update initial state
+            if (value !== "") {
+                newRoute.initialState = routes[value].initialState;
+            } else {
+                newRoute.initialState = null;
+            }
         } else {
             newRoute[name] = value;
         }
@@ -263,6 +293,13 @@ class RouteFormImpl extends React.Component {
         });
     }
 
+    updateNumSections() {
+
+        this.setState({
+            numSections: Math.min(this.state.numSections + 10, this.state.sections.length)
+        })
+    }
+
     loadLastRouteEdit(e) {
         e.preventDefault();
 
@@ -278,9 +315,18 @@ class RouteFormImpl extends React.Component {
     generateDownload(e) {
         e.preventDefault();
 
+        const route = {
+            title: this.state.title,
+            path: this.state.path,
+            game: this.state.game,
+            version: this.state.version,
+            initialState: this.state.initialState,
+            sections: this.state.sections
+        }
+
         let a = document.createElement('a');
-        a.href = "data:text/json;charset=utf-8," + JSON.stringify(this.state);
-        a.download = this.state.path + ".json";
+        a.href = "data:text/json;charset=utf-8," + JSON.stringify(route);
+        a.download = route.path + ".json";
         a.click();
     }
 
@@ -288,7 +334,7 @@ class RouteFormImpl extends React.Component {
         // JSON stringify, then JSON parse to make a deep copy.
         let newRoute = JSON.parse(JSON.stringify(this.state));
         newRoute.sections[sectionId] = section;
-        this.setState(newRoute)
+        this.setState(newRoute);
 
         try {
             localStorage.setItem("lastRouteEdit", JSON.stringify(newRoute));
@@ -328,12 +374,15 @@ class RouteFormImpl extends React.Component {
 
                     <SectionList
                         sections={this.state.sections}
+                        initialState={this.state.initialState}
+                        numSections={this.state.numSections}
                         game={this.state.game}
                         updateRoute={this.updateRoute}
                         moveSectionUp={this.moveSectionUp}
                         moveSectionDown={this.moveSectionDown}
                         addSection={this.addSection}
                         deleteSection={this.deleteSection}
+                        updateNumSections={this.updateNumSections}
                     />
                 </form>
             );
