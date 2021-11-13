@@ -76,13 +76,13 @@ class Notes extends React.Component {
     }
 
     componentDidUpdate(prevProps) {
-        if (this.props.mode === "list" && this.props.mode !== prevProps.mode) {
+        if (this.props.mode === "list" && this.props.display && (this.props.mode !== prevProps.mode || !prevProps.display)) {
             this.sectionRefs[this.state.section].current.scrollIntoView({behavior: 'instant'});
         }
 
         // Update observer to the latest. Only matter in list view
         this.observer.disconnect();
-        if (this.state.numSections < this.props.notes.sections.length && this.props.mode === "list") {
+        if (this.state.numSections < this.props.notes.sections.length && this.props.mode === "list" && this.props.display) {
             this.observer.observe(this.sectionRefs[this.state.numSections - 1].current);
         }
     }
