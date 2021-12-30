@@ -152,7 +152,11 @@
             {
                 "title": "BN5",
                 "path": "bn5"
-            }
+            },
+	    {
+		"title": "BN5 Colonel Any% No ASE",
+                "path": "mmbn5c_no_ase"
+	    }
         ]
     },
     "MMBN6": {
