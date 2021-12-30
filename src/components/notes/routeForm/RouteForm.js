@@ -325,7 +325,7 @@ class RouteFormImpl extends React.Component {
         }
 
         let a = document.createElement('a');
-        a.href = "data:text/json;charset=utf-8," + JSON.stringify(route);
+        a.href = "data:text/json;base64;charset=utf-8," + btoa(JSON.stringify(route));
         a.download = route.path + ".json";
         a.click();
     }
