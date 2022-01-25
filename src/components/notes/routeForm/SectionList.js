@@ -1,4 +1,4 @@
-import { useState, useEffect, useContext } from 'react';
+import { useState, useEffect, useCallback, useContext } from 'react';
 import RouteContext from '../../common/RouteContext';
 import InfiniteScroll from 'react-infinite-scroll-component';
 import Section from './Section/Section';
@@ -29,7 +29,7 @@ function SectionList(props) {
         setContext({ route: { ...route, sections: newSections } });
     }
 
-    const addSection = (id) => {
+    const addSection = useCallback((id) => {
         let newSections = [...route.sections];
         let newSection = {
             id: id,
@@ -45,9 +45,9 @@ function SectionList(props) {
 
         setContext({ route: { ...route, sections: newSections } });
         setNumSections(numSections + 1);
-    }
+    }, [route, setContext, numSections, setNumSections]);
 
-    const moveSectionUp = (id) => {
+    const moveSectionUp = useCallback((id) => {
         // Stringify then parse JSON to create deep copy.
         let newSections = JSON.parse(JSON.stringify(route.sections));
 
@@ -60,9 +60,9 @@ function SectionList(props) {
         newSections[id - 1] = chosenSection;
 
         setContext({ route: { ...route, sections: newSections } });
-    }
+    }, [route, setContext]);
 
-    const moveSectionDown = (id) => {
+    const moveSectionDown = useCallback((id) => {
         // Stringify then parse JSON to create deep copy.
         let newSections = JSON.parse(JSON.stringify(route.sections));
 
@@ -75,9 +75,9 @@ function SectionList(props) {
         newSections[id + 1] = chosenSection;
 
         setContext({ route: { ...route, sections: newSections } });
-    }
+    }, [route, setContext]);
 
-    const deleteSection = (id) => {
+    const deleteSection = useCallback((id) => {
         // JSON stringify, then JSON parse to make a deep copy.
         let newSections = JSON.parse(JSON.stringify(route.sections));
 
@@ -88,7 +88,7 @@ function SectionList(props) {
         newSections.splice(id, 1);
 
         setContext({ route: { ...route, sections: newSections } });
-    }
+    }, [route, setContext]);
 
     const getLastState = (id) => {
         // Check previous sections for the last state value
@@ -125,9 +125,7 @@ function SectionList(props) {
                         key={"section-" + section.id}
                         section={section}
                         setSection={setSection}
-                        initialState={route.initialState}
                         max={route.sections.length - 1}
-                        updateRoute={props.updateRoute}
                         moveSectionUp={moveSectionUp}
                         moveSectionDown={moveSectionDown}
                         addSection={addSection}

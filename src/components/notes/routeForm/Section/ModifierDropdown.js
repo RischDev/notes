@@ -1,13 +1,9 @@
 import { useContext } from 'react';
-import RouteContext from '../../../common/RouteContext';
+import GameContext from '../../../common/GameContext';
 import styles from "./styles/ModifierDropdown.Module.css";
 
 function ModifierDropdown(props) {
-    const {
-        route: {
-            game
-        }
-    } = useContext(RouteContext);
+    const game = useContext(GameContext);
 
     const onModifierUpdate = (e) => {
         let value = e.target.value;

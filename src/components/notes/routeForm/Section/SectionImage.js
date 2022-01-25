@@ -2,7 +2,15 @@ import React from 'react';
 import PreviewImage from './PreviewImage';
 import Icon from '../../../common/Icon';
 
-function SectionImage(props) {
+function shouldUpdate(oldProps, newProps) {
+    if (oldProps.image !== newProps.image) {
+        return false;
+    }
+
+    return true;
+}
+
+const SectionImage = React.memo((props) => {
     const getBase64 = (file, callback) => {
         let reader = new FileReader();
         reader.readAsDataURL(file);
@@ -22,6 +30,6 @@ function SectionImage(props) {
             <PreviewImage image={props.image} />
         </div>
     );
-}
+}, shouldUpdate);
 
 export default SectionImage;

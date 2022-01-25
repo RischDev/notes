@@ -1,14 +1,18 @@
-import { useContext } from 'react';
-import RouteContext from '../../../common/RouteContext';
+import { useContext, memo } from 'react';
+import GameContext from '../../../common/GameContext';
 import styles from './styles/ItemDropdown.Module.css';
 import Icon from '../../../common/Icon';
 
-function ItemDropdown(props) {
-    const {
-        route: {
-            game
-        }
-    } = useContext(RouteContext);
+function shouldUpdate(oldProps, newProps) {
+    if (oldProps.item !== newProps.item) {
+        return false;
+    }
+
+    return true;
+}
+
+const ItemDropdown = memo((props) => {
+    const game = useContext(GameContext);
 
     const onUpdateItem = (e) => {
         let value = e.target.value;
@@ -62,6 +66,6 @@ function ItemDropdown(props) {
     }
 
     return null;
-}
+}, shouldUpdate);
 
 export default ItemDropdown;
