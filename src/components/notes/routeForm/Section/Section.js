@@ -1,8 +1,8 @@
 /** @format */
 
-import { useContext } from 'react';
+import { useCallback, useContext } from 'react';
 import styles from './styles/Section.Module.css';
-import RouteContext from '../../../common/RouteContext';
+import GameContext from '../../../common/GameContext';
 import Button from '../../../common/Button';
 import Icon from '../../../common/Icon';
 import SectionText from './SectionText';
@@ -11,20 +11,16 @@ import SectionImage from './SectionImage';
 import SectionState from './SectionState';
 
 function Section(props) {
-    const {
-        route: {
-            game
-        }
-    } = useContext(RouteContext);
+    const game = useContext(GameContext);
 
-    const updateText = (text, id) => {
+    const updateText = useCallback((text, id) => {
         // Stringify then parse JSON to create deep copy.
         let newSection = JSON.parse(JSON.stringify(props.section));
         newSection.text[id] = text;
         props.setSection(newSection, props.section.id);
-    }
+    }, [props]);
 
-    const addText = (e) => {
+    const addText = useCallback((e) => {
         // Stringify then parse JSON to create deep copy.
         e.preventDefault();
 
@@ -34,9 +30,9 @@ function Section(props) {
             text: '',
         });
         props.setSection(newSection, props.section.id)
-    }
+    }, [props]);
 
-    const moveTextUp = (id) => {
+    const moveTextUp = useCallback((id) => {
         // Stringify then parse JSON to create deep copy.
         let newSection = JSON.parse(JSON.stringify(props.section));
 
@@ -49,9 +45,9 @@ function Section(props) {
         newSection.text[id - 1] = chosenText;
 
         props.setSection(newSection, props.section.id);
-    }
+    }, [props]);
 
-    const moveTextDown = (id) => {
+    const moveTextDown = useCallback((id) => {
         // Stringify then parse JSON to create deep copy.
         let newSection = JSON.parse(JSON.stringify(props.section));
 
@@ -64,9 +60,9 @@ function Section(props) {
         newSection.text[id + 1] = chosenText;
 
         props.setSection(newSection, props.section.id);
-    }
+    }, [props]);
 
-    const deleteText = (id) => {
+    const deleteText = useCallback((id) => {
         // Stringify then parse JSON to create deep copy.
         let newSection = JSON.parse(JSON.stringify(props.section));
 
@@ -77,28 +73,26 @@ function Section(props) {
         newSection.text.splice(id, 1);
 
         props.setSection(newSection, props.section.id);
-    }
+    }, [props]);
 
-    const updateItem = (item, id) => {
+    const updateItem = useCallback((item, id) => {
         // Stringify then parse JSON to create deep copy.
         const newSection = JSON.parse(JSON.stringify(props.section));
         newSection.items[id] = item;
         props.setSection(newSection, props.section.id)
-    }
+    }, [props]);
 
-    const addItem = (e) => {
-            e.preventDefault();
+    const addItem = useCallback(() => {
+        // Stringify then parse JSON to create deep copy.
+        let newSection = JSON.parse(JSON.stringify(props.section));
+        newSection.items.push({
+            id: newSection.items.length,
+            value: 0
+        });
+        props.setSection(newSection, props.section.id)
+    }, [props]);
 
-            // Stringify then parse JSON to create deep copy.
-            let newSection = JSON.parse(JSON.stringify(props.section));
-            newSection.items.push({
-                id: newSection.items.length,
-                value: 0
-            });
-            props.setSection(newSection, props.section.id)
-        }
-
-    const moveItemUp = (id) => {
+    const moveItemUp = useCallback((id) => {
         // Stringify then parse JSON to create deep copy.
         let newSection = JSON.parse(JSON.stringify(props.section));
 
@@ -111,9 +105,9 @@ function Section(props) {
         newSection.items[id - 1] = chosenItem;
 
         props.setSection(newSection, props.section.id)
-    }
+    }, [props]);
 
-    const moveItemDown = (id) => {
+    const moveItemDown = useCallback((id) => {
         // Stringify then parse JSON to create deep copy.
         let newSection = JSON.parse(JSON.stringify(props.section));
 
@@ -126,9 +120,9 @@ function Section(props) {
         newSection.items[id + 1] = chosenItem;
 
         props.setSection(newSection, props.section.id);
-    }
+    }, [props]);
 
-    const deleteItem = (id) =>  {
+    const deleteItem = useCallback((id) =>  {
         // Stringify then parse JSON to create deep copy.
         let newSection = JSON.parse(JSON.stringify(props.section));
 
@@ -139,44 +133,42 @@ function Section(props) {
         newSection.items.splice(id, 1);
 
         props.setSection(newSection, props.section.id);
-    }
+    }, [props]);
 
-    const updateImage = (image) => {
+    const updateImage = useCallback((image) => {
         // Stringify then parse JSON to create deep copy.
         let newSection = JSON.parse(JSON.stringify(props.section));
         newSection.image = image;
         props.setSection(newSection, props.section.id)
-    }
+    }, [props]);
 
-    const deleteImage = () => {
-            // Stringify then parse JSON to create deep copy.
-            let newSection = JSON.parse(JSON.stringify(props.section));
-            newSection.image = null;
-            props.setSection(newSection, props.section.id);
-        }
+    const deleteImage = useCallback(() => {
+        // Stringify then parse JSON to create deep copy.
+        let newSection = JSON.parse(JSON.stringify(props.section));
+        newSection.image = null;
+        props.setSection(newSection, props.section.id);
+    }, [props]);
 
-    const updateState = (state) => {
+    const updateState = useCallback((state) => {
         // Stringify then parse JSON to create deep copy.
         let newSection = JSON.parse(JSON.stringify(props.section));
         newSection.state = state;
         props.setSection(newSection, props.section.id);
-    }
+    }, [props]);
 
-    const addState = (e) => {
+    const addState = useCallback((e) => {
         // Stringify then parse JSON to create deep copy.
         let newSection = JSON.parse(JSON.stringify(props.section));
         newSection.state = props.getLastState(props.section.id);
         props.setSection(newSection, props.section.id);
-    }
+    }, [props]);
 
-    const deleteState = () => {
+    const deleteState = useCallback(() => {
         // Stringify then parse JSON to create deep copy.
         let newSection = JSON.parse(JSON.stringify(props.section));
-
         newSection.state = null;
-
         props.setSection(newSection, props.section.id);
-    }
+    }, [props]);
 
     let Items = require('../../../../resources/ItemNames.json');
     if (game !== "" && game != null) {

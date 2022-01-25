@@ -5,7 +5,19 @@ import ItemDropdown from './ItemDropdown';
 import ModifierDropdown from './ModifierDropdown';
 import Icon from '../../../common/Icon';
 
-function SectionItem(props) {
+function shouldUpdate(oldProps, newProps) {
+    if (oldProps.item.id !== newProps.item.id) {
+        return false;
+    } else if (oldProps.item.value !== newProps.item.value) {
+        return false;
+    } else if (oldProps.item.modifier !== newProps.item.modifier) {
+        return false;
+    }
+
+    return true;
+}
+
+const SectionItem = React.memo((props) => {
     const updateItem = (item) => {
         const newItem = JSON.parse(JSON.stringify(props.item));
         newItem.value = item;
@@ -27,6 +39,6 @@ function SectionItem(props) {
             <Icon src="/icons/delete.png" size="small" hover={true} hidden={false} altText="X" onClick={ () => props.deleteItem(props.item.id) } />
         </div>
     );
-}
+}, shouldUpdate);
 
 export default SectionItem;

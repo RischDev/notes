@@ -1,12 +1,13 @@
 /** @format */
 
-import { useState, useCallback, Suspense } from 'react';
+import { useState, useCallback, useMemo, Suspense } from 'react';
 import styles from './styles/RouteForm.Module.css';
 import Route from '../route/Route';
 import SectionList from './SectionList';
 import RouteInfo from './RouteInfo';
 import useSuspenseResource from '../../common/useSuspense';
 import RouteContext from '../../common/RouteContext';
+import GameContext from '../../common/GameContext';
 
 const equal = require('deep-equal');
 const routes = require('../../../notes/routes.json');
@@ -34,7 +35,7 @@ const getInitialState = (path, game, route) => {
         route: {
             title: path != null ? route.title : "",
             path: path,
-            game: game,
+            game: path != null ? route.game : game,
             version: path != null ? route.version : "1.0",
             initialState: game != null ? routes[game].initialState : {},
             sections: path != null ? route.sections : [{
@@ -57,6 +58,7 @@ function RouteFormImpl(props) {
     }
 
     const [state, setState] = useState(getInitialState(initialPath, initialGame, initialRoute));
+    const gameContext = useMemo(() => { return(state.route.game) }, [state.route.game]);
 
     const setContext = useCallback(
         updates => {
@@ -118,14 +120,16 @@ function RouteFormImpl(props) {
         return(
             <form className={`${styles.wrapper} ${styles.form}`}>
                 <RouteContext.Provider value={getContextValue()}>
-                    <RouteInfo
-                        loadLastRouteEdit={loadLastRouteEdit}
-                        swapPreview={swapPreview}
-                    />
+                    <GameContext.Provider value={gameContext}>
+                        <RouteInfo
+                            loadLastRouteEdit={loadLastRouteEdit}
+                            swapPreview={swapPreview}
+                        />
 
-                    <SectionList
-                        sections={state.route.sections}
-                    />
+                        <SectionList
+                            sections={state.route.sections}
+                        />
+                    </GameContext.Provider>
                 </RouteContext.Provider>
             </form>
         );

@@ -1,9 +1,22 @@
 /** @format */
 
+import { memo } from 'react';
 import Icon from '../../../common/Icon';
 import styles from './styles/SectionState.Module.css';
 
-function SectionState(props) {
+function shouldUpdate(oldProps, newProps) {
+    if (oldProps.state != null && newProps.state != null) {
+        for (const key in newProps.state.keys) {
+            if (oldProps.state[key] !== newProps.state[key]) {
+                return false;
+            }
+        }
+    }
+
+    return true;
+}
+
+const SectionState = memo((props) => {
     const onStateValueChange = (key, value) => {
         // JSON stringify, then JSON parse to make a deep copy.
         let newState = JSON.parse(JSON.stringify(props.state));
@@ -48,6 +61,6 @@ function SectionState(props) {
         );
     }
     return null;
-}
+}, shouldUpdate);
 
 export default SectionState;

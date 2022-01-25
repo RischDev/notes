@@ -1,18 +1,30 @@
 /** @format */
 
-import { useContext } from 'react';
+import { useContext, memo } from 'react';
 import styles from'./styles/SectionText.Module.css';
 import ItemDropdown from './ItemDropdown';
 import ModifierDropdown from './ModifierDropdown';
 import Icon from '../../../common/Icon';
-import RouteContext from '../../../common/RouteContext';
+import GameContext from '../../../common/GameContext';
 
-function SectionText(props) {
-    const {
-        route: {
-            game
-        }
-    } = useContext(RouteContext);
+function shouldUpdate(oldProps, newProps) {
+    if (oldProps.text.id !== newProps.text.id) {
+        return false;
+    } else if (oldProps.text.text !== newProps.text.text) {
+        return false;
+    } else if (oldProps.text.item !== newProps.text.item) {
+        return false;
+    } else if (oldProps.text.modifier !== newProps.text.modifier) {
+        return false;
+    } else if (oldProps.updateText !== newProps.updateText) {
+        return false;
+    }
+
+    return true;
+}
+
+const SectionText = memo((props) => {
+    const game = useContext(GameContext);
 
     const onTextUpdate = (e) => {
         const newText = JSON.parse(JSON.stringify(props.text));
@@ -46,6 +58,6 @@ function SectionText(props) {
             <Icon src="/icons/delete.png" id={"deleteText-" + props.text.id} size="small" hover={true} hidden={false} altText="X" onClick={ () => props.deleteText(props.text.id) } />
         </div>
     );
-}
+}, shouldUpdate);
 
 export default SectionText;
