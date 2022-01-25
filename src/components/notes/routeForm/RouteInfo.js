@@ -1,27 +1,106 @@
+import { useCallback, useContext } from 'react';
 import styles from './styles/RouteInfo.Module.css';
+import RouteContext from '../../common/RouteContext';
 import Button from '../../common/Button';
 
 function RouteInfo(props) {
+    const {
+        route,
+        preview,
+        setContext
+    } = useContext(RouteContext);
+
     const games = require("../../../resources/gamesList.json");
     const routes = require("../../../notes/routes.json");
+
+    const generateDownload = useCallback(
+        (e) => {
+            e.preventDefault();
+
+            // Remove unnecessary values
+
+            console.log(route);
+
+            let a = document.createElement('a');
+            a.href = "data:text/json;base64;charset=utf-8," + btoa(JSON.stringify(route));
+            a.download = route.path + ".json";
+            a.click();
+        },
+        [route]
+    );
+
+    const importText = (text) => {
+        text = text.replace(/(\r\n|\n|\r)/gm, "\n");
+        const lines = text.split("\n");
+        let newSections = [];
+
+        let sectionId = 0;
+
+        for (let i = 0; i < lines.length; i++) {
+            let line = lines[i];
+            const section = {
+                id: sectionId,
+                text: [],
+                items: []
+            }
+
+            let textId = 0;
+            while (line !== "") {
+                const text = {
+                    id: textId,
+                    text: line
+                }
+
+                section.text.push(text);
+                i++;
+                textId++;
+
+                if (i < lines.length) {
+                    line = lines[i];
+                } else {
+                    line = "";
+                }
+            }
+
+            newSections.push(section);
+            sectionId++;
+        }
+
+        setContext({ route: { ...route, sections: newSections } });
+    }
+
+    const importJSON = (file) => {
+        setContext({ route: JSON.parse(file) });
+    }
+
+    const handleUpload = (file, callback) => {
+        let reader = new FileReader();
+        reader.readAsText(file, "UTF-8");
+        reader.onload = function () {
+            callback(reader.result);
+        };
+        reader.onerror = function (error) {
+            console.log('Error: ', error);
+        };
+    }
 
     return (
         <div className={`${styles.routeInfo}`}>
             <h2>Update your Route</h2>
-            <input type="text" name="title" className={`${styles.textInput}`} placeholder="Title" defaultValue={props.title} onBlur={props.handleInputChange} />
-            <input type="text" name="path" className={`${styles.textInput}`} placeholder="Path" defaultValue={props.path} onBlur={props.handleInputChange} />
-            <select name="game" className={`${styles.select}`} value={props.game} onChange={props.handleInputChange}>
+            <input type="text" name="title" className={`${styles.textInput}`} placeholder="Title" defaultValue={route.title} onBlur={ (e) => setContext({ route: { ...route, title: e.target.value } }) } />
+            <input type="text" name="path" className={`${styles.textInput}`} placeholder="Path" defaultValue={route.path} onBlur={ (e) => setContext({ route: { ...route, path: e.target.value } }) } />
+            <select name="game" className={`${styles.select}`} value={route.game} onChange={ (e) => setContext({ route: { ...route, game: e.target.value } }) }>
                 <option value="">Select a game</option>
                 {games.map((game) =>
                     <option key={game} value={game}>{routes[game].name}</option>
                 )}
             </select>
             <div className="row">
-                <div>Import Text: <input type="file" name={"textImport"} onChange={props.handleInputChange} /></div>
-                <div>Import JSON: <input type="file" name={"jsonImport"} onChange={props.handleInputChange} /></div>
+                <div>Import Text: <input type="file" name={"textImport"} onChange={(e) => handleUpload(e.target.files[0], importText)} /></div>
+                <div>Import JSON: <input type="file" name={"jsonImport"} onChange={(e) => handleUpload(e.target.files[0], importJSON)} /></div>
                 <Button text="Load Last Edit" size="medium" onClick={props.loadLastRouteEdit} />
-                <Button text="Generate JSON File" size="medium" onClick={props.generateDownload} />
-                <Button text="Preview Route" size="medium" onClick={props.swapPreview} />
+                <Button text="Generate JSON File" size="medium" onClick={generateDownload} />
+                <Button text="Preview Route" size="medium" onClick={() => setContext({ preview: !preview }) } />
             </div>
 
             <div className={`${styles.instructions}`}>

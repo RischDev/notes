@@ -2,20 +2,18 @@ import Icon from '../../../common/Icon';
 import styles from './styles/SectionState.Module.css';
 
 function SectionState(props) {
-    const onChange = (e) => {
-        const name = e.target.name.split("-");
-        const key = name[1];
-        const value = e.target.type === 'checkbox' ? e.target.checked : e.target.value;;
-
+    const onStateValueChange = (key, value) => {
         // JSON stringify, then JSON parse to make a deep copy.
         let newState = JSON.parse(JSON.stringify(props.state));
-        if (name[0].includes("Shown")) {
-            newState[key].shown = value;
-        } else {
-            newState[key].value = value;
-        }
+        newState[key].value = value;
+        props.updateState(newState);
+    }
 
-        props.updateState(props.sectionId, newState);
+    const onStateShownChange = (key, value) => {
+        // JSON stringify, then JSON parse to make a deep copy.
+        let newState = JSON.parse(JSON.stringify(props.state));
+        newState[key].shown = value;
+        props.updateState(newState);
     }
 
     if (props.state != null) {
@@ -28,16 +26,16 @@ function SectionState(props) {
                                 <label htmlFor={"state-" + key + "-" + props.sectionId}>{key}</label>
                             </div>
                             <div className="col-5">
-                                <input type="text" name={"state-" + key + "-" + props.sectionId} className={styles.textInput} defaultValue={props.state[key].value} onChange={onChange} />
+                                <input type="text" className={styles.textInput} defaultValue={props.state[key].value} onChange={ (e) => { onStateValueChange(key, e.target.value) } } />
                             </div>
                             <div className="col-2">
-                                <input type="checkbox" name={"stateShown-" + key + "-" + props.sectionId} className={styles.checkbox} checked={props.state[key].shown} onChange={onChange} />
+                                <input type="checkbox" className={styles.checkbox} checked={props.state[key].shown} onChange={ (e) => { onStateShownChange(key, e.target.checked) } } />
                             </div>
                         </div>
                     )}
                 </div>
                 <div className="col-2">
-                    <Icon src="/icons/delete.png" id={"deleteState-" + props.sectionId} size="small" hover={true} hidden={false} altText="X" onClick={props.deleteState} />
+                    <Icon src="/icons/delete.png" size="small" hover={true} hidden={false} altText="X" onClick={props.deleteState} />
                 </div>
             </div>
         );

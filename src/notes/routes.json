@@ -182,6 +182,192 @@
             "Giga": {
                 "value": 0,
                 "shown": true
+            },
+            "Folder": [
+                {
+                    "slot": 0,
+                    "item": 0,
+                    "modifier": "A",
+                    "reg": false
+                },
+                {
+                    "slot": 1,
+                    "item": 0,
+                    "modifier": "A",
+                    "reg": false
+                },
+                {
+                    "slot": 2,
+                    "item": 0,
+                    "modifier": "B",
+                    "reg": false
+                },
+                {
+                    "slot": 3,
+                    "item": 0,
+                    "modifier": "B",
+                    "regged": false
+                },
+                {
+                    "slot": 4,
+                    "item": 3,
+                    "modifier": "*",
+                    "regged": false
+                },
+                {
+                    "slot": 5,
+                    "item": 3,
+                    "modifier": "*",
+                    "regged": false
+                },
+                {
+                    "slot": 6,
+                    "item": 4,
+                    "modifier": "D",
+                    "regged": false
+                },
+                {
+                    "slot": 7,
+                    "item": 4,
+                    "modifier": "D",
+                    "regged": false
+                },
+                {
+                    "slot": 8,
+                    "item": 4,
+                    "modifier": "D",
+                    "regged": false
+                },
+                {
+                    "slot": 9,
+                    "item": 57,
+                    "modifier": "B",
+                    "regged": false
+                },
+                {
+                    "slot": 10,
+                    "item": 57,
+                    "modifier": "B",
+                    "regged": false
+                },
+                {
+                    "slot": 11,
+                    "item": 57,
+                    "modifier": "L",
+                    "regged": false
+                },
+                {
+                    "slot": 12,
+                    "item": 57,
+                    "modifier": "L",
+                    "regged": false
+                },
+                {
+                    "slot": 13,
+                    "item": 69,
+                    "modifier": "S",
+                    "regged": false
+                },
+                {
+                    "slot": 14,
+                    "item": 69,
+                    "modifier": "S",
+                    "regged": false
+                },
+                {
+                    "slot": 15,
+                    "item": 69,
+                    "modifier": "S",
+                    "regged": false
+                },
+                {
+                    "slot": 16,
+                    "item": 69,
+                    "modifier": "S",
+                    "regged": false
+                },
+                {
+                    "slot": 17,
+                    "item": 70,
+                    "modifier": "S",
+                    "regged": false
+                },
+                {
+                    "slot": 18,
+                    "item": 70,
+                    "modifier": "S",
+                    "regged": false
+                },
+                {
+                    "slot": 19,
+                    "item": 176,
+                    "modifier": "*",
+                    "regged": false
+                },
+                {
+                    "slot": 20,
+                    "item": 87,
+                    "modifier": "*",
+                    "regged": false
+                },
+                {
+                    "slot": 21,
+                    "item": 87,
+                    "modifier": "*",
+                    "regged": false
+                },
+                {
+                    "slot": 22,
+                    "item": 155,
+                    "modifier": "A",
+                    "regged": false
+                },
+                {
+                    "slot": 23,
+                    "item": 155,
+                    "modifier": "A",
+                    "regged": false
+                },
+                {
+                    "slot": 24,
+                    "item": 155,
+                    "modifier": "L",
+                    "regged": false
+                },
+                {
+                    "slot": 25,
+                    "item": 155,
+                    "modifier": "L",
+                    "regged": false
+                },
+                {
+                    "slot": 26,
+                    "item": 164,
+                    "modifier": "S",
+                    "regged": false
+                },
+                {
+                    "slot": 27,
+                    "item": 195,
+                    "modifier": "*",
+                    "regged": false
+                },
+                {
+                    "slot": 28,
+                    "item": 195,
+                    "modifier": "*",
+                    "regged": false
+                },
+                {
+                    "slot": 29,
+                    "item": 191,
+                    "modifier": "*",
+                    "regged": false
+                }
+            ],
+            "FolderEdit": {
+                "value": [],
+                "shown": false
             }
         },
         "routes": [
