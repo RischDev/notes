@@ -1,92 +1,51 @@
 /** @format */
 
-import React from 'react';
-import styles from './styles/SectionText.Module.css';
+import { useContext } from 'react';
+import styles from'./styles/SectionText.Module.css';
 import ItemDropdown from './ItemDropdown';
 import ModifierDropdown from './ModifierDropdown';
 import Icon from '../../../common/Icon';
+import RouteContext from '../../../common/RouteContext';
 
-class SectionText extends React.Component {
-    constructor(props) {
-        super(props);
+function SectionText(props) {
+    const {
+        route: {
+            game
+        }
+    } = useContext(RouteContext);
 
-        this.onChange = this.onChange.bind(this);
+    const onTextUpdate = (e) => {
+        const newText = JSON.parse(JSON.stringify(props.text));
+        newText.text = e.target.value;
+        props.updateText(newText, props.text.id)
     }
 
-    onChange(e) {
-        const value =
-            e.target.type === 'checkbox' ? e.target.checked : e.target.value;
-        const name = e.target.name.split('-');
-        const sectionId = parseInt(name[1]);
-        const textId = parseInt(name[2]);
-
-        this.props.updateText(sectionId, textId, value, null, null);
+    const updateItem = (item) => {
+        const newText = JSON.parse(JSON.stringify(props.text));
+        if (item !== "") {
+            newText.item = item;
+        } else {
+            newText.item = null;
+        }
+        props.updateText(newText, props.text.id)
     }
 
-    render() {
-        return (
-            <div>
-                <textarea
-                    className={`${styles.textarea}`}
-                    name={
-                        'textValue-' +
-                        this.props.sectionId +
-                        '-' +
-                        this.props.text.id
-                    }
-                    value={this.props.text.text}
-                    placeholder="Text"
-                    onChange={this.onChange}
-                />
-                <ItemDropdown
-                    type="text"
-                    sectionId={this.props.sectionId}
-                    textId={this.props.text.id}
-                    value={this.props.text.item}
-                    game={this.props.game}
-                    updateText={this.props.updateText}
-                    updateItems={this.props.updateItems}
-                />
-                <ModifierDropdown
-                    type="text"
-                    sectionId={this.props.sectionId}
-                    textId={this.props.text.id}
-                    itemValue={this.props.text.item}
-                    value={this.props.text.modifier}
-                    game={this.props.game}
-                    updateText={this.props.updateText}
-                    updateItems={this.props.updateItems}
-                />
-                <Icon
-                    src="/icons/up.png"
-                    id={'moveTextUp-' + this.props.text.id}
-                    size="small"
-                    hover={true}
-                    hidden={this.props.text.id === 0}
-                    altText="Up"
-                    onClick={this.props.moveTextUp}
-                />
-                <Icon
-                    src="/icons/down.png"
-                    id={'moveTextDown-' + this.props.text.id}
-                    size="small"
-                    hover={true}
-                    hidden={this.props.text.id === this.props.max}
-                    altText="Down"
-                    onClick={this.props.moveTextDown}
-                />
-                <Icon
-                    src="/icons/delete.png"
-                    id={'deleteText-' + this.props.text.id}
-                    size="small"
-                    hover={true}
-                    hidden={false}
-                    altText="X"
-                    onClick={this.props.deleteText}
-                />
-            </div>
-        );
+    const updateModifier = (modifier) => {
+        const newText = JSON.parse(JSON.stringify(props.text));
+        newText.modifier = modifier;
+        props.updateText(newText, props.text.id)
     }
+
+    return(
+        <div>
+            <textarea className={`${styles.textarea}`} value={props.text.text} placeholder="Text" onChange={onTextUpdate} />
+            <ItemDropdown type="text" item={props.text.item} game={game} updateItem={updateItem} />
+            <ModifierDropdown type="text" item={props.text.item} modifier={props.text.modifier} updateModifier={updateModifier} />
+            <Icon src="/icons/up.png" id={"moveTextUp-" + props.text.id} size="small" hover={true} hidden={props.text.id === 0} altText="Up" onClick={ () => props.moveTextUp(props.text.id) } />
+            <Icon src="/icons/down.png" id={"moveTextDown-" + props.text.id} size="small" hover={true} hidden={props.text.id === props.max} altText="Down" onClick={ () => props.moveTextDown(props.text.id) } />
+            <Icon src="/icons/delete.png" id={"deleteText-" + props.text.id} size="small" hover={true} hidden={false} altText="X" onClick={ () => props.deleteText(props.text.id) } />
+        </div>
+    );
 }
 
 export default SectionText;

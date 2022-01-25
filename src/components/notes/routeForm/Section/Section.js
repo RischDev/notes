@@ -1,7 +1,8 @@
 /** @format */
 
-import React from 'react';
+import { useContext } from 'react';
 import styles from './styles/Section.Module.css';
+import RouteContext from '../../../common/RouteContext';
 import Button from '../../../common/Button';
 import Icon from '../../../common/Icon';
 import SectionText from './SectionText';
@@ -9,465 +10,234 @@ import SectionItem from './SectionItem';
 import SectionImage from './SectionImage';
 import SectionState from './SectionState';
 
-class CreateSection extends React.Component {
-    constructor(props) {
-        super(props);
-
-        this.updateText = this.updateText.bind(this);
-        this.updateItems = this.updateItems.bind(this);
-        this.updateImage = this.updateImage.bind(this);
-        this.updateState = this.updateState.bind(this);
-        this.addText = this.addText.bind(this);
-        this.addItem = this.addItem.bind(this);
-        this.addState = this.addState.bind(this);
-        this.moveTextUp = this.moveTextUp.bind(this);
-        this.moveTextDown = this.moveTextDown.bind(this);
-        this.moveItemUp = this.moveItemUp.bind(this);
-        this.moveItemDown = this.moveItemDown.bind(this);
-        this.deleteText = this.deleteText.bind(this);
-        this.deleteItem = this.deleteItem.bind(this);
-        this.deleteImage = this.deleteImage.bind(this);
-        this.deleteState = this.deleteState.bind(this);
-    }
-
-    shouldComponentUpdate(nextProps, nextState) {
-        if (this.props.game !== nextProps.game) {
-            return true;
+function Section(props) {
+    const {
+        route: {
+            game
         }
+    } = useContext(RouteContext);
 
-        if (this.props.max !== nextProps.max) {
-            return true;
-        }
-
-        if (this.props.section.text.length !== nextProps.section.text.length) {
-            return true;
-        } else {
-            for (let i = 0; i < nextProps.section.text.length; i++) {
-                if (
-                    this.props.section.text[i].text !==
-                    nextProps.section.text[i].text
-                ) {
-                    return true;
-                } else if (
-                    this.props.section.text[i].item !==
-                    nextProps.section.text[i].item
-                ) {
-                    return true;
-                } else if (
-                    this.props.section.text[i].modifier !==
-                    nextProps.section.text[i].modifier
-                ) {
-                    return true;
-                }
-            }
-        }
-
-        if (
-            this.props.section.items.length !== nextProps.section.items.length
-        ) {
-            return true;
-        } else {
-            for (let i = 0; i < nextProps.section.items.length; i++) {
-                if (
-                    this.props.section.items[i].value !==
-                    nextProps.section.items[i].value
-                ) {
-                    return true;
-                } else if (
-                    this.props.section.items[i].modifier !==
-                    nextProps.section.items[i].modifier
-                ) {
-                    return true;
-                }
-            }
-        }
-
-        if (this.props.section.image !== nextProps.section.image) {
-            return true;
-        }
-
-        if (this.props.section.state !== nextProps.section.state) {
-            return true;
-        }
-
-        return false;
-    }
-
-    updateText(sectionId, textId, textValue, itemValue, modifierValue) {
+    const updateText = (text, id) => {
         // Stringify then parse JSON to create deep copy.
-        let newSection = JSON.parse(JSON.stringify(this.props.section));
-
-        if (textId != null) {
-            if (textValue != null) {
-                newSection.text[textId].text = textValue;
-            }
-
-            if (itemValue != null) {
-                if (itemValue === '') {
-                    newSection.text[textId].item = null;
-                } else {
-                    newSection.text[textId].item = itemValue;
-                }
-            }
-
-            if (modifierValue != null) {
-                newSection.text[textId].modifier = modifierValue;
-            }
-        }
-
-        this.props.updateRoute(sectionId, newSection);
+        let newSection = JSON.parse(JSON.stringify(props.section));
+        newSection.text[id] = text;
+        props.setSection(newSection, props.section.id);
     }
 
-    updateItems(sectionId, itemId, itemValue, modifierValue) {
-        // Stringify then parse JSON to create deep copy.
-        let newSection = JSON.parse(JSON.stringify(this.props.section));
-
-        if (itemId != null) {
-            if (itemValue != null) {
-                newSection.items[itemId].value = itemValue;
-            }
-
-            if (modifierValue != null) {
-                newSection.items[itemId].modifier = modifierValue;
-            }
-        }
-
-        this.props.updateRoute(sectionId, newSection);
-    }
-
-    updateImage(sectionId, image) {
-        // Stringify then parse JSON to create deep copy.
-        let newSection = JSON.parse(JSON.stringify(this.props.section));
-
-        newSection.image = image;
-
-        this.props.updateRoute(sectionId, newSection);
-    }
-
-    updateState(sectionId, state) {
-        // Stringify then parse JSON to create deep copy.
-        let newSection = JSON.parse(JSON.stringify(this.props.section));
-
-        newSection.state = state;
-
-        this.props.updateRoute(sectionId, newSection);
-    }
-
-    addText(e) {
+    const addText = (e) => {
         // Stringify then parse JSON to create deep copy.
         e.preventDefault();
 
-        let newSection = JSON.parse(JSON.stringify(this.props.section));
-
+        let newSection = JSON.parse(JSON.stringify(props.section));
         newSection.text.push({
             id: newSection.text.length,
             text: '',
         });
-
-        this.props.updateRoute(this.props.section.id, newSection);
+        props.setSection(newSection, props.section.id)
     }
 
-    addItem(e) {
-        e.preventDefault();
-
+    const moveTextUp = (id) => {
         // Stringify then parse JSON to create deep copy.
-        let newSection = JSON.parse(JSON.stringify(this.props.section));
+        let newSection = JSON.parse(JSON.stringify(props.section));
 
-        newSection.items.push({
-            id: newSection.items.length,
-            value: 0,
-        });
+        let chosenText = newSection.text[id];
+        chosenText.id = id - 1;
+        let aboveText = newSection.text[id - 1];
+        aboveText.id = id;
 
-        this.props.updateRoute(this.props.section.id, newSection);
+        newSection.text[id] = aboveText;
+        newSection.text[id - 1] = chosenText;
+
+        props.setSection(newSection, props.section.id);
     }
 
-    addState(e) {
-        e.preventDefault();
-
+    const moveTextDown = (id) => {
         // Stringify then parse JSON to create deep copy.
-        let newSection = JSON.parse(JSON.stringify(this.props.section));
+        let newSection = JSON.parse(JSON.stringify(props.section));
 
-        // Check previous sections for the last state value
-        let state = null;
-        for (let i = this.props.section.id - 1; i >= 0; i--) {
-            if (this.props.sections[i].state != null) {
-                state = this.props.sections[i].state;
-                break;
-            }
-        }
+        let chosenText = newSection.text[id];
+        chosenText.id = id + 1;
+        let belowText = newSection.text[id + 1];
+        belowText.id = id;
 
-        if (state == null) {
-            state = this.props.initialState;
-        }
+        newSection.text[id] = belowText;
+        newSection.text[id + 1] = chosenText;
 
-        newSection.state = state;
-
-        this.props.updateRoute(this.props.section.id, newSection);
+        props.setSection(newSection, props.section.id);
     }
 
-    moveTextUp(e) {
-        e.preventDefault();
-
-        const nameParts = e.target.id.split('-');
-        const textId = parseInt(nameParts[1]);
-
+    const deleteText = (id) => {
         // Stringify then parse JSON to create deep copy.
-        let newSection = JSON.parse(JSON.stringify(this.props.section));
+        let newSection = JSON.parse(JSON.stringify(props.section));
 
-        let chosenText = newSection.text[textId];
-        chosenText.id = textId - 1;
-        let aboveText = newSection.text[textId - 1];
-        aboveText.id = textId;
-
-        newSection.text[textId] = aboveText;
-        newSection.text[textId - 1] = chosenText;
-
-        this.props.updateRoute(this.props.section.id, newSection);
-    }
-
-    moveTextDown(e) {
-        e.preventDefault();
-
-        const nameParts = e.target.id.split('-');
-        const textId = parseInt(nameParts[1]);
-
-        // Stringify then parse JSON to create deep copy.
-        let newSection = JSON.parse(JSON.stringify(this.props.section));
-
-        let chosenText = newSection.text[textId];
-        chosenText.id = textId + 1;
-        let belowText = newSection.text[textId + 1];
-        belowText.id = textId;
-
-        newSection.text[textId] = belowText;
-        newSection.text[textId + 1] = chosenText;
-
-        this.props.updateRoute(this.props.section.id, newSection);
-    }
-
-    moveItemUp(e) {
-        e.preventDefault();
-
-        const nameParts = e.target.id.split('-');
-        const itemId = parseInt(nameParts[1]);
-
-        // Stringify then parse JSON to create deep copy.
-        let newSection = JSON.parse(JSON.stringify(this.props.section));
-
-        let chosenItem = newSection.items[itemId];
-        chosenItem.id = itemId - 1;
-        let aboveItem = newSection.items[itemId - 1];
-        aboveItem.id = itemId;
-
-        newSection.items[itemId] = aboveItem;
-        newSection.items[itemId - 1] = chosenItem;
-
-        this.props.updateRoute(this.props.section.id, newSection);
-    }
-
-    moveItemDown(e) {
-        e.preventDefault();
-
-        const nameParts = e.target.id.split('-');
-        const itemId = parseInt(nameParts[1]);
-
-        // Stringify then parse JSON to create deep copy.
-        let newSection = JSON.parse(JSON.stringify(this.props.section));
-
-        let chosenItem = newSection.items[itemId];
-        chosenItem.id = itemId + 1;
-        let belowItem = newSection.items[itemId + 1];
-        belowItem.id = itemId;
-
-        newSection.items[itemId] = belowItem;
-        newSection.items[itemId + 1] = chosenItem;
-
-        this.props.updateRoute(this.props.section.id, newSection);
-    }
-
-    deleteText(e) {
-        e.preventDefault();
-
-        const nameParts = e.target.id.split('-');
-        const textId = parseInt(nameParts[1]);
-
-        // Stringify then parse JSON to create deep copy.
-        let newSection = JSON.parse(JSON.stringify(this.props.section));
-
-        for (let i = textId + 1; i < newSection.text.length; i++) {
+        for (let i = id + 1; i < newSection.text.length; i++) {
             newSection.text[i].id--;
         }
 
-        newSection.text.splice(textId, 1);
+        newSection.text.splice(id, 1);
 
-        this.props.updateRoute(this.props.section.id, newSection);
+        props.setSection(newSection, props.section.id);
     }
 
-    deleteItem(e) {
-        e.preventDefault();
-
-        const nameParts = e.target.id.split('-');
-        const itemId = parseInt(nameParts[1]);
-
+    const updateItem = (item, id) => {
         // Stringify then parse JSON to create deep copy.
-        let newSection = JSON.parse(JSON.stringify(this.props.section));
+        const newSection = JSON.parse(JSON.stringify(props.section));
+        newSection.items[id] = item;
+        props.setSection(newSection, props.section.id)
+    }
 
-        for (let i = itemId + 1; i < newSection.items.length; i++) {
+    const addItem = (e) => {
+            e.preventDefault();
+
+            // Stringify then parse JSON to create deep copy.
+            let newSection = JSON.parse(JSON.stringify(props.section));
+            newSection.items.push({
+                id: newSection.items.length,
+                value: 0
+            });
+            props.setSection(newSection, props.section.id)
+        }
+
+    const moveItemUp = (id) => {
+        // Stringify then parse JSON to create deep copy.
+        let newSection = JSON.parse(JSON.stringify(props.section));
+
+        let chosenItem = newSection.items[id];
+        chosenItem.id = id - 1;
+        let aboveItem = newSection.items[id - 1];
+        aboveItem.id = id;
+
+        newSection.items[id] = aboveItem;
+        newSection.items[id - 1] = chosenItem;
+
+        props.setSection(newSection, props.section.id)
+    }
+
+    const moveItemDown = (id) => {
+        // Stringify then parse JSON to create deep copy.
+        let newSection = JSON.parse(JSON.stringify(props.section));
+
+        let chosenItem = newSection.items[id];
+        chosenItem.id = id + 1;
+        let belowItem = newSection.items[id + 1];
+        belowItem.id = id;
+
+        newSection.items[id] = belowItem;
+        newSection.items[id + 1] = chosenItem;
+
+        props.setSection(newSection, props.section.id);
+    }
+
+    const deleteItem = (id) =>  {
+        // Stringify then parse JSON to create deep copy.
+        let newSection = JSON.parse(JSON.stringify(props.section));
+
+        for (let i = id + 1; i < newSection.items.length; i++) {
             newSection.items[i].id--;
         }
 
-        newSection.items.splice(itemId, 1);
+        newSection.items.splice(id, 1);
 
-        this.props.updateRoute(this.props.section.id, newSection);
+        props.setSection(newSection, props.section.id);
     }
 
-    deleteImage(e) {
-        e.preventDefault();
-
+    const updateImage = (image) => {
         // Stringify then parse JSON to create deep copy.
-        let newSection = JSON.parse(JSON.stringify(this.props.section));
-
-        newSection.image = null;
-
-        this.props.updateRoute(this.props.section.id, newSection);
+        let newSection = JSON.parse(JSON.stringify(props.section));
+        newSection.image = image;
+        props.setSection(newSection, props.section.id)
     }
 
-    deleteState(e) {
-        e.preventDefault();
+    const deleteImage = () => {
+            // Stringify then parse JSON to create deep copy.
+            let newSection = JSON.parse(JSON.stringify(props.section));
+            newSection.image = null;
+            props.setSection(newSection, props.section.id);
+        }
 
+    const updateState = (state) => {
         // Stringify then parse JSON to create deep copy.
-        let newSection = JSON.parse(JSON.stringify(this.props.section));
+        let newSection = JSON.parse(JSON.stringify(props.section));
+        newSection.state = state;
+        props.setSection(newSection, props.section.id);
+    }
+
+    const addState = (e) => {
+        // Stringify then parse JSON to create deep copy.
+        let newSection = JSON.parse(JSON.stringify(props.section));
+        newSection.state = props.getLastState(props.section.id);
+        props.setSection(newSection, props.section.id);
+    }
+
+    const deleteState = () => {
+        // Stringify then parse JSON to create deep copy.
+        let newSection = JSON.parse(JSON.stringify(props.section));
 
         newSection.state = null;
 
-        this.props.updateRoute(this.props.section.id, newSection);
+        props.setSection(newSection, props.section.id);
     }
 
-    render() {
-        let Items = require('../../../../resources/ItemNames.json');
-        if (this.props.game !== '' && this.props.game != null) {
-            Items = require('../../../../resources/' +
-                this.props.game +
-                '/ItemNames.json');
-        }
+    let Items = require('../../../../resources/ItemNames.json');
+    if (game !== "" && game != null) {
+        Items = require('../../../../resources/' + game + '/ItemNames.json');
+    }
 
-        const addStateButton =
-            !this.props.section.state && this.props.game ? (
-                <Button
-                    text="Add State"
-                    size="medium"
-                    onClick={this.addState}
-                />
-            ) : (
-                ''
-            );
+    const addStateButton = (!props.section.state && game) ? <Button text="Add State" size="medium" onClick={addState} /> : "";
 
-        return (
-            <div
-                id={'section-' + this.props.section.id}
-                ref={this.props.sectionRef}
-                className={`${styles.section}`}>
-                <h3 className={`${styles.header}`}>
-                    Section {this.props.section.id + 1}
-                </h3>
-                <Icon
-                    src="/icons/up.png"
-                    id={'moveSectionUp-' + this.props.section.id}
-                    size="small"
-                    altText="Up"
-                    hover={true}
-                    hidden={this.props.section.id === 0}
-                    onClick={this.props.moveSectionUp}
-                />
-                <Icon
-                    src="/icons/down.png"
-                    id={'moveSectionDown-' + this.props.section.id}
-                    size="small"
-                    altText="Down"
-                    hover={true}
-                    hidden={this.props.section.id === this.props.max}
-                    onClick={this.props.moveSectionDown}
-                />
-                <Icon
-                    src="/icons/delete.png"
-                    id={'deleteSection-' + this.props.section.id}
-                    size="small"
-                    altText="X"
-                    hover={true}
-                    onClick={this.props.deleteSection}
-                />
-                <div className={`${styles.wrapper}`}>
-                    <div className="col-6">
-                        {this.props.section.text.map((text) => (
-                            <SectionText
-                                key={'text-' + text.id}
-                                sectionId={this.props.section.id}
-                                text={text}
-                                max={this.props.section.text.length - 1}
-                                game={this.props.game}
-                                updateText={this.updateText}
-                                moveTextUp={this.moveTextUp}
-                                moveTextDown={this.moveTextDown}
-                                deleteText={this.deleteText}
-                            />
-                        ))}
-                    </div>
-                    <div className="col-3">
-                        {this.props.section.items.map((item) => (
-                            <SectionItem
-                                key={'item-' + item.id}
-                                sectionId={this.props.section.id}
-                                item={item}
-                                game={this.props.game}
-                                max={this.props.section.items.length - 1}
-                                updateItems={this.updateItems}
-                                moveItemUp={this.moveItemUp}
-                                moveItemDown={this.moveItemDown}
-                                deleteItem={this.deleteItem}
-                            />
-                        ))}
-                    </div>
-                    <div className="col-3">
-                        <SectionImage
-                            sectionId={this.props.section.id}
-                            image={this.props.section.image}
-                            updateImage={this.updateImage}
-                            deleteImage={this.deleteImage}
+    return(
+        <div id={"section-" + props.section.id} className={`${styles.section}`}>
+            <h3 className={`${styles.header}`}>Section {props.section.id + 1}</h3>
+            <Icon src="/icons/up.png" id={"moveSectionUp-" + props.section.id} size="small" altText="Up" hover={true} hidden={props.section.id === 0} onClick={ () => { props.moveSectionUp(props.section.id) } } />
+            <Icon src="/icons/down.png" id={"moveSectionDown-" + props.section.id} size="small" altText="Down" hover={true} hidden={props.section.id === props.max} onClick={ () => { props.moveSectionDown(props.section.id) } } />
+            <Icon src="/icons/delete.png" id={"deleteSection-" + props.section.id} size="small" altText="X" hover={true} onClick={ () => { props.deleteSection(props.section.id) } } />
+            <div className={`${styles.wrapper}`}>
+                <div className="col-6">
+                    {props.section.text.map((text) =>
+                        <SectionText
+                            key={"text-" + text.id}
+                            sectionId={props.section.id}
+                            text={text}
+                            max={props.section.text.length - 1}
+                            updateText={updateText}
+                            moveTextUp={moveTextUp}
+                            moveTextDown={moveTextDown}
+                            deleteText={deleteText}
                         />
-                        <SectionState
-                            sectionId={this.props.section.id}
-                            state={this.props.section.state}
-                            updateState={this.updateState}
-                            deleteState={this.deleteState}
-                        />
-                    </div>
+                    )}
                 </div>
-                <div className={`${styles.wrapper}`}>
-                    <div className="col-6">
-                        <Button
-                            text="Add Text"
-                            size="medium"
-                            onClick={this.addText}
+                <div className="col-3">
+                    {props.section.items.map((item) =>
+                        <SectionItem
+                            key={"item-" + item.id}
+                            item={item}
+                            max={props.section.items.length - 1}
+                            updateItem={updateItem}
+                            moveItemUp={moveItemUp}
+                            moveItemDown={moveItemDown}
+                            deleteItem={deleteItem}
                         />
-                    </div>
-                    <div className="col-3">
-                        <Button
-                            text={'Add ' + Items.name}
-                            size="medium"
-                            onClick={this.addItem}
-                        />
-                    </div>
-                    <div className="col-3">{addStateButton}</div>
+                    )}
                 </div>
-                <Button
-                    text="Add Section"
-                    id={'addSection-' + (this.props.section.id + 1)}
-                    size="medium"
-                    onClick={this.props.addSection}
-                />
+                <div className="col-3">
+                    <SectionImage image={props.section.image} updateImage={updateImage} deleteImage={deleteImage} />
+                    <SectionState sectionId={props.section.id} state={props.section.state} updateState={updateState} deleteState={deleteState} />
+                </div>
             </div>
-        );
-    }
+            <div className={`${styles.wrapper}`}>
+                <div className="col-6">
+                    <Button text="Add Text" size="medium" onClick={addText} />
+                </div>
+                <div className="col-3">
+                     <Button text={"Add " + Items.name} size="medium" onClick={addItem} />
+                </div>
+                <div className="col-3">
+                    {addStateButton}
+                </div>
+            </div>
+            <Button text="Add Section" id={"addSection-" + (props.section.id + 1)} size="medium" onClick={ () => { props.addSection(props.section.id + 1) } } />
+        </div>
+    );
 }
 
-export default CreateSection;
+export default Section;

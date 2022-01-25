@@ -4,12 +4,6 @@ import React from 'react';
 import styles from './styles/Button.Module.css';
 
 class Button extends React.Component {
-    constructor(props) {
-        super(props);
-
-        this.onClick = props.onClick.bind(this);
-    }
-
     render() {
         return (
             <button
