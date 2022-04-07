@@ -2,6 +2,227 @@
     "name": "Chip",
     "modifiers": true,
     "modifierName": "Code",
+    "itemsShown": 7,
+    "initialState": {
+        "keys": ["Max HP", "Zenny", "Bugfrags", "Sneakruns", "Standard", "Mega", "Giga"],
+        "Max HP": {
+            "value": 100,
+            "shown": true
+        },
+        "Zenny": {
+            "value": 0,
+            "shown": true
+        },
+        "Bugfrags": {
+            "value": 0,
+            "shown": true
+        },
+        "Sneakruns": {
+            "value": 0,
+            "shown": true
+        },
+        "Standard": {
+            "value": 10,
+            "shown": true
+        },
+        "Mega": {
+            "value": 0,
+            "shown": true
+        },
+        "Giga": {
+            "value": 0,
+            "shown": true
+        },
+        "folder": [
+            {
+                "slot": 0,
+                "item": 0,
+                "modifier": "A"
+            },
+            {
+                "slot": 1,
+                "item": 0,
+                "modifier": "A"
+            },
+            {
+                "slot": 2,
+                "item": 0,
+                "modifier": "B"
+            },
+            {
+                "slot": 3,
+                "item": 0,
+                "modifier": "B"
+            },
+            {
+                "slot": 4,
+                "item": 3,
+                "modifier": "A"
+            },
+            {
+                "slot": 5,
+                "item": 3,
+                "modifier": "A"
+            },
+            {
+                "slot": 6,
+                "item": 3,
+                "modifier": "A"
+            },
+            {
+                "slot": 7,
+                "item": 4,
+                "modifier": "V"
+            },
+            {
+                "slot": 8,
+                "item": 4,
+                "modifier": "V"
+            },
+            {
+                "slot": 9,
+                "item": 4,
+                "modifier": "V"
+            },
+            {
+                "slot": 10,
+                "item": 43,
+                "modifier": "B"
+            },
+            {
+                "slot": 11,
+                "item": 43,
+                "modifier": "B"
+            },
+            {
+                "slot": 12,
+                "item": 43,
+                "modifier": "L"
+            },
+            {
+                "slot": 13,
+                "item": 43,
+                "modifier": "L"
+            },
+            {
+                "slot": 14,
+                "item": 53,
+                "modifier": "S"
+            },
+            {
+                "slot": 15,
+                "item": 53,
+                "modifier": "S"
+            },
+            {
+                "slot": 16,
+                "item": 53,
+                "modifier": "S"
+            },
+            {
+                "slot": 17,
+                "item": 53,
+                "modifier": "S"
+            },
+            {
+                "slot": 18,
+                "item": 54,
+                "modifier": "S"
+            },
+            {
+                "slot": 19,
+                "item": 54,
+                "modifier": "S"
+            },
+            {
+                "slot": 20,
+                "item": 105,
+                "modifier": "*"
+            },
+            {
+                "slot": 21,
+                "item": 105,
+                "modifier": "*"
+            },
+            {
+                "slot": 22,
+                "item": 105,
+                "modifier": "*"
+            },
+            {
+                "slot": 23,
+                "item": 108,
+                "modifier": "A"
+            },
+            {
+                "slot": 24,
+                "item": 108,
+                "modifier": "A"
+            },
+            {
+                "slot": 25,
+                "item": 108,
+                "modifier": "L"
+            },
+            {
+                "slot": 26,
+                "item": 108,
+                "modifier": "L"
+            },
+            {
+                "slot": 27,
+                "item": 118,
+                "modifier": "S"
+            },
+            {
+                "slot": 28,
+                "item": 147,
+                "modifier": "*"
+            },
+            {
+                "slot": 29,
+                "item": 147,
+                "modifier": "*"
+            }
+        ],
+        "folderEdit": {
+            "value": [],
+            "shown": false
+        }
+    },
+    "elementOrder": {
+        "fire": 1,
+        "aqua": 2,
+        "elec": 3,
+        "wood": 4,
+        "recov": 5,
+        "num": 6,
+        "sword": 7,
+        "invis": 8,
+        "ground": 9,
+        "obj": 10,
+        "wind": 11,
+        "break": 12,
+        "none": 13
+    },
+    "sortTypes": [
+        "ID",
+        "Alphabet",
+        "Alphabet (JP)",
+        "Code",
+        "Attack",
+        "Element",
+        "Quantity",
+        "MB"
+    ],
+    "actionTypes": [
+        "Remove",
+        "Add",
+        "Swap",
+        "Replace",
+        "Sort",
+        "Reg"
+    ],
     "types": [
         {
             "name": "Standard",
@@ -14,1398 +235,3744 @@
             "id": "Mega",
             "low": 150,
             "high": 227
+        },
+        {
+            "name": "Giga",
+            "id": "Giga",
+            "low": 228,
+            "high": 237
+        },
+        {
+            "name": "Secret",
+            "id": "Secret",
+            "low": 238,
+            "high": 277
+        },
+        {
+            "name": "DarkChip",
+            "id": "DarkChip",
+            "low": 278,
+            "high": 285
         }
     ],
     "Items": [
         {
             "id": 0,
+            "gameId": 0,
             "name": "Cannon",
-            "modifiers": ["A", "B", "C", "*"]
+            "nameJP": "キャノン",
+            "modifiers": ["A","B","C","*"],
+            "damageSort": 40,
+            "damageDisplay": 40,
+            "element": "none",
+            "rarity": 1,
+            "capacity": 8,
+            "version": "Both"
         },
         {
             "id": 1,
+            "gameId": 1,
             "name": "HiCannon",
-            "modifiers": ["C", "D", "E"]
+            "nameJP": "ハイキャノン",
+            "modifiers": ["C","D","E"],
+            "damageSort": 80,
+            "damageDisplay": 80,
+            "element": "none",
+            "rarity": 2,
+            "capacity": 24,
+            "version": "Both"
         },
         {
             "id": 2,
+            "gameId": 2,
             "name": "M-Cannon",
-            "modifiers": ["E", "F", "G"]
+            "nameJP": "メガキャノン",
+            "modifiers": ["E","F","G"],
+            "damageSort": 120,
+            "damageDisplay": 120,
+            "element": "none",
+            "rarity": 3,
+            "capacity": 40,
+            "version": "Both"
         },
         {
             "id": 3,
+            "gameId": 3,
             "name": "AirShot",
-            "modifiers": ["A", "S", "V", "*"]
+            "nameJP": "エアシュート",
+            "modifiers": ["A","S","V","*"],
+            "damageSort": 20,
+            "damageDisplay": 20,
+            "element": "wind",
+            "rarity": 2,
+            "capacity": 6,
+            "version": "Both"
         },
         {
             "id": 4,
+            "gameId": 14,
             "name": "Vulcan1",
-            "modifiers": ["E", "S", "V", "*"]
+            "nameJP": "バルカン１",
+            "modifiers": ["E","S","V","*"],
+            "damageSort": 10,
+            "damageDisplay": 10,
+            "element": "none",
+            "rarity": 1,
+            "capacity": 6,
+            "version": "Both"
         },
         {
             "id": 5,
+            "gameId": 15,
             "name": "Vulcan2",
-            "modifiers": ["B", "H", "O"]
+            "nameJP": "バルカン２",
+            "modifiers": ["B","H","O"],
+            "damageSort": 10,
+            "damageDisplay": 10,
+            "element": "none",
+            "rarity": 2,
+            "capacity": 18,
+            "version": "Both"
         },
         {
             "id": 6,
+            "gameId": 16,
             "name": "Vulcan3",
-            "modifiers": ["O", "Y", "W"]
+            "nameJP": "バルカン３",
+            "modifiers": ["O","Y","W"],
+            "damageSort": 10,
+            "damageDisplay": 10,
+            "element": "none",
+            "rarity": 3,
+            "capacity": 30,
+            "version": "Both"
         },
         {
             "id": 7,
+            "gameId": 17,
             "name": "Spreader",
-            "modifiers": ["L", "M", "N", "*"]
+            "nameJP": "スプレッドガン",
+            "modifiers": ["L","M","N","*"],
+            "damageSort": 30,
+            "damageDisplay": 30,
+            "element": "none",
+            "rarity": 2,
+            "capacity": 10,
+            "version": "Both"
         },
         {
             "id": 8,
+            "gameId": 18,
             "name": "HeatShot",
-            "modifiers": ["B", "C", "D", "*"]
+            "nameJP": "ヒートショット",
+            "modifiers": ["B","C","D","*"],
+            "damageSort": 40,
+            "damageDisplay": 40,
+            "element": "fire",
+            "rarity": 1,
+            "capacity": 8,
+            "version": "Both"
         },
         {
             "id": 9,
+            "gameId": 19,
             "name": "Heat-V",
-            "modifiers": ["C", "D", "E"]
+            "nameJP": "ヒートブイ",
+            "modifiers": ["C","D","E"],
+            "damageSort": 70,
+            "damageDisplay": 70,
+            "element": "fire",
+            "rarity": 2,
+            "capacity": 22,
+            "version": "Both"
         },
         {
             "id": 10,
+            "gameId": 20,
             "name": "HeatSide",
-            "modifiers": ["D", "E", "F"]
+            "nameJP": "ヒートサイド",
+            "modifiers": ["D","E","F"],
+            "damageSort": 100,
+            "damageDisplay": 100,
+            "element": "fire",
+            "rarity": 3,
+            "capacity": 44,
+            "version": "Both"
         },
         {
             "id": 11,
+            "gameId": 21,
             "name": "Bubbler",
-            "modifiers": ["P", "Q", "R", "*"]
+            "nameJP": "バブルショット",
+            "modifiers": ["P","Q","R","*"],
+            "damageSort": 50,
+            "damageDisplay": 50,
+            "element": "aqua",
+            "rarity": 1,
+            "capacity": 12,
+            "version": "Both"
         },
         {
             "id": 12,
+            "gameId": 22,
             "name": "Bub-V",
-            "modifiers": ["C", "D", "E"]
+            "nameJP": "バブルブイ",
+            "modifiers": ["C","D","E"],
+            "damageSort": 80,
+            "damageDisplay": 80,
+            "element": "aqua",
+            "rarity": 2,
+            "capacity": 22,
+            "version": "Both"
         },
         {
             "id": 13,
+            "gameId": 23,
             "name": "BublSide",
-            "modifiers": ["D", "E", "F"]
+            "nameJP": "バブルサイド",
+            "modifiers": ["D","E","F"],
+            "damageSort": 110,
+            "damageDisplay": 110,
+            "element": "aqua",
+            "rarity": 3,
+            "capacity": 44,
+            "version": "Both"
         },
         {
             "id": 14,
+            "gameId": 56,
             "name": "Thunder1",
-            "modifiers": ["B", "L", "P", "*"]
+            "nameJP": "サンダーボール１",
+            "modifiers": ["B","L","P","*"],
+            "damageSort": 40,
+            "damageDisplay": 40,
+            "element": "elec",
+            "rarity": 1,
+            "capacity": 7,
+            "version": "Both"
         },
         {
             "id": 15,
+            "gameId": 57,
             "name": "Thunder2",
-            "modifiers": ["H", "P", "S"]
+            "nameJP": "サンダーボール２",
+            "modifiers": ["H","P","S"],
+            "damageSort": 60,
+            "damageDisplay": 60,
+            "element": "elec",
+            "rarity": 2,
+            "capacity": 18,
+            "version": "Both"
         },
         {
             "id": 16,
+            "gameId": 58,
             "name": "Thunder3",
-            "modifiers": ["I", "T", "W"]
+            "nameJP": "サンダーボール３",
+            "modifiers": ["I","T","W"],
+            "damageSort": 80,
+            "damageDisplay": 80,
+            "element": "elec",
+            "rarity": 3,
+            "capacity": 33,
+            "version": "Both"
         },
         {
             "id": 17,
+            "gameId": 8,
             "name": "WideSht1",
-            "modifiers": ["C", "D", "E", "*"]
+            "nameJP": "ワイドショット１",
+            "modifiers": ["C","D","E","*"],
+            "damageSort": 60,
+            "damageDisplay": 60,
+            "element": "aqua",
+            "rarity": 1,
+            "capacity": 10,
+            "version": "Both"
         },
         {
             "id": 18,
+            "gameId": 9,
             "name": "WideSht2",
-            "modifiers": ["L", "M", "N"]
+            "nameJP": "ワイドショット２",
+            "modifiers": ["L","M","N"],
+            "damageSort": 80,
+            "damageDisplay": 80,
+            "element": "aqua",
+            "rarity": 2,
+            "capacity": 30,
+            "version": "Both"
         },
         {
             "id": 19,
+            "gameId": 10,
             "name": "WideSht3",
-            "modifiers": ["S", "T", "U"]
+            "nameJP": "ワイドショット３",
+            "modifiers": ["S","T","U"],
+            "damageSort": 100,
+            "damageDisplay": 100,
+            "element": "aqua",
+            "rarity": 3,
+            "capacity": 50,
+            "version": "Both"
         },
         {
             "id": 20,
+            "gameId": 11,
             "name": "FlmLine1",
-            "modifiers": ["F", "G", "H", "*"]
+            "nameJP": "フレイムライン１",
+            "modifiers": ["F","G","H","*"],
+            "damageSort": 70,
+            "damageDisplay": 70,
+            "element": "fire",
+            "rarity": 1,
+            "capacity": 18,
+            "version": "Both"
         },
         {
             "id": 21,
+            "gameId": 12,
             "name": "FlmLine2",
-            "modifiers": ["D", "E", "F"]
+            "nameJP": "フレイムライン２",
+            "modifiers": ["D","E","F"],
+            "damageSort": 120,
+            "damageDisplay": 120,
+            "element": "fire",
+            "rarity": 1,
+            "capacity": 26,
+            "version": "Both"
         },
         {
             "id": 22,
+            "gameId": 13,
             "name": "FlmLine3",
-            "modifiers": ["J", "K", "L"]
+            "nameJP": "フレイムライン３",
+            "modifiers": ["J","K","L"],
+            "damageSort": 170,
+            "damageDisplay": 170,
+            "element": "fire",
+            "rarity": 1,
+            "capacity": 54,
+            "version": "Both"
         },
         {
             "id": 23,
+            "gameId": 31,
             "name": "GunSol1",
-            "modifiers": ["A", "G", "M", "*"]
+            "nameJP": "ガンデルソル１",
+            "modifiers": ["A","G","M","*"],
+            "damageSort": 120,
+            "damageDisplay": 120,
+            "element": "none",
+            "rarity": 2,
+            "capacity": 15,
+            "version": "Both"
         },
         {
             "id": 24,
+            "gameId": 32,
             "name": "GunSol2",
-            "modifiers": ["B", "G", "S"]
+            "nameJP": "ガンデルソル２",
+            "modifiers": ["B","G","S"],
+            "damageSort": 180,
+            "damageDisplay": 180,
+            "element": "none",
+            "rarity": 3,
+            "capacity": 25,
+            "version": "Both"
         },
         {
             "id": 25,
+            "gameId": 33,
             "name": "GunSol3",
-            "modifiers": ["C", "G", "T"]
+            "nameJP": "ガンデルソル３",
+            "modifiers": ["C","G","T"],
+            "damageSort": 240,
+            "damageDisplay": 240,
+            "element": "none",
+            "rarity": 4,
+            "capacity": 35,
+            "version": "Both"
         },
         {
             "id": 26,
+            "gameId": 4,
             "name": "Blizzard",
-            "modifiers": ["H", "J", "V"]
+            "nameJP": "ブリザード",
+            "modifiers": ["H","J","V"],
+            "damageSort": 100,
+            "damageDisplay": 100,
+            "element": "aqua",
+            "rarity": 2,
+            "capacity": 26,
+            "version": "Both"
         },
         {
             "id": 27,
+            "gameId": 5,
             "name": "HeatBrth",
-            "modifiers": ["D", "K", "O", "*"]
+            "nameJP": "ヒートブレス",
+            "modifiers": ["D","K","O","*"],
+            "damageSort": 90,
+            "damageDisplay": 90,
+            "element": "fire",
+            "rarity": 2,
+            "capacity": 30,
+            "version": "Both"
         },
         {
             "id": 28,
+            "gameId": 41,
             "name": "ElecShok",
-            "modifiers": ["J", "L", "S", "*"]
+            "nameJP": "エレキショック",
+            "modifiers": ["J","L","S","*"],
+            "damageSort": 80,
+            "damageDisplay": 80,
+            "element": "elec",
+            "rarity": 3,
+            "capacity": 40,
+            "version": "Both"
         },
         {
             "id": 29,
+            "gameId": 42,
             "name": "WoodPwdr",
-            "modifiers": ["F", "T", "W", "*"]
+            "nameJP": "ウッディパウダー",
+            "modifiers": ["F","T","W","*"],
+            "damageSort": 100,
+            "damageDisplay": 100,
+            "element": "wood",
+            "rarity": 3,
+            "capacity": 40,
+            "version": "Both"
         },
         {
             "id": 30,
+            "gameId": 46,
             "name": "SandRing",
-            "modifiers": ["C", "R", "S", "*"]
+            "nameJP": "サンドリング",
+            "modifiers": ["C","R","S","*"],
+            "damageSort": 0,
+            "damageDisplay": 0,
+            "element": "none",
+            "rarity": 2,
+            "capacity": 8,
+            "version": "Both"
         },
         {
             "id": 31,
+            "gameId": 68,
             "name": "TwnFng1",
-            "modifiers": ["A", "B", "C", "*"]
+            "nameJP": "ツインファング１",
+            "modifiers": ["A","B","C","*"],
+            "damageSort": 70,
+            "damageDisplay": 70,
+            "element": "none",
+            "rarity": 1,
+            "capacity": 13,
+            "version": "Both"
         },
         {
             "id": 32,
+            "gameId": 69,
             "name": "TwnFng2",
-            "modifiers": ["O", "P", "Q"]
+            "nameJP": "ツインファング２",
+            "modifiers": ["O","P","Q"],
+            "damageSort": 100,
+            "damageDisplay": 100,
+            "element": "none",
+            "rarity": 2,
+            "capacity": 26,
+            "version": "Both"
         },
         {
             "id": 33,
+            "gameId": 70,
             "name": "TwnFng3",
-            "modifiers": ["F", "G", "H"]
+            "nameJP": "ツインファング３",
+            "modifiers": ["F","G","H"],
+            "damageSort": 130,
+            "damageDisplay": 130,
+            "element": "none",
+            "rarity": 3,
+            "capacity": 39,
+            "version": "Both"
         },
         {
             "id": 34,
+            "gameId": 24,
             "name": "ElemFlar",
-            "modifiers": ["K", "N", "P"]
+            "nameJP": "エレメントフレア",
+            "modifiers": ["K","N","P"],
+            "damageSort": 100,
+            "damageDisplay": 100,
+            "element": "fire",
+            "rarity": 3,
+            "capacity": 24,
+            "version": "Both"
         },
         {
             "id": 35,
+            "gameId": 25,
             "name": "ElemIce",
-            "modifiers": ["H", "Q", "V"]
+            "nameJP": "エレメントアイス",
+            "modifiers": ["H","Q","V"],
+            "damageSort": 100,
+            "damageDisplay": 100,
+            "element": "aqua",
+            "rarity": 3,
+            "capacity": 24,
+            "version": "Both"
         },
         {
             "id": 36,
+            "gameId": 125,
             "name": "ElemLeaf",
-            "modifiers": ["C", "D", "I"]
+            "nameJP": "エレメントリーフ",
+            "modifiers": ["C","D","I"],
+            "damageSort": 80,
+            "damageDisplay": 80,
+            "element": "wood",
+            "rarity": 3,
+            "capacity": 24,
+            "version": "Both"
         },
         {
             "id": 37,
+            "gameId": 127,
             "name": "ElemSand",
-            "modifiers": ["A", "L", "S", "*"]
+            "nameJP": "エレメントサンド",
+            "modifiers": ["A","L","S","*"],
+            "damageSort": 120,
+            "damageDisplay": 120,
+            "element": "fire",
+            "rarity": 3,
+            "capacity": 24,
+            "version": "Both"
         },
         {
             "id": 38,
+            "gameId": 34,
             "name": "MagBolt1",
-            "modifiers": ["B", "C", "D"]
+            "nameJP": "マグボルト１",
+            "modifiers": ["B","C","D"],
+            "damageSort": 90,
+            "damageDisplay": 90,
+            "element": "elec",
+            "rarity": 1,
+            "capacity": 18,
+            "version": "Both"
         },
         {
             "id": 39,
+            "gameId": 35,
             "name": "MagBolt2",
-            "modifiers": ["E", "F", "G"]
+            "nameJP": "マグボルト２",
+            "modifiers": ["E","F","G"],
+            "damageSort": 110,
+            "damageDisplay": 110,
+            "element": "elec",
+            "rarity": 2,
+            "capacity": 28,
+            "version": "Both"
         },
         {
             "id": 40,
+            "gameId": 36,
             "name": "MagBolt3",
-            "modifiers": ["A", "B", "C"]
+            "nameJP": "マグボルト３",
+            "modifiers": ["A","B","C"],
+            "damageSort": 130,
+            "damageDisplay": 130,
+            "element": "elec",
+            "rarity": 3,
+            "capacity": 38,
+            "version": "Both"
         },
         {
             "id": 41,
+            "gameId": 7,
             "name": "Tornado",
-            "modifiers": ["E", "L", "T"]
+            "nameJP": "トルネード",
+            "modifiers": ["E","L","T"],
+            "damageSort": 20,
+            "damageDisplay": 20,
+            "element": "wind",
+            "rarity": 3,
+            "capacity": 22,
+            "version": "Both"
         },
         {
             "id": 42,
+            "gameId": 26,
             "name": "Static",
-            "modifiers": ["B", "G", "Z", "*"]
+            "nameJP": "ノイズストーム",
+            "modifiers": ["B","G","Z","*"],
+            "damageSort": 20,
+            "damageDisplay": 20,
+            "element": "none",
+            "rarity": 3,
+            "capacity": 30,
+            "version": "Both"
         },
         {
             "id": 43,
+            "gameId": 28,
             "name": "MiniBomb",
-            "modifiers": ["B", "L", "T", "*"]
+            "nameJP": "ミニボム",
+            "modifiers": ["B","L","T","*"],
+            "damageSort": 50,
+            "damageDisplay": 50,
+            "element": "none",
+            "rarity": 1,
+            "capacity": 5,
+            "version": "Both"
         },
         {
             "id": 44,
+            "gameId": 29,
             "name": "EnergBom",
-            "modifiers": ["E", "N", "T", "*"]
+            "nameJP": "エナジーボム",
+            "modifiers": ["E","N","T","*"],
+            "damageSort": 40,
+            "damageDisplay": 40,
+            "element": "none",
+            "rarity": 3,
+            "capacity": 11,
+            "version": "Both"
         },
         {
             "id": 45,
+            "gameId": 30,
             "name": "MegEnBom",
-            "modifiers": ["D", "J", "W"]
+            "nameJP": "メガエナジーボム",
+            "modifiers": ["D","J","W"],
+            "damageSort": 60,
+            "damageDisplay": 60,
+            "element": "none",
+            "rarity": 4,
+            "capacity": 30,
+            "version": "Both"
         },
         {
             "id": 46,
+            "gameId": 43,
             "name": "Ball",
-            "modifiers": ["B", "T", "V", "*"]
+            "nameJP": "ホウガン",
+            "modifiers": ["B","T","V","*"],
+            "damageSort": 140,
+            "damageDisplay": 140,
+            "element": "break",
+            "rarity": 3,
+            "capacity": 30,
+            "version": "Both"
         },
         {
             "id": 47,
+            "gameId": 45,
             "name": "BlkBomb",
-            "modifiers": ["D", "H", "Z"]
+            "nameJP": "ブラックボム",
+            "modifiers": ["D","H","Z"],
+            "damageSort": 210,
+            "damageDisplay": 210,
+            "element": "fire",
+            "rarity": 4,
+            "capacity": 55,
+            "version": "Both"
         },
         {
             "id": 48,
+            "gameId": 44,
             "name": "Geyser",
-            "modifiers": ["B", "L", "V"]
+            "nameJP": "カンケツセン",
+            "modifiers": ["B","L","V"],
+            "damageSort": 200,
+            "damageDisplay": 200,
+            "element": "aqua",
+            "rarity": 4,
+            "capacity": 38,
+            "version": "Both"
         },
         {
             "id": 49,
+            "gameId": 40,
             "name": "BugBomb",
-            "modifiers": ["B", "G", "Z", "*"]
+            "nameJP": "バグボム",
+            "modifiers": ["B","G","Z","*"],
+            "damageSort": 0,
+            "damageDisplay": 0,
+            "element": "none",
+            "rarity": 3,
+            "capacity": 30,
+            "version": "Both"
         },
         {
             "id": 50,
+            "gameId": 37,
             "name": "Binder1",
-            "modifiers": ["C", "O", "S", "*"]
+            "nameJP": "バウンドノート１",
+            "modifiers": ["C","O","S","*"],
+            "damageSort": 60,
+            "damageDisplay": 60,
+            "element": "none",
+            "rarity": 1,
+            "capacity": 10,
+            "version": "Both"
         },
         {
             "id": 51,
+            "gameId": 38,
             "name": "Binder2",
-            "modifiers": ["A", "T", "Y"]
+            "nameJP": "バウンドノート２",
+            "modifiers": ["A","T","Y"],
+            "damageSort": 80,
+            "damageDisplay": 80,
+            "element": "none",
+            "rarity": 2,
+            "capacity": 17,
+            "version": "Both"
         },
         {
             "id": 52,
+            "gameId": 39,
             "name": "Binder3",
-            "modifiers": ["E", "I", "O"]
+            "nameJP": "バウンドノート３",
+            "modifiers": ["E","I","O"],
+            "damageSort": 100,
+            "damageDisplay": 100,
+            "element": "none",
+            "rarity": 3,
+            "capacity": 24,
+            "version": "Both"
         },
         {
             "id": 53,
+            "gameId": 47,
             "name": "Sword",
-            "modifiers": ["E", "L", "S"]
+            "nameJP": "ソード",
+            "modifiers": ["E","L","S"],
+            "damageSort": 80,
+            "damageDisplay": 80,
+            "element": "sword",
+            "rarity": 1,
+            "capacity": 9,
+            "version": "Both"
         },
         {
             "id": 54,
+            "gameId": 48,
             "name": "WideSwrd",
-            "modifiers": ["E", "L", "S"]
+            "nameJP": "ワイドソード",
+            "modifiers": ["E","L","S"],
+            "damageSort": 80,
+            "damageDisplay": 80,
+            "element": "sword",
+            "rarity": 2,
+            "capacity": 16,
+            "version": "Both"
         },
         {
             "id": 55,
+            "gameId": 49,
             "name": "LongSwrd",
-            "modifiers": ["E", "L", "S"]
+            "nameJP": "ロングソード",
+            "modifiers": ["E","L","S"],
+            "damageSort": 80,
+            "damageDisplay": 80,
+            "element": "sword",
+            "rarity": 3,
+            "capacity": 25,
+            "version": "Both"
         },
         {
             "id": 56,
+            "gameId": 50,
             "name": "WideBlde",
-            "modifiers": ["C", "K", "S"]
+            "nameJP": "ワイドブレード",
+            "modifiers": ["C","K","S"],
+            "damageSort": 130,
+            "damageDisplay": 130,
+            "element": "sword",
+            "rarity": 4,
+            "capacity": 38,
+            "version": "Both"
         },
         {
             "id": 57,
+            "gameId": 51,
             "name": "LongBlde",
-            "modifiers": ["G", "R", "S"]
+            "nameJP": "ロングブレード",
+            "modifiers": ["G","R","S"],
+            "damageSort": 130,
+            "damageDisplay": 130,
+            "element": "sword",
+            "rarity": 4,
+            "capacity": 40,
+            "version": "Both"
         },
         {
             "id": 58,
+            "gameId": 53,
             "name": "CustSwrd",
-            "modifiers": ["B", "P", "S"]
+            "nameJP": "カスタムソード",
+            "modifiers": ["B","P","S"],
+            "damageSort": 0,
+            "damageDisplay": "???",
+            "element": "sword",
+            "rarity": 3,
+            "capacity": 20,
+            "version": "Both"
         },
         {
             "id": 59,
+            "gameId": 54,
             "name": "VarSwrd",
-            "modifiers": ["C", "J", "V"]
+            "nameJP": "バリアブルソード",
+            "modifiers": ["C","J","V"],
+            "damageSort": 150,
+            "damageDisplay": 150,
+            "element": "sword",
+            "rarity": 4,
+            "capacity": 60,
+            "version": "Both"
         },
         {
             "id": 60,
+            "gameId": 55,
             "name": "Slasher",
-            "modifiers": ["F", "H", "R"]
+            "nameJP": "イアイフォーム",
+            "modifiers": ["F","H","R"],
+            "damageSort": 240,
+            "damageDisplay": 240,
+            "element": "sword",
+            "rarity": 3,
+            "capacity": 18,
+            "version": "Both"
         },
         {
             "id": 61,
+            "gameId": 52,
             "name": "WindRack",
-            "modifiers": ["A", "L", "R", "*"]
+            "nameJP": "フウジンラケット",
+            "modifiers": ["A","L","R","*"],
+            "damageSort": 100,
+            "damageDisplay": 100,
+            "element": "wind",
+            "rarity": 3,
+            "capacity": 23,
+            "version": "Both"
         },
         {
             "id": 62,
+            "gameId": 62,
             "name": "AirHoc1",
-            "modifiers": ["D", "E", "F", "*"]
+            "nameJP": "エアホッケー１",
+            "modifiers": ["D","E","F","*"],
+            "damageSort": 50,
+            "damageDisplay": 50,
+            "element": "break",
+            "rarity": 1,
+            "capacity": 20,
+            "version": "Both"
         },
         {
             "id": 63,
+            "gameId": 63,
             "name": "AirHoc2",
-            "modifiers": ["I", "J", "K"]
+            "nameJP": "エアホッケー２",
+            "modifiers": ["I","J","K"],
+            "damageSort": 60,
+            "damageDisplay": 60,
+            "element": "break",
+            "rarity": 2,
+            "capacity": 30,
+            "version": "Both"
         },
         {
             "id": 64,
+            "gameId": 64,
             "name": "AirHoc3",
-            "modifiers": ["U", "V", "W"]
+            "nameJP": "エアホッケー３",
+            "modifiers": ["U","V","W"],
+            "damageSort": 70,
+            "damageDisplay": 70,
+            "element": "break",
+            "rarity": 3,
+            "capacity": 40,
+            "version": "Both"
         },
         {
             "id": 65,
+            "gameId": 59,
             "name": "Counter1",
-            "modifiers": ["F", "M", "T", "*"]
+            "nameJP": "カウンター１",
+            "modifiers": ["F","M","T","*"],
+            "damageSort": 70,
+            "damageDisplay": 70,
+            "element": "none",
+            "rarity": 3,
+            "capacity": 14,
+            "version": "Both"
         },
         {
             "id": 66,
+            "gameId": 60,
             "name": "Counter2",
-            "modifiers": ["B", "H", "L", "*"]
+            "nameJP": "カウンター２",
+            "modifiers": ["B","H","L","*"],
+            "damageSort": 110,
+            "damageDisplay": 110,
+            "element": "none",
+            "rarity": 3,
+            "capacity": 28,
+            "version": "Both"
         },
         {
             "id": 67,
+            "gameId": 61,
             "name": "Counter3",
-            "modifiers": ["A", "N", "V"]
+            "nameJP": "カウンター３",
+            "modifiers": ["A","N","V"],
+            "damageSort": 150,
+            "damageDisplay": 150,
+            "element": "none",
+            "rarity": 3,
+            "capacity": 42,
+            "version": "Both"
         },
         {
             "id": 68,
+            "gameId": 74,
             "name": "Boomer1",
-            "modifiers": ["L", "M", "N"]
+            "nameJP": "ブーメラン１",
+            "modifiers": ["L","M","N"],
+            "damageSort": 60,
+            "damageDisplay": 60,
+            "element": "wood",
+            "rarity": 1,
+            "capacity": 16,
+            "version": "Both"
         },
         {
             "id": 69,
+            "gameId": 75,
             "name": "Boomer2",
-            "modifiers": ["L", "M", "N"]
+            "nameJP": "ブーメラン２",
+            "modifiers": ["L","M","N"],
+            "damageSort": 80,
+            "damageDisplay": 80,
+            "element": "wood",
+            "rarity": 2,
+            "capacity": 28,
+            "version": "Both"
         },
         {
             "id": 70,
+            "gameId": 76,
             "name": "Boomer3",
-            "modifiers": ["S", "T", "U"]
+            "nameJP": "ブーメラン３",
+            "modifiers": ["S","T","U"],
+            "damageSort": 100,
+            "damageDisplay": 100,
+            "element": "wood",
+            "rarity": 2,
+            "capacity": 40,
+            "version": "Both"
         },
         {
             "id": 71,
+            "gameId": 77,
             "name": "SidBmbo1",
-            "modifiers": ["B", "I", "R", "*"]
+            "nameJP": "サイドバンブー１",
+            "modifiers": ["B","I","R","*"],
+            "damageSort": 80,
+            "damageDisplay": 80,
+            "element": "wood",
+            "rarity": 1,
+            "capacity": 14,
+            "version": "Both"
         },
         {
             "id": 72,
+            "gameId": 78,
             "name": "SidBmbo2",
-            "modifiers": ["H", "O", "S"]
+            "nameJP": "サイドバンブー２",
+            "modifiers": ["H","O","S"],
+            "damageSort": 110,
+            "damageDisplay": 110,
+            "element": "wood",
+            "rarity": 2,
+            "capacity": 22,
+            "version": "Both"
         },
         {
             "id": 73,
+            "gameId": 79,
             "name": "SidBmbo3",
-            "modifiers": ["A", "F", "U"]
+            "nameJP": "サイドバンブー３",
+            "modifiers": ["A","F","U"],
+            "damageSort": 140,
+            "damageDisplay": 140,
+            "element": "wood",
+            "rarity": 3,
+            "capacity": 30,
+            "version": "Both"
         },
         {
             "id": 74,
+            "gameId": 80,
             "name": "Lance",
-            "modifiers": ["A", "G", "R", "*"]
+            "nameJP": "バンブーランス",
+            "modifiers": ["A","G","R","*"],
+            "damageSort": 130,
+            "damageDisplay": 130,
+            "element": "wood",
+            "rarity": 4,
+            "capacity": 42,
+            "version": "Both"
         },
         {
             "id": 75,
+            "gameId": 71,
             "name": "WhitWeb1",
-            "modifiers": ["D", "L", "R", "*"]
+            "nameJP": "ホワイトウェブ１",
+            "modifiers": ["D","L","R","*"],
+            "damageSort": 40,
+            "damageDisplay": 40,
+            "element": "wood",
+            "rarity": 1,
+            "capacity": 26,
+            "version": "Both"
         },
         {
             "id": 76,
+            "gameId": 72,
             "name": "WhitWeb2",
-            "modifiers": ["C", "E", "Y", "*"]
+            "nameJP": "ホワイトウェブ２",
+            "modifiers": ["C","E","Y","*"],
+            "damageSort": 40,
+            "damageDisplay": 40,
+            "element": "wood",
+            "rarity": 2,
+            "capacity": 36,
+            "version": "Both"
         },
         {
             "id": 77,
+            "gameId": 73,
             "name": "WhitWeb3",
-            "modifiers": ["K", "O", "V", "*"]
+            "nameJP": "ホワイトウェブ３",
+            "modifiers": ["K","O","V","*"],
+            "damageSort": 40,
+            "damageDisplay": 40,
+            "element": "wood",
+            "rarity": 3,
+            "capacity": 46,
+            "version": "Both"
         },
         {
             "id": 78,
+            "gameId": 129,
             "name": "MokoRus1",
-            "modifiers": ["C", "I", "M"]
+            "nameJP": "モコラッシュ１",
+            "modifiers": ["C","I","M"],
+            "damageSort": 60,
+            "damageDisplay": 60,
+            "element": "none",
+            "rarity": 1,
+            "capacity": 14,
+            "version": "Both"
         },
         {
             "id": 79,
+            "gameId": 130,
             "name": "MokoRus2",
-            "modifiers": ["G", "K", "U"]
+            "nameJP": "モコラッシュ２",
+            "modifiers": ["G","K","U"],
+            "damageSort": 90,
+            "damageDisplay": 90,
+            "element": "none",
+            "rarity": 2,
+            "capacity": 28,
+            "version": "Both"
         },
         {
             "id": 80,
+            "gameId": 131,
             "name": "MokoRus3",
-            "modifiers": ["O", "T", "Y"]
+            "nameJP": "モコラッシュ３",
+            "modifiers": ["O","T","Y"],
+            "damageSort": 120,
+            "damageDisplay": 120,
+            "element": "none",
+            "rarity": 3,
+            "capacity": 42,
+            "version": "Both"
         },
         {
             "id": 81,
+            "gameId": 65,
             "name": "CircGun1",
-            "modifiers": ["H", "T", "Z"]
+            "nameJP": "サークルガン１",
+            "modifiers": ["H","T","Z"],
+            "damageSort": 80,
+            "damageDisplay": 80,
+            "element": "none",
+            "rarity": 1,
+            "capacity": 28,
+            "version": "Both"
         },
         {
             "id": 82,
+            "gameId": 66,
             "name": "CircGun2",
-            "modifiers": ["D", "G", "T"]
+            "nameJP": "サークルガン２",
+            "modifiers": ["D","G","T"],
+            "damageSort": 100,
+            "damageDisplay": 100,
+            "element": "none",
+            "rarity": 2,
+            "capacity": 40,
+            "version": "Both"
         },
         {
             "id": 83,
+            "gameId": 67,
             "name": "CircGun3",
-            "modifiers": ["J", "M", "R"]
+            "nameJP": "サークルガン３",
+            "modifiers": ["J","M","R"],
+            "damageSort": 120,
+            "damageDisplay": 120,
+            "element": "none",
+            "rarity": 3,
+            "capacity": 52,
+            "version": "Both"
         },
         {
             "id": 84,
+            "gameId": 95,
             "name": "Snake",
-            "modifiers": ["D", "M", "R"]
+            "nameJP": "カモンスネーク",
+            "modifiers": ["D","M","R"],
+            "damageSort": 20,
+            "damageDisplay": 20,
+            "element": "none",
+            "rarity": 4,
+            "capacity": 60,
+            "version": "Both"
         },
         {
             "id": 85,
+            "gameId": 93,
             "name": "Magnum",
-            "modifiers": ["H", "Q", "V"]
+            "nameJP": "マグナム",
+            "modifiers": ["H","Q","V"],
+            "damageSort": 130,
+            "damageDisplay": 130,
+            "element": "ground",
+            "rarity": 3,
+            "capacity": 52,
+            "version": "Both"
         },
         {
             "id": 86,
+            "gameId": 103,
             "name": "BigHamr1",
-            "modifiers": ["B", "O", "R"]
+            "nameJP": "ビッグハンマー１",
+            "modifiers": ["B","O","R"],
+            "damageSort": 160,
+            "damageDisplay": 160,
+            "element": "break",
+            "rarity": 1,
+            "capacity": 22,
+            "version": "Both"
         },
         {
             "id": 87,
+            "gameId": 104,
             "name": "BigHamr2",
-            "modifiers": ["G", "J", "W"]
+            "nameJP": "ビッグハンマー２",
+            "modifiers": ["G","J","W"],
+            "damageSort": 220,
+            "damageDisplay": 220,
+            "element": "break",
+            "rarity": 2,
+            "capacity": 33,
+            "version": "Both"
         },
         {
             "id": 88,
+            "gameId": 105,
             "name": "BigHamr3",
-            "modifiers": ["D", "V", "Z"]
+            "nameJP": "ビッグハンマー３",
+            "modifiers": ["D","V","Z"],
+            "damageSort": 280,
+            "damageDisplay": 280,
+            "element": "break",
+            "rarity": 3,
+            "capacity": 44,
+            "version": "Both"
         },
         {
             "id": 89,
+            "gameId": 84,
             "name": "BoyBomb1",
-            "modifiers": ["E", "J", "M"]
+            "nameJP": "ボーイズボム１",
+            "modifiers": ["E","J","M"],
+            "damageSort": 220,
+            "damageDisplay": 220,
+            "element": "obj",
+            "rarity": 1,
+            "capacity": 30,
+            "version": "Both"
         },
         {
             "id": 90,
+            "gameId": 85,
             "name": "BoyBomb2",
-            "modifiers": ["I", "S", "W"]
+            "nameJP": "ボーイズボム２",
+            "modifiers": ["I","S","W"],
+            "damageSort": 250,
+            "damageDisplay": 250,
+            "element": "obj",
+            "rarity": 2,
+            "capacity": 40,
+            "version": "Both"
         },
         {
             "id": 91,
+            "gameId": 86,
             "name": "BoyBomb3",
-            "modifiers": ["G", "T", "V"]
+            "nameJP": "ボーイズボム３",
+            "modifiers": ["G","T","V"],
+            "damageSort": 280,
+            "damageDisplay": 280,
+            "element": "obj",
+            "rarity": 3,
+            "capacity": 50,
+            "version": "Both"
         },
         {
             "id": 92,
+            "gameId": 96,
             "name": "TimeBomb",
-            "modifiers": ["J", "K", "L"]
+            "nameJP": "カウントボム",
+            "modifiers": ["J","K","L"],
+            "damageSort": 150,
+            "damageDisplay": 150,
+            "element": "obj",
+            "rarity": 3,
+            "capacity": 55,
+            "version": "Both"
         },
         {
             "id": 93,
+            "gameId": 97,
             "name": "Mine",
-            "modifiers": ["C", "H", "Z"]
+            "nameJP": "ステルスマイン",
+            "modifiers": ["C","H","Z"],
+            "damageSort": 300,
+            "damageDisplay": 300,
+            "element": "obj",
+            "rarity": 3,
+            "capacity": 42,
+            "version": "Both"
         },
         {
             "id": 94,
+            "gameId": 98,
             "name": "RockCube",
-            "modifiers": ["*"]
+            "nameJP": "ストーンキューブ",
+            "modifiers": ["*"],
+            "damageSort": 0,
+            "damageDisplay": 0,
+            "element": "obj",
+            "rarity": 1,
+            "capacity": 6,
+            "version": "Both"
         },
         {
             "id": 95,
+            "gameId": 82,
             "name": "Wind",
-            "modifiers": ["*"]
+            "nameJP": "トップウ",
+            "modifiers": ["*"],
+            "damageSort": 0,
+            "damageDisplay": 0,
+            "element": "wind",
+            "rarity": 2,
+            "capacity": 10,
+            "version": "Both"
         },
         {
             "id": 96,
+            "gameId": 83,
             "name": "Fan",
-            "modifiers": ["*"]
+            "nameJP": "スイコミ",
+            "modifiers": ["*"],
+            "damageSort": 0,
+            "damageDisplay": 0,
+            "element": "wind",
+            "rarity": 2,
+            "capacity": 10,
+            "version": "Both"
         },
         {
             "id": 97,
+            "gameId": 99,
             "name": "Fanfare",
-            "modifiers": ["E", "G", "N", "*"]
+            "nameJP": "オウエンカ",
+            "modifiers": ["E","G","N","*"],
+            "damageSort": 0,
+            "damageDisplay": 0,
+            "element": "obj",
+            "rarity": 2,
+            "capacity": 20,
+            "version": "Both"
         },
         {
             "id": 98,
+            "gameId": 100,
             "name": "Discord",
-            "modifiers": ["D", "T", "V", "*"]
+            "nameJP": "ディスコード",
+            "modifiers": ["D","T","V","*"],
+            "damageSort": 0,
+            "damageDisplay": 0,
+            "element": "obj",
+            "rarity": 2,
+            "capacity": 20,
+            "version": "Both"
         },
         {
             "id": 99,
+            "gameId": 101,
             "name": "Timpani",
-            "modifiers": ["P", "T", "Z", "*"]
+            "nameJP": "ティンパニー",
+            "modifiers": ["P","T","Z","*"],
+            "damageSort": 0,
+            "damageDisplay": 0,
+            "element": "obj",
+            "rarity": 2,
+            "capacity": 20,
+            "version": "Both"
         },
         {
             "id": 100,
+            "gameId": 6,
             "name": "Silence",
-            "modifiers": ["C", "M", "R", "*"]
+            "nameJP": "サイレンス",
+            "modifiers": ["C","M","R","*"],
+            "damageSort": 0,
+            "damageDisplay": 0,
+            "element": "obj",
+            "rarity": 2,
+            "capacity": 20,
+            "version": "Both"
         },
         {
             "id": 101,
+            "gameId": 102,
             "name": "VDoll",
-            "modifiers": ["I", "O", "Y"]
+            "nameJP": "ワラニンギョウ",
+            "modifiers": ["I","O","Y"],
+            "damageSort": 10,
+            "damageDisplay": 10,
+            "element": "obj",
+            "rarity": 2,
+            "capacity": 58,
+            "version": "Both"
         },
         {
             "id": 102,
+            "gameId": 87,
             "name": "Guard1",
-            "modifiers": ["A", "L", "V", "*"]
+            "nameJP": "メットガード１",
+            "modifiers": ["A","L","V","*"],
+            "damageSort": 50,
+            "damageDisplay": 50,
+            "element": "none",
+            "rarity": 1,
+            "capacity": 4,
+            "version": "Both"
         },
         {
             "id": 103,
+            "gameId": 88,
             "name": "Guard2",
-            "modifiers": ["C", "G", "P", "*"]
+            "nameJP": "メットガード２",
+            "modifiers": ["C","G","P","*"],
+            "damageSort": 80,
+            "damageDisplay": 80,
+            "element": "none",
+            "rarity": 2,
+            "capacity": 10,
+            "version": "Both"
         },
         {
             "id": 104,
+            "gameId": 89,
             "name": "Guard3",
-            "modifiers": ["F", "R", "T", "*"]
+            "nameJP": "メットガード３",
+            "modifiers": ["F","R","T","*"],
+            "damageSort": 110,
+            "damageDisplay": 110,
+            "element": "none",
+            "rarity": 3,
+            "capacity": 16,
+            "version": "Both"
         },
         {
             "id": 105,
+            "gameId": 90,
             "name": "CrakOut",
-            "modifiers": ["*"]
+            "nameJP": "クラックアウト",
+            "modifiers": ["*"],
+            "damageSort": 0,
+            "damageDisplay": 0,
+            "element": "ground",
+            "rarity": 1,
+            "capacity": 4,
+            "version": "Both"
         },
         {
             "id": 106,
+            "gameId": 91,
             "name": "DublCrack",
-            "modifiers": ["B", "L", "R", "*"]
+            "nameJP": "ダブルクラック",
+            "modifiers": ["B","L","R","*"],
+            "damageSort": 0,
+            "damageDisplay": 0,
+            "element": "ground",
+            "rarity": 1,
+            "capacity": 7,
+            "version": "Both"
         },
         {
             "id": 107,
+            "gameId": 92,
             "name": "TripCrack",
-            "modifiers": ["B", "L", "R", "*"]
+            "nameJP": "トリプルクラック",
+            "modifiers": ["B","L","R","*"],
+            "damageSort": 0,
+            "damageDisplay": 0,
+            "element": "ground",
+            "rarity": 1,
+            "capacity": 10,
+            "version": "Both"
         },
         {
             "id": 108,
+            "gameId": 106,
             "name": "Recov10",
-            "modifiers": ["A", "L", "N", "*"]
+            "nameJP": "リカバリー１０",
+            "modifiers": ["A","L","N","*"],
+            "damageSort": 0,
+            "damageDisplay": 0,
+            "element": "recov",
+            "rarity": 1,
+            "capacity": 8,
+            "version": "Both"
         },
         {
             "id": 109,
+            "gameId": 107,
             "name": "Recov30",
-            "modifiers": ["F", "H", "R", "*"]
+            "nameJP": "リカバリー３０",
+            "modifiers": ["F","H","R","*"],
+            "damageSort": 0,
+            "damageDisplay": 0,
+            "element": "recov",
+            "rarity": 1,
+            "capacity": 16,
+            "version": "Both"
         },
         {
             "id": 110,
+            "gameId": 108,
             "name": "Recov50",
-            "modifiers": ["E", "L", "S", "*"]
+            "nameJP": "リカバリー５０",
+            "modifiers": ["E","L","S","*"],
+            "damageSort": 0,
+            "damageDisplay": 0,
+            "element": "recov",
+            "rarity": 1,
+            "capacity": 24,
+            "version": "Both"
         },
         {
             "id": 111,
+            "gameId": 109,
             "name": "Recov80",
-            "modifiers": ["B", "J", "O", "*"]
+            "nameJP": "リカバリー８０",
+            "modifiers": ["B","J","O","*"],
+            "damageSort": 0,
+            "damageDisplay": 0,
+            "element": "recov",
+            "rarity": 2,
+            "capacity": 32,
+            "version": "Both"
         },
         {
             "id": 112,
+            "gameId": 110,
             "name": "Recov120",
-            "modifiers": ["F", "J", "Q", "*"]
+            "nameJP": "リカバリー１２０",
+            "modifiers": ["F","J","Q","*"],
+            "damageSort": 0,
+            "damageDisplay": 0,
+            "element": "recov",
+            "rarity": 2,
+            "capacity": 40,
+            "version": "Both"
         },
         {
             "id": 113,
+            "gameId": 111,
             "name": "Recov150",
-            "modifiers": ["C", "T", "Z"]
+            "nameJP": "リカバリー１５０",
+            "modifiers": ["C","T","Z"],
+            "damageSort": 0,
+            "damageDisplay": 0,
+            "element": "recov",
+            "rarity": 3,
+            "capacity": 48,
+            "version": "Both"
         },
         {
             "id": 114,
+            "gameId": 112,
             "name": "Recov200",
-            "modifiers": ["H", "M", "W"]
+            "nameJP": "リカバリー２００",
+            "modifiers": ["H","M","W"],
+            "damageSort": 0,
+            "damageDisplay": 0,
+            "element": "recov",
+            "rarity": 3,
+            "capacity": 56,
+            "version": "Both"
         },
         {
             "id": 115,
+            "gameId": 113,
             "name": "Recov300",
-            "modifiers": ["J", "N", "Y"]
+            "nameJP": "リカバリー３００",
+            "modifiers": ["J","N","Y"],
+            "damageSort": 0,
+            "damageDisplay": 0,
+            "element": "recov",
+            "rarity": 4,
+            "capacity": 64,
+            "version": "Both"
         },
         {
             "id": 116,
+            "gameId": 114,
             "name": "Repair",
-            "modifiers": ["I", "P", "R", "*"]
+            "nameJP": "リペアー",
+            "modifiers": ["I","P","R","*"],
+            "damageSort": 0,
+            "damageDisplay": 0,
+            "element": "recov",
+            "rarity": 1,
+            "capacity": 5,
+            "version": "Both"
         },
         {
             "id": 117,
+            "gameId": 115,
             "name": "PanlGrab",
-            "modifiers": ["K", "O", "Y"]
+            "nameJP": "パネルスチール",
+            "modifiers": ["K","O","Y"],
+            "damageSort": 0,
+            "damageDisplay": 0,
+            "element": "none",
+            "rarity": 1,
+            "capacity": 6,
+            "version": "Both"
         },
         {
             "id": 118,
+            "gameId": 116,
             "name": "AreaGrab",
-            "modifiers": ["E", "M", "S", "*"]
+            "nameJP": "エリアスチール",
+            "modifiers": ["E","M","S","*"],
+            "damageSort": 0,
+            "damageDisplay": 0,
+            "element": "none",
+            "rarity": 1,
+            "capacity": 8,
+            "version": "Both"
         },
         {
             "id": 119,
+            "gameId": 94,
             "name": "MetaGel",
-            "modifiers": ["K", "T", "Z"]
+            "nameJP": "スチールゼリー",
+            "modifiers": ["K","T","Z"],
+            "damageSort": 0,
+            "damageDisplay": 0,
+            "element": "aqua",
+            "rarity": 4,
+            "capacity": 52,
+            "version": "Both"
         },
         {
             "id": 120,
+            "gameId": 118,
             "name": "GrabBnsh",
-            "modifiers": ["E", "K", "P"]
+            "nameJP": "スチールパニシュ",
+            "modifiers": ["E","K","P"],
+            "damageSort": 0,
+            "damageDisplay": 0,
+            "element": "none",
+            "rarity": 3,
+            "capacity": 24,
+            "version": "Both"
         },
         {
             "id": 121,
+            "gameId": 117,
             "name": "GrabRvng",
-            "modifiers": ["D", "J", "N"]
+            "nameJP": "スチールリベンジ",
+            "modifiers": ["D","J","N"],
+            "damageSort": 0,
+            "damageDisplay": 0,
+            "element": "none",
+            "rarity": 4,
+            "capacity": 48,
+            "version": "Both"
         },
         {
             "id": 122,
+            "gameId": 121,
             "name": "PnlRetrn",
-            "modifiers": ["*"]
+            "nameJP": "パネルリターン",
+            "modifiers": ["*"],
+            "damageSort": 0,
+            "damageDisplay": 0,
+            "element": "none",
+            "rarity": 2,
+            "capacity": 14,
+            "version": "Both"
         },
         {
             "id": 123,
+            "gameId": 122,
             "name": "Geddon1",
-            "modifiers": ["J", "K", "W"]
+            "nameJP": "デスマッチ１",
+            "modifiers": ["J","K","W"],
+            "damageSort": 0,
+            "damageDisplay": 0,
+            "element": "ground",
+            "rarity": 3,
+            "capacity": 34,
+            "version": "Both"
         },
         {
             "id": 124,
+            "gameId": 123,
             "name": "Geddon2",
-            "modifiers": ["N", "T", "Y"]
+            "nameJP": "デスマッチ２",
+            "modifiers": ["N","T","Y"],
+            "damageSort": 0,
+            "damageDisplay": 0,
+            "element": "ground",
+            "rarity": 3,
+            "capacity": 47,
+            "version": "Both"
         },
         {
             "id": 125,
+            "gameId": 124,
             "name": "Geddon3",
-            "modifiers": ["H", "Q", "U"]
+            "nameJP": "デスマッチ３",
+            "modifiers": ["H","Q","U"],
+            "damageSort": 0,
+            "damageDisplay": 0,
+            "element": "none",
+            "rarity": 4,
+            "capacity": 62,
+            "version": "Both"
         },
         {
             "id": 126,
+            "gameId": 119,
             "name": "SloGauge",
-            "modifiers": ["E", "H", "V", "*"]
+            "nameJP": "ヘビーゲージ",
+            "modifiers": ["E","H","V","*"],
+            "damageSort": 0,
+            "damageDisplay": 0,
+            "element": "none",
+            "rarity": 3,
+            "capacity": 22,
+            "version": "Both"
         },
         {
             "id": 127,
+            "gameId": 120,
             "name": "FstGauge",
-            "modifiers": ["I", "Q", "U", "*"]
+            "nameJP": "クイックゲージ",
+            "modifiers": ["I","Q","U","*"],
+            "damageSort": 0,
+            "damageDisplay": 0,
+            "element": "none",
+            "rarity": 3,
+            "capacity": 32,
+            "version": "Both"
         },
         {
             "id": 128,
+            "gameId": 128,
             "name": "Blinder",
-            "modifiers": ["*"]
+            "nameJP": "ブラインド",
+            "modifiers": ["*"],
+            "damageSort": 0,
+            "damageDisplay": 0,
+            "element": "none",
+            "rarity": 2,
+            "capacity": 9,
+            "version": "Both"
         },
         {
             "id": 129,
+            "gameId": 137,
             "name": "NrthWind",
-            "modifiers": ["E", "N", "T", "*"]
+            "nameJP": "スーパーキタカゼ",
+            "modifiers": ["E","N","T","*"],
+            "damageSort": 0,
+            "damageDisplay": 0,
+            "element": "wind",
+            "rarity": 3,
+            "capacity": 33,
+            "version": "Both"
         },
         {
             "id": 130,
+            "gameId": 138,
             "name": "HolyPanl",
-            "modifiers": ["*"]
+            "nameJP": "ホーリーパネル",
+            "modifiers": ["*"],
+            "damageSort": 0,
+            "damageDisplay": 0,
+            "element": "none",
+            "rarity": 2,
+            "capacity": 24,
+            "version": "Both"
         },
         {
             "id": 131,
+            "gameId": 81,
             "name": "Hole",
-            "modifiers": ["*"]
+            "nameJP": "ダークホール",
+            "modifiers": ["*"],
+            "damageSort": 0,
+            "damageDisplay": 0,
+            "element": "none",
+            "rarity": 3,
+            "capacity": 23,
+            "version": "Both"
         },
         {
             "id": 132,
+            "gameId": 132,
             "name": "Invis",
-            "modifiers": ["*"]
+            "nameJP": "インビジブル",
+            "modifiers": ["*"],
+            "damageSort": 0,
+            "damageDisplay": 0,
+            "element": "invis",
+            "rarity": 3,
+            "capacity": 12,
+            "version": "Both"
         },
         {
             "id": 133,
+            "gameId": 133,
             "name": "PopUp",
-            "modifiers": ["J", "P", "Y", "*"]
+            "nameJP": "ユカシタ",
+            "modifiers": ["J","P","Y","*"],
+            "damageSort": 0,
+            "damageDisplay": 0,
+            "element": "invis",
+            "rarity": 3,
+            "capacity": 21,
+            "version": "Both"
         },
         {
             "id": 134,
+            "gameId": 134,
             "name": "Barrier",
-            "modifiers": ["A", "D", "Z", "*"]
+            "nameJP": "バリア",
+            "modifiers": ["A","D","Z","*"],
+            "damageSort": 0,
+            "damageDisplay": 0,
+            "element": "none",
+            "rarity": 2,
+            "capacity": 7,
+            "version": "Both"
         },
         {
             "id": 135,
+            "gameId": 135,
             "name": "Barr100",
-            "modifiers": ["P", "Q", "W"]
+            "nameJP": "バリア１００",
+            "modifiers": ["P","Q","W"],
+            "damageSort": 0,
+            "damageDisplay": 0,
+            "element": "none",
+            "rarity": 3,
+            "capacity": 27,
+            "version": "Both"
         },
         {
             "id": 136,
+            "gameId": 136,
             "name": "Barr200",
-            "modifiers": ["I", "O", "U"]
+            "nameJP": "バリア２００",
+            "modifiers": ["I","O","U"],
+            "damageSort": 0,
+            "damageDisplay": 0,
+            "element": "none",
+            "rarity": 4,
+            "capacity": 47,
+            "version": "Both"
         },
         {
             "id": 137,
+            "gameId": 139,
             "name": "AntiFire",
-            "modifiers": ["K"]
+            "nameJP": "カキゲンキン",
+            "modifiers": ["K"],
+            "damageSort": 0,
+            "damageDisplay": 0,
+            "element": "fire",
+            "rarity": 3,
+            "capacity": 58,
+            "version": "Both"
         },
         {
             "id": 138,
+            "gameId": 140,
             "name": "AntiWatr",
-            "modifiers": ["D"]
+            "nameJP": "ダイコウズイ",
+            "modifiers": ["D"],
+            "damageSort": 0,
+            "damageDisplay": 0,
+            "element": "aqua",
+            "rarity": 3,
+            "capacity": 54,
+            "version": "Both"
         },
         {
             "id": 139,
+            "gameId": 141,
             "name": "AntiElec",
-            "modifiers": ["H"]
+            "nameJP": "ヒライシン",
+            "modifiers": ["H"],
+            "damageSort": 0,
+            "damageDisplay": 0,
+            "element": "elec",
+            "rarity": 3,
+            "capacity": 59,
+            "version": "Both"
         },
         {
             "id": 140,
+            "gameId": 142,
             "name": "AntiWood",
-            "modifiers": ["M"]
+            "nameJP": "マヨイノモリ",
+            "modifiers": ["M"],
+            "damageSort": 0,
+            "damageDisplay": 0,
+            "element": "wood",
+            "rarity": 3,
+            "capacity": 55,
+            "version": "Both"
         },
         {
             "id": 141,
+            "gameId": 144,
             "name": "AntiDmg",
-            "modifiers": ["K", "M", "R"]
+            "nameJP": "カワリミ",
+            "modifiers": ["K","M","R"],
+            "damageSort": 0,
+            "damageDisplay": 0,
+            "element": "none",
+            "rarity": 3,
+            "capacity": 31,
+            "version": "Both"
         },
         {
             "id": 142,
+            "gameId": 145,
             "name": "AntiSwrd",
-            "modifiers": ["C", "I", "N", "*"]
+            "nameJP": "シラハドリ",
+            "modifiers": ["C","I","N","*"],
+            "damageSort": 0,
+            "damageDisplay": 0,
+            "element": "sword",
+            "rarity": 3,
+            "capacity": 43,
+            "version": "Both"
         },
         {
             "id": 143,
+            "gameId": 143,
             "name": "AntiNavi",
-            "modifiers": ["J", "M", "T"]
+            "nameJP": "ナビスカウト",
+            "modifiers": ["J","M","T"],
+            "damageSort": 0,
+            "damageDisplay": 0,
+            "element": "none",
+            "rarity": 4,
+            "capacity": 44,
+            "version": "Both"
         },
         {
             "id": 144,
+            "gameId": 146,
             "name": "AntiRecv",
-            "modifiers": ["B", "D", "G", "*"]
+            "nameJP": "バッドメディスン",
+            "modifiers": ["B","D","G","*"],
+            "damageSort": 0,
+            "damageDisplay": 0,
+            "element": "none",
+            "rarity": 3,
+            "capacity": 37,
+            "version": "Both"
         },
         {
             "id": 145,
+            "gameId": 147,
             "name": "CopyDmg",
-            "modifiers": ["*"]
+            "nameJP": "コピーダメージ",
+            "modifiers": ["*"],
+            "damageSort": 0,
+            "damageDisplay": 0,
+            "element": "none",
+            "rarity": 2,
+            "capacity": 12,
+            "version": "Both"
         },
         {
             "id": 146,
+            "gameId": 27,
             "name": "LifeSync",
-            "modifiers": ["N", "Q", "Y"]
+            "nameJP": "ライフシンクロ",
+            "modifiers": ["N","Q","Y"],
+            "damageSort": 0,
+            "damageDisplay": 0,
+            "element": "none",
+            "rarity": 2,
+            "capacity": 12,
+            "version": "Both"
         },
         {
             "id": 147,
+            "gameId": 148,
             "name": "Atk+10",
-            "modifiers": ["*"]
+            "nameJP": "アタック＋１０",
+            "modifiers": ["*"],
+            "damageSort": 0,
+            "damageDisplay": 0,
+            "element": "num",
+            "rarity": 1,
+            "capacity": 6,
+            "version": "Both"
         },
         {
             "id": 148,
+            "gameId": 149,
             "name": "Navi+20",
-            "modifiers": ["*"]
+            "nameJP": "ナビ＋２０",
+            "modifiers": ["*"],
+            "damageSort": 0,
+            "damageDisplay": 0,
+            "element": "num",
+            "rarity": 3,
+            "capacity": 36,
+            "version": "Both"
         },
         {
             "id": 149,
+            "gameId": 126,
             "name": "ColorPt",
-            "modifiers": ["*"]
+            "nameJP": "カラーポイント",
+            "modifiers": ["*"],
+            "damageSort": 0,
+            "damageDisplay": 0,
+            "element": "num",
+            "rarity": 2,
+            "capacity": 25,
+            "version": "Both"
         },
         {
             "id": 150,
+            "gameId": 219,
             "name": "SuprVulc",
-            "modifiers": ["V"]
+            "nameJP": "スーパーバルカン",
+            "modifiers": ["V"],
+            "damageSort": 10,
+            "damageDisplay": 10,
+            "element": "none",
+            "rarity": 4,
+            "capacity": 75,
+            "version": "Both"
         },
         {
             "id": 151,
+            "gameId": 216,
             "name": "NeoVari",
-            "modifiers": ["N"]
+            "nameJP": "ネオバリアブル",
+            "modifiers": ["N"],
+            "damageSort": 240,
+            "damageDisplay": 240,
+            "element": "sword",
+            "rarity": 5,
+            "capacity": 74,
+            "version": "Both"
         },
         {
             "id": 152,
+            "gameId": 209,
             "name": "ShotStar",
-            "modifiers": ["R"]
+            "nameJP": "リュウセイグン",
+            "modifiers": ["R"],
+            "damageSort": 40,
+            "damageDisplay": 40,
+            "element": "fire",
+            "rarity": 5,
+            "capacity": 73,
+            "version": "Both"
         },
         {
             "id": 153,
+            "gameId": 214,
             "name": "GodHammr",
-            "modifiers": ["G"]
+            "nameJP": "ゴッドハンマー",
+            "modifiers": ["G"],
+            "damageSort": 250,
+            "damageDisplay": 250,
+            "element": "obj",
+            "rarity": 4,
+            "capacity": 68,
+            "version": "Both"
         },
         {
             "id": 154,
+            "gameId": 202,
             "name": "Guardian",
-            "modifiers": ["O"]
+            "nameJP": "オジゾウサン",
+            "modifiers": ["O"],
+            "damageSort": 200,
+            "damageDisplay": 200,
+            "element": "obj",
+            "rarity": 4,
+            "capacity": 64,
+            "version": "Both"
         },
         {
             "id": 155,
+            "gameId": 211,
             "name": "Jealousy",
-            "modifiers": ["J"]
+            "nameJP": "ジェラシー",
+            "modifiers": ["J"],
+            "damageSort": 80,
+            "damageDisplay": 80,
+            "element": "none",
+            "rarity": 4,
+            "capacity": 35,
+            "version": "Both"
         },
         {
             "id": 156,
+            "gameId": 210,
             "name": "BugChain",
-            "modifiers": ["*"]
+            "nameJP": "バグチェーン",
+            "modifiers": ["*"],
+            "damageSort": 0,
+            "damageDisplay": 0,
+            "element": "none",
+            "rarity": 4,
+            "capacity": 59,
+            "version": "Both"
         },
         {
             "id": 157,
+            "gameId": 205,
             "name": "BugFix",
-            "modifiers": ["B", "*"]
+            "nameJP": "バグシュウセイ",
+            "modifiers": ["B","*"],
+            "damageSort": 0,
+            "damageDisplay": 0,
+            "element": "none",
+            "rarity": 4,
+            "capacity": 62,
+            "version": "Both"
         },
         {
             "id": 158,
+            "gameId": 208,
             "name": "FullCust",
-            "modifiers": ["*"]
+            "nameJP": "フルカスタム",
+            "modifiers": ["*"],
+            "damageSort": 0,
+            "damageDisplay": 0,
+            "element": "none",
+            "rarity": 4,
+            "capacity": 45,
+            "version": "Both"
         },
         {
             "id": 159,
+            "gameId": 200,
             "name": "LifeAura",
-            "modifiers": ["D"]
+            "nameJP": "ドリームオーラ",
+            "modifiers": ["D"],
+            "damageSort": 0,
+            "damageDisplay": 0,
+            "element": "none",
+            "rarity": 5,
+            "capacity": 70,
+            "version": "Both"
         },
         {
             "id": 160,
+            "gameId": 207,
             "name": "Snctuary",
-            "modifiers": ["S"]
+            "nameJP": "サンクチュアリ",
+            "modifiers": ["S"],
+            "damageSort": 0,
+            "damageDisplay": 0,
+            "element": "none",
+            "rarity": 4,
+            "capacity": 62,
+            "version": "Both"
         },
         {
             "id": 161,
+            "gameId": 204,
             "name": "Atk+30",
-            "modifiers": ["*"]
+            "nameJP": "アタック＋３０",
+            "modifiers": ["*"],
+            "damageSort": 0,
+            "damageDisplay": 0,
+            "element": "num",
+            "rarity": 4,
+            "capacity": 66,
+            "version": "Both"
         },
         {
             "id": 162,
+            "gameId": 206,
             "name": "DblPoint",
-            "modifiers": ["*"]
+            "nameJP": "ダブルポイント",
+            "modifiers": ["*"],
+            "damageSort": 0,
+            "damageDisplay": 0,
+            "element": "num",
+            "rarity": 4,
+            "capacity": 50,
+            "version": "Both"
         },
         {
             "id": 163,
+            "gameId": 201,
             "name": "Muramasa",
-            "modifiers": ["M"]
+            "nameJP": "ムラマサブレード",
+            "modifiers": ["M"],
+            "damageSort": 0,
+            "damageDisplay": "???",
+            "element": "sword",
+            "rarity": 5,
+            "capacity": 81,
+            "version": "Both"
         },
         {
             "id": 164,
+            "gameId": 203,
             "name": "Anubis",
-            "modifiers": ["A"]
+            "nameJP": "ポイズンアヌビス",
+            "modifiers": ["A"],
+            "damageSort": 0,
+            "damageDisplay": 0,
+            "element": "obj",
+            "rarity": 5,
+            "capacity": 86,
+            "version": "Both"
         },
         {
             "id": 165,
+            "gameId": 212,
             "name": "ElemDark",
-            "modifiers": ["E"]
+            "nameJP": "エレメントダーク",
+            "modifiers": ["E"],
+            "damageSort": 220,
+            "damageDisplay": 220,
+            "element": "none",
+            "rarity": 4,
+            "capacity": 38,
+            "version": "Both"
         },
         {
             "id": 166,
+            "gameId": 213,
             "name": "BlakWing",
-            "modifiers": ["W"]
+            "nameJP": "ブラックウイング",
+            "modifiers": ["W"],
+            "damageSort": 20,
+            "damageDisplay": 20,
+            "element": "none",
+            "rarity": 4,
+            "capacity": 58,
+            "version": "Both"
         },
         {
             "id": 167,
+            "gameId": 215,
             "name": "DrkLine",
-            "modifiers": ["L", "*"]
+            "nameJP": "ダークライン",
+            "modifiers": ["L","*"],
+            "damageSort": 0,
+            "damageDisplay": 0,
+            "element": "none",
+            "rarity": 4,
+            "capacity": 59,
+            "version": "Both"
         },
         {
             "id": 168,
+            "gameId": 220,
             "name": "Roll",
-            "modifiers": ["R"]
+            "nameJP": "ロール",
+            "modifiers": ["R"],
+            "damageSort": 20,
+            "damageDisplay": 20,
+            "element": "recov",
+            "rarity": 4,
+            "capacity": 28,
+            "version": "Red"
         },
         {
             "id": 169,
+            "gameId": 221,
             "name": "RollSP",
-            "modifiers": ["R"]
+            "nameJP": "ロールＳＰ",
+            "modifiers": ["R"],
+            "damageSort": 0,
+            "damageDisplay": "???",
+            "element": "recov",
+            "rarity": 5,
+            "capacity": 60,
+            "version": "Red"
         },
         {
             "id": 170,
+            "gameId": 222,
             "name": "RollDS",
-            "modifiers": ["R"]
+            "nameJP": "ロールＤＳ",
+            "modifiers": ["R"],
+            "damageSort": 0,
+            "damageDisplay": "???",
+            "element": "recov",
+            "rarity": 5,
+            "capacity": 60,
+            "version": "Red"
         },
         {
             "id": 171,
+            "gameId": 223,
             "name": "GutsMan",
-            "modifiers": ["G"]
+            "nameJP": "ガッツマン",
+            "modifiers": ["G"],
+            "damageSort": 80,
+            "damageDisplay": 80,
+            "element": "ground",
+            "rarity": 4,
+            "capacity": 32,
+            "version": "Red"
         },
         {
             "id": 172,
+            "gameId": 224,
             "name": "GutsManSP",
-            "modifiers": ["G"]
+            "nameJP": "ガッツマンＳＰ",
+            "modifiers": ["G"],
+            "damageSort": 0,
+            "damageDisplay": "???",
+            "element": "ground",
+            "rarity": 4,
+            "capacity": 68,
+            "version": "Red"
         },
         {
             "id": 173,
+            "gameId": 225,
             "name": "GutsManDS",
-            "modifiers": ["G"]
+            "nameJP": "ガッツマンＤＳ",
+            "modifiers": ["G"],
+            "damageSort": 0,
+            "damageDisplay": "???",
+            "element": "ground",
+            "rarity": 4,
+            "capacity": 68,
+            "version": "Red"
         },
         {
             "id": 174,
+            "gameId": 226,
             "name": "WindMan",
-            "modifiers": ["W"]
+            "nameJP": "ウインドマン",
+            "modifiers": ["W"],
+            "damageSort": 40,
+            "damageDisplay": 40,
+            "element": "wind",
+            "rarity": 4,
+            "capacity": 48,
+            "version": "Red"
         },
         {
             "id": 175,
+            "gameId": 227,
             "name": "WindManSP",
-            "modifiers": ["W"]
+            "nameJP": "ウインドマンＳＰ",
+            "modifiers": ["W"],
+            "damageSort": 0,
+            "damageDisplay": "???",
+            "element": "wind",
+            "rarity": 5,
+            "capacity": 64,
+            "version": "Red"
         },
         {
             "id": 176,
+            "gameId": 228,
             "name": "WindManDS",
-            "modifiers": ["W"]
+            "nameJP": "ウインドマンＤＳ",
+            "modifiers": ["W"],
+            "damageSort": 0,
+            "damageDisplay": "???",
+            "element": "wind",
+            "rarity": 5,
+            "capacity": 64,
+            "version": "Red"
         },
         {
             "id": 177,
+            "gameId": 229,
             "name": "SearchMan",
-            "modifiers": ["S"]
+            "nameJP": "サーチマン",
+            "modifiers": ["S"],
+            "damageSort": 20,
+            "damageDisplay": 20,
+            "element": "invis",
+            "rarity": 4,
+            "capacity": 45,
+            "version": "Red"
         },
         {
             "id": 178,
+            "gameId": 230,
             "name": "SearchManSP",
-            "modifiers": ["S"]
+            "nameJP": "サーチマンＳＰ",
+            "modifiers": ["S"],
+            "damageSort": 0,
+            "damageDisplay": "???",
+            "element": "invis",
+            "rarity": 5,
+            "capacity": 45,
+            "version": "Red"
         },
         {
             "id": 179,
+            "gameId": 231,
             "name": "SearchManDS",
-            "modifiers": ["S"]
+            "nameJP": "サーチマンＤＳ",
+            "modifiers": ["S"],
+            "damageSort": 0,
+            "damageDisplay": "???",
+            "element": "invis",
+            "rarity": 5,
+            "capacity": 70,
+            "version": "Red"
         },
         {
             "id": 180,
+            "gameId": 232,
             "name": "FireMan",
-            "modifiers": ["F"]
+            "nameJP": "ファイアマン",
+            "modifiers": ["F"],
+            "damageSort": 100,
+            "damageDisplay": 100,
+            "element": "fire",
+            "rarity": 4,
+            "capacity": 35,
+            "version": "Red"
         },
         {
             "id": 181,
+            "gameId": 233,
             "name": "FireManSP",
-            "modifiers": ["F"]
+            "nameJP": "ファイアマンＳＰ",
+            "modifiers": ["F"],
+            "damageSort": 0,
+            "damageDisplay": "???",
+            "element": "fire",
+            "rarity": 5,
+            "capacity": 72,
+            "version": "Red"
         },
         {
             "id": 182,
+            "gameId": 234,
             "name": "FireManDS",
-            "modifiers": ["F"]
+            "nameJP": "ファイアマンＤＳ",
+            "modifiers": ["F"],
+            "damageSort": 0,
+            "damageDisplay": "???",
+            "element": "fire",
+            "rarity": 5,
+            "capacity": 72,
+            "version": "Red"
         },
         {
             "id": 183,
+            "gameId": 235,
             "name": "ThunMan",
-            "modifiers": ["T"]
+            "nameJP": "サンダーマン",
+            "modifiers": ["T"],
+            "damageSort": 90,
+            "damageDisplay": 90,
+            "element": "elec",
+            "rarity": 4,
+            "capacity": 48,
+            "version": "Red"
         },
         {
             "id": 184,
+            "gameId": 236,
             "name": "ThunManSP",
-            "modifiers": ["T"]
+            "nameJP": "サンダーマンＳＰ",
+            "modifiers": ["T"],
+            "damageSort": 0,
+            "damageDisplay": "???",
+            "element": "elec",
+            "rarity": 5,
+            "capacity": 68,
+            "version": "Red"
         },
         {
             "id": 185,
+            "gameId": 237,
             "name": "ThunManDS",
-            "modifiers": ["T"]
+            "nameJP": "サンダーマンＤＳ",
+            "modifiers": ["T"],
+            "damageSort": 0,
+            "damageDisplay": "???",
+            "element": "elec",
+            "rarity": 5,
+            "capacity": 68,
+            "version": "Red"
         },
         {
             "id": 186,
+            "gameId": 238,
             "name": "ProtoMan",
-            "modifiers": ["B"]
+            "nameJP": "ブルース",
+            "modifiers": ["B"],
+            "damageSort": 100,
+            "damageDisplay": 100,
+            "element": "sword",
+            "rarity": 4,
+            "capacity": 54,
+            "version": "Blue"
         },
         {
             "id": 187,
+            "gameId": 239,
             "name": "ProtoManSP",
-            "modifiers": ["B"]
+            "nameJP": "ブルースＳＰ",
+            "modifiers": ["B"],
+            "damageSort": 0,
+            "damageDisplay": "???",
+            "element": "sword",
+            "rarity": 5,
+            "capacity": 79,
+            "version": "Blue"
         },
         {
             "id": 188,
+            "gameId": 240,
             "name": "ProtoManDS",
-            "modifiers": ["B"]
+            "nameJP": "ブルースＤＳ",
+            "modifiers": ["B"],
+            "damageSort": 0,
+            "damageDisplay": "???",
+            "element": "sword",
+            "rarity": 5,
+            "capacity": 79,
+            "version": "Blue"
         },
         {
             "id": 189,
+            "gameId": 241,
             "name": "NumberMan",
-            "modifiers": ["N"]
+            "nameJP": "ナンバーマン",
+            "modifiers": ["N"],
+            "damageSort": 30,
+            "damageDisplay": 30,
+            "element": "num",
+            "rarity": 4,
+            "capacity": 33,
+            "version": "Blue"
         },
         {
             "id": 190,
+            "gameId": 242,
             "name": "NumberManSP",
-            "modifiers": ["N"]
+            "nameJP": "ナンバーマンＳＰ",
+            "modifiers": ["N"],
+            "damageSort": 0,
+            "damageDisplay": "???",
+            "element": "num",
+            "rarity": 5,
+            "capacity": 66,
+            "version": "Blue"
         },
         {
             "id": 191,
+            "gameId": 243,
             "name": "NumberManDS",
-            "modifiers": ["N"]
+            "nameJP": "ナンバーマンＤＳ",
+            "modifiers": ["N"],
+            "damageSort": 0,
+            "damageDisplay": "???",
+            "element": "num",
+            "rarity": 5,
+            "capacity": 66,
+            "version": "Blue"
         },
         {
             "id": 192,
+            "gameId": 244,
             "name": "MetalMan",
-            "modifiers": ["M"]
+            "nameJP": "メタルマン",
+            "modifiers": ["M"],
+            "damageSort": 160,
+            "damageDisplay": 160,
+            "element": "break",
+            "rarity": 4,
+            "capacity": 52,
+            "version": "Blue"
         },
         {
             "id": 193,
+            "gameId": 245,
             "name": "MetalManSP",
-            "modifiers": ["M"]
+            "nameJP": "メタルマンＳＰ",
+            "modifiers": ["M"],
+            "damageSort": 0,
+            "damageDisplay": "???",
+            "element": "break",
+            "rarity": 5,
+            "capacity": 76,
+            "version": "Blue"
         },
         {
             "id": 194,
+            "gameId": 246,
             "name": "MetalManDS",
-            "modifiers": ["M"]
+            "nameJP": "メタルマンＤＳ",
+            "modifiers": ["M"],
+            "damageSort": 0,
+            "damageDisplay": "???",
+            "element": "break",
+            "rarity": 5,
+            "capacity": 76,
+            "version": "Blue"
         },
         {
             "id": 195,
+            "gameId": 247,
             "name": "JunkMan",
-            "modifiers": ["J"]
+            "nameJP": "ジャンクマン",
+            "modifiers": ["J"],
+            "damageSort": 100,
+            "damageDisplay": 100,
+            "element": "obj",
+            "rarity": 4,
+            "capacity": 80,
+            "version": "Blue"
         },
         {
             "id": 196,
+            "gameId": 248,
             "name": "JunkManSP",
-            "modifiers": ["J"]
+            "nameJP": "ジャンクマンＳＰ",
+            "modifiers": ["J"],
+            "damageSort": 0,
+            "damageDisplay": "???",
+            "element": "obj",
+            "rarity": 5,
+            "capacity": 80,
+            "version": "Blue"
         },
         {
             "id": 197,
+            "gameId": 249,
             "name": "JunkManDS",
-            "modifiers": ["J"]
+            "nameJP": "ジャンクマンＤＳ",
+            "modifiers": ["J"],
+            "damageSort": 0,
+            "damageDisplay": "???",
+            "element": "obj",
+            "rarity": 5,
+            "capacity": 80,
+            "version": "Blue"
         },
         {
             "id": 198,
+            "gameId": 250,
             "name": "AquaMan",
-            "modifiers": ["A"]
+            "nameJP": "アクアマン",
+            "modifiers": ["A"],
+            "damageSort": 70,
+            "damageDisplay": 70,
+            "element": "aqua",
+            "rarity": 4,
+            "capacity": 41,
+            "version": "Blue"
         },
         {
             "id": 199,
+            "gameId": 251,
             "name": "AquaManSP",
-            "modifiers": ["A"]
+            "nameJP": "アクアマンＳＰ",
+            "modifiers": ["A"],
+            "damageSort": 0,
+            "damageDisplay": "???",
+            "element": "aqua",
+            "rarity": 5,
+            "capacity": 62,
+            "version": "Blue"
         },
         {
             "id": 200,
+            "gameId": 252,
             "name": "AquaManDS",
-            "modifiers": ["A"]
+            "nameJP": "アクアマンＤＳ",
+            "modifiers": ["A"],
+            "damageSort": 0,
+            "damageDisplay": "???",
+            "element": "aqua",
+            "rarity": 5,
+            "capacity": 62,
+            "version": "Blue"
         },
         {
             "id": 201,
+            "gameId": 253,
             "name": "WoodMan",
-            "modifiers": ["W"]
+            "nameJP": "ウッドマン",
+            "modifiers": ["W"],
+            "damageSort": 130,
+            "damageDisplay": 130,
+            "element": "wood",
+            "rarity": 4,
+            "capacity": 50,
+            "version": "Blue"
         },
         {
             "id": 202,
+            "gameId": 254,
             "name": "WoodManSP",
-            "modifiers": ["W"]
+            "nameJP": "ウッドマンＳＰ",
+            "modifiers": ["W"],
+            "damageSort": 0,
+            "damageDisplay": "???",
+            "element": "wood",
+            "rarity": 5,
+            "capacity": 76,
+            "version": "Blue"
         },
         {
             "id": 203,
+            "gameId": 255,
             "name": "WoodManDS",
-            "modifiers": ["W"]
+            "nameJP": "ウッドマンＤＳ",
+            "modifiers": ["W"],
+            "damageSort": 0,
+            "damageDisplay": "???",
+            "element": "wood",
+            "rarity": 5,
+            "capacity": 76,
+            "version": "Blue"
         },
         {
             "id": 204,
+            "gameId": 256,
             "name": "TopMan",
-            "modifiers": ["T"]
+            "nameJP": "タップマン",
+            "modifiers": ["T"],
+            "damageSort": 20,
+            "damageDisplay": 20,
+            "element": "break",
+            "rarity": 4,
+            "capacity": 54,
+            "version": "Both"
         },
         {
             "id": 205,
+            "gameId": 257,
             "name": "TopManSP",
-            "modifiers": ["T"]
+            "nameJP": "タップマンＳＰ",
+            "modifiers": ["T"],
+            "damageSort": 0,
+            "damageDisplay": "???",
+            "element": "break",
+            "rarity": 5,
+            "capacity": 71,
+            "version": "Both"
         },
         {
             "id": 206,
+            "gameId": 258,
             "name": "TopManDS",
-            "modifiers": ["T"]
+            "nameJP": "タップマンＤＳ",
+            "modifiers": ["T"],
+            "damageSort": 0,
+            "damageDisplay": "???",
+            "element": "break",
+            "rarity": 5,
+            "capacity": 71,
+            "version": "Both"
         },
         {
             "id": 207,
+            "gameId": 262,
             "name": "BurnerMan",
-            "modifiers": ["B"]
+            "nameJP": "バーナーマン",
+            "modifiers": ["B"],
+            "damageSort": 60,
+            "damageDisplay": 60,
+            "element": "fire",
+            "rarity": 4,
+            "capacity": 46,
+            "version": "Both"
         },
         {
             "id": 208,
+            "gameId": 263,
             "name": "BurnerManSP",
-            "modifiers": ["B"]
+            "nameJP": "バーナーマンＳＰ",
+            "modifiers": ["B"],
+            "damageSort": 0,
+            "damageDisplay": "???",
+            "element": "fire",
+            "rarity": 5,
+            "capacity": 69,
+            "version": "Both"
         },
         {
             "id": 209,
+            "gameId": 264,
             "name": "BurnerManDS",
-            "modifiers": ["B"]
+            "nameJP": "バーナーマンＤＳ",
+            "modifiers": ["B"],
+            "damageSort": 0,
+            "damageDisplay": "???",
+            "element": "fire",
+            "rarity": 5,
+            "capacity": 69,
+            "version": "Both"
         },
         {
             "id": 210,
+            "gameId": 265,
             "name": "ColdMan",
-            "modifiers": ["C"]
+            "nameJP": "コールドマン",
+            "modifiers": ["C"],
+            "damageSort": 100,
+            "damageDisplay": 100,
+            "element": "aqua",
+            "rarity": 4,
+            "capacity": 53,
+            "version": "Both"
         },
         {
             "id": 211,
+            "gameId": 266,
             "name": "ColdManSP",
-            "modifiers": ["C"]
+            "nameJP": "コールドマンＳＰ",
+            "modifiers": ["C"],
+            "damageSort": 0,
+            "damageDisplay": "???",
+            "element": "aqua",
+            "rarity": 5,
+            "capacity": 72,
+            "version": "Both"
         },
         {
             "id": 212,
+            "gameId": 267,
             "name": "ColdManDS",
-            "modifiers": ["C"]
+            "nameJP": "コールドマンＤＳ",
+            "modifiers": ["C"],
+            "damageSort": 0,
+            "damageDisplay": "???",
+            "element": "aqua",
+            "rarity": 5,
+            "capacity": 72,
+            "version": "Both"
         },
         {
             "id": 213,
+            "gameId": 268,
             "name": "SparkMan",
-            "modifiers": ["S"]
+            "nameJP": "スパークマン",
+            "modifiers": ["S"],
+            "damageSort": 70,
+            "damageDisplay": 70,
+            "element": "elec",
+            "rarity": 4,
+            "capacity": 55,
+            "version": "Both"
         },
         {
             "id": 214,
+            "gameId": 269,
             "name": "SparkManSP",
-            "modifiers": ["S"]
+            "nameJP": "スパークマンＳＰ",
+            "modifiers": ["S"],
+            "damageSort": 0,
+            "damageDisplay": "???",
+            "element": "elec",
+            "rarity": 5,
+            "capacity": 77,
+            "version": "Both"
         },
         {
             "id": 215,
+            "gameId": 270,
             "name": "SparkManDS",
-            "modifiers": ["S"]
+            "nameJP": "スパークマンＤＳ",
+            "modifiers": ["S"],
+            "damageSort": 0,
+            "damageDisplay": "???",
+            "element": "elec",
+            "rarity": 5,
+            "capacity": 77,
+            "version": "Both"
         },
         {
             "id": 216,
+            "gameId": 259,
             "name": "ShadeMan",
-            "modifiers": ["X"]
+            "nameJP": "シェードマン",
+            "modifiers": ["X"],
+            "damageSort": 120,
+            "damageDisplay": 120,
+            "element": "none",
+            "rarity": 4,
+            "capacity": 73,
+            "version": "Both"
         },
         {
             "id": 217,
+            "gameId": 260,
             "name": "ShadeManSP",
-            "modifiers": ["X"]
+            "nameJP": "シェードマンＳＰ",
+            "modifiers": ["X"],
+            "damageSort": 0,
+            "damageDisplay": "???",
+            "element": "none",
+            "rarity": 5,
+            "capacity": 88,
+            "version": "Both"
         },
         {
             "id": 218,
+            "gameId": 261,
             "name": "ShadeManDS",
-            "modifiers": ["X"]
+            "nameJP": "シェードマンＤＳ",
+            "modifiers": ["X"],
+            "damageSort": 0,
+            "damageDisplay": "???",
+            "element": "none",
+            "rarity": 5,
+            "capacity": 88,
+            "version": "Both"
         },
         {
             "id": 219,
+            "gameId": 271,
             "name": "LaserMan",
-            "modifiers": ["L"]
+            "nameJP": "レーザーマン",
+            "modifiers": ["L"],
+            "damageSort": 100,
+            "damageDisplay": 100,
+            "element": "none",
+            "rarity": 4,
+            "capacity": 60,
+            "version": "Both"
         },
         {
             "id": 220,
+            "gameId": 272,
             "name": "LaserManSP",
-            "modifiers": ["L"]
+            "nameJP": "レーザーマンＳＰ",
+            "modifiers": ["L"],
+            "damageSort": 0,
+            "damageDisplay": "???",
+            "element": "none",
+            "rarity": 5,
+            "capacity": 80,
+            "version": "Both"
         },
         {
             "id": 221,
+            "gameId": 273,
             "name": "LaserManDS",
-            "modifiers": ["L"]
+            "nameJP": "レーザーマンＤＳ",
+            "modifiers": ["L"],
+            "damageSort": 0,
+            "damageDisplay": "???",
+            "element": "none",
+            "rarity": 5,
+            "capacity": 80,
+            "version": "Both"
         },
         {
             "id": 222,
+            "gameId": 274,
             "name": "KendoMan",
-            "modifiers": ["K"]
+            "nameJP": "ケンドーマン",
+            "modifiers": ["K"],
+            "damageSort": 70,
+            "damageDisplay": 70,
+            "element": "none",
+            "rarity": 4,
+            "capacity": 45,
+            "version": "Both"
         },
         {
             "id": 223,
+            "gameId": 275,
             "name": "KendoManSP",
-            "modifiers": ["K"]
+            "nameJP": "ケンドーマンＳＰ",
+            "modifiers": ["K"],
+            "damageSort": 0,
+            "damageDisplay": "???",
+            "element": "none",
+            "rarity": 5,
+            "capacity": 75,
+            "version": "Both"
         },
         {
             "id": 224,
+            "gameId": 276,
             "name": "KendoManDS",
-            "modifiers": ["K"]
+            "nameJP": "ケンドーマンＤＳ",
+            "modifiers": ["K"],
+            "damageSort": 0,
+            "damageDisplay": "???",
+            "element": "none",
+            "rarity": 5,
+            "capacity": 75,
+            "version": "Both"
         },
         {
             "id": 225,
+            "gameId": 277,
             "name": "VideoMan",
-            "modifiers": ["V"]
+            "nameJP": "ビデオマン",
+            "modifiers": ["V"],
+            "damageSort": 25,
+            "damageDisplay": 25,
+            "element": "none",
+            "rarity": 4,
+            "capacity": 44,
+            "version": "Both"
         },
         {
             "id": 226,
+            "gameId": 278,
             "name": "VideoManSP",
-            "modifiers": ["V"]
+            "nameJP": "ビデオマンＳＰ",
+            "modifiers": ["V"],
+            "damageSort": 0,
+            "damageDisplay": "???",
+            "element": "none",
+            "rarity": 5,
+            "capacity": 67,
+            "version": "Both"
         },
         {
             "id": 227,
+            "gameId": 279,
             "name": "VideoManDS",
-            "modifiers": ["V"]
+            "nameJP": "ビデオマンＤＳ",
+            "modifiers": ["V"],
+            "damageSort": 0,
+            "damageDisplay": "???",
+            "element": "none",
+            "rarity": 5,
+            "capacity": 67,
+            "version": "Both"
         },
         {
             "id": 228,
+            "gameId": 303,
             "name": "RedSun",
-            "modifiers": ["R"]
+            "nameJP": "メテオレッドサン",
+            "modifiers": ["R"],
+            "damageSort": 0,
+            "damageDisplay": "???",
+            "element": "none",
+            "rarity": 5,
+            "capacity": 90,
+            "version": "Red"
         },
         {
             "id": 229,
+            "gameId": 306,
             "name": "HolyDrem",
-            "modifiers": ["H"]
+            "nameJP": "ホーリードリーム",
+            "modifiers": ["H"],
+            "damageSort": 50,
+            "damageDisplay": 50,
+            "element": "none",
+            "rarity": 5,
+            "capacity": 92,
+            "version": "Red"
         },
         {
             "id": 230,
+            "gameId": 300,
             "name": "Bass",
-            "modifiers": ["X"]
+            "nameJP": "フォルテ",
+            "modifiers": ["X"],
+            "damageSort": 60,
+            "damageDisplay": 60,
+            "element": "none",
+            "rarity": 5,
+            "capacity": 95,
+            "version": "Red"
         },
         {
             "id": 231,
+            "gameId": 309,
             "name": "BugCharg",
-            "modifiers": ["C"]
+            "nameJP": "バグチャージ",
+            "modifiers": ["C"],
+            "damageSort": 80,
+            "damageDisplay": 80,
+            "element": "none",
+            "rarity": 5,
+            "capacity": 77,
+            "version": "Red"
         },
         {
             "id": 232,
+            "gameId": 307,
             "name": "BlakBarr",
-            "modifiers": ["A"]
+            "nameJP": "ブラックバリア",
+            "modifiers": ["A"],
+            "damageSort": 0,
+            "damageDisplay": 0,
+            "element": "none",
+            "rarity": 5,
+            "capacity": 87,
+            "version": "Red"
         },
         {
             "id": 233,
+            "gameId": 308,
             "name": "BlueMoon",
-            "modifiers": ["B"]
+            "nameJP": "ブルームーンレイ",
+            "modifiers": ["B"],
+            "damageSort": 200,
+            "damageDisplay": 200,
+            "element": "none",
+            "rarity": 5,
+            "capacity": 90,
+            "version": "Blue"
         },
         {
             "id": 234,
+            "gameId": 304,
             "name": "SignlRed",
-            "modifiers": ["S"]
+            "nameJP": "シグナルレッド",
+            "modifiers": ["S"],
+            "damageSort": 0,
+            "damageDisplay": 0,
+            "element": "obj",
+            "rarity": 5,
+            "capacity": 61,
+            "version": "Blue"
         },
         {
             "id": 235,
+            "gameId": 305,
             "name": "BassAnly",
-            "modifiers": ["X"]
+            "nameJP": "フォルテアナザー",
+            "modifiers": ["X"],
+            "damageSort": 160,
+            "damageDisplay": 160,
+            "element": "none",
+            "rarity": 5,
+            "capacity": 95,
+            "version": "Blue"
         },
         {
             "id": 236,
+            "gameId": 302,
             "name": "BugCurse",
-            "modifiers": ["S", " ", "(", "C", "?", ")"]
+            "nameJP": "カースオブバグ",
+            "modifiers": ["S"],
+            "damageSort": 0,
+            "damageDisplay": 0,
+            "element": "none",
+            "rarity": 5,
+            "capacity": 73,
+            "version": "Blue"
         },
         {
             "id": 237,
+            "gameId": 301,
             "name": "DeltaRay",
-            "modifiers": ["Z"]
+            "nameJP": "デルタレイエッジ",
+            "modifiers": ["Z"],
+            "damageSort": 260,
+            "damageDisplay": 260,
+            "element": "sword",
+            "rarity": 4,
+            "capacity": 82,
+            "version": "Blue"
         },
         {
             "id": 238,
+            "gameId": 150,
             "name": "RollAro1",
-            "modifiers": ["A", "F", "W"]
+            "nameJP": "ロールアロー１",
+            "modifiers": ["A","F","W"],
+            "damageSort": 50,
+            "damageDisplay": 50,
+            "element": "none",
+            "rarity": 2,
+            "capacity": 32,
+            "version": "Both"
         },
         {
             "id": 239,
+            "gameId": 151,
             "name": "RollAro2",
-            "modifiers": ["D", "R", "W"]
+            "nameJP": "ロールアロー２",
+            "modifiers": ["D","R","W"],
+            "damageSort": 70,
+            "damageDisplay": 70,
+            "element": "none",
+            "rarity": 3,
+            "capacity": 38,
+            "version": "Both"
         },
         {
             "id": 240,
+            "gameId": 152,
             "name": "RollAro3",
-            "modifiers": ["Q", "Y", "Z"]
+            "nameJP": "ロールアロー３",
+            "modifiers": ["Q","Y","Z"],
+            "damageSort": 90,
+            "damageDisplay": 90,
+            "element": "none",
+            "rarity": 4,
+            "capacity": 44,
+            "version": "Both"
         },
         {
             "id": 241,
+            "gameId": 153,
             "name": "GutPnch1",
-            "modifiers": ["B", "E", "N"]
+            "nameJP": "ガッツパンチ１",
+            "modifiers": ["B","E","N"],
+            "damageSort": 100,
+            "damageDisplay": 100,
+            "element": "none",
+            "rarity": 2,
+            "capacity": 22,
+            "version": "Both"
         },
         {
             "id": 242,
+            "gameId": 154,
             "name": "GutPnch2",
-            "modifiers": ["G", "P", "Y"]
+            "nameJP": "ガッツパンチ２",
+            "modifiers": ["G","P","Y"],
+            "damageSort": 140,
+            "damageDisplay": 140,
+            "element": "none",
+            "rarity": 3,
+            "capacity": 36,
+            "version": "Both"
         },
         {
             "id": 243,
+            "gameId": 155,
             "name": "GutPnch3",
-            "modifiers": ["M", "Q", "T"]
+            "nameJP": "ガッツパンチ３",
+            "modifiers": ["M","Q","T"],
+            "damageSort": 180,
+            "damageDisplay": 180,
+            "element": "none",
+            "rarity": 4,
+            "capacity": 50,
+            "version": "Both"
         },
         {
             "id": 244,
+            "gameId": 156,
             "name": "PropBom1",
-            "modifiers": ["E", "G", "P", "*"]
+            "nameJP": "プロペラボム１",
+            "modifiers": ["E","G","P","*"],
+            "damageSort": 120,
+            "damageDisplay": 120,
+            "element": "none",
+            "rarity": 2,
+            "capacity": 18,
+            "version": "Both"
         },
         {
             "id": 245,
+            "gameId": 157,
             "name": "PropBom2",
-            "modifiers": ["F", "V", "Z", "*"]
+            "nameJP": "プロペラボム２",
+            "modifiers": ["F","V","Z","*"],
+            "damageSort": 160,
+            "damageDisplay": 160,
+            "element": "none",
+            "rarity": 3,
+            "capacity": 26,
+            "version": "Both"
         },
         {
             "id": 246,
+            "gameId": 158,
             "name": "PropBom3",
-            "modifiers": ["H", "J", "Q"]
+            "nameJP": "プロペラボム３",
+            "modifiers": ["H","J","Q"],
+            "damageSort": 200,
+            "damageDisplay": 200,
+            "element": "none",
+            "rarity": 4,
+            "capacity": 34,
+            "version": "Both"
         },
         {
             "id": 247,
+            "gameId": 159,
             "name": "SeekBom1",
-            "modifiers": ["B", "R", "S", "*"]
+            "nameJP": "サーチボム１",
+            "modifiers": ["B","R","S","*"],
+            "damageSort": 80,
+            "damageDisplay": 80,
+            "element": "none",
+            "rarity": 2,
+            "capacity": 25,
+            "version": "Both"
         },
         {
             "id": 248,
+            "gameId": 160,
             "name": "SeekBom2",
-            "modifiers": ["C", "I", "O"]
+            "nameJP": "サーチボム２",
+            "modifiers": ["C","I","O"],
+            "damageSort": 110,
+            "damageDisplay": 110,
+            "element": "none",
+            "rarity": 3,
+            "capacity": 35,
+            "version": "Both"
         },
         {
             "id": 249,
+            "gameId": 161,
             "name": "SeekBom3",
-            "modifiers": ["M", "U", "W"]
+            "nameJP": "サーチボム３",
+            "modifiers": ["M","U","W"],
+            "damageSort": 140,
+            "damageDisplay": 140,
+            "element": "none",
+            "rarity": 4,
+            "capacity": 45,
+            "version": "Both"
         },
         {
             "id": 250,
+            "gameId": 162,
             "name": "Meteors1",
-            "modifiers": ["G", "L", "S", "*"]
+            "nameJP": "メテオレイン１",
+            "modifiers": ["G","L","S","*"],
+            "damageSort": 50,
+            "damageDisplay": 50,
+            "element": "fire",
+            "rarity": 2,
+            "capacity": 15,
+            "version": "Both"
         },
         {
             "id": 251,
+            "gameId": 163,
             "name": "Meteors2",
-            "modifiers": ["M", "Q", "T"]
+            "nameJP": "メテオレイン２",
+            "modifiers": ["M","Q","T"],
+            "damageSort": 60,
+            "damageDisplay": 60,
+            "element": "fire",
+            "rarity": 3,
+            "capacity": 23,
+            "version": "Both"
         },
         {
             "id": 252,
+            "gameId": 164,
             "name": "Meteors3",
-            "modifiers": ["C", "R", "Z"]
+            "nameJP": "メテオレイン３",
+            "modifiers": ["C","R","Z"],
+            "damageSort": 70,
+            "damageDisplay": 70,
+            "element": "fire",
+            "rarity": 4,
+            "capacity": 31,
+            "version": "Both"
         },
         {
             "id": 253,
+            "gameId": 165,
             "name": "Ligtnin1",
-            "modifiers": ["L", "T", "W", "*"]
+            "nameJP": "ライトニング１",
+            "modifiers": ["L","T","W","*"],
+            "damageSort": 100,
+            "damageDisplay": 100,
+            "element": "elec",
+            "rarity": 2,
+            "capacity": 33,
+            "version": "Both"
         },
         {
             "id": 254,
+            "gameId": 166,
             "name": "Ligtnin2",
-            "modifiers": ["A", "E", "V"]
+            "nameJP": "ライトニング２",
+            "modifiers": ["A","E","V"],
+            "damageSort": 130,
+            "damageDisplay": 130,
+            "element": "elec",
+            "rarity": 3,
+            "capacity": 37,
+            "version": "Both"
         },
         {
             "id": 255,
+            "gameId": 167,
             "name": "Ligtnin3",
-            "modifiers": ["H", "J", "Q"]
+            "nameJP": "ライトニング３",
+            "modifiers": ["H","J","Q"],
+            "damageSort": 160,
+            "damageDisplay": 160,
+            "element": "elec",
+            "rarity": 4,
+            "capacity": 41,
+            "version": "Both"
         },
         {
             "id": 256,
+            "gameId": 168,
             "name": "HawkCut1",
-            "modifiers": ["H", "N", "O"]
+            "nameJP": "ハヤブサギリ１",
+            "modifiers": ["H","N","O"],
+            "damageSort": 80,
+            "damageDisplay": 80,
+            "element": "sword",
+            "rarity": 2,
+            "capacity": 40,
+            "version": "Both"
         },
         {
             "id": 257,
+            "gameId": 169,
             "name": "HawkCut2",
-            "modifiers": ["F", "S", "V"]
+            "nameJP": "ハヤブサギリ２",
+            "modifiers": ["F","S","V"],
+            "damageSort": 90,
+            "damageDisplay": 90,
+            "element": "sword",
+            "rarity": 3,
+            "capacity": 50,
+            "version": "Both"
         },
         {
             "id": 258,
+            "gameId": 170,
             "name": "HawkCut3",
-            "modifiers": ["I", "N", "Z"]
+            "nameJP": "ハヤブサギリ３",
+            "modifiers": ["I","N","Z"],
+            "damageSort": 100,
+            "damageDisplay": 100,
+            "element": "sword",
+            "rarity": 4,
+            "capacity": 60,
+            "version": "Both"
         },
         {
             "id": 259,
+            "gameId": 171,
             "name": "NumbrBl1",
-            "modifiers": ["E", "L", "W"]
+            "nameJP": "ナンバーボール１",
+            "modifiers": ["E","L","W"],
+            "damageSort": 0,
+            "damageDisplay": "???",
+            "element": "none",
+            "rarity": 2,
+            "capacity": 28,
+            "version": "Both"
         },
         {
             "id": 260,
+            "gameId": 172,
             "name": "NumbrBl2",
-            "modifiers": ["A", "E", "P"]
+            "nameJP": "ナンバーボール２",
+            "modifiers": ["A","E","P"],
+            "damageSort": 0,
+            "damageDisplay": "???",
+            "element": "none",
+            "rarity": 3,
+            "capacity": 35,
+            "version": "Both"
         },
         {
             "id": 261,
+            "gameId": 173,
             "name": "NumbrBl3",
-            "modifiers": ["L", "T", "Y"]
+            "nameJP": "ナンバーボール３",
+            "modifiers": ["L","T","Y"],
+            "damageSort": 0,
+            "damageDisplay": "???",
+            "element": "none",
+            "rarity": 4,
+            "capacity": 42,
+            "version": "Both"
         },
         {
             "id": 262,
+            "gameId": 174,
             "name": "MetlGer1",
-            "modifiers": ["A", "M", "P", "*"]
+            "nameJP": "メタルギア１",
+            "modifiers": ["A","M","P","*"],
+            "damageSort": 100,
+            "damageDisplay": 100,
+            "element": "break",
+            "rarity": 2,
+            "capacity": 20,
+            "version": "Both"
         },
         {
             "id": 263,
+            "gameId": 175,
             "name": "MetlGer2",
-            "modifiers": ["C", "E", "G", "*"]
+            "nameJP": "メタルギア２",
+            "modifiers": ["C","E","G","*"],
+            "damageSort": 130,
+            "damageDisplay": 130,
+            "element": "break",
+            "rarity": 3,
+            "capacity": 28,
+            "version": "Both"
         },
         {
             "id": 264,
+            "gameId": 176,
             "name": "MetlGer3",
-            "modifiers": ["I", "L", "Q", "*"]
+            "nameJP": "メタルギア３",
+            "modifiers": ["I","L","Q","*"],
+            "damageSort": 160,
+            "damageDisplay": 160,
+            "element": "break",
+            "rarity": 4,
+            "capacity": 36,
+            "version": "Both"
         },
         {
             "id": 265,
+            "gameId": 177,
             "name": "PanlSht1",
-            "modifiers": ["A", "H", "S", "*"]
+            "nameJP": "パネルシュート１",
+            "modifiers": ["A","H","S","*"],
+            "damageSort": 100,
+            "damageDisplay": 100,
+            "element": "ground",
+            "rarity": 2,
+            "capacity": 19,
+            "version": "Both"
         },
         {
             "id": 266,
+            "gameId": 178,
             "name": "PanlSht2",
-            "modifiers": ["C", "G", "T", "*"]
+            "nameJP": "パネルシュート２",
+            "modifiers": ["C","G","T","*"],
+            "damageSort": 60,
+            "damageDisplay": 60,
+            "element": "ground",
+            "rarity": 3,
+            "capacity": 25,
+            "version": "Both"
         },
         {
             "id": 267,
+            "gameId": 179,
             "name": "PanlSht3",
-            "modifiers": ["F", "J", "N", "*"]
+            "nameJP": "パネルシュート３",
+            "modifiers": ["F","J","N","*"],
+            "damageSort": 80,
+            "damageDisplay": 80,
+            "element": "ground",
+            "rarity": 4,
+            "capacity": 31,
+            "version": "Both"
         },
         {
             "id": 268,
+            "gameId": 180,
             "name": "AquaUp1",
-            "modifiers": ["B", "S", "Z"]
+            "nameJP": "アクアアッパー１",
+            "modifiers": ["B","S","Z"],
+            "damageSort": 110,
+            "damageDisplay": 110,
+            "element": "aqua",
+            "rarity": 2,
+            "capacity": 22,
+            "version": "Both"
         },
         {
             "id": 269,
+            "gameId": 181,
             "name": "AquaUp2",
-            "modifiers": ["I", "P", "U"]
+            "nameJP": "アクアアッパー２",
+            "modifiers": ["I","P","U"],
+            "damageSort": 140,
+            "damageDisplay": 140,
+            "element": "aqua",
+            "rarity": 3,
+            "capacity": 28,
+            "version": "Both"
         },
         {
             "id": 270,
+            "gameId": 182,
             "name": "AquaUp3",
-            "modifiers": ["F", "K", "W"]
+            "nameJP": "アクアアッパー３",
+            "modifiers": ["F","K","W"],
+            "damageSort": 170,
+            "damageDisplay": 170,
+            "element": "aqua",
+            "rarity": 4,
+            "capacity": 34,
+            "version": "Both"
         },
         {
             "id": 271,
+            "gameId": 183,
             "name": "GreenWd1",
-            "modifiers": ["G", "J", "Y"]
+            "nameJP": "グリーンウッド１",
+            "modifiers": ["G","J","Y"],
+            "damageSort": 120,
+            "damageDisplay": 120,
+            "element": "wood",
+            "rarity": 2,
+            "capacity": 35,
+            "version": "Both"
         },
         {
             "id": 272,
+            "gameId": 184,
             "name": "GreenWd2",
-            "modifiers": ["D", "K", "P"]
+            "nameJP": "グリーンウッド２",
+            "modifiers": ["D","K","P"],
+            "damageSort": 140,
+            "damageDisplay": 140,
+            "element": "wood",
+            "rarity": 3,
+            "capacity": 40,
+            "version": "Both"
         },
         {
             "id": 273,
+            "gameId": 185,
             "name": "GreenWd3",
-            "modifiers": ["E", "N", "P"]
+            "nameJP": "グリーンウッド３",
+            "modifiers": ["E","N","P"],
+            "damageSort": 160,
+            "damageDisplay": 160,
+            "element": "wood",
+            "rarity": 4,
+            "capacity": 45,
+            "version": "Both"
         },
         {
             "id": 274,
+            "gameId": 218,
             "name": "GunSolEX",
-            "modifiers": ["G"]
+            "nameJP": "ガンデルソルＥＸ",
+            "modifiers": ["G"],
+            "damageSort": "???",
+            "damageDisplay": "???",
+            "element": "none",
+            "rarity": 5,
+            "capacity": 80,
+            "version": "Both"
         },
         {
             "id": 275,
+            "gameId": 217,
             "name": "Z Saver",
-            "modifiers": ["Z"]
+            "nameJP": "Ｚセイバー",
+            "modifiers": ["Z"],
+            "damageSort": 100,
+            "damageDisplay": 100,
+            "element": "sword",
+            "rarity": 5,
+            "capacity": 80,
+            "version": "Both"
         },
         {
             "id": 276,
+            "gameId": "??",
             "name": "PrixPowr",
-            "modifiers": ["?"]
+            "nameJP": null,
+            "modifiers": ["G"],
+            "damageSort": 200,
+            "damageDisplay": 200,
+            "element": "none",
+            "rarity": "?",
+            "capacity": "?",
+            "version": "Both"
         },
         {
             "id": 277,
+            "gameId": "??",
             "name": "Duo",
-            "modifiers": ["?"]
+            "nameJP": null,
+            "modifiers": ["D"],
+            "damageSort": 200,
+            "damageDisplay": 200,
+            "element": "none",
+            "rarity": "?",
+            "capacity": "?",
+            "version": "Both"
+        },
+        {
+            "id": 278,
+            "gameId": "??",
+            "name": "DrkCanon",
+            "nameJP": "ダークキャノン",
+            "modifiers": "",
+            "damageSort": 0,
+            "damageDisplay": "???",
+            "element": "none",
+            "rarity": "?",
+            "capacity": "?",
+            "version": "Both"
+        },
+        {
+            "id": 279,
+            "gameId": "??",
+            "name": "DrkVulcn",
+            "nameJP": "ダークバルカン",
+            "modifiers": "",
+            "damageSort": 20,
+            "damageDisplay": "20 * 24",
+            "element": "none",
+            "rarity": "?",
+            "capacity": "?",
+            "version": "Both"
+        },
+        {
+            "id": 280,
+            "gameId": "??",
+            "name": "DrkSpred",
+            "nameJP": "ダークスプレッド",
+            "modifiers": "",
+            "damageSort": 400,
+            "damageDisplay": 400,
+            "element": "none",
+            "rarity": "?",
+            "capacity": "?",
+            "version": "Both"
+        },
+        {
+            "id": 281,
+            "gameId": "??",
+            "name": "DarkBomb",
+            "nameJP": "ダークボム",
+            "modifiers": "",
+            "damageSort": 200,
+            "damageDisplay": 200,
+            "element": "none",
+            "rarity": "?",
+            "capacity": "?",
+            "version": "Both"
+        },
+        {
+            "id": 282,
+            "gameId": "??",
+            "name": "DrkSword",
+            "nameJP": "ダークソード",
+            "modifiers": "",
+            "damageSort": 500,
+            "damageDisplay": 500,
+            "element": "none",
+            "rarity": "?",
+            "capacity": "?",
+            "version": "Both"
+        },
+        {
+            "id": 283,
+            "gameId": "??",
+            "name": "DrkLance",
+            "nameJP": "ダークランス",
+            "modifiers": "",
+            "damageSort": 400,
+            "damageDisplay": 400,
+            "element": "none",
+            "rarity": "?",
+            "capacity": "?",
+            "version": "Both"
+        },
+        {
+            "id": 284,
+            "gameId": "??",
+            "name": "DrkRecov",
+            "nameJP": "ダークリカバリー",
+            "modifiers": "",
+            "damageSort": 0,
+            "damageDisplay": 0,
+            "element": "none",
+            "rarity": "?",
+            "capacity": "?",
+            "version": "Both"
+        },
+        {
+            "id": 285,
+            "gameId": "??",
+            "name": "DrkStage",
+            "nameJP": "ダークステージ",
+            "modifiers": "",
+            "damageSort": 0,
+            "damageDisplay": 0,
+            "element": "none",
+            "rarity": "?",
+            "capacity": "?",
+            "version": "Both"
         }
     ]
 }

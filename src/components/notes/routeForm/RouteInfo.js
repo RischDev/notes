@@ -86,12 +86,27 @@ function RouteInfo(props) {
         };
     }
 
+    const updateGame = useCallback((newGame) => {
+        let gameInfo = require('../../../resources/ItemNames.json');
+        if (newGame !== "" && newGame != null) {
+            gameInfo = require('../../../resources/' + newGame + '/ItemNames.json');
+        }
+
+        setContext({
+            route: {
+                ...route,
+                game: newGame
+            },
+            gameInfo: gameInfo
+        })
+    }, [route]);
+
     return (
         <div className={`${styles.routeInfo}`}>
             <h2>Update your Route</h2>
             <input type="text" name="title" className={`${styles.textInput}`} placeholder="Title" defaultValue={route.title} onBlur={ (e) => setContext({ route: { ...route, title: e.target.value } }) } />
             <input type="text" name="path" className={`${styles.textInput}`} placeholder="Path" defaultValue={route.path} onBlur={ (e) => setContext({ route: { ...route, path: e.target.value } }) } />
-            <select name="game" className={`${styles.select}`} value={route.game} onChange={ (e) => setContext({ route: { ...route, game: e.target.value } }) }>
+            <select name="game" className={`${styles.select}`} value={route.game} onChange={ (e) => updateGame(e.target.value) }>
                 <option value="">Select a game</option>
                 {games.map((game) => (
                     <option key={game} value={game}>

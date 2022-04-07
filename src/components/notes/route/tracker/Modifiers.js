@@ -1,59 +1,44 @@
 /** @format */
 
-import React from 'react';
+import { useContext } from 'react';
+import NotesContext from '../../../common/NotesContext';
 import styles from './styles/Modifiers.Module.css';
 import themeMMBN from './styles/themes/MMBN/MMBN-Modifiers.Module.css';
 
 function Modifier(props) {
-    const foundClass = props.foundModifiers[props.id].includes(props.modifier)
-        ? styles.found
-        : '';
-    return (
-        <div
-            id={'modifier-' + props.id + '-' + props.modifier}
-            className={`${styles.modifier} ${styles[props.game]} ${foundClass}`}
-            onClick={props.onClick}>
-            {props.modifier}{' '}
-        </div>
+    const foundClass = props.foundModifiers[props.id].includes(props.modifier) ? styles.found : "";
+    return(
+        <div id={"modifier-" + props.id + "-" + props.modifier} className={`${styles.modifier} ${styles[props.game]} ${foundClass}`} onClick={ () => props.updateFound(props.modifier) } >{props.modifier} </div>
     );
 }
 
-class Modifiers extends React.Component {
-    constructor(props) {
-        super(props);
+function Modifiers(props) {
+    const {
+        notes: {
+            game
+        },
+        foundModifiers
+    } = useContext(NotesContext);
 
-        this.theme = {};
-        if (props.game.includes('MMBN')) {
-            this.theme = themeMMBN;
-        }
-
-        this.updateFound = this.updateFound.bind(this);
+    let theme = {};
+    if (game.includes("MMBN")) {
+        theme = themeMMBN;
     }
 
-    updateFound(e) {
-        let modifier = e.target.id.split('-')[2];
-        this.props.updateTracker(this.props.id, modifier);
-    }
+    const updateFound = (modifier) => {
+        props.updateTracker(props.id, modifier);
+    };
 
-    render() {
-        if (this.props.modifiers != null && this.props.modifiers.length > 0) {
-            return (
-                <div className={`${styles.modifiers} ${this.theme.modifiers}`}>
-                    {this.props.modifiers.map((modifier) => (
-                        <Modifier
-                            key={'modifier-' + modifier}
-                            id={this.props.id}
-                            modifier={modifier}
-                            game={this.props.game}
-                            foundModifiers={this.props.foundModifiers}
-                            onClick={this.updateFound}
-                        />
-                    ))}
-                </div>
-            );
-        }
-        return null;
+    if (props.modifiers != null && props.modifiers.length > 0) {
+        return(
+            <div className={`${styles.modifiers} ${theme.modifiers}`}>
+                {props.modifiers.map((modifier) =>
+                    <Modifier key={"modifier-" + modifier} id={props.id} modifier={modifier} foundModifiers={foundModifiers} game={game} updateFound={updateFound} />
+                )}
+            </div>
+        );
     }
+    return null;
 }
 
 export default Modifiers;

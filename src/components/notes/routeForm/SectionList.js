@@ -97,18 +97,20 @@ function SectionList(props) {
         let state = null;
         for (let i = id - 1; i >= 0; i--) {
             if (route.sections[i].state != null) {
-                state = route.sections[i].state;
+                state = JSON.parse(JSON.stringify(route.sections[i].state));
                 break;
             }
         }
 
         // If no state was found, use initialState
         if (state == null) {
-            state = route.initialState;
-
-            // Setup the previous folder to be the same as the starting folder, and default folder edit to false.
-            state.PrevFolder = state.Folder;
+            state = JSON.parse(JSON.stringify(route.initialState));
         }
+
+        // Setup the previous folder to be the same as the starting folder, and clear the folder edit.
+        state.prevFolder = state.folder;
+        state.folderEdit.value = [];
+        state.folderEdit.shown = false;
 
         return state;
     }

@@ -1,82 +1,45 @@
 /** @format */
 
-import React from 'react';
+import { useContext } from 'react';
 import Modifiers from './Modifiers';
+import NotesContext from '../../../common/NotesContext';
 import styles from './styles/Item.Module.css';
 import themeMMBN from './styles/themes/MMBN/MMBN-Item.Module.css';
 import themeMMSF from './styles/themes/MMSF/MMSF-Item.Module.css';
 
-class Item extends React.Component {
-    constructor(props) {
-        super(props);
-
-        this.theme = {};
-        if (props.game.includes('MMBN')) {
-            this.theme = themeMMBN;
-        } else if (props.game.includes('MMSF')) {
-            this.theme = themeMMSF;
+function Item(props) {
+    const {
+        notes: {
+            game
         }
+    } = useContext(NotesContext);
 
-        this.state = {
-            id: props.id,
-            name: props.name,
-            type: props.type,
-            game: props.game,
-        };
-
-        this.updateFound = this.updateFound.bind(this);
+    let theme = {};
+    if (game.includes("MMBN")) {
+        theme = themeMMBN;
+    } else if (game.includes("MMSF")) {
+        theme = themeMMSF;
     }
 
-    updateFound() {
-        this.props.updateTracker(this.state.id, null);
-    }
+    const updateFound = () => {
+        props.updateTracker(props.id, null);
+    };
 
-    render() {
-        if (
-            this.state.id >= this.state.type.low &&
-            this.state.id <= this.state.type.high
-        ) {
-            const foundClass = this.props.found ? styles.found : '';
+    if (props.id >= props.type.low && props.id <= props.type.high) {
+        const foundClass = props.found ? styles.found : "";
 
-            return (
-                <div>
-                    <div
-                        id={this.state.id}
-                        className={`${styles.item} ${
-                            this.theme[this.state.type.id]
-                        } ${this.theme.item} ${foundClass}`}
-                        onClick={this.updateFound}>
-                        <div className={`${styles.title} ${this.theme.title}`}>
-                            {(this.state.id - this.props.low + 1)
-                                .toString()
-                                .padStart(3, '0')}{' '}
-                            {this.state.name}
-                        </div>
-                        <img
-                            className={`${styles.itemArt} ${this.theme.itemArt}`}
-                            src={
-                                '/items/' +
-                                this.state.game +
-                                '/' +
-                                this.state.id +
-                                '.png'
-                            }
-                            alt={this.state.name + ' art'}
-                        />
-                    </div>
-                    <Modifiers
-                        id={this.state.id}
-                        modifiers={this.props.modifiers}
-                        game={this.state.game}
-                        updateTracker={this.props.updateTracker}
-                        foundModifiers={this.props.foundModifiers}
-                    />
+        return(
+            <div>
+                <div id={props.id} className={`${styles.item} ${theme[props.type.id]} ${theme.item} ${foundClass}`} onClick={updateFound}>
+                    <div className={`${styles.title} ${theme.title}`}>{(props.id - props.low + 1).toString().padStart(3, "0")} {props.name}</div>
+                    <img className={`${styles.itemArt} ${theme.itemArt}`} src={"/items/" + game + "/" + props.id + ".png"} alt={props.name + " art"} />
                 </div>
-            );
-        }
-
-        return null;
+                <Modifiers id={props.id} modifiers={props.modifiers} updateTracker={props.updateTracker} />
+            </div>
+        );
     }
+
+    return null;
 }
 
 export default Item;

@@ -14,7 +14,7 @@ function shouldUpdate(oldProps, newProps) {
 }
 
 const ItemDropdown = memo((props) => {
-    const game = useContext(GameContext);
+    const gameInfo = useContext(GameContext);
 
     const onUpdateItem = (e) => {
         let value = e.target.value;
@@ -32,17 +32,12 @@ const ItemDropdown = memo((props) => {
         props.updateItem(0);
     }
 
-    let Items = require('../../../../resources/ItemNames.json');
-    if (game !== "" && game != null) {
-        Items = require('../../../../resources/' + game + '/ItemNames.json');
-    }
-
     if (props.item != null) {
         if (props.type === "text") {
             return(
                 <select className={`${styles.select}`} value={props.item} onChange={onUpdateItem}>
-                    <option value="">Remove {Items.name}</option>
-                    {Items.Items.map((item) =>
+                    <option value="">Remove {gameInfo.name}</option>
+                    {gameInfo.Items.map((item) =>
                         <option value={item.id} key={"text-item-" + item.id}>{item.name}</option>
                     )}
                 </select>
@@ -50,8 +45,8 @@ const ItemDropdown = memo((props) => {
         } else if (props.type === "section") {
             return(
                 <select className={`${styles.select}`} value={props.item} onChange={onUpdateItem}>
-                    <option value="">Select {Items.name}</option>
-                    {Items.Items.map((item) =>
+                    <option value="">Select {gameInfo.name}</option>
+                    {gameInfo.Items.map((item) =>
                         <option value={item.id} key={"section-item-" + item.id}>{item.name}</option>
                     )}
                 </select>

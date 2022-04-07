@@ -2,6 +2,178 @@
     "name": "Chip",
     "modifiers": true,
     "modifierName": "Code",
+    "itemsShown": 7,
+    "initialState": {
+        "keys": ["Max HP", "Zenny", "Battlechips"],
+        "Max HP": {
+            "value": 100,
+            "shown": true
+        },
+        "Zenny": {
+            "value": 0,
+            "shown": true
+        },
+        "Battlechips": {
+            "value": 12,
+            "shown": true
+        },
+        "folder": [
+            {
+                "slot": 0,
+                "item": 0,
+                "modifier": "A"
+            },
+            {
+                "slot": 1,
+                "item": 0,
+                "modifier": "A"
+            },
+            {
+                "slot": 2,
+                "item": 0,
+                "modifier": "B"
+            },
+            {
+                "slot": 3,
+                "item": 0,
+                "modifier": "B"
+            },
+            {
+                "slot": 4,
+                "item": 3,
+                "modifier": "N"
+            },
+            {
+                "slot": 5,
+                "item": 3,
+                "modifier": "N"
+            },
+            {
+                "slot": 6,
+                "item": 3,
+                "modifier": "N"
+            },
+            {
+                "slot": 7,
+                "item": 3,
+                "modifier": "N"
+            },
+            {
+                "slot": 8,
+                "item": 4,
+                "modifier": "J"
+            },
+            {
+                "slot": 9,
+                "item": 4,
+                "modifier": "J"
+            },
+            {
+                "slot": 10,
+                "item": 4,
+                "modifier": "J"
+            },
+            {
+                "slot": 11,
+                "item": 4,
+                "modifier": "J"
+            },
+            {
+                "slot": 12,
+                "item": 8,
+                "modifier": "C"
+            },
+            {
+                "slot": 13,
+                "item": 8,
+                "modifier": "C"
+            },
+            {
+                "slot": 14,
+                "item": 8,
+                "modifier": "L"
+            },
+            {
+                "slot": 15,
+                "item": 8,
+                "modifier": "L"
+            },
+            {
+                "slot": 16,
+                "item": 12,
+                "modifier": "S"
+            },
+            {
+                "slot": 17,
+                "item": 12,
+                "modifier": "S"
+            },
+            {
+                "slot": 18,
+                "item": 12,
+                "modifier": "S"
+            },
+            {
+                "slot": 19,
+                "item": 12,
+                "modifier": "S"
+            },
+            {
+                "slot": 20,
+                "item": 13,
+                "modifier": "S"
+            },
+            {
+                "slot": 21,
+                "item": 63,
+                "modifier": "L"
+            },
+            {
+                "slot": 22,
+                "item": 63,
+                "modifier": "L"
+            },
+            {
+                "slot": 23,
+                "item": 68,
+                "modifier": "A"
+            },
+            {
+                "slot": 24,
+                "item": 68,
+                "modifier": "A"
+            },
+            {
+                "slot": 25,
+                "item": 68,
+                "modifier": "A"
+            },
+            {
+                "slot": 26,
+                "item": 68,
+                "modifier": "L"
+            },
+            {
+                "slot": 27,
+                "item": 68,
+                "modifier": "L"
+            },
+            {
+                "slot": 28,
+                "item": 76,
+                "modifier": "S"
+            },
+            {
+                "slot": 29,
+                "item": 79,
+                "modifier": "F"
+            }
+        ],
+        "folderEdit": {
+            "value": [],
+            "shown": false
+        }
+    },
     "types": [
         {
             "name": "Battlechips",

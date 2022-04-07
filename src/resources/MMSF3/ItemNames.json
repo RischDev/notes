@@ -1,6 +1,31 @@
 {
     "name": "Card",
     "modifier": false,
+    "itemsShown": 5,
+    "elementOrder": {
+        "none": 1,
+        "fire": 2,
+        "aqua": 3,
+        "elec": 4,
+        "wood": 5
+    },
+    "sortTypes": [
+        "ID",
+        "Alphabet",
+        "Alphabet (JP)",
+        "Color",
+        "Attack",
+        "Element",
+        "Number"
+    ],
+    "actionTypes": [
+        "Remove",
+        "Add",
+        "Swap",
+        "Replace",
+        "Sort",
+        "Default"
+    ],
     "types": [
         {
             "name": "Standard",
@@ -13,788 +38,2474 @@
             "id": "Mega",
             "low": 150,
             "high": 194
+        },
+        {
+            "name": "Giga",
+            "id": "Giga",
+            "low": 195,
+            "high": 204
         }
     ],
     "Items": [
         {
+            "id": 0,
+            "gameId": 0,
             "name": "Cannon",
-            "id": 0
+            "nameJP": "キャノン",
+            "damageSort": 40,
+            "damageDisplay": 40,
+            "element": "none",
+            "attributes": "none",
+            "color": "yellow",
+            "version": "All"
         },
         {
+            "id": 1,
+            "gameId": 1,
             "name": "PlusCannon",
-            "id": 1
+            "nameJP": "プラスキャノン",
+            "damageSort": 100,
+            "damageDisplay": 100,
+            "element": "none",
+            "attributes": "none",
+            "color": "yellow",
+            "version": "All"
         },
         {
+            "id": 2,
+            "gameId": 2,
             "name": "HevyCannon",
-            "id": 2
+            "nameJP": "ヘビーキャノン",
+            "damageSort": 160,
+            "damageDisplay": 160,
+            "element": "none",
+            "attributes": "none",
+            "color": "yellow",
+            "version": "All"
         },
         {
+            "id": 3,
+            "gameId": 3,
             "name": "PlasmaGun",
-            "id": 3
+            "nameJP": "プラスマガン",
+            "damageSort": 30,
+            "damageDisplay": 30,
+            "element": "none",
+            "attributes": "none",
+            "color": "yellow",
+            "version": "All"
         },
         {
+            "id": 4,
+            "gameId": 4,
             "name": "AirSpread1",
-            "id": 4
+            "nameJP": "エアスプレッド１",
+            "damageSort": 10,
+            "damageDisplay": 10,
+            "element": "none",
+            "attributes": "wind",
+            "color": "yellow",
+            "version": "All"
         },
         {
+            "id": 5,
+            "gameId": 5,
             "name": "AirSpread2",
-            "id": 5
+            "nameJP": "エアスプレッド２",
+            "damageSort": 20,
+            "damageDisplay": 20,
+            "element": "none",
+            "attributes": "wind",
+            "color": "yellow",
+            "version": "All"
         },
         {
+            "id": 6,
+            "gameId": 6,
             "name": "AirSpread3",
-            "id": 6
+            "nameJP": "エアスプレッド３",
+            "damageSort": 30,
+            "damageDisplay": 30,
+            "element": "none",
+            "attributes": "wind",
+            "color": "yellow",
+            "version": "All"
         },
         {
-            "name": "MadVulcan1",
-            "id": 7
+            "id": 7,
+            "gameId": 101,
+            "name": "MadVulcn1",
+            "nameJP": "マッドバルカン１",
+            "damageSort": 10,
+            "damageDisplay": 10,
+            "element": "none",
+            "attributes": "none",
+            "color": "yellow",
+            "version": "All"
         },
         {
-            "name": "MadVulcan2",
-            "id": 8
+            "id": 8,
+            "gameId": 102,
+            "name": "MadVulcn2",
+            "nameJP": "マッドバルカン２",
+            "damageSort": 10,
+            "damageDisplay": 10,
+            "element": "none",
+            "attributes": "none",
+            "color": "yellow",
+            "version": "All"
         },
         {
-            "name": "MadVulcan3",
-            "id": 9
+            "id": 9,
+            "gameId": 103,
+            "name": "MadVulcn3",
+            "nameJP": "マッドバルカン３",
+            "damageSort": 10,
+            "damageDisplay": 10,
+            "element": "none",
+            "attributes": "none",
+            "color": "yellow",
+            "version": "All"
         },
         {
+            "id": 10,
+            "gameId": 27,
             "name": "BlackInk",
-            "id": 10
+            "nameJP": "ブラックインク",
+            "damageSort": 90,
+            "damageDisplay": 90,
+            "element": "none",
+            "attributes": "none",
+            "color": "yellow",
+            "version": "All"
         },
         {
+            "id": 11,
+            "gameId": 7,
             "name": "MiniGrnade",
-            "id": 11
+            "nameJP": "ミニグレネード",
+            "damageSort": 10,
+            "damageDisplay": 10,
+            "element": "none",
+            "attributes": "none",
+            "color": "yellow",
+            "version": "All"
         },
         {
+            "id": 12,
+            "gameId": 18,
             "name": "Sword",
-            "id": 12
+            "nameJP": "ソード",
+            "damageSort": 80,
+            "damageDisplay": 80,
+            "element": "none",
+            "attributes": "sword",
+            "color": "yellow",
+            "version": "All"
         },
         {
+            "id": 13,
+            "gameId": 19,
             "name": "WideSword",
-            "id": 13
+            "nameJP": "ワイドソード",
+            "damageSort": 80,
+            "damageDisplay": 80,
+            "element": "none",
+            "attributes": "sword",
+            "color": "yellow",
+            "version": "All"
         },
         {
+            "id": 14,
+            "gameId": 20,
             "name": "LongSword",
-            "id": 14
+            "nameJP": "ロングソード",
+            "damageSort": 80,
+            "damageDisplay": 80,
+            "element": "none",
+            "attributes": "sword",
+            "color": "yellow",
+            "version": "All"
         },
         {
+            "id": 15,
+            "gameId": 95,
             "name": "Bushido1",
-            "id": 15
+            "nameJP": "エドギリブレード１",
+            "damageSort": 110,
+            "damageDisplay": 110,
+            "element": "none",
+            "attributes": "sword",
+            "color": "yellow",
+            "version": "All"
         },
         {
+            "id": 16,
+            "gameId": 96,
             "name": "Bushido2",
-            "id": 16
+            "nameJP": "エドギリブレード２",
+            "damageSort": 140,
+            "damageDisplay": 140,
+            "element": "none",
+            "attributes": "sword",
+            "color": "yellow",
+            "version": "All"
         },
         {
+            "id": 17,
+            "gameId": 97,
             "name": "Bushido3",
-            "id": 17
+            "nameJP": "エドギリブレード３",
+            "damageSort": 170,
+            "damageDisplay": 170,
+            "element": "none",
+            "attributes": "sword",
+            "color": "yellow",
+            "version": "All"
         },
         {
+            "id": 18,
+            "gameId": 21,
             "name": "GreatAxe",
-            "id": 18
+            "nameJP": "グレートアックス",
+            "damageSort": 140,
+            "damageDisplay": 140,
+            "element": "wood",
+            "attributes": "sword",
+            "color": "yellow",
+            "version": "All"
         },
         {
+            "id": 19,
+            "gameId": 122,
             "name": "FlameAxe",
-            "id": 19
+            "nameJP": "フレイムアックス",
+            "damageSort": 200,
+            "damageDisplay": 200,
+            "element": "fire",
+            "attributes": "sword",
+            "color": "yellow",
+            "version": "All"
         },
         {
+            "id": 20,
+            "gameId": 14,
             "name": "WindyAtk1",
-            "id": 20
+            "nameJP": "ウィンディアタック１",
+            "damageSort": 90,
+            "damageDisplay": 90,
+            "element": "none",
+            "attributes": "wind",
+            "color": "yellow",
+            "version": "All"
         },
         {
+            "id": 21,
+            "gameId": 15,
             "name": "WindyAtk2",
-            "id": 21
+            "nameJP": "ウィンディアタック２",
+            "damageSort": 120,
+            "damageDisplay": 120,
+            "element": "none",
+            "attributes": "wind",
+            "color": "yellow",
+            "version": "All"
         },
         {
+            "id": 22,
+            "gameId": 16,
             "name": "WindyAtk3",
-            "id": 22
+            "nameJP": "ウィンディアタック３",
+            "damageSort": 150,
+            "damageDisplay": 150,
+            "element": "none",
+            "attributes": "wind",
+            "color": "yellow",
+            "version": "All"
         },
         {
+            "id": 23,
+            "gameId": 22,
             "name": "SyncHook1",
-            "id": 23
+            "nameJP": "シンクロフック１",
+            "damageSort": 100,
+            "damageDisplay": 100,
+            "element": "none",
+            "attributes": "none",
+            "color": "yellow",
+            "version": "All"
         },
         {
+            "id": 24,
+            "gameId": 23,
             "name": "SyncHook2",
-            "id": 24
+            "nameJP": "シンクロフック２",
+            "damageSort": 130,
+            "damageDisplay": 130,
+            "element": "none",
+            "attributes": "none",
+            "color": "yellow",
+            "version": "All"
         },
         {
+            "id": 25,
+            "gameId": 24,
             "name": "SyncHook3",
-            "id": 25
+            "nameJP": "シンクロフック３",
+            "damageSort": 150,
+            "damageDisplay": 150,
+            "element": "none",
+            "attributes": "none",
+            "color": "yellow",
+            "version": "All"
         },
         {
+            "id": 26,
+            "gameId": 8,
             "name": "DrillArm1",
-            "id": 26
+            "nameJP": "ドリルアーム１",
+            "damageSort": 40,
+            "damageDisplay": 40,
+            "element": "none",
+            "attributes": "break",
+            "color": "yellow",
+            "version": "All"
         },
         {
+            "id": 27,
+            "gameId": 9,
             "name": "DrillArm2",
-            "id": 27
+            "nameJP": "ドリルアーム２",
+            "damageSort": 50,
+            "damageDisplay": 50,
+            "element": "none",
+            "attributes": "break",
+            "color": "yellow",
+            "version": "All"
         },
         {
+            "id": 28,
+            "gameId": 10,
             "name": "DrillArm3",
-            "id": 28
+            "nameJP": "ドリルアーム３",
+            "damageSort": 60,
+            "damageDisplay": 60,
+            "element": "none",
+            "attributes": "break",
+            "color": "yellow",
+            "version": "All"
         },
         {
+            "id": 29,
+            "gameId": 116,
             "name": "TyphnDance",
-            "id": 29
+            "nameJP": "タイフーンダンス",
+            "damageSort": 60,
+            "damageDisplay": 60,
+            "element": "none",
+            "attributes": "wind",
+            "color": "yellow",
+            "version": "All"
         },
         {
+            "id": 30,
+            "gameId": 117,
             "name": "TrnadoDnce",
-            "id": 30
+            "nameJP": "トルネードダンス",
+            "damageSort": 60,
+            "damageDisplay": 60,
+            "element": "none",
+            "attributes": "wind",
+            "color": "yellow",
+            "version": "All"
         },
         {
+            "id": 31,
+            "gameId": 25,
             "name": "WhtMeteor",
-            "id": 31
+            "nameJP": "ホワイトメテオ",
+            "damageSort": 50,
+            "damageDisplay": 50,
+            "element": "none",
+            "attributes": "none",
+            "color": "yellow",
+            "version": "All"
         },
         {
+            "id": 32,
+            "gameId": 26,
             "name": "SilvMeteor",
-            "id": 32
+            "nameJP": "シルバーメテオ",
+            "damageSort": 70,
+            "damageDisplay": 70,
+            "element": "none",
+            "attributes": "none",
+            "color": "yellow",
+            "version": "All"
         },
         {
+            "id": 33,
+            "gameId": 29,
             "name": "GrandWave1",
-            "id": 33
+            "nameJP": "グランドウェーブ１",
+            "damageSort": 50,
+            "damageDisplay": 50,
+            "element": "none",
+            "attributes": "none",
+            "color": "yellow",
+            "version": "All"
         },
         {
+            "id": 34,
+            "gameId": 30,
             "name": "GrandWave2",
-            "id": 34
+            "nameJP": "グランドウェーブ２",
+            "damageSort": 80,
+            "damageDisplay": 80,
+            "element": "none",
+            "attributes": "none",
+            "color": "yellow",
+            "version": "All"
         },
         {
+            "id": 35,
+            "gameId": 31,
             "name": "GrandWave3",
-            "id": 35
+            "nameJP": "グランドウェーブ３",
+            "damageSort": 120,
+            "damageDisplay": 120,
+            "element": "none",
+            "attributes": "none",
+            "color": "yellow",
+            "version": "All"
         },
         {
+            "id": 36,
+            "gameId": 32,
             "name": "JetAttack1",
-            "id": 36
+            "nameJP": "ジェットアタック１",
+            "damageSort": 90,
+            "damageDisplay": 90,
+            "element": "none",
+            "attributes": "break wind",
+            "color": "yellow",
+            "version": "All"
         },
         {
+            "id": 37,
+            "gameId": 33,
             "name": "JetAttack2",
-            "id": 37
+            "nameJP": "ジェットアタック２",
+            "damageSort": 120,
+            "damageDisplay": 120,
+            "element": "none",
+            "attributes": "break wind",
+            "color": "yellow",
+            "version": "All"
         },
         {
+            "id": 38,
+            "gameId": 34,
             "name": "JetAttack3",
-            "id": 38
+            "nameJP": "ジェットアタック３",
+            "damageSort": 150,
+            "damageDisplay": 150,
+            "element": "none",
+            "attributes": "break wind",
+            "color": "yellow",
+            "version": "All"
         },
         {
+            "id": 39,
+            "gameId": 35,
             "name": "Buki1",
-            "id": 39
+            "nameJP": "ハンマーウェポン１",
+            "damageSort": 130,
+            "damageDisplay": 130,
+            "element": "none",
+            "attributes": "break",
+            "color": "yellow",
+            "version": "All"
         },
         {
+            "id": 40,
+            "gameId": 36,
             "name": "Buki2",
-            "id": 40
+            "nameJP": "ハンマーウェポン２",
+            "damageSort": 150,
+            "damageDisplay": 150,
+            "element": "none",
+            "attributes": "break",
+            "color": "yellow",
+            "version": "All"
         },
         {
+            "id": 41,
+            "gameId": 37,
             "name": "Buki3",
-            "id": 41
+            "nameJP": "ハンマーウェポン３",
+            "damageSort": 170,
+            "damageDisplay": 170,
+            "element": "none",
+            "attributes": "break",
+            "color": "yellow",
+            "version": "All"
         },
         {
+            "id": 42,
+            "gameId": 38,
             "name": "SmileCoin1",
-            "id": 42
+            "nameJP": "スマイルコイン１",
+            "damageSort": 30,
+            "damageDisplay": 30,
+            "element": "none",
+            "attributes": "none",
+            "color": "yellow",
+            "version": "All"
         },
         {
+            "id": 43,
+            "gameId": 39,
             "name": "SmileCoin2",
-            "id": 43
+            "nameJP": "スマイルコイン２",
+            "damageSort": 40,
+            "damageDisplay": 40,
+            "element": "none",
+            "attributes": "none",
+            "color": "yellow",
+            "version": "All"
         },
         {
+            "id": 44,
+            "gameId": 40,
             "name": "SmileCoin3",
-            "id": 44
+            "nameJP": "スマイルコイン３",
+            "damageSort": 50,
+            "damageDisplay": 50,
+            "element": "none",
+            "attributes": "none",
+            "color": "yellow",
+            "version": "All"
         },
         {
+            "id": 45,
+            "gameId": 41,
             "name": "BigDrop1",
-            "id": 45
+            "nameJP": "ヘビードーン１",
+            "damageSort": 140,
+            "damageDisplay": 140,
+            "element": "none",
+            "attributes": "break",
+            "color": "yellow",
+            "version": "All"
         },
         {
+            "id": 46,
+            "gameId": 42,
             "name": "BigDrop2",
-            "id": 46
+            "nameJP": "ヘビードーン２",
+            "damageSort": 180,
+            "damageDisplay": 180,
+            "element": "none",
+            "attributes": "break",
+            "color": "yellow",
+            "version": "All"
         },
         {
+            "id": 47,
+            "gameId": 43,
             "name": "BigDrop3",
-            "id": 47
+            "nameJP": "ヘビードーン３",
+            "damageSort": 220,
+            "damageDisplay": 220,
+            "element": "none",
+            "attributes": "break",
+            "color": "yellow",
+            "version": "All"
         },
         {
+            "id": 48,
+            "gameId": 92,
             "name": "BuzzSaw1",
-            "id": 48
+            "nameJP": "ギザホイール１",
+            "damageSort": 100,
+            "damageDisplay": 100,
+            "element": "none",
+            "attributes": "sword",
+            "color": "yellow",
+            "version": "All"
         },
         {
+            "id": 49,
+            "gameId": 93,
             "name": "BuzzSaw2",
-            "id": 49
+            "nameJP": "ギザホイール２",
+            "damageSort": 120,
+            "damageDisplay": 120,
+            "element": "none",
+            "attributes": "sword",
+            "color": "yellow",
+            "version": "All"
         },
         {
+            "id": 50,
+            "gameId": 94,
             "name": "BuzzSaw3",
-            "id": 50
+            "nameJP": "ギザホイール３",
+            "damageSort": 150,
+            "damageDisplay": 150,
+            "element": "none",
+            "attributes": "sword",
+            "color": "yellow",
+            "version": "All"
         },
         {
+            "id": 51,
+            "gameId": 98,
             "name": "SkullArrw1",
-            "id": 51
+            "nameJP": "スカルアロー１",
+            "damageSort": 130,
+            "damageDisplay": 130,
+            "element": "none",
+            "attributes": "none",
+            "color": "yellow",
+            "version": "All"
         },
         {
+            "id": 52,
+            "gameId": 99,
             "name": "SkullArrw2",
-            "id": 52
+            "nameJP": "スカルアロー２",
+            "damageSort": 150,
+            "damageDisplay": 150,
+            "element": "none",
+            "attributes": "none",
+            "color": "yellow",
+            "version": "All"
         },
         {
+            "id": 53,
+            "gameId": 100,
             "name": "SkullArrw3",
-            "id": 53
+            "nameJP": "スカルアロー３",
+            "damageSort": 170,
+            "damageDisplay": 170,
+            "element": "none",
+            "attributes": "none",
+            "color": "yellow",
+            "version": "All"
         },
         {
+            "id": 54,
+            "gameId": 104,
             "name": "MuTech1",
-            "id": 54
+            "nameJP": "ムーテクノロジー１",
+            "damageSort": 50,
+            "damageDisplay": 50,
+            "element": "none",
+            "attributes": "break",
+            "color": "yellow",
+            "version": "All"
         },
         {
+            "id": 55,
+            "gameId": 105,
             "name": "MuTech2",
-            "id": 55
+            "nameJP": "ムーテクノロジー２",
+            "damageSort": 60,
+            "damageDisplay": 60,
+            "element": "none",
+            "attributes": "break",
+            "color": "yellow",
+            "version": "All"
         },
         {
+            "id": 56,
+            "gameId": 106,
             "name": "MuTech3",
-            "id": 56
+            "nameJP": "ムーテクノロジー３",
+            "damageSort": 70,
+            "damageDisplay": 70,
+            "element": "none",
+            "attributes": "break",
+            "color": "yellow",
+            "version": "All"
         },
         {
+            "id": 57,
+            "gameId": 44,
             "name": "TimeBomb1",
-            "id": 57
+            "nameJP": "カウントボム１",
+            "damageSort": 130,
+            "damageDisplay": 130,
+            "element": "fire",
+            "attributes": "none",
+            "color": "yellow",
+            "version": "All"
         },
         {
+            "id": 58,
+            "gameId": 45,
             "name": "TimeBomb2",
-            "id": 58
+            "nameJP": "カウントボム２",
+            "damageSort": 160,
+            "damageDisplay": 160,
+            "element": "fire",
+            "attributes": "none",
+            "color": "yellow",
+            "version": "All"
         },
         {
+            "id": 59,
+            "gameId": 46,
             "name": "TimeBomb3",
-            "id": 59
+            "nameJP": "カウントボム３",
+            "damageSort": 200,
+            "damageDisplay": 200,
+            "element": "fire",
+            "attributes": "none",
+            "color": "yellow",
+            "version": "All"
         },
         {
+            "id": 60,
+            "gameId": 47,
             "name": "HeatUppr1",
-            "id": 60
+            "nameJP": "ヒートアッパー１",
+            "damageSort": 120,
+            "damageDisplay": 120,
+            "element": "fire",
+            "attributes": "break",
+            "color": "yellow",
+            "version": "All"
         },
         {
+            "id": 61,
+            "gameId": 48,
             "name": "HeatUppr2",
-            "id": 61
+            "nameJP": "ヒートアッパー２",
+            "damageSort": 150,
+            "damageDisplay": 150,
+            "element": "fire",
+            "attributes": "break",
+            "color": "yellow",
+            "version": "All"
         },
         {
+            "id": 62,
+            "gameId": 49,
             "name": "HeatUppr3",
-            "id": 62
+            "nameJP": "ヒートアッパー３",
+            "damageSort": 200,
+            "damageDisplay": 200,
+            "element": "fire",
+            "attributes": "break",
+            "color": "yellow",
+            "version": "All"
         },
         {
+            "id": 63,
+            "gameId": 50,
             "name": "MechFlame1",
-            "id": 63
+            "nameJP": "マシーンフレイム１",
+            "damageSort": 110,
+            "damageDisplay": 110,
+            "element": "fire",
+            "attributes": "none",
+            "color": "yellow",
+            "version": "All"
         },
         {
+            "id": 64,
+            "gameId": 51,
             "name": "MechFlame2",
-            "id": 64
+            "nameJP": "マシーンフレイム２",
+            "damageSort": 140,
+            "damageDisplay": 140,
+            "element": "fire",
+            "attributes": "none",
+            "color": "yellow",
+            "version": "All"
         },
         {
+            "id": 65,
+            "gameId": 52,
             "name": "MechFlame3",
-            "id": 65
+            "nameJP": "マシーンフレイム３",
+            "damageSort": 170,
+            "damageDisplay": 170,
+            "element": "fire",
+            "attributes": "none",
+            "color": "yellow",
+            "version": "All"
         },
         {
+            "id": 66,
+            "gameId": 53,
             "name": "MadFire1",
-            "id": 66
+            "nameJP": "アンガーファイア１",
+            "damageSort": 100,
+            "damageDisplay": 100,
+            "element": "fire",
+            "attributes": "none",
+            "color": "yellow",
+            "version": "All"
         },
         {
+            "id": 67,
+            "gameId": 54,
             "name": "MadFire2",
-            "id": 67
+            "nameJP": "アンガーファイア２",
+            "damageSort": 140,
+            "damageDisplay": 140,
+            "element": "fire",
+            "attributes": "none",
+            "color": "yellow",
+            "version": "All"
         },
         {
+            "id": 68,
+            "gameId": 55,
             "name": "MadFire3",
-            "id": 68
+            "nameJP": "アンガーファイア３",
+            "damageSort": 180,
+            "damageDisplay": 180,
+            "element": "fire",
+            "attributes": "none",
+            "color": "yellow",
+            "version": "All"
         },
         {
+            "id": 69,
+            "gameId": 56,
             "name": "WideWave1",
-            "id": 69
+            "nameJP": "ワイドウェーブ１",
+            "damageSort": 70,
+            "damageDisplay": 70,
+            "element": "aqua",
+            "attributes": "none",
+            "color": "yellow",
+            "version": "All"
         },
         {
+            "id": 70,
+            "gameId": 57,
             "name": "WideWave2",
-            "id": 70
+            "nameJP": "ワイドウェーブ２",
+            "damageSort": 90,
+            "damageDisplay": 90,
+            "element": "aqua",
+            "attributes": "none",
+            "color": "yellow",
+            "version": "All"
         },
         {
+            "id": 71,
+            "gameId": 58,
             "name": "WideWave3",
-            "id": 71
+            "nameJP": "ワイドウェーブ３",
+            "damageSort": 120,
+            "damageDisplay": 120,
+            "element": "aqua",
+            "attributes": "none",
+            "color": "yellow",
+            "version": "All"
         },
         {
+            "id": 72,
+            "gameId": 59,
             "name": "BubblHook1",
-            "id": 72
+            "nameJP": "バブルフック１",
+            "damageSort": 60,
+            "damageDisplay": 60,
+            "element": "aqua",
+            "attributes": "none",
+            "color": "yellow",
+            "version": "All"
         },
         {
+            "id": 73,
+            "gameId": 60,
             "name": "BubblHook2",
-            "id": 73
+            "nameJP": "バブルフック２",
+            "damageSort": 80,
+            "damageDisplay": 80,
+            "element": "aqua",
+            "attributes": "none",
+            "color": "yellow",
+            "version": "All"
         },
         {
+            "id": 74,
+            "gameId": 61,
             "name": "BubblHook3",
-            "id": 74
+            "nameJP": "バブルフック３",
+            "damageSort": 100,
+            "damageDisplay": 100,
+            "element": "aqua",
+            "attributes": "none",
+            "color": "yellow",
+            "version": "All"
         },
         {
+            "id": 75,
+            "gameId": 62,
             "name": "SharkAtk1",
-            "id": 75
+            "nameJP": "シャークカッター１",
+            "damageSort": 70,
+            "damageDisplay": 70,
+            "element": "aqua",
+            "attributes": "none",
+            "color": "yellow",
+            "version": "All"
         },
         {
+            "id": 76,
+            "gameId": 63,
             "name": "SharkAtk2",
-            "id": 76
+            "nameJP": "シャークカッター２",
+            "damageSort": 80,
+            "damageDisplay": 80,
+            "element": "aqua",
+            "attributes": "none",
+            "color": "yellow",
+            "version": "All"
         },
         {
+            "id": 77,
+            "gameId": 64,
             "name": "SharkAtk3",
-            "id": 77
+            "nameJP": "シャークカッター３",
+            "damageSort": 90,
+            "damageDisplay": 90,
+            "element": "aqua",
+            "attributes": "none",
+            "color": "yellow",
+            "version": "All"
         },
         {
+            "id": 78,
+            "gameId": 65,
             "name": "IceSpin1",
-            "id": 78
+            "nameJP": "アイススピニング１",
+            "damageSort": 70,
+            "damageDisplay": 70,
+            "element": "aqua",
+            "attributes": "break",
+            "color": "yellow",
+            "version": "All"
         },
         {
+            "id": 79,
+            "gameId": 66,
             "name": "IceSpin2",
-            "id": 79
+            "nameJP": "アイススピニング２",
+            "damageSort": 90,
+            "damageDisplay": 90,
+            "element": "aqua",
+            "attributes": "break",
+            "color": "yellow",
+            "version": "All"
         },
         {
+            "id": 80,
+            "gameId": 67,
             "name": "IceSpin3",
-            "id": 80
+            "nameJP": "アイススピニング３",
+            "damageSort": 110,
+            "damageDisplay": 110,
+            "element": "aqua",
+            "attributes": "break",
+            "color": "yellow",
+            "version": "All"
         },
         {
+            "id": 81,
+            "gameId": 68,
             "name": "StlthLzr1",
-            "id": 81
+            "nameJP": "ステルスレーザー１",
+            "damageSort": 40,
+            "damageDisplay": 40,
+            "element": "elec",
+            "attributes": "none",
+            "color": "yellow",
+            "version": "All"
         },
         {
+            "id": 82,
+            "gameId": 69,
             "name": "StlthLzr2",
-            "id": 82
+            "nameJP": "ステルスレーザー２",
+            "damageSort": 50,
+            "damageDisplay": 50,
+            "element": "elec",
+            "attributes": "none",
+            "color": "yellow",
+            "version": "All"
         },
         {
+            "id": 83,
+            "gameId": 70,
             "name": "StlthLzr3",
-            "id": 83
+            "nameJP": "ステルスレーザー３",
+            "damageSort": 60,
+            "damageDisplay": 60,
+            "element": "elec",
+            "attributes": "none",
+            "color": "yellow",
+            "version": "All"
         },
         {
+            "id": 84,
+            "gameId": 71,
             "name": "MummyHand1",
-            "id": 84
+            "nameJP": "マミーハンド１",
+            "damageSort": 120,
+            "damageDisplay": 120,
+            "element": "elec",
+            "attributes": "none",
+            "color": "yellow",
+            "version": "All"
         },
         {
+            "id": 85,
+            "gameId": 72,
             "name": "MummyHand2",
-            "id": 85
+            "nameJP": "マミーハンド２",
+            "damageSort": 150,
+            "damageDisplay": 150,
+            "element": "elec",
+            "attributes": "none",
+            "color": "yellow",
+            "version": "All"
         },
         {
+            "id": 86,
+            "gameId": 73,
             "name": "MummyHand3",
-            "id": 86
+            "nameJP": "マミーハンド３",
+            "damageSort": 170,
+            "damageDisplay": 170,
+            "element": "elec",
+            "attributes": "none",
+            "color": "yellow",
+            "version": "All"
         },
         {
+            "id": 87,
+            "gameId": 74,
             "name": "ThndrHead1",
-            "id": 87
+            "nameJP": "イナズマヘッド１",
+            "damageSort": 150,
+            "damageDisplay": 150,
+            "element": "elec",
+            "attributes": "none",
+            "color": "yellow",
+            "version": "All"
         },
         {
+            "id": 88,
+            "gameId": 75,
             "name": "ThndrHead2",
-            "id": 88
+            "nameJP": "イナズマヘッド２",
+            "damageSort": 180,
+            "damageDisplay": 180,
+            "element": "elec",
+            "attributes": "none",
+            "color": "yellow",
+            "version": "All"
         },
         {
+            "id": 89,
+            "gameId": 76,
             "name": "ThndrHead3",
-            "id": 89
+            "nameJP": "イナズマヘッド３",
+            "damageSort": 230,
+            "damageDisplay": 230,
+            "element": "elec",
+            "attributes": "none",
+            "color": "yellow",
+            "version": "All"
         },
         {
+            "id": 90,
+            "gameId": 77,
             "name": "FlashStrk1",
-            "id": 90
+            "nameJP": "フラッシュスピア１",
+            "damageSort": 10,
+            "damageDisplay": 10,
+            "element": "elec",
+            "attributes": "none",
+            "color": "yellow",
+            "version": "All"
         },
         {
+            "id": 91,
+            "gameId": 78,
             "name": "FlashStrk2",
-            "id": 91
+            "nameJP": "フラッシュスピア２",
+            "damageSort": 20,
+            "damageDisplay": 20,
+            "element": "elec",
+            "attributes": "none",
+            "color": "yellow",
+            "version": "All"
         },
         {
+            "id": 92,
+            "gameId": 79,
             "name": "FlashStrk3",
-            "id": 92
+            "nameJP": "フラッシュスピア３",
+            "damageSort": 30,
+            "damageDisplay": 30,
+            "element": "elec",
+            "attributes": "none",
+            "color": "yellow",
+            "version": "All"
         },
         {
+            "id": 93,
+            "gameId": 80,
             "name": "ArachAtk1",
-            "id": 93
+            "nameJP": "ダミースパイダー１",
+            "damageSort": 40,
+            "damageDisplay": 40,
+            "element": "wood",
+            "attributes": "none",
+            "color": "yellow",
+            "version": "All"
         },
         {
+            "id": 94,
+            "gameId": 81,
             "name": "ArachAtk2",
-            "id": 94
+            "nameJP": "ダミースパイダー２",
+            "damageSort": 50,
+            "damageDisplay": 50,
+            "element": "wood",
+            "attributes": "none",
+            "color": "yellow",
+            "version": "All"
         },
         {
+            "id": 95,
+            "gameId": 82,
             "name": "ArachAtk3",
-            "id": 95
+            "nameJP": "ダミースパイダー３",
+            "damageSort": 60,
+            "damageDisplay": 60,
+            "element": "wood",
+            "attributes": "none",
+            "color": "yellow",
+            "version": "All"
         },
         {
+            "id": 96,
+            "gameId": 83,
             "name": "Shuriken1",
-            "id": 96
+            "nameJP": "シュリシュリケン１",
+            "damageSort": 100,
+            "damageDisplay": 100,
+            "element": "wood",
+            "attributes": "sword",
+            "color": "yellow",
+            "version": "All"
         },
         {
+            "id": 97,
+            "gameId": 84,
             "name": "Shuriken2",
-            "id": 97
+            "nameJP": "シュリシュリケン２",
+            "damageSort": 120,
+            "damageDisplay": 120,
+            "element": "wood",
+            "attributes": "sword",
+            "color": "yellow",
+            "version": "All"
         },
         {
+            "id": 98,
+            "gameId": 85,
             "name": "Shuriken3",
-            "id": 98
+            "nameJP": "シュリシュリケン３",
+            "damageSort": 140,
+            "damageDisplay": 140,
+            "element": "wood",
+            "attributes": "sword",
+            "color": "yellow",
+            "version": "All"
         },
         {
-            "name": "PollenShot1",
-            "id": 99
+            "id": 99,
+            "gameId": 86,
+            "name": "PollnShot1",
+            "nameJP": "パウダーシュート１",
+            "damageSort": 120,
+            "damageDisplay": 120,
+            "element": "wood",
+            "attributes": "none",
+            "color": "yellow",
+            "version": "All"
         },
         {
-            "name": "PollenShot2",
-            "id": 100
+            "id": 100,
+            "gameId": 87,
+            "name": "PollnShot2",
+            "nameJP": "パウダーシュート２",
+            "damageSort": 140,
+            "damageDisplay": 140,
+            "element": "wood",
+            "attributes": "none",
+            "color": "yellow",
+            "version": "All"
         },
         {
-            "name": "PollenShot3",
-            "id": 101
+            "id": 101,
+            "gameId": 88,
+            "name": "PollnShot3",
+            "nameJP": "パウダーシュート３",
+            "damageSort": 160,
+            "damageDisplay": 160,
+            "element": "wood",
+            "attributes": "none",
+            "color": "yellow",
+            "version": "All"
         },
         {
+            "id": 102,
+            "gameId": 89,
             "name": "AcornBomb1",
-            "id": 102
+            "nameJP": "ローリングナッツ１",
+            "damageSort": 100,
+            "damageDisplay": 100,
+            "element": "wood",
+            "attributes": "none",
+            "color": "yellow",
+            "version": "All"
         },
         {
+            "id": 103,
+            "gameId": 90,
             "name": "AcornBomb2",
-            "id": 103
+            "nameJP": "ローリングナッツ２",
+            "damageSort": 120,
+            "damageDisplay": 120,
+            "element": "wood",
+            "attributes": "none",
+            "color": "yellow",
+            "version": "All"
         },
         {
+            "id": 104,
+            "gameId": 91,
             "name": "AcornBomb3",
-            "id": 104
+            "nameJP": "ローリングナッツ３",
+            "damageSort": 140,
+            "damageDisplay": 140,
+            "element": "wood",
+            "attributes": "none",
+            "color": "yellow",
+            "version": "All"
         },
         {
+            "id": 105,
+            "gameId": 11,
             "name": "BeastSlap1",
-            "id": 105
+            "nameJP": "ビーストスイング１",
+            "damageSort": 100,
+            "damageDisplay": 100,
+            "element": "none",
+            "attributes": "sword",
+            "color": "yellow",
+            "version": "All"
         },
         {
+            "id": 106,
+            "gameId": 12,
             "name": "BeastSlap2",
-            "id": 106
+            "nameJP": "ビーストスイング２",
+            "damageSort": 140,
+            "damageDisplay": 140,
+            "element": "none",
+            "attributes": "sword",
+            "color": "yellow",
+            "version": "All"
         },
         {
+            "id": 107,
+            "gameId": 13,
             "name": "BeastSlap3",
-            "id": 107
+            "nameJP": "ビーストスイング３",
+            "damageSort": 200,
+            "damageDisplay": 200,
+            "element": "none",
+            "attributes": "sword",
+            "color": "yellow",
+            "version": "All"
         },
         {
+            "id": 108,
+            "gameId": 107,
             "name": "NoiseWzrd1",
-            "id": 108
+            "nameJP": "ノイズドウィザード１",
+            "damageSort": 120,
+            "damageDisplay": 120,
+            "element": "none",
+            "attributes": "sword",
+            "color": "yellow",
+            "version": "All"
         },
         {
+            "id": 109,
+            "gameId": 108,
             "name": "NoiseWzrd2",
-            "id": 109
+            "nameJP": "ノイズドウィザード２",
+            "damageSort": 150,
+            "damageDisplay": 150,
+            "element": "none",
+            "attributes": "sword",
+            "color": "yellow",
+            "version": "All"
         },
         {
+            "id": 110,
+            "gameId": 109,
             "name": "NoiseWzrd3",
-            "id": 110
+            "nameJP": "ノイズドウィザード３",
+            "damageSort": 180,
+            "damageDisplay": 180,
+            "element": "none",
+            "attributes": "sword",
+            "color": "yellow",
+            "version": "All"
         },
         {
+            "id": 111,
+            "gameId": 110,
             "name": "MalWizard1",
-            "id": 111
+            "nameJP": "ヒールウィザード１",
+            "damageSort": 180,
+            "damageDisplay": 180,
+            "element": "elec",
+            "attributes": "none",
+            "color": "yellow",
+            "version": "All"
         },
         {
+            "id": 112,
+            "gameId": 111,
             "name": "MalWizard2",
-            "id": 112
+            "nameJP": "ヒールウィザード２",
+            "damageSort": 210,
+            "damageDisplay": 210,
+            "element": "elec",
+            "attributes": "none",
+            "color": "yellow",
+            "version": "All"
         },
         {
+            "id": 113,
+            "gameId": 112,
             "name": "MalWizard3",
-            "id": 113
+            "nameJP": "ヒールウィザード３",
+            "damageSort": 250,
+            "damageDisplay": 250,
+            "element": "elec",
+            "attributes": "none",
+            "color": "yellow",
+            "version": "All"
         },
         {
+            "id": 114,
+            "gameId": 113,
             "name": "BlackHole1",
-            "id": 114
+            "nameJP": "ブラックホール１",
+            "damageSort": 0,
+            "damageDisplay": 0,
+            "element": "none",
+            "attributes": "none",
+            "color": "yellow",
+            "version": "All"
         },
         {
+            "id": 115,
+            "gameId": 114,
             "name": "BlackHole2",
-            "id": 115
+            "nameJP": "ブラックホール２",
+            "damageSort": 0,
+            "damageDisplay": 0,
+            "element": "none",
+            "attributes": "none",
+            "color": "yellow",
+            "version": "All"
         },
         {
+            "id": 116,
+            "gameId": 115,
             "name": "BlackHole3",
-            "id": 116
+            "nameJP": "ブラックホール３",
+            "damageSort": 0,
+            "damageDisplay": 0,
+            "element": "none",
+            "attributes": "none",
+            "color": "yellow",
+            "version": "All"
         },
         {
+            "id": 117,
+            "gameId": 118,
             "name": "DblStone",
-            "id": 117
+            "nameJP": "ダブルストーン",
+            "damageSort": 0,
+            "damageDisplay": 0,
+            "element": "none",
+            "attributes": "none",
+            "color": "white",
+            "version": "All"
         },
         {
+            "id": 118,
+            "gameId": 119,
             "name": "Bombalizer",
-            "id": 118
+            "nameJP": "ボムライザー",
+            "damageSort": 200,
+            "damageDisplay": 200,
+            "element": "none",
+            "attributes": "none",
+            "color": "yellow",
+            "version": "All"
         },
         {
+            "id": 119,
+            "gameId": 120,
             "name": "DivideLine",
-            "id": 119
+            "nameJP": "ディバイドライン",
+            "damageSort": 0,
+            "damageDisplay": 0,
+            "element": "none",
+            "attributes": "none",
+            "color": "white",
+            "version": "All"
         },
         {
+            "id": 120,
+            "gameId": 28,
             "name": "DblEater",
-            "id": 120
+            "nameJP": "ダブルイーター",
+            "damageSort": 0,
+            "damageDisplay": 0,
+            "element": "none",
+            "attributes": "none",
+            "color": "white",
+            "version": "All"
         },
         {
+            "id": 121,
+            "gameId": 121,
             "name": "PanlFormat",
-            "id": 121
+            "nameJP": "パネルフォーマット",
+            "damageSort": 0,
+            "damageDisplay": 0,
+            "element": "none",
+            "attributes": "none",
+            "color": "white",
+            "version": "All"
         },
         {
+            "id": 122,
+            "gameId": 17,
             "name": "PanicCloud",
-            "id": 122
+            "nameJP": "パニッククラウド",
+            "damageSort": 0,
+            "damageDisplay": 0,
+            "element": "none",
+            "attributes": "none",
+            "color": "yellow",
+            "version": "All"
         },
         {
+            "id": 123,
+            "gameId": 125,
             "name": "Recover10",
-            "id": 123
+            "nameJP": "リカバリー１０",
+            "damageSort": 0,
+            "damageDisplay": 0,
+            "element": "none",
+            "attributes": "none",
+            "color": "yellow",
+            "version": "All"
         },
         {
+            "id": 124,
+            "gameId": 126,
             "name": "Recover30",
-            "id": 124
+            "nameJP": "リカバリー３０",
+            "damageSort": 0,
+            "damageDisplay": 0,
+            "element": "none",
+            "attributes": "none",
+            "color": "yellow",
+            "version": "All"
         },
         {
+            "id": 125,
+            "gameId": 127,
             "name": "Recover50",
-            "id": 125
+            "nameJP": "リカバリー５０",
+            "damageSort": 0,
+            "damageDisplay": 0,
+            "element": "none",
+            "attributes": "none",
+            "color": "yellow",
+            "version": "All"
         },
         {
+            "id": 126,
+            "gameId": 128,
             "name": "Recover80",
-            "id": 126
+            "nameJP": "リカバリー８０",
+            "damageSort": 0,
+            "damageDisplay": 0,
+            "element": "none",
+            "attributes": "none",
+            "color": "yellow",
+            "version": "All"
         },
         {
+            "id": 127,
+            "gameId": 129,
             "name": "Recover120",
-            "id": 127
+            "nameJP": "リカバリー１２０",
+            "damageSort": 0,
+            "damageDisplay": 0,
+            "element": "none",
+            "attributes": "none",
+            "color": "yellow",
+            "version": "All"
         },
         {
+            "id": 128,
+            "gameId": 130,
             "name": "Recover150",
-            "id": 128
+            "nameJP": "リカバリー１５０",
+            "damageSort": 0,
+            "damageDisplay": 0,
+            "element": "none",
+            "attributes": "none",
+            "color": "yellow",
+            "version": "All"
         },
         {
+            "id": 129,
+            "gameId": 131,
             "name": "Recover200",
-            "id": 129
+            "nameJP": "リカバリー２００",
+            "damageSort": 0,
+            "damageDisplay": 0,
+            "element": "none",
+            "attributes": "none",
+            "color": "yellow",
+            "version": "All"
         },
         {
+            "id": 130,
+            "gameId": 132,
             "name": "Recover300",
-            "id": 130
+            "nameJP": "リカバリー３００",
+            "damageSort": 0,
+            "damageDisplay": 0,
+            "element": "none",
+            "attributes": "none",
+            "color": "yellow",
+            "version": "All"
         },
         {
+            "id": 131,
+            "gameId": 133,
             "name": "Barrier",
-            "id": 131
+            "nameJP": "バリア",
+            "damageSort": 0,
+            "damageDisplay": 0,
+            "element": "none",
+            "attributes": "none",
+            "color": "yellow",
+            "version": "All"
         },
         {
+            "id": 132,
+            "gameId": 134,
             "name": "SprBarrier",
-            "id": 132
+            "nameJP": "スーパーバリア",
+            "damageSort": 0,
+            "damageDisplay": 0,
+            "element": "none",
+            "attributes": "none",
+            "color": "yellow",
+            "version": "All"
         },
         {
+            "id": 133,
+            "gameId": 135,
             "name": "Aura",
-            "id": 133
+            "nameJP": "オーラ",
+            "damageSort": 0,
+            "damageDisplay": 0,
+            "element": "none",
+            "attributes": "none",
+            "color": "yellow",
+            "version": "All"
         },
         {
+            "id": 134,
+            "gameId": 136,
             "name": "Invisible",
-            "id": 134
+            "nameJP": "インビジブル",
+            "damageSort": 0,
+            "damageDisplay": 0,
+            "element": "none",
+            "attributes": "none",
+            "color": "white",
+            "version": "All"
         },
         {
+            "id": 135,
+            "gameId": 137,
             "name": "Whistle",
-            "id": 135
+            "nameJP": "ホイッスル",
+            "damageSort": 0,
+            "damageDisplay": 0,
+            "element": "none",
+            "attributes": "break wind",
+            "color": "yellow",
+            "version": "All"
         },
         {
+            "id": 136,
+            "gameId": 123,
             "name": "MegaCrushr",
-            "id": 136
+            "nameJP": "メガクラッシャー",
+            "damageSort": 0,
+            "damageDisplay": 0,
+            "element": "none",
+            "attributes": "none",
+            "color": "yellow",
+            "version": "All"
         },
         {
+            "id": 137,
+            "gameId": 138,
             "name": "SpiritFury",
-            "id": 137
+            "nameJP": "セイレイノイカリ",
+            "damageSort": 150,
+            "damageDisplay": 150,
+            "element": "none",
+            "attributes": "none",
+            "color": "yellow",
+            "version": "All"
         },
         {
+            "id": 138,
+            "gameId": 139,
             "name": "AntiSword",
-            "id": 138
+            "nameJP": "シラハドリ",
+            "damageSort": 120,
+            "damageDisplay": 120,
+            "element": "none",
+            "attributes": "none",
+            "color": "yellow",
+            "version": "All"
         },
         {
+            "id": 139,
+            "gameId": 140,
             "name": "PoisnApple",
-            "id": 139
+            "nameJP": "ドクリンゴ",
+            "damageSort": 0,
+            "damageDisplay": 0,
+            "element": "none",
+            "attributes": "none",
+            "color": "yellow",
+            "version": "All"
         },
         {
+            "id": 140,
+            "gameId": 141,
             "name": "DoublCross",
-            "id": 140
+            "nameJP": "ウラギリノススメ",
+            "damageSort": 0,
+            "damageDisplay": 0,
+            "element": "none",
+            "attributes": "none",
+            "color": "yellow",
+            "version": "All"
         },
         {
+            "id": 141,
+            "gameId": 142,
             "name": "GigaMine",
-            "id": 141
+            "nameJP": "ギガマイン",
+            "damageSort": 300,
+            "damageDisplay": 300,
+            "element": "none",
+            "attributes": "none",
+            "color": "yellow",
+            "version": "All"
         },
         {
+            "id": 142,
+            "gameId": 143,
             "name": "GrassStage",
-            "id": 142
+            "nameJP": "クサムラステージ",
+            "damageSort": 0,
+            "damageDisplay": 0,
+            "element": "wood",
+            "attributes": "none",
+            "color": "white",
+            "version": "All"
         },
         {
+            "id": 143,
+            "gameId": 144,
             "name": "IceStage",
-            "id": 143
+            "nameJP": "アイスステージ",
+            "damageSort": 0,
+            "damageDisplay": 0,
+            "element": "aqua",
+            "attributes": "none",
+            "color": "white",
+            "version": "All"
         },
         {
+            "id": 144,
+            "gameId": 145,
             "name": "PrlyzeStg",
-            "id": 144
+            "nameJP": "パラライズステージ",
+            "damageSort": 0,
+            "damageDisplay": 0,
+            "element": "elec",
+            "attributes": "none",
+            "color": "white",
+            "version": "All"
         },
         {
+            "id": 145,
+            "gameId": 146,
             "name": "HolyPanel",
-            "id": 145
+            "nameJP": "ホーリーパネル",
+            "damageSort": 0,
+            "damageDisplay": 0,
+            "element": "none",
+            "attributes": "none",
+            "color": "white",
+            "version": "All"
         },
         {
+            "id": 146,
+            "gameId": 147,
             "name": "AtkPanel",
-            "id": 146
+            "nameJP": "アタックパネル",
+            "damageSort": 0,
+            "damageDisplay": 0,
+            "element": "none",
+            "attributes": "none",
+            "color": "white",
+            "version": "All"
         },
         {
+            "id": 147,
+            "gameId": 124,
             "name": "GravtyPlus",
-            "id": 147
+            "nameJP": "グラビティプラス",
+            "damageSort": 0,
+            "damageDisplay": 0,
+            "element": "none",
+            "attributes": "none",
+            "color": "white",
+            "version": "All"
         },
         {
+            "id": 148,
+            "gameId": 148,
             "name": "ParlyzPlus",
-            "id": 148
+            "nameJP": "マヒプラス",
+            "damageSort": 0,
+            "damageDisplay": 0,
+            "element": "none",
+            "attributes": "none",
+            "color": "white",
+            "version": "All"
         },
         {
+            "id": 149,
+            "gameId": 149,
             "name": "Attack+10",
-            "id": 149
+            "nameJP": "アタック＋１０",
+            "damageSort": 0,
+            "damageDisplay": 0,
+            "element": "none",
+            "attributes": "none",
+            "color": "white",
+            "version": "All"
         },
         {
+            "id": 150,
+            "gameId": 150,
             "name": "SpadMgnes",
-            "id": 150
+            "nameJP": "スペードマグネッツ",
+            "damageSort": 60,
+            "damageDisplay": 60,
+            "element": "elec",
+            "attributes": "sword",
+            "color": "blue",
+            "version": "All"
         },
         {
+            "id": 151,
+            "gameId": 151,
             "name": "SpadMgnesV2",
-            "id": 151
+            "nameJP": "スペードマグネッツｖ２",
+            "damageSort": 90,
+            "damageDisplay": 90,
+            "element": "elec",
+            "attributes": "sword",
+            "color": "blue",
+            "version": "All"
         },
         {
+            "id": 152,
+            "gameId": 152,
             "name": "SpadMgnesV3",
-            "id": 152
+            "nameJP": "スペードマグネッツｖ３",
+            "damageSort": 130,
+            "damageDisplay": 130,
+            "element": "elec",
+            "attributes": "sword",
+            "color": "blue",
+            "version": "All"
         },
         {
+            "id": 153,
+            "gameId": 153,
             "name": "DiamndIce",
-            "id": 153
+            "nameJP": "ダイヤアイスバーン",
+            "damageSort": 40,
+            "damageDisplay": 40,
+            "element": "aqua",
+            "attributes": "wind",
+            "color": "blue",
+            "version": "All"
         },
         {
+            "id": 154,
+            "gameId": 154,
             "name": "DiamndIceV2",
-            "id": 154
+            "nameJP": "ダイヤアイスバーンｖ２",
+            "damageSort": 50,
+            "damageDisplay": 50,
+            "element": "aqua",
+            "attributes": "wind",
+            "color": "blue",
+            "version": "All"
         },
         {
+            "id": 155,
+            "gameId": 155,
             "name": "DiamndIceV3",
-            "id": 155
+            "nameJP": "ダイヤアイスバーンｖ３",
+            "damageSort": 80,
+            "damageDisplay": 80,
+            "element": "aqua",
+            "attributes": "wind",
+            "color": "blue",
+            "version": "All"
         },
         {
+            "id": 156,
+            "gameId": 156,
             "name": "ClubStrng",
-            "id": 156
+            "nameJP": "クラブストロング",
+            "damageSort": 20,
+            "damageDisplay": 20,
+            "element": "wood",
+            "attributes": "wind",
+            "color": "blue",
+            "version": "All"
         },
         {
+            "id": 157,
+            "gameId": 157,
             "name": "ClubStrngV2",
-            "id": 157
+            "nameJP": "クラブストロングｖ２",
+            "damageSort": 25,
+            "damageDisplay": 25,
+            "element": "wood",
+            "attributes": "wind",
+            "color": "blue",
+            "version": "All"
         },
         {
+            "id": 158,
+            "gameId": 158,
             "name": "ClubStrngV3",
-            "id": 158
+            "nameJP": "クラブストロングｖ３",
+            "damageSort": 40,
+            "damageDisplay": 40,
+            "element": "wood",
+            "attributes": "wind",
+            "color": "blue",
+            "version": "All"
         },
         {
+            "id": 159,
+            "gameId": 159,
             "name": "QueenVrgo",
-            "id": 159
+            "nameJP": "クイーンヴァルゴ",
+            "damageSort": 60,
+            "damageDisplay": 60,
+            "element": "aqua",
+            "attributes": "break",
+            "color": "blue",
+            "version": "All"
         },
         {
+            "id": 160,
+            "gameId": 160,
             "name": "QueenVrgoV2",
-            "id": 160
+            "nameJP": "クイーンヴァルゴｖ２",
+            "damageSort": 80,
+            "damageDisplay": 80,
+            "element": "aqua",
+            "attributes": "break",
+            "color": "blue",
+            "version": "All"
         },
         {
+            "id": 161,
+            "gameId": 161,
             "name": "QueenVrgoV3",
-            "id": 161
+            "nameJP": "クイーンヴァルゴｖ３",
+            "damageSort": 100,
+            "damageDisplay": 100,
+            "element": "aqua",
+            "attributes": "break",
+            "color": "blue",
+            "version": "All"
         },
         {
+            "id": 162,
+            "gameId": 162,
             "name": "JackCorvs",
-            "id": 162
+            "nameJP": "ジャックコーヴァス",
+            "damageSort": 150,
+            "damageDisplay": 150,
+            "element": "fire",
+            "attributes": "none",
+            "color": "blue",
+            "version": "All"
         },
         {
+            "id": 163,
+            "gameId": 163,
             "name": "JackCorvsV2",
-            "id": 163
+            "nameJP": "ジャックコーヴァスｖ２",
+            "damageSort": 180,
+            "damageDisplay": 180,
+            "element": "fire",
+            "attributes": "none",
+            "color": "blue",
+            "version": "All"
         },
         {
+            "id": 164,
+            "gameId": 164,
             "name": "JackCorvsV3",
-            "id": 164
+            "nameJP": "ジャックコーヴァスｖ３",
+            "damageSort": 300,
+            "damageDisplay": 300,
+            "element": "fire",
+            "attributes": "none",
+            "color": "blue",
+            "version": "All"
         },
         {
+            "id": 165,
+            "gameId": 165,
             "name": "DreadJokr",
-            "id": 165
+            "nameJP": "グレイブジョーカー",
+            "damageSort": 160,
+            "damageDisplay": 160,
+            "element": "none",
+            "attributes": "break",
+            "color": "blue",
+            "version": "All"
         },
         {
+            "id": 166,
+            "gameId": 166,
             "name": "DreadJokrV2",
-            "id": 166
+            "nameJP": "グレイブジョーカーｖ２",
+            "damageSort": 190,
+            "damageDisplay": 190,
+            "element": "none",
+            "attributes": "break",
+            "color": "blue",
+            "version": "All"
         },
         {
+            "id": 167,
+            "gameId": 167,
             "name": "DreadJokrV3",
-            "id": 167
+            "nameJP": "グレイブジョーカーｖ３",
+            "damageSort": 270,
+            "damageDisplay": 270,
+            "element": "none",
+            "attributes": "break",
+            "color": "blue",
+            "version": "All"
         },
         {
+            "id": 168,
+            "gameId": 168,
             "name": "AcidAce",
-            "id": 168
+            "nameJP": "アシッドエース",
+            "damageSort": 140,
+            "damageDisplay": 140,
+            "element": "none",
+            "attributes": "sword break",
+            "color": "blue",
+            "version": "All"
         },
         {
+            "id": 169,
+            "gameId": 169,
             "name": "AcidAceV2",
-            "id": 169
+            "nameJP": "アシッドエースｖ２",
+            "damageSort": 170,
+            "damageDisplay": 170,
+            "element": "none",
+            "attributes": "sword break",
+            "color": "blue",
+            "version": "All"
         },
         {
+            "id": 170,
+            "gameId": 170,
             "name": "AcidAceV3",
-            "id": 170
+            "nameJP": "アシッドエースｖ３",
+            "damageSort": 220,
+            "damageDisplay": 220,
+            "element": "none",
+            "attributes": "sword break",
+            "color": "blue",
+            "version": "All"
         },
         {
+            "id": 171,
+            "gameId": 171,
             "name": "TaursFire",
-            "id": 171
+            "nameJP": "オックスファイアー",
+            "damageSort": 100,
+            "damageDisplay": 100,
+            "element": "fire",
+            "attributes": "none",
+            "color": "blue",
+            "version": "All"
         },
         {
+            "id": 172,
+            "gameId": 172,
             "name": "TaursFireV2",
-            "id": 172
+            "nameJP": "オックスファイアーｖ２",
+            "damageSort": 150,
+            "damageDisplay": 150,
+            "element": "fire",
+            "attributes": "none",
+            "color": "blue",
+            "version": "All"
         },
         {
+            "id": 173,
+            "gameId": 173,
             "name": "TaursFireV3",
-            "id": 173
+            "nameJP": "オックスファイアーｖ３",
+            "damageSort": 220,
+            "damageDisplay": 220,
+            "element": "fire",
+            "attributes": "none",
+            "color": "blue",
+            "version": "All"
         },
         {
+            "id": 174,
+            "gameId": 174,
             "name": "CygnsWing",
-            "id": 174
+            "nameJP": "キグナスウィング",
+            "damageSort": 130,
+            "damageDisplay": 130,
+            "element": "none",
+            "attributes": "break wind",
+            "color": "blue",
+            "version": "All"
         },
         {
+            "id": 175,
+            "gameId": 175,
             "name": "CygnsWingV2",
-            "id": 175
+            "nameJP": "キグナスウィングｖ２",
+            "damageSort": 170,
+            "damageDisplay": 170,
+            "element": "none",
+            "attributes": "break wind",
+            "color": "blue",
+            "version": "All"
         },
         {
+            "id": 176,
+            "gameId": 176,
             "name": "CygnsWingV3",
-            "id": 176
+            "nameJP": "キグナスウィングｖ３",
+            "damageSort": 240,
+            "damageDisplay": 240,
+            "element": "none",
+            "attributes": "break wind",
+            "color": "blue",
+            "version": "All"
         },
         {
+            "id": 177,
+            "gameId": 177,
             "name": "WolfWoods",
-            "id": 177
+            "nameJP": "ウルフフォレスト",
+            "damageSort": 80,
+            "damageDisplay": 80,
+            "element": "wood",
+            "attributes": "sword",
+            "color": "blue",
+            "version": "All"
         },
         {
+            "id": 178,
+            "gameId": 178,
             "name": "WolfWoodsV2",
-            "id": 178
+            "nameJP": "ウルフフォレストｖ２",
+            "damageSort": 100,
+            "damageDisplay": 100,
+            "element": "wood",
+            "attributes": "sword",
+            "color": "blue",
+            "version": "All"
         },
         {
+            "id": 179,
+            "gameId": 179,
             "name": "WolfWoodsV3",
-            "id": 179
+            "nameJP": "ウルフフォレストｖ３",
+            "damageSort": 140,
+            "damageDisplay": 140,
+            "element": "wood",
+            "attributes": "sword",
+            "color": "blue",
+            "version": "All"
         },
         {
+            "id": 180,
+            "gameId": 180,
             "name": "DrkPhntm",
-            "id": 180
+            "nameJP": "ファントムブラック",
+            "damageSort": 130,
+            "damageDisplay": 130,
+            "element": "none",
+            "attributes": "none",
+            "color": "blue",
+            "version": "All"
         },
         {
+            "id": 181,
+            "gameId": 181,
             "name": "DrkPhntmV2",
-            "id": 181
+            "nameJP": "ファントムブラックｖ２",
+            "damageSort": 200,
+            "damageDisplay": 200,
+            "element": "none",
+            "attributes": "none",
+            "color": "blue",
+            "version": "All"
         },
         {
+            "id": 182,
+            "gameId": 182,
             "name": "DrkPhntmV3",
-            "id": 182
+            "nameJP": "ファントムブラックｖ３",
+            "damageSort": 300,
+            "damageDisplay": 300,
+            "element": "none",
+            "attributes": "none",
+            "color": "blue",
+            "version": "All"
         },
         {
+            "id": 183,
+            "gameId": 183,
             "name": "Rogue",
-            "id": 183
+            "nameJP": "ブライ",
+            "damageSort": 40,
+            "damageDisplay": 40,
+            "element": "none",
+            "attributes": "break",
+            "color": "blue",
+            "version": "All"
         },
         {
+            "id": 184,
+            "gameId": 184,
             "name": "RogueV2",
-            "id": 184
+            "nameJP": "ブライｖ２",
+            "damageSort": 50,
+            "damageDisplay": 50,
+            "element": "none",
+            "attributes": "break",
+            "color": "blue",
+            "version": "All"
         },
         {
+            "id": 185,
+            "gameId": 185,
             "name": "RogueV3",
-            "id": 185
+            "nameJP": "ブライｖ３",
+            "damageSort": 70,
+            "damageDisplay": 70,
+            "element": "none",
+            "attributes": "break",
+            "color": "blue",
+            "version": "All"
         },
         {
+            "id": 186,
+            "gameId": 186,
             "name": "MoonDstry",
-            "id": 186
+            "nameJP": "ムーンディザスター",
+            "damageSort": 100,
+            "damageDisplay": 100,
+            "element": "none",
+            "attributes": "sword",
+            "color": "blue",
+            "version": "All"
         },
         {
+            "id": 187,
+            "gameId": 187,
             "name": "MoonDstryV2",
-            "id": 187
+            "nameJP": "ムーンディザスターｖ２",
+            "damageSort": 120,
+            "damageDisplay": 120,
+            "element": "none",
+            "attributes": "sword",
+            "color": "blue",
+            "version": "All"
         },
         {
+            "id": 188,
+            "gameId": 188,
             "name": "MoonDstryV3",
-            "id": 188
+            "nameJP": "ムーンディザスターｖ３",
+            "damageSort": 140,
+            "damageDisplay": 140,
+            "element": "none",
+            "attributes": "sword",
+            "color": "blue",
+            "version": "All"
         },
         {
+            "id": 189,
+            "gameId": 189,
             "name": "ApolloFlm",
-            "id": 189
+            "nameJP": "アポロンフレイム",
+            "damageSort": 170,
+            "damageDisplay": 170,
+            "element": "none",
+            "attributes": "none",
+            "color": "blue",
+            "version": "All"
         },
         {
+            "id": 190,
+            "gameId": 190,
             "name": "ApolloFlmV2",
-            "id": 190
+            "nameJP": "アポロンフレイムｖ２",
+            "damageSort": 200,
+            "damageDisplay": 200,
+            "element": "none",
+            "attributes": "none",
+            "color": "blue",
+            "version": "All"
         },
         {
+            "id": 191,
+            "gameId": 191,
             "name": "ApolloFlmV3",
-            "id": 191
+            "nameJP": "アポロンフレイムｖ３",
+            "damageSort": 250,
+            "damageDisplay": 250,
+            "element": "none",
+            "attributes": "none",
+            "color": "blue",
+            "version": "All"
         },
         {
+            "id": 192,
+            "gameId": 192,
             "name": "Sirius",
-            "id": 192
+            "nameJP": "シリウス",
+            "damageSort": 120,
+            "damageDisplay": 120,
+            "element": "none",
+            "attributes": "none",
+            "color": "blue",
+            "version": "All"
         },
         {
+            "id": 193,
+            "gameId": 193,
             "name": "SiriusV2",
-            "id": 193
+            "nameJP": "シリウスｖ２",
+            "damageSort": 160,
+            "damageDisplay": 160,
+            "element": "none",
+            "attributes": "none",
+            "color": "blue",
+            "version": "All"
         },
         {
+            "id": 194,
+            "gameId": 194,
             "name": "SiriusV3",
-            "id": 194
+            "nameJP": "シリウスｖ３",
+            "damageSort": 200,
+            "damageDisplay": 200,
+            "element": "none",
+            "attributes": "none",
+            "color": "blue",
+            "version": "All"
+        },
+        {
+            "id": 195,
+            "gameId": 195,
+            "name": "WingBlade",
+            "nameJP": "ウィングブレード",
+            "damageSort": 450,
+            "damageDisplay": 450,
+            "element": "none",
+            "attributes": "break wind",
+            "color": "red",
+            "version": "Black Ace"
+        },
+        {
+            "id": 196,
+            "gameId": 196,
+            "name": "DrknesHole",
+            "nameJP": "ダークネスホール",
+            "damageSort": 0,
+            "damageDisplay": 0,
+            "element": "none",
+            "attributes": "none",
+            "color": "red",
+            "version": "Black Ace"
+        },
+        {
+            "id": 197,
+            "gameId": 197,
+            "name": "MilliKick",
+            "nameJP": "サウサンドキック",
+            "damageSort": 20,
+            "damageDisplay": 20,
+            "element": "none",
+            "attributes": "none",
+            "color": "red",
+            "version": "Black Ace"
+        },
+        {
+            "id": 198,
+            "gameId": 198,
+            "name": "BrkTmeBmb",
+            "nameJP": "ブレイクカウントボム",
+            "damageSort": 600,
+            "damageDisplay": 600,
+            "element": "fire",
+            "attributes": "break",
+            "color": "red",
+            "version": "Black Ace"
+        },
+        {
+            "id": 199,
+            "gameId": 199,
+            "name": "MuBarrier",
+            "nameJP": "ムーリジェクション",
+            "damageSort": 0,
+            "damageDisplay": 0,
+            "element": "none",
+            "attributes": "none",
+            "color": "red",
+            "version": "Black Ace"
+        },
+        {
+            "id": 200,
+            "gameId": 200,
+            "name": "DreadLazer",
+            "nameJP": "Ｇメテオレーザー",
+            "damageSort": 30,
+            "damageDisplay": 30,
+            "element": "none",
+            "attributes": "none",
+            "color": "red",
+            "version": "Red Joker"
+        },
+        {
+            "id": 201,
+            "gameId": 201,
+            "name": "DestrMissl",
+            "nameJP": "デストロイミサイル",
+            "damageSort": 50,
+            "damageDisplay": 50,
+            "element": "none",
+            "attributes": "none",
+            "color": "red",
+            "version": "Red Joker"
+        },
+        {
+            "id": 202,
+            "gameId": 202,
+            "name": "BusterMAX",
+            "nameJP": "バスターマックス",
+            "damageSort": 0,
+            "damageDisplay": 0,
+            "element": "none",
+            "attributes": "none",
+            "color": "red",
+            "version": "Red Joker"
+        },
+        {
+            "id": 203,
+            "gameId": 203,
+            "name": "OxTackle",
+            "nameJP": "オックスタックル",
+            "damageSort": 520,
+            "damageDisplay": 520,
+            "element": "fire",
+            "attributes": "break",
+            "color": "red",
+            "version": "Red Joker"
+        },
+        {
+            "id": 204,
+            "gameId": 204,
+            "name": "MirrorsEdg",
+            "nameJP": "ドッペルミラー",
+            "damageSort": 0,
+            "damageDisplay": 0,
+            "element": "none",
+            "attributes": "none",
+            "color": "red",
+            "version": "Red Joker"
         }
     ]
 }

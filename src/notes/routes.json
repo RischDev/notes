@@ -1,21 +1,6 @@
 {
     "MMBN1": {
         "name": "Mega Man Battle Network",
-        "initialState": {
-            "keys": ["Max HP", "Zenny", "Battlechips"],
-            "Max HP": {
-                "value": 100,
-                "shown": true
-            },
-            "Zenny": {
-                "value": 0,
-                "shown": true
-            },
-            "Battlechips": {
-                "value": 12,
-                "shown": true
-            }
-        },
         "routes": [
             {
                 "title": "BN1",
@@ -25,25 +10,6 @@
     },
     "MMBN2": {
         "name": "Mega Man Battle Network 2",
-        "initialState": {
-            "keys": ["Max HP", "Zenny", "Sneakruns", "Battlechips"],
-            "Max HP": {
-                "value": 100,
-                "shown": true
-            },
-            "Zenny": {
-                "value": 0,
-                "shown": true
-            },
-            "Sneakruns": {
-                "value": 0,
-                "shown": true
-            },
-            "Battlechips": {
-                "value": 12,
-                "shown": true
-            }
-        },
         "routes": [
             {
                 "title": "BN2",
@@ -53,29 +19,6 @@
     },
     "MMBN3": {
         "name": "Mega Man Battle Network 3",
-        "initialState": {
-            "keys": ["Max HP", "Zenny", "Standard", "Mega", "Giga"],
-            "Max HP": {
-                "value": 100,
-                "shown": true
-            },
-            "Zenny": {
-                "value": 0,
-                "shown": true
-            },
-            "Standard": {
-                "value": 12,
-                "shown": true
-            },
-            "Mega": {
-                "value": 0,
-                "shown": true
-            },
-            "Giga": {
-                "value": 0,
-                "shown": true
-            }
-        },
         "routes": [
             {
                 "title": "BN3",
@@ -204,24 +147,24 @@
                 "value": 0,
                 "shown": true
             },
-            "Folder": [
+            "folder": [
                 {
                     "slot": 0,
                     "item": 0,
                     "modifier": "A",
-                    "reg": false
+                    "regged": false
                 },
                 {
                     "slot": 1,
                     "item": 0,
                     "modifier": "A",
-                    "reg": false
+                    "regged": false
                 },
                 {
                     "slot": 2,
                     "item": 0,
                     "modifier": "B",
-                    "reg": false
+                    "regged": false
                 },
                 {
                     "slot": 3,
@@ -386,7 +329,7 @@
                     "regged": false
                 }
             ],
-            "FolderEdit": {
+            "folderEdit": {
                 "value": [],
                 "shown": false
             }

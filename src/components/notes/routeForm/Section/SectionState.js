@@ -1,19 +1,17 @@
 /** @format */
 
 import { memo } from 'react';
+import SectionFolderEdit from './SectionFolderEdit';
 import Icon from '../../../common/Icon';
 import styles from './styles/SectionState.Module.css';
+import areShallowEqual from 'are-shallow-equal';
 
 function shouldUpdate(oldProps, newProps) {
-    if (oldProps.state != null && newProps.state != null) {
-        for (const key in newProps.state.keys) {
-            if (oldProps.state[key] !== newProps.state[key]) {
-                return false;
-            }
-        }
+    if (areShallowEqual(oldProps, newProps)) {
+        return true;
     }
 
-    return true;
+    return false;
 }
 
 const SectionState = memo((props) => {
@@ -28,6 +26,14 @@ const SectionState = memo((props) => {
         // JSON stringify, then JSON parse to make a deep copy.
         let newState = JSON.parse(JSON.stringify(props.state));
         newState[key].shown = value;
+        props.updateState(newState);
+    }
+
+    const updateFolderEdit = (folderEdit, folder) => {
+        // JSON stringify, then JSON parse to make a deep copy.
+        let newState = JSON.parse(JSON.stringify(props.state));
+        newState.folderEdit = folderEdit;
+        newState.folder = folder;
         props.updateState(newState);
     }
 
@@ -57,6 +63,7 @@ const SectionState = memo((props) => {
                 <div className="col-2">
                     <Icon src="/icons/delete.png" size="small" hover={true} hidden={false} altText="X" onClick={props.deleteState} />
                 </div>
+                <SectionFolderEdit folderEdit={props.state.folderEdit} folder={props.state.prevFolder} updateFolderEdit={updateFolderEdit} />
             </div>
         );
     }

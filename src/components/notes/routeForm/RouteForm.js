@@ -9,8 +9,7 @@ import useSuspenseResource from '../../common/useSuspense';
 import RouteContext from '../../common/RouteContext';
 import GameContext from '../../common/GameContext';
 
-const equal = require('deep-equal');
-const routes = require('../../../notes/routes.json');
+const equal = require("deep-equal");
 
 function RouteForm(props) {
     const path = props.match.params.path;
@@ -31,19 +30,25 @@ function RouteForm(props) {
 }
 
 const getInitialState = (path, game, route) => {
+    let gameInfo = require('../../../resources/ItemNames.json');
+    if (game !== "" && game != null) {
+        gameInfo = require('../../../resources/' + game + '/ItemNames.json');
+    }
+
     return {
         route: {
             title: path != null ? route.title : "",
             path: path,
             game: path != null ? route.game : game,
             version: path != null ? route.version : "1.0",
-            initialState: game != null ? routes[game].initialState : {},
+            initialState: game != null ? gameInfo.initialState : {},
             sections: path != null ? route.sections : [{
                 id: 0,
                 text: [],
                 items: []
             }],
         },
+        gameInfo: gameInfo,
         preview: false,
         numSections: path != null ? Math.min(10, route.sections.length) : 1
     }
@@ -58,7 +63,7 @@ function RouteFormImpl(props) {
     }
 
     const [state, setState] = useState(getInitialState(initialPath, initialGame, initialRoute));
-    const gameContext = useMemo(() => { return(state.route.game) }, [state.route.game]);
+    const gameContext = useMemo(() => { return(state.gameInfo) }, [state.gameInfo]);
 
     const setContext = useCallback(
         updates => {
@@ -80,8 +85,8 @@ function RouteFormImpl(props) {
         newRoute.numSections = Math.min(10, newRoute.sections.length);
 
         // If initial state is different, the state variables need to be updated
-        if (!equal(newRoute.initialState, routes[newRoute.game].initialState)) {
-            newRoute.initialState = routes[newRoute.game].initialState;
+        if (!equal(newRoute.initialState, state.gameInfo.initialState)) {
+            newRoute.initialState = state.gameInfo.initialState;
 
             // TODO: Update state variables in each section to add new keys.
         }
@@ -113,7 +118,9 @@ function RouteFormImpl(props) {
     if (state.preview) {
         return(
             <div>
-                <Route notes={state.route} preview={true} swapPreview={swapPreview}  />
+                <RouteContext.Provider value={getContextValue()}>
+                    <Route swapPreview={swapPreview}  />
+                </RouteContext.Provider>
             </div>
         );
     } else {

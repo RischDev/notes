@@ -11,7 +11,7 @@ import SectionImage from './SectionImage';
 import SectionState from './SectionState';
 
 function Section(props) {
-    const game = useContext(GameContext);
+    const gameInfo = useContext(GameContext);
 
     const updateText = useCallback((text, id) => {
         // Stringify then parse JSON to create deep copy.
@@ -170,12 +170,7 @@ function Section(props) {
         props.setSection(newSection, props.section.id);
     }, [props]);
 
-    let Items = require('../../../../resources/ItemNames.json');
-    if (game !== "" && game != null) {
-        Items = require('../../../../resources/' + game + '/ItemNames.json');
-    }
-
-    const addStateButton = (!props.section.state && game) ? <Button text="Add State" size="medium" onClick={addState} /> : "";
+    const addStateButton = (!props.section.state && gameInfo) ? <Button text="Add State" size="medium" onClick={addState} /> : "";
 
     return(
         <div id={"section-" + props.section.id} className={`${styles.section}`}>
@@ -213,7 +208,7 @@ function Section(props) {
                 </div>
                 <div className="col-3">
                     <SectionImage image={props.section.image} updateImage={updateImage} deleteImage={deleteImage} />
-                    <SectionState sectionId={props.section.id} state={props.section.state} updateState={updateState} deleteState={deleteState} />
+                    <SectionState state={props.section.state} updateState={updateState} deleteState={deleteState} />
                 </div>
             </div>
             <div className={`${styles.wrapper}`}>
@@ -221,7 +216,7 @@ function Section(props) {
                     <Button text="Add Text" size="medium" onClick={addText} />
                 </div>
                 <div className="col-3">
-                     <Button text={"Add " + Items.name} size="medium" onClick={addItem} />
+                     <Button text={"Add " + gameInfo.name} size="medium" onClick={addItem} />
                 </div>
                 <div className="col-3">
                     {addStateButton}

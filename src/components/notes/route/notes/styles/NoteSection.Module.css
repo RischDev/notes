@@ -1,26 +1,10 @@
-/** @format */
-
-.header {
-    text-align: center;
-}
-
-.itemList {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-}
-
-.image {
-    width: 100%;
-}
-
 .wrapper {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    margin: 5px 10px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	margin: 5px 10px;
 }
 
 /* For mobile phones: */
@@ -28,12 +12,4 @@
     .wrapper {
         align-items: flex-start;
     }
-}
-
-.found {
-    text-decoration: line-through;
-}
-
-.hidden {
-    display: none;
 }

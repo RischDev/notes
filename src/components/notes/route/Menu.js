@@ -1,15 +1,68 @@
 /** @format */
 
-import React from 'react';
-import styles from './styles/Menu.Module.css';
-import Button from '../../common/Button';
-import useMatchMedia from '../../common/Functions';
+import { useContext, useCallback } from 'react';
+import styles from "./styles/Menu.Module.css";
+import Button from "../../common/Button";
+import { useMatchMedia } from '../../common/Functions';
+import NotesContext from '../../common/NotesContext';
 
 function Menu(props) {
-    let modeText =
-        props.mode === 'presenter'
-            ? 'Swap to List Mode'
-            : 'Swap to Presenter Mode';
+    const {
+        notes: {
+            game
+        },
+        showNotes,
+        showTracker,
+        mode,
+        foundModifiers,
+        setContext
+    } = useContext(NotesContext);
+
+    const changeMode = useCallback(
+        () => {
+            setContext({ mode: mode === "list" ? "presenter" : "list" });
+        },
+        [mode, setContext]
+    );
+
+    const resetTracker = useCallback(
+        () => {
+            let newFoundItems = JSON.parse(JSON.stringify(require('../../../resources/' + game + '/DefaultFoundItems.json')));
+            let newFoundModifiers = foundModifiers;
+            if (newFoundModifiers != null)  {
+                newFoundModifiers = JSON.parse(JSON.stringify(require('../../../resources/' + game + '/DefaultFoundModifiers.json')));
+            }
+
+            setContext({ foundItems: newFoundItems, foundModifiers: newFoundModifiers });
+
+            localStorage.setItem("foundItems-" + game, JSON.stringify(newFoundItems));
+            localStorage.setItem("foundModifiers-" + game, JSON.stringify(newFoundModifiers));
+        },
+        [game, foundModifiers, setContext]
+    );
+
+    const updateNotesDisplay = useCallback(
+        () => {
+            setContext({ showNotes: !showNotes });
+        },
+        [showNotes, setContext]
+    );
+
+    const updateTrackerDisplay = useCallback(
+        () => {
+            setContext({ showTracker: !showTracker });
+        },
+        [showTracker, setContext]
+    );
+
+    const swapNotesAndTracker = useCallback(
+        () => {
+            setContext({ showNotes: !showNotes, showTracker: !showTracker });
+        },
+        [showNotes, showTracker, setContext]
+    );
+
+    let modeText = mode === "presenter" ? "Swap to List Mode" : "Swap to Presenter Mode";
 
     let previewButton = '';
     if (props.preview) {
@@ -27,21 +80,9 @@ function Menu(props) {
         let notesText = props.showNotes ? 'Show Tracker' : 'Show Notes';
         return (
             <div className={`card ${styles.menu}`}>
-                <Button
-                    text="Reset Tracker"
-                    size="medium"
-                    onClick={props.resetTracker}
-                />
-                <Button
-                    text={notesText}
-                    size="medium"
-                    onClick={props.swapNotesAndTracker}
-                />
-                <Button
-                    text={modeText}
-                    size="large"
-                    onClick={props.changeMode}
-                />
+                <Button text="Reset Tracker" size="medium" onClick={resetTracker} />
+                <Button text={notesText} size="medium" onClick={swapNotesAndTracker} />
+                <Button text={modeText} size="large" onClick={changeMode} />
                 {previewButton}
             </div>
         );
@@ -53,26 +94,10 @@ function Menu(props) {
 
         return (
             <div className={`card ${styles.menu}`}>
-                <Button
-                    text="Reset Tracker"
-                    size="medium"
-                    onClick={props.resetTracker}
-                />
-                <Button
-                    text={showNotesText}
-                    size="medium"
-                    onClick={props.updateNotesDisplay}
-                />
-                <Button
-                    text={showTrackerText}
-                    size="medium"
-                    onClick={props.updateTrackerDisplay}
-                />
-                <Button
-                    text={modeText}
-                    size="large"
-                    onClick={props.changeMode}
-                />
+                <Button text="Reset Tracker" size="medium" onClick={resetTracker} />
+                <Button text={showNotesText} size="medium" onClick={updateNotesDisplay} />
+                <Button text={showTrackerText} size="medium" onClick={updateTrackerDisplay} />
+                <Button text={modeText} size="large" onClick={changeMode} />
                 {previewButton}
             </div>
         );
