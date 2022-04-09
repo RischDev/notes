@@ -509,9 +509,82 @@ export function getFolderEditInputs(folderEdit, game, actionIndex = 0, cursor = 
         } else if (action.action === "Replace") {
 
         } else if (action.action === "Reg" || action.action === "Default") {
+            if (state === "pack") {
+                actionInputs = actionInputs + "< ";
+                state = "folder";
+            }
 
+            const paths = getPathsToSlot(game, cursor, cursorPosition, action.item1);
+            // If multiple paths returned, we need to test which one works better with the rest of the edit.
+            if (paths.length > 1) {
+                let bestInputs = Number.MAX_VALUE;
+                let bestPath = {}
+                for (const path of paths) {
+                    const tempInputs = getFolderEditInputs(folderEdit, game, actionIndex + 1, path.cursor, path.cursorPosition, sortCursor, state);
+                    if (bestInputs > getNumInputs(tempInputs)) {
+                        bestInputs = getNumInputs(tempInputs);
+                        bestPath = path;
+                        inputs = tempInputs;
+                    }
+                }
+                actionInputs = actionInputs + bestPath.path + "Select ";
+            } else {
+                actionInputs = actionInputs + paths[0].path + "Select ";
+                inputs = getFolderEditInputs(folderEdit, game, actionIndex + 1, paths[0].cursor, paths[0].cursorPosition, sortCursor, state);
+            }
+            inputs[actionIndex] = actionInputs;
         } else if (action.action === "Sort") {
+            if (state === "pack") {
+                actionInputs = actionInputs + "< ";
+                state = "folder";
+            }
 
+            actionInputs = actionInputs + "Start ";
+
+            const sortTypes = [...gameInfo.sortTypes];
+            // We need to remove one of the Alphabet sorts from the list, since the game can only sort by one Alphabet.
+            if (action.item1 === "Alphabet (JP)") {
+                sortTypes.splice(sortTypes.indexOf("Alphabet"), 1);
+            } else {
+                sortTypes.splice(sortTypes.indexOf("Alphabet (JP)"), 1);
+            }
+
+            // If the distance between the cursor and the desired sort is less than half the number of possible
+            // sorts, go directly to it. Otherwise, wrap around.
+            console.log(action)
+            const numInputs = sortCursor - sortTypes.indexOf(action.item1);
+            if (Math.abs(numInputs) <= (sortTypes.length / 2)) {
+                // If positive difference, go up. Otherwise, go down.
+                if (Math.sign(numInputs) > 0) {
+                    for (let i = 0; i < Math.abs(numInputs); i++) {
+                        actionInputs = actionInputs + "^ ";
+                    }
+                } else if (Math.sign(numInputs) < 0) {
+                    for (let i = 0; i < Math.abs(numInputs); i++) {
+                        actionInputs = actionInputs + "V ";
+                    }
+                }
+            } else {
+                const inverseInputs = sortTypes.length - Math.abs(numInputs)
+                // If positive difference, go down. Otherwise, go up. (Opposite of other situation).
+                if (Math.sign(numInputs) > 0) {
+                    for (let i = 0; i < Math.abs(inverseInputs); i++) {
+                        actionInputs = actionInputs + "V ";
+                    }
+                } else if (Math.sign(numInputs) < 0) {
+                    for (let i = 0; i < Math.abs(inverseInputs); i++) {
+                        actionInputs = actionInputs + "^ ";
+                    }
+                }
+            }
+            actionInputs = actionInputs + "A ";
+            // For reverse sorts, press A a 2nd time.
+            if (action.item2) {
+                actionInputs = actionInputs + "A ";
+            }
+            actionInputs = actionInputs + "B ";
+            inputs = getFolderEditInputs(folderEdit, game, actionIndex + 1, cursor, cursorPosition, sortTypes.indexOf(action.item1), state);
+            inputs[actionIndex] = actionInputs;
         } else if (action.action === "Favorite") {
 
         }
