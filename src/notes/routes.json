@@ -86,7 +86,14 @@
     "MMBN4": {
         "name": "Mega Man Battle Network 4",
         "initialState": {
-            "keys": ["Max HP", "Zenny", "Sneakruns", "Standard", "Mega", "Giga"],
+            "keys": [
+                "Max HP",
+                "Zenny",
+                "Sneakruns",
+                "Standard",
+                "Mega",
+                "Giga"
+            ],
             "Max HP": {
                 "value": 100,
                 "shown": true
@@ -122,7 +129,14 @@
     "MMBN5": {
         "name": "Mega Man Battle Network 5",
         "initialState": {
-            "keys": ["Max HP", "Zenny", "Sneakruns", "Standard", "Mega", "Giga"],
+            "keys": [
+                "Max HP",
+                "Zenny",
+                "Sneakruns",
+                "Standard",
+                "Mega",
+                "Giga"
+            ],
             "Max HP": {
                 "value": 100,
                 "shown": true
@@ -150,15 +164,22 @@
         },
         "routes": [
             {
-            "title": "BN5 Colonel Any% No ASE",
-                    "path": "mmbn5c_no_ase"
+                "title": "BN5 Colonel Any% No ASE",
+                "path": "mmbn5c_no_ase"
             }
         ]
     },
     "MMBN6": {
         "name": "Mega Man Battle Network 6",
         "initialState": {
-            "keys": ["Max HP", "Zenny", "Sneakruns", "Standard", "Mega", "Giga"],
+            "keys": [
+                "Max HP",
+                "Zenny",
+                "Sneakruns",
+                "Standard",
+                "Mega",
+                "Giga"
+            ],
             "Max HP": {
                 "value": 100,
                 "shown": true
@@ -189,7 +210,7 @@
                 "title": "Test Battle Network 6 Route",
                 "path": "test_bn6"
             },
-			{
+            {
                 "title": "GregSP Route",
                 "path": "gregsp_route"
             }
@@ -234,7 +255,18 @@
     "MMSF2": {
         "name": "Mega Man Star Force 2",
         "initialState": {
-            "keys": ["Max HP", "Zenny", "Cloakers", "FireSrch", "AquaSrch", "ElecSrch", "WoodSrch", "Standard", "Mega", "Giga"],
+            "keys": [
+                "Max HP",
+                "Zenny",
+                "Cloakers",
+                "FireSrch",
+                "AquaSrch",
+                "ElecSrch",
+                "WoodSrch",
+                "Standard",
+                "Mega",
+                "Giga"
+            ],
             "Max HP": {
                 "value": 100,
                 "shown": true

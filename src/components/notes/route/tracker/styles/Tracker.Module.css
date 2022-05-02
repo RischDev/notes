@@ -1,11 +1,13 @@
+/** @format */
+
 .tracker {
-	overflow-y: scroll;
-	overflow-x: hidden;
-	width: 35%;
-	height: 80vh;
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: left;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    width: 35%;
+    height: 80vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
 }
 
 .section {
@@ -17,15 +19,15 @@
 }
 
 .header {
-	width: -moz-calc(100% - 15px);
-	width: -webkit-calc(100% - 15px);
-	width: -o-calc(100% - 15px);
-	width: calc(100% - 15px);
-	margin: 5px 15px;
+    width: -moz-calc(100% - 15px);
+    width: -webkit-calc(100% - 15px);
+    width: -o-calc(100% - 15px);
+    width: calc(100% - 15px);
+    margin: 5px 15px;
 }
 
 .list {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-around;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
 }

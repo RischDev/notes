@@ -1,3 +1,5 @@
+/** @format */
+
 .item {
     font-family: BN6FontBold;
     text-shadow: 1px 1px 0 #414951;
@@ -13,7 +15,8 @@
     border: 2px solid black;
 }
 
-.BattleChip, .Standard {
+.BattleChip,
+.Standard {
     background: #dedeef;
 }
 

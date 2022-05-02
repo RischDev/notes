@@ -1,3 +1,5 @@
+/** @format */
+
 .item {
     width: 78px;
     border: 1px solid black;
@@ -8,18 +10,18 @@
 }
 
 .title {
-	padding: 2px;
+    padding: 2px;
     text-align: center;
 }
 
 .itemArt {
-	image-rendering: -moz-crisp-edges;
-	image-rendering: pixelated;
-	display: block;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: pixelated;
+    display: block;
     margin: 0px auto;
     font-size: 12px;
 }
 
 .found {
-	opacity: 0.35;
+    opacity: 0.35;
 }

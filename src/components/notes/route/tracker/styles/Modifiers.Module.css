@@ -1,3 +1,5 @@
+/** @format */
+
 .modifiers {
     display: flex;
     flex-wrap: wrap;
@@ -5,7 +7,7 @@
 }
 
 .found {
-	opacity: 0.35;
+    opacity: 0.35;
 }
 
 .modifier {

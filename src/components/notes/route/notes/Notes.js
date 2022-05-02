@@ -1,3 +1,5 @@
+/** @format */
+
 import React from 'react';
 import NoteSection from './NoteSection';
 import styles from './styles/Notes.Module.css';
@@ -35,30 +37,36 @@ class Notes extends React.Component {
             section: 0,
             sectionTop: 5,
             scrollPosition: 0,
-            numSections: Math.min(10, this.props.notes.sections.length)
-        }
+            numSections: Math.min(10, this.props.notes.sections.length),
+        };
 
         this.notesRef = React.createRef();
 
         this.sectionRefs = new Array(this.props.notes.sections.length);
-        this.props.notes.sections.map((section) =>
-            this.sectionRefs[section.id] = React.createRef()
+        this.props.notes.sections.map(
+            (section) => (this.sectionRefs[section.id] = React.createRef()),
         );
 
         const renderNewSections = (entries, observer) => {
-            const [ entry ] = entries;
+            const [entry] = entries;
 
-            if (entry.isIntersecting && this.state.numSections !== this.props.notes.sections.length) {
+            if (
+                entry.isIntersecting &&
+                this.state.numSections !== this.props.notes.sections.length
+            ) {
                 this.setState({
-                    numSections: Math.min(this.state.numSections + 10, this.props.notes.sections.length)
-                })
+                    numSections: Math.min(
+                        this.state.numSections + 10,
+                        this.props.notes.sections.length,
+                    ),
+                });
             }
-        }
+        };
         const options = {
             root: null,
-            rootMargin: "0px",
-            threshold: 0.2
-        }
+            rootMargin: '0px',
+            threshold: 0.2,
+        };
 
         this.observer = new IntersectionObserver(renderNewSections, options);
 
@@ -70,20 +78,37 @@ class Notes extends React.Component {
 
     componentDidMount() {
         // Update observer to the latest. Only matter in list view
-        if (this.state.numSections < this.props.notes.sections.length && this.props.mode === "list") {
-            this.observer.observe(this.sectionRefs[this.state.numSections - 1].current);
+        if (
+            this.state.numSections < this.props.notes.sections.length &&
+            this.props.mode === 'list'
+        ) {
+            this.observer.observe(
+                this.sectionRefs[this.state.numSections - 1].current,
+            );
         }
     }
 
     componentDidUpdate(prevProps) {
-        if (this.props.mode === "list" && this.props.display && (this.props.mode !== prevProps.mode || !prevProps.display)) {
-            this.sectionRefs[this.state.section].current.scrollIntoView({behavior: 'instant'});
+        if (
+            this.props.mode === 'list' &&
+            this.props.display &&
+            (this.props.mode !== prevProps.mode || !prevProps.display)
+        ) {
+            this.sectionRefs[this.state.section].current.scrollIntoView({
+                behavior: 'instant',
+            });
         }
 
         // Update observer to the latest. Only matter in list view
         this.observer.disconnect();
-        if (this.state.numSections < this.props.notes.sections.length && this.props.mode === "list" && this.props.display) {
-            this.observer.observe(this.sectionRefs[this.state.numSections - 1].current);
+        if (
+            this.state.numSections < this.props.notes.sections.length &&
+            this.props.mode === 'list' &&
+            this.props.display
+        ) {
+            this.observer.observe(
+                this.sectionRefs[this.state.numSections - 1].current,
+            );
         }
     }
 
@@ -92,19 +117,48 @@ class Notes extends React.Component {
         let newSectionTop = this.state.sectionTop;
 
         let i = 0;
-        if (scrollPosition > this.state.scrollPosition && this.state.section !== this.props.notes.sections.length) {
-            while (scrollPosition >= Math.floor(newSectionTop + this.sectionRefs[this.state.section + i].current.getBoundingClientRect().height + 10)) {
-                newSectionTop = newSectionTop + Math.floor(this.sectionRefs[this.state.section + i].current.getBoundingClientRect().height + 10);
+        if (
+            scrollPosition > this.state.scrollPosition &&
+            this.state.section !== this.props.notes.sections.length
+        ) {
+            while (
+                scrollPosition >=
+                Math.floor(
+                    newSectionTop +
+                        this.sectionRefs[
+                            this.state.section + i
+                        ].current.getBoundingClientRect().height +
+                        10,
+                )
+            ) {
+                newSectionTop =
+                    newSectionTop +
+                    Math.floor(
+                        this.sectionRefs[
+                            this.state.section + i
+                        ].current.getBoundingClientRect().height + 10,
+                    );
                 i++;
 
-                if (this.state.section + i === this.props.notes.sections.length) {
+                if (
+                    this.state.section + i ===
+                    this.props.notes.sections.length
+                ) {
                     break;
                 }
             }
-        } else if (scrollPosition < this.state.scrollPosition && this.state.section !== 0) {
+        } else if (
+            scrollPosition < this.state.scrollPosition &&
+            this.state.section !== 0
+        ) {
             while (scrollPosition < newSectionTop) {
                 i--;
-                newSectionTop = newSectionTop - this.sectionRefs[this.state.section + i].current.getBoundingClientRect().height - 10;
+                newSectionTop =
+                    newSectionTop -
+                    this.sectionRefs[
+                        this.state.section + i
+                    ].current.getBoundingClientRect().height -
+                    10;
 
                 if (this.state.section + i === 0) {
                     break;
@@ -115,30 +169,41 @@ class Notes extends React.Component {
         this.setState({
             section: this.state.section + i,
             sectionTop: newSectionTop,
-            scrollPosition: scrollPosition
-        })
+            scrollPosition: scrollPosition,
+        });
     }
 
     handleKeyPress(e) {
         let keyPress = e.key;
-        if (keyPress === "ArrowLeft" || keyPress === "ArrowRight" || keyPress === " ") {
+        if (
+            keyPress === 'ArrowLeft' ||
+            keyPress === 'ArrowRight' ||
+            keyPress === ' '
+        ) {
             e.preventDefault();
         }
 
-        if (keyPress === "ArrowLeft" && this.state.section !== 0) {
-            if (this.props.mode === "list") {
-                this.sectionRefs[this.state.section - 1].current.scrollIntoView({behavior: 'smooth'});
-            } else if (this.props.mode === "presenter") {
+        if (keyPress === 'ArrowLeft' && this.state.section !== 0) {
+            if (this.props.mode === 'list') {
+                this.sectionRefs[this.state.section - 1].current.scrollIntoView(
+                    { behavior: 'smooth' },
+                );
+            } else if (this.props.mode === 'presenter') {
                 this.setState({
-                    section: this.state.section - 1
+                    section: this.state.section - 1,
                 });
             }
-        } else if ((keyPress === " " || keyPress === "ArrowRight") && this.state.section !== this.props.notes.sections.length - 1) {
-            if (this.props.mode === "list") {
-                this.sectionRefs[this.state.section + 1].current.scrollIntoView({behavior: 'smooth'});
-            } else if (this.props.mode === "presenter") {
+        } else if (
+            (keyPress === ' ' || keyPress === 'ArrowRight') &&
+            this.state.section !== this.props.notes.sections.length - 1
+        ) {
+            if (this.props.mode === 'list') {
+                this.sectionRefs[this.state.section + 1].current.scrollIntoView(
+                    { behavior: 'smooth' },
+                );
+            } else if (this.props.mode === 'presenter') {
                 this.setState({
-                    section: this.state.section + 1
+                    section: this.state.section + 1,
                 });
             }
         }
@@ -149,7 +214,7 @@ class Notes extends React.Component {
 
         if (this.state.section !== 0) {
             this.setState({
-                section: this.state.section - 1
+                section: this.state.section - 1,
             });
         }
     }
@@ -159,43 +224,54 @@ class Notes extends React.Component {
 
         if (this.state.section !== this.props.notes.sections.length - 1) {
             this.setState({
-                section: this.state.section + 1
+                section: this.state.section + 1,
             });
         }
     }
 
     render() {
-        const fullSizeClass = this.props.fullSize ? styles.fullSize : "";
+        const fullSizeClass = this.props.fullSize ? styles.fullSize : '';
 
         if (this.props.display) {
-            if (this.props.mode === "list") {
-                return(
-                    <div onScroll={this.onScroll} onKeyDown={this.handleKeyPress} className={`${styles.notes} ${fullSizeClass}`} ref={this.notesRef} tabIndex="0">
-                        {this.props.notes.sections.slice(0, this.state.numSections).map((section) =>
-                            <NoteSection
-                                key={"section-" + section.id}
-                                sectionId={section.id}
-                                noteRef={this.sectionRefs[section.id]}
-                                text={section.text}
-                                image={section.image}
-                                state={section.state}
-                                items={section.items}
-                                mode={this.props.mode}
-                                game={this.props.notes.game}
-                                foundItems={this.props.foundItems}
-                                foundModifiers={this.props.foundModifiers}
-                                updateTracker={this.props.updateTracker}
-                            />
-                        )}
+            if (this.props.mode === 'list') {
+                return (
+                    <div
+                        onScroll={this.onScroll}
+                        onKeyDown={this.handleKeyPress}
+                        className={`${styles.notes} ${fullSizeClass}`}
+                        ref={this.notesRef}
+                        tabIndex="0">
+                        {this.props.notes.sections
+                            .slice(0, this.state.numSections)
+                            .map((section) => (
+                                <NoteSection
+                                    key={'section-' + section.id}
+                                    sectionId={section.id}
+                                    noteRef={this.sectionRefs[section.id]}
+                                    text={section.text}
+                                    image={section.image}
+                                    state={section.state}
+                                    items={section.items}
+                                    mode={this.props.mode}
+                                    game={this.props.notes.game}
+                                    foundItems={this.props.foundItems}
+                                    foundModifiers={this.props.foundModifiers}
+                                    updateTracker={this.props.updateTracker}
+                                />
+                            ))}
                     </div>
                 );
-            } else if (this.props.mode === "presenter") {
+            } else if (this.props.mode === 'presenter') {
                 const section = this.props.notes.sections[this.state.section];
 
-                return(
-                    <div onKeyDown={this.handleKeyPress} className={`${styles.notes} ${fullSizeClass}`} ref={this.notesRef} tabIndex="0">
+                return (
+                    <div
+                        onKeyDown={this.handleKeyPress}
+                        className={`${styles.notes} ${fullSizeClass}`}
+                        ref={this.notesRef}
+                        tabIndex="0">
                         <NoteSection
-                            key={"section-" + section.id}
+                            key={'section-' + section.id}
                             sectionId={section.id}
                             noteRef={this.sectionRefs[section.id]}
                             text={section.text}
@@ -211,7 +287,7 @@ class Notes extends React.Component {
                             nextSection={this.nextSection}
                         />
                     </div>
-                )
+                );
             }
         }
 

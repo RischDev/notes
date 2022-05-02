@@ -1,3 +1,5 @@
+/** @format */
+
 import React from 'react';
 import styles from './styles/Section.Module.css';
 import Button from '../../../common/Button';
@@ -41,23 +43,40 @@ class CreateSection extends React.Component {
             return true;
         } else {
             for (let i = 0; i < nextProps.section.text.length; i++) {
-                if (this.props.section.text[i].text !== nextProps.section.text[i].text) {
+                if (
+                    this.props.section.text[i].text !==
+                    nextProps.section.text[i].text
+                ) {
                     return true;
-                } else if (this.props.section.text[i].item !== nextProps.section.text[i].item) {
-                   return true;
-                } else if (this.props.section.text[i].modifier !== nextProps.section.text[i].modifier) {
+                } else if (
+                    this.props.section.text[i].item !==
+                    nextProps.section.text[i].item
+                ) {
+                    return true;
+                } else if (
+                    this.props.section.text[i].modifier !==
+                    nextProps.section.text[i].modifier
+                ) {
                     return true;
                 }
             }
         }
 
-        if (this.props.section.items.length !== nextProps.section.items.length) {
+        if (
+            this.props.section.items.length !== nextProps.section.items.length
+        ) {
             return true;
         } else {
             for (let i = 0; i < nextProps.section.items.length; i++) {
-                if (this.props.section.items[i].value !== nextProps.section.items[i].value) {
+                if (
+                    this.props.section.items[i].value !==
+                    nextProps.section.items[i].value
+                ) {
                     return true;
-                } else if (this.props.section.items[i].modifier !== nextProps.section.items[i].modifier) {
+                } else if (
+                    this.props.section.items[i].modifier !==
+                    nextProps.section.items[i].modifier
+                ) {
                     return true;
                 }
             }
@@ -84,7 +103,7 @@ class CreateSection extends React.Component {
             }
 
             if (itemValue != null) {
-                if (itemValue === "") {
+                if (itemValue === '') {
                     newSection.text[textId].item = null;
                 } else {
                     newSection.text[textId].item = itemValue;
@@ -142,7 +161,7 @@ class CreateSection extends React.Component {
 
         newSection.text.push({
             id: newSection.text.length,
-            text: ""
+            text: '',
         });
 
         this.props.updateRoute(this.props.section.id, newSection);
@@ -156,7 +175,7 @@ class CreateSection extends React.Component {
 
         newSection.items.push({
             id: newSection.items.length,
-            value: 0
+            value: 0,
         });
 
         this.props.updateRoute(this.props.section.id, newSection);
@@ -184,12 +203,12 @@ class CreateSection extends React.Component {
         newSection.state = state;
 
         this.props.updateRoute(this.props.section.id, newSection);
-     }
+    }
 
     moveTextUp(e) {
         e.preventDefault();
 
-        const nameParts = e.target.id.split("-");
+        const nameParts = e.target.id.split('-');
         const textId = parseInt(nameParts[1]);
 
         // Stringify then parse JSON to create deep copy.
@@ -209,7 +228,7 @@ class CreateSection extends React.Component {
     moveTextDown(e) {
         e.preventDefault();
 
-        const nameParts = e.target.id.split("-");
+        const nameParts = e.target.id.split('-');
         const textId = parseInt(nameParts[1]);
 
         // Stringify then parse JSON to create deep copy.
@@ -229,7 +248,7 @@ class CreateSection extends React.Component {
     moveItemUp(e) {
         e.preventDefault();
 
-        const nameParts = e.target.id.split("-");
+        const nameParts = e.target.id.split('-');
         const itemId = parseInt(nameParts[1]);
 
         // Stringify then parse JSON to create deep copy.
@@ -249,7 +268,7 @@ class CreateSection extends React.Component {
     moveItemDown(e) {
         e.preventDefault();
 
-        const nameParts = e.target.id.split("-");
+        const nameParts = e.target.id.split('-');
         const itemId = parseInt(nameParts[1]);
 
         // Stringify then parse JSON to create deep copy.
@@ -269,7 +288,7 @@ class CreateSection extends React.Component {
     deleteText(e) {
         e.preventDefault();
 
-        const nameParts = e.target.id.split("-");
+        const nameParts = e.target.id.split('-');
         const textId = parseInt(nameParts[1]);
 
         // Stringify then parse JSON to create deep copy.
@@ -287,7 +306,7 @@ class CreateSection extends React.Component {
     deleteItem(e) {
         e.preventDefault();
 
-        const nameParts = e.target.id.split("-");
+        const nameParts = e.target.id.split('-');
         const itemId = parseInt(nameParts[1]);
 
         // Stringify then parse JSON to create deep copy.
@@ -326,23 +345,62 @@ class CreateSection extends React.Component {
 
     render() {
         let Items = require('../../../../resources/ItemNames.json');
-        if (this.props.game !== "" && this.props.game != null) {
-            Items = require('../../../../resources/' + this.props.game + '/ItemNames.json');
+        if (this.props.game !== '' && this.props.game != null) {
+            Items = require('../../../../resources/' +
+                this.props.game +
+                '/ItemNames.json');
         }
 
-        const addStateButton = (!this.props.section.state && this.props.game) ? <Button text="Add State" size="medium" onClick={this.addState} /> : "";
+        const addStateButton =
+            !this.props.section.state && this.props.game ? (
+                <Button
+                    text="Add State"
+                    size="medium"
+                    onClick={this.addState}
+                />
+            ) : (
+                ''
+            );
 
-        return(
-            <div id={"section-" + this.props.section.id} ref={this.props.sectionRef} className={`${styles.section}`}>
-                <h3 className={`${styles.header}`}>Section {this.props.section.id + 1}</h3>
-                <Icon src="/icons/up.png" id={"moveSectionUp-" + this.props.section.id} size="small" altText="Up" hover={true} hidden={this.props.section.id === 0} onClick={this.props.moveSectionUp} />
-                <Icon src="/icons/down.png" id={"moveSectionDown-" + this.props.section.id} size="small" altText="Down" hover={true} hidden={this.props.section.id === this.props.max} onClick={this.props.moveSectionDown} />
-                <Icon src="/icons/delete.png" id={"deleteSection-" + this.props.section.id} size="small" altText="X" hover={true} onClick={this.props.deleteSection} />
+        return (
+            <div
+                id={'section-' + this.props.section.id}
+                ref={this.props.sectionRef}
+                className={`${styles.section}`}>
+                <h3 className={`${styles.header}`}>
+                    Section {this.props.section.id + 1}
+                </h3>
+                <Icon
+                    src="/icons/up.png"
+                    id={'moveSectionUp-' + this.props.section.id}
+                    size="small"
+                    altText="Up"
+                    hover={true}
+                    hidden={this.props.section.id === 0}
+                    onClick={this.props.moveSectionUp}
+                />
+                <Icon
+                    src="/icons/down.png"
+                    id={'moveSectionDown-' + this.props.section.id}
+                    size="small"
+                    altText="Down"
+                    hover={true}
+                    hidden={this.props.section.id === this.props.max}
+                    onClick={this.props.moveSectionDown}
+                />
+                <Icon
+                    src="/icons/delete.png"
+                    id={'deleteSection-' + this.props.section.id}
+                    size="small"
+                    altText="X"
+                    hover={true}
+                    onClick={this.props.deleteSection}
+                />
                 <div className={`${styles.wrapper}`}>
                     <div className="col-6">
-                        {this.props.section.text.map((text) =>
+                        {this.props.section.text.map((text) => (
                             <SectionText
-                                key={"text-" + text.id}
+                                key={'text-' + text.id}
                                 sectionId={this.props.section.id}
                                 text={text}
                                 max={this.props.section.text.length - 1}
@@ -352,12 +410,12 @@ class CreateSection extends React.Component {
                                 moveTextDown={this.moveTextDown}
                                 deleteText={this.deleteText}
                             />
-                        )}
+                        ))}
                     </div>
                     <div className="col-3">
-                        {this.props.section.items.map((item) =>
+                        {this.props.section.items.map((item) => (
                             <SectionItem
-                                key={"item-" + item.id}
+                                key={'item-' + item.id}
                                 sectionId={this.props.section.id}
                                 item={item}
                                 game={this.props.game}
@@ -367,25 +425,46 @@ class CreateSection extends React.Component {
                                 moveItemDown={this.moveItemDown}
                                 deleteItem={this.deleteItem}
                             />
-                        )}
+                        ))}
                     </div>
                     <div className="col-3">
-                        <SectionImage sectionId={this.props.section.id} image={this.props.section.image} updateImage={this.updateImage} deleteImage={this.deleteImage} />
-                        <SectionState sectionId={this.props.section.id} state={this.props.section.state} updateState={this.updateState} deleteState={this.deleteState} />
+                        <SectionImage
+                            sectionId={this.props.section.id}
+                            image={this.props.section.image}
+                            updateImage={this.updateImage}
+                            deleteImage={this.deleteImage}
+                        />
+                        <SectionState
+                            sectionId={this.props.section.id}
+                            state={this.props.section.state}
+                            updateState={this.updateState}
+                            deleteState={this.deleteState}
+                        />
                     </div>
                 </div>
                 <div className={`${styles.wrapper}`}>
                     <div className="col-6">
-                        <Button text="Add Text" size="medium" onClick={this.addText} />
+                        <Button
+                            text="Add Text"
+                            size="medium"
+                            onClick={this.addText}
+                        />
                     </div>
                     <div className="col-3">
-                         <Button text={"Add " + Items.name} size="medium" onClick={this.addItem} />
+                        <Button
+                            text={'Add ' + Items.name}
+                            size="medium"
+                            onClick={this.addItem}
+                        />
                     </div>
-                    <div className="col-3">
-                        {addStateButton}
-                    </div>
+                    <div className="col-3">{addStateButton}</div>
                 </div>
-                <Button text="Add Section" id={"addSection-" + (this.props.section.id + 1)} size="medium"onClick={this.props.addSection} />
+                <Button
+                    text="Add Section"
+                    id={'addSection-' + (this.props.section.id + 1)}
+                    size="medium"
+                    onClick={this.props.addSection}
+                />
             </div>
         );
     }
