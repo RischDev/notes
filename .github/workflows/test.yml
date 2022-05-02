@@ -25,7 +25,4 @@ jobs:
             - name: ESLint
               run: npm run lint
             - name: Prettier
-              uses: actionsx/prettier@v2
-              with:
-                  # prettier CLI arguments.
-                  args: --check .
+              run: npx prettier --check .
