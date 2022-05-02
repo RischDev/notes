@@ -14,2870 +14,1332 @@
         {
             "id": 0,
             "name": "Cannon",
-            "modifiers": [
-                "A",
-                "B",
-                "C",
-                "D",
-                "E",
-                "*"
-            ]
+            "modifiers": ["A", "B", "C", "D", "E", "*"]
         },
         {
             "id": 1,
             "name": "HiCannon",
-            "modifiers": [
-                "C",
-                "D",
-                "E",
-                "F",
-                "G",
-                "*"
-            ]
+            "modifiers": ["C", "D", "E", "F", "G", "*"]
         },
         {
             "id": 2,
             "name": "M-Cannon",
-            "modifiers": [
-                "E",
-                "F",
-                "G",
-                "H",
-                "I",
-                "*"
-            ]
+            "modifiers": ["E", "F", "G", "H", "I", "*"]
         },
         {
             "id": 3,
             "name": "Shotgun",
-            "modifiers": [
-                "B",
-                "F",
-                "H",
-                "J",
-                "N",
-                "*"
-            ]
+            "modifiers": ["B", "F", "H", "J", "N", "*"]
         },
         {
             "id": 4,
             "name": "V-Gun",
-            "modifiers": [
-                "A",
-                "F",
-                "G",
-                "L",
-                "P",
-                "*"
-            ]
+            "modifiers": ["A", "F", "G", "L", "P", "*"]
         },
         {
             "id": 5,
             "name": "CrossGun",
-            "modifiers": [
-                "H",
-                "J",
-                "M",
-                "Q",
-                "S",
-                "*"
-            ]
+            "modifiers": ["H", "J", "M", "Q", "S", "*"]
         },
         {
             "id": 6,
             "name": "Spreader",
-            "modifiers": [
-                "M",
-                "N",
-                "O",
-                "P",
-                "Q",
-                "*"
-            ]
+            "modifiers": ["M", "N", "O", "P", "Q", "*"]
         },
         {
             "id": 7,
             "name": "Bubbler",
-            "modifiers": [
-                "B",
-                "G",
-                "H",
-                "P",
-                "R",
-                "*"
-            ]
+            "modifiers": ["B", "G", "H", "P", "R", "*"]
         },
         {
             "id": 8,
             "name": "Bub-V",
-            "modifiers": [
-                "C",
-                "D",
-                "J",
-                "N",
-                "S",
-                "*"
-            ]
+            "modifiers": ["C", "D", "J", "N", "S", "*"]
         },
         {
             "id": 9,
             "name": "BubCross",
-            "modifiers": [
-                "K",
-                "O",
-                "P",
-                "T",
-                "V",
-                "*"
-            ]
+            "modifiers": ["K", "O", "P", "T", "V", "*"]
         },
         {
             "id": 10,
             "name": "BubSprd",
-            "modifiers": [
-                "E",
-                "F",
-                "I",
-                "L",
-                "M",
-                "*"
-            ]
+            "modifiers": ["E", "F", "I", "L", "M", "*"]
         },
         {
             "id": 11,
             "name": "HeatShot",
-            "modifiers": [
-                "B",
-                "G",
-                "H",
-                "P",
-                "R",
-                "*"
-            ]
+            "modifiers": ["B", "G", "H", "P", "R", "*"]
         },
         {
             "id": 12,
             "name": "Heat-V",
-            "modifiers": [
-                "C",
-                "D",
-                "J",
-                "N",
-                "S",
-                "*"
-            ]
+            "modifiers": ["C", "D", "J", "N", "S", "*"]
         },
         {
             "id": 13,
             "name": "HeatCros",
-            "modifiers": [
-                "K",
-                "O",
-                "P",
-                "T",
-                "V",
-                "*"
-            ]
+            "modifiers": ["K", "O", "P", "T", "V", "*"]
         },
         {
             "id": 14,
             "name": "HeatSprd",
-            "modifiers": [
-                "E",
-                "F",
-                "I",
-                "L",
-                "M",
-                "*"
-            ]
+            "modifiers": ["E", "F", "I", "L", "M", "*"]
         },
         {
             "id": 15,
             "name": "MiniBomb",
-            "modifiers": [
-                "B",
-                "E",
-                "G",
-                "L",
-                "O",
-                "*"
-            ]
+            "modifiers": ["B", "E", "G", "L", "O", "*"]
         },
         {
             "id": 16,
             "name": "LilBomb",
-            "modifiers": [
-                "F",
-                "J",
-                "O",
-                "Q",
-                "T",
-                "*"
-            ]
+            "modifiers": ["F", "J", "O", "Q", "T", "*"]
         },
         {
             "id": 17,
             "name": "CrosBomb",
-            "modifiers": [
-                "D",
-                "J",
-                "O",
-                "Q",
-                "T",
-                "*"
-            ]
+            "modifiers": ["D", "J", "O", "Q", "T", "*"]
         },
         {
             "id": 18,
             "name": "BigBomb",
-            "modifiers": [
-                "O",
-                "Q",
-                "T",
-                "V",
-                "Y",
-                "*"
-            ]
+            "modifiers": ["O", "Q", "T", "V", "Y", "*"]
         },
         {
             "id": 19,
             "name": "TreeBom1",
-            "modifiers": [
-                "B",
-                "G",
-                "H",
-                "P",
-                "R",
-                "*"
-            ]
+            "modifiers": ["B", "G", "H", "P", "R", "*"]
         },
         {
             "id": 20,
             "name": "TreeBom2",
-            "modifiers": [
-                "C",
-                "D",
-                "J",
-                "N",
-                "S",
-                "*"
-            ]
+            "modifiers": ["C", "D", "J", "N", "S", "*"]
         },
         {
             "id": 21,
             "name": "TreeBom3",
-            "modifiers": [
-                "K",
-                "O",
-                "P",
-                "T",
-                "V",
-                "*"
-            ]
+            "modifiers": ["K", "O", "P", "T", "V", "*"]
         },
         {
             "id": 22,
             "name": "Sword",
-            "modifiers": [
-                "A",
-                "K",
-                "L",
-                "S",
-                "Y",
-                "*"
-            ]
+            "modifiers": ["A", "K", "L", "S", "Y", "*"]
         },
         {
             "id": 23,
             "name": "WideSwrd",
-            "modifiers": [
-                "A",
-                "C",
-                "L",
-                "Q",
-                "Y",
-                "*"
-            ]
+            "modifiers": ["A", "C", "L", "Q", "Y", "*"]
         },
         {
             "id": 24,
             "name": "LongSwrd",
-            "modifiers": [
-                "A",
-                "I",
-                "L",
-                "O",
-                "Y",
-                "*"
-            ]
+            "modifiers": ["A", "I", "L", "O", "Y", "*"]
         },
         {
             "id": 25,
             "name": "FireSwrd",
-            "modifiers": [
-                "F",
-                "H",
-                "N",
-                "R",
-                "U",
-                "*"
-            ]
+            "modifiers": ["F", "H", "N", "R", "U", "*"]
         },
         {
             "id": 26,
             "name": "AquaSwrd",
-            "modifiers": [
-                "A",
-                "H",
-                "N",
-                "R",
-                "W",
-                "*"
-            ]
+            "modifiers": ["A", "H", "N", "R", "W", "*"]
         },
         {
             "id": 27,
             "name": "ElecSwrd",
-            "modifiers": [
-                "E",
-                "H",
-                "N",
-                "R",
-                "V",
-                "*"
-            ]
+            "modifiers": ["E", "H", "N", "R", "V", "*"]
         },
         {
             "id": 28,
             "name": "FireBlde",
-            "modifiers": [
-                "F",
-                "H",
-                "P",
-                "R",
-                "Z",
-                "*"
-            ]
+            "modifiers": ["F", "H", "P", "R", "Z", "*"]
         },
         {
             "id": 29,
             "name": "AquaBlde",
-            "modifiers": [
-                "A",
-                "F",
-                "J",
-                "R",
-                "Z",
-                "*"
-            ]
+            "modifiers": ["A", "F", "J", "R", "Z", "*"]
         },
         {
             "id": 30,
             "name": "ElecBlde",
-            "modifiers": [
-                "E",
-                "F",
-                "M",
-                "N",
-                "R",
-                "*"
-            ]
+            "modifiers": ["E", "F", "M", "N", "R", "*"]
         },
         {
             "id": 31,
             "name": "StepSwrd",
-            "modifiers": [
-                "D",
-                "H",
-                "M",
-                "Q",
-                "U",
-                "*"
-            ]
+            "modifiers": ["D", "H", "M", "Q", "U", "*"]
         },
         {
             "id": 32,
             "name": "Kunai1",
-            "modifiers": [
-                "E",
-                "I",
-                "L",
-                "P",
-                "S",
-                "*"
-            ]
+            "modifiers": ["E", "I", "L", "P", "S", "*"]
         },
         {
             "id": 33,
             "name": "Kunai2",
-            "modifiers": [
-                "D",
-                "F",
-                "J",
-                "Q",
-                "R",
-                "*"
-            ]
+            "modifiers": ["D", "F", "J", "Q", "R", "*"]
         },
         {
             "id": 34,
             "name": "Kunai3",
-            "modifiers": [
-                "C",
-                "G",
-                "H",
-                "K",
-                "N",
-                "*"
-            ]
+            "modifiers": ["C", "G", "H", "K", "N", "*"]
         },
         {
             "id": 35,
             "name": "CustSwrd",
-            "modifiers": [
-                "B",
-                "G",
-                "K",
-                "Q",
-                "T",
-                "*"
-            ]
+            "modifiers": ["B", "G", "K", "Q", "T", "*"]
         },
         {
             "id": 36,
             "name": "Muramasa",
-            "modifiers": [
-                "N",
-                "O",
-                "T",
-                "U",
-                "W",
-                "*"
-            ]
+            "modifiers": ["N", "O", "T", "U", "W", "*"]
         },
         {
             "id": 37,
             "name": "VarSwrd",
-            "modifiers": [
-                "B",
-                "L",
-                "N",
-                "T",
-                "Z",
-                "*"
-            ]
+            "modifiers": ["B", "L", "N", "T", "Z", "*"]
         },
         {
             "id": 38,
             "name": "Slasher",
-            "modifiers": [
-                "A",
-                "D",
-                "H",
-                "L",
-                "Q",
-                "*"
-            ]
+            "modifiers": ["A", "D", "H", "L", "Q", "*"]
         },
         {
             "id": 39,
             "name": "Shockwav",
-            "modifiers": [
-                "H",
-                "J",
-                "L",
-                "R",
-                "U",
-                "*"
-            ]
+            "modifiers": ["H", "J", "L", "R", "U", "*"]
         },
         {
             "id": 40,
             "name": "Sonicwav",
-            "modifiers": [
-                "E",
-                "I",
-                "M",
-                "S",
-                "W",
-                "*"
-            ]
+            "modifiers": ["E", "I", "M", "S", "W", "*"]
         },
         {
             "id": 41,
             "name": "Dynawave",
-            "modifiers": [
-                "G",
-                "N",
-                "Q",
-                "T",
-                "V",
-                "*"
-            ]
+            "modifiers": ["G", "N", "Q", "T", "V", "*"]
         },
         {
             "id": 42,
             "name": "Quake1",
-            "modifiers": [
-                "A",
-                "M",
-                "P",
-                "Q",
-                "W",
-                "*"
-            ]
+            "modifiers": ["A", "M", "P", "Q", "W", "*"]
         },
         {
             "id": 43,
             "name": "Quake2",
-            "modifiers": [
-                "B",
-                "G",
-                "N",
-                "Q",
-                "W",
-                "*"
-            ]
+            "modifiers": ["B", "G", "N", "Q", "W", "*"]
         },
         {
             "id": 44,
             "name": "Quake3",
-            "modifiers": [
-                "C",
-                "E",
-                "O",
-                "Q",
-                "W",
-                "*"
-            ]
+            "modifiers": ["C", "E", "O", "Q", "W", "*"]
         },
         {
             "id": 45,
             "name": "GutPunch",
-            "modifiers": [
-                "B",
-                "D",
-                "H",
-                "K",
-                "N",
-                "*"
-            ]
+            "modifiers": ["B", "D", "H", "K", "N", "*"]
         },
         {
             "id": 46,
             "name": "ColdPnch",
-            "modifiers": [
-                "B",
-                "D",
-                "L",
-                "P",
-                "S",
-                "*"
-            ]
+            "modifiers": ["B", "D", "L", "P", "S", "*"]
         },
         {
             "id": 47,
             "name": "DashAtk",
-            "modifiers": [
-                "B",
-                "D",
-                "G",
-                "J",
-                "L",
-                "*"
-            ]
+            "modifiers": ["B", "D", "G", "J", "L", "*"]
         },
         {
             "id": 48,
             "name": "Wrecker",
-            "modifiers": [
-                "O",
-                "Q",
-                "S",
-                "U",
-                "W",
-                "*"
-            ]
+            "modifiers": ["O", "Q", "S", "U", "W", "*"]
         },
         {
             "id": 49,
             "name": "CannBall",
-            "modifiers": [
-                "O",
-                "P",
-                "Q",
-                "R",
-                "S",
-                "*"
-            ]
+            "modifiers": ["O", "P", "Q", "R", "S", "*"]
         },
         {
             "id": 50,
             "name": "DoubNdl",
-            "modifiers": [
-                "A",
-                "C",
-                "F",
-                "I",
-                "J",
-                "*"
-            ]
+            "modifiers": ["A", "C", "F", "I", "J", "*"]
         },
         {
             "id": 51,
             "name": "TripNdl",
-            "modifiers": [
-                "C",
-                "I",
-                "M",
-                "T",
-                "V",
-                "*"
-            ]
+            "modifiers": ["C", "I", "M", "T", "V", "*"]
         },
         {
             "id": 52,
             "name": "QuadNdl",
-            "modifiers": [
-                "C",
-                "H",
-                "I",
-                "P",
-                "U",
-                "*"
-            ]
+            "modifiers": ["C", "H", "I", "P", "U", "*"]
         },
         {
             "id": 53,
             "name": "Trident",
-            "modifiers": [
-                "E",
-                "I",
-                "K",
-                "O",
-                "T",
-                "*"
-            ]
+            "modifiers": ["E", "I", "K", "O", "T", "*"]
         },
         {
             "id": 54,
             "name": "Ratton1",
-            "modifiers": [
-                "H",
-                "I",
-                "J",
-                "K",
-                "L",
-                "*"
-            ]
+            "modifiers": ["H", "I", "J", "K", "L", "*"]
         },
         {
             "id": 55,
             "name": "Ratton2",
-            "modifiers": [
-                "J",
-                "K",
-                "L",
-                "M",
-                "N",
-                "*"
-            ]
+            "modifiers": ["J", "K", "L", "M", "N", "*"]
         },
         {
             "id": 56,
             "name": "Ratton3",
-            "modifiers": [
-                "L",
-                "M",
-                "N",
-                "O",
-                "P",
-                "*"
-            ]
+            "modifiers": ["L", "M", "N", "O", "P", "*"]
         },
         {
             "id": 57,
             "name": "FireRat",
-            "modifiers": [
-                "B",
-                "F",
-                "G",
-                "H",
-                "R",
-                "*"
-            ]
+            "modifiers": ["B", "F", "G", "H", "R", "*"]
         },
         {
             "id": 58,
             "name": "Tornado",
-            "modifiers": [
-                "E",
-                "J",
-                "L",
-                "M",
-                "Q",
-                "*"
-            ]
+            "modifiers": ["E", "J", "L", "M", "Q", "*"]
         },
         {
             "id": 59,
             "name": "Twister",
-            "modifiers": [
-                "N",
-                "O",
-                "T",
-                "U",
-                "Y",
-                "*"
-            ]
+            "modifiers": ["N", "O", "T", "U", "Y", "*"]
         },
         {
             "id": 60,
             "name": "Blower",
-            "modifiers": [
-                "P",
-                "R",
-                "T",
-                "W",
-                "Z",
-                "*"
-            ]
+            "modifiers": ["P", "R", "T", "W", "Z", "*"]
         },
         {
             "id": 61,
             "name": "Burner",
-            "modifiers": [
-                "A",
-                "B",
-                "F",
-                "L",
-                "S",
-                "*"
-            ]
+            "modifiers": ["A", "B", "F", "L", "S", "*"]
         },
         {
             "id": 62,
             "name": "ZapRing1",
-            "modifiers": [
-                "A",
-                "M",
-                "P",
-                "Q",
-                "W",
-                "*"
-            ]
+            "modifiers": ["A", "M", "P", "Q", "W", "*"]
         },
         {
             "id": 63,
             "name": "ZapRing2",
-            "modifiers": [
-                "B",
-                "G",
-                "N",
-                "R",
-                "S",
-                "*"
-            ]
+            "modifiers": ["B", "G", "N", "R", "S", "*"]
         },
         {
             "id": 64,
             "name": "ZapRing3",
-            "modifiers": [
-                "C",
-                "E",
-                "O",
-                "T",
-                "Z",
-                "*"
-            ]
+            "modifiers": ["C", "E", "O", "T", "Z", "*"]
         },
         {
             "id": 65,
             "name": "Satelit1",
-            "modifiers": [
-                "G",
-                "O",
-                "Q",
-                "U",
-                "W",
-                "*"
-            ]
+            "modifiers": ["G", "O", "Q", "U", "W", "*"]
         },
         {
             "id": 66,
             "name": "Satelit2",
-            "modifiers": [
-                "H",
-                "J",
-                "K",
-                "P",
-                "R",
-                "*"
-            ]
+            "modifiers": ["H", "J", "K", "P", "R", "*"]
         },
         {
             "id": 67,
             "name": "Satelit3",
-            "modifiers": [
-                "L",
-                "S",
-                "T",
-                "Y",
-                "Z",
-                "*"
-            ]
+            "modifiers": ["L", "S", "T", "Y", "Z", "*"]
         },
         {
             "id": 68,
             "name": "Spice1",
-            "modifiers": [
-                "A",
-                "C",
-                "G",
-                "Q",
-                "T",
-                "*"
-            ]
+            "modifiers": ["A", "C", "G", "Q", "T", "*"]
         },
         {
             "id": 69,
             "name": "Spice2",
-            "modifiers": [
-                "B",
-                "E",
-                "H",
-                "J",
-                "N",
-                "*"
-            ]
+            "modifiers": ["B", "E", "H", "J", "N", "*"]
         },
         {
             "id": 70,
             "name": "Spice3",
-            "modifiers": [
-                "D",
-                "K",
-                "M",
-                "P",
-                "Q",
-                "*"
-            ]
+            "modifiers": ["D", "K", "M", "P", "Q", "*"]
         },
         {
             "id": 71,
             "name": "MagBomb1",
-            "modifiers": [
-                "F",
-                "G",
-                "J",
-                "M",
-                "N",
-                "*"
-            ]
+            "modifiers": ["F", "G", "J", "M", "N", "*"]
         },
         {
             "id": 72,
             "name": "MagBomb2",
-            "modifiers": [
-                "B",
-                "D",
-                "I",
-                "R",
-                "T",
-                "*"
-            ]
+            "modifiers": ["B", "D", "I", "R", "T", "*"]
         },
         {
             "id": 73,
             "name": "MagBomb3",
-            "modifiers": [
-                "H",
-                "K",
-                "O",
-                "Q",
-                "S",
-                "*"
-            ]
+            "modifiers": ["H", "K", "O", "Q", "S", "*"]
         },
         {
             "id": 74,
             "name": "Yo-Yo1",
-            "modifiers": [
-                "C",
-                "E",
-                "R",
-                "T",
-                "V",
-                "*"
-            ]
+            "modifiers": ["C", "E", "R", "T", "V", "*"]
         },
         {
             "id": 75,
             "name": "Yo-Yo2",
-            "modifiers": [
-                "A",
-                "G",
-                "J",
-                "K",
-                "N",
-                "*"
-            ]
+            "modifiers": ["A", "G", "J", "K", "N", "*"]
         },
         {
             "id": 76,
             "name": "Yo-Yo3",
-            "modifiers": [
-                "D",
-                "I",
-                "M",
-                "S",
-                "Y",
-                "*"
-            ]
+            "modifiers": ["D", "I", "M", "S", "Y", "*"]
         },
         {
             "id": 77,
             "name": "CrsShld1",
-            "modifiers": [
-                "A",
-                "O",
-                "P",
-                "S",
-                "Z",
-                "*"
-            ]
+            "modifiers": ["A", "O", "P", "S", "Z", "*"]
         },
         {
             "id": 78,
             "name": "CrsShld2",
-            "modifiers": [
-                "A",
-                "O",
-                "P",
-                "T",
-                "V",
-                "*"
-            ]
+            "modifiers": ["A", "O", "P", "T", "V", "*"]
         },
         {
             "id": 79,
             "name": "CrsShld3",
-            "modifiers": [
-                "A",
-                "O",
-                "P",
-                "U",
-                "W",
-                "*"
-            ]
+            "modifiers": ["A", "O", "P", "U", "W", "*"]
         },
         {
             "id": 80,
             "name": "Hammer",
-            "modifiers": [
-                "R",
-                "T",
-                "U",
-                "V",
-                "Z",
-                "*"
-            ]
+            "modifiers": ["R", "T", "U", "V", "Z", "*"]
         },
         {
             "id": 81,
             "name": "ZeusHamr",
-            "modifiers": [
-                "J",
-                "K",
-                "O",
-                "V",
-                "Z",
-                "*"
-            ]
+            "modifiers": ["J", "K", "O", "V", "Z", "*"]
         },
         {
             "id": 82,
             "name": "Lance",
-            "modifiers": [
-                "O",
-                "P",
-                "T",
-                "V",
-                "Y",
-                "*"
-            ]
+            "modifiers": ["O", "P", "T", "V", "Y", "*"]
         },
         {
             "id": 83,
             "name": "BrnzFist",
-            "modifiers": [
-                "B",
-                "N",
-                "O",
-                "R",
-                "S",
-                "*"
-            ]
+            "modifiers": ["B", "N", "O", "R", "S", "*"]
         },
         {
             "id": 84,
             "name": "SilvFist",
-            "modifiers": [
-                "E",
-                "I",
-                "L",
-                "S",
-                "V",
-                "*"
-            ]
+            "modifiers": ["E", "I", "L", "S", "V", "*"]
         },
         {
             "id": 85,
             "name": "GoldFist",
-            "modifiers": [
-                "D",
-                "G",
-                "L",
-                "O",
-                "Z",
-                "*"
-            ]
+            "modifiers": ["D", "G", "L", "O", "Z", "*"]
         },
         {
             "id": 86,
             "name": "PoisMask",
-            "modifiers": [
-                "D",
-                "S",
-                "U",
-                "W",
-                "Z",
-                "*"
-            ]
+            "modifiers": ["D", "S", "U", "W", "Z", "*"]
         },
         {
             "id": 87,
             "name": "PoisFace",
-            "modifiers": [
-                "P",
-                "Q",
-                "U",
-                "W",
-                "Y",
-                "*"
-            ]
+            "modifiers": ["P", "Q", "U", "W", "Y", "*"]
         },
         {
             "id": 88,
             "name": "Whirlpl",
-            "modifiers": [
-                "A",
-                "C",
-                "E",
-                "G",
-                "I",
-                "*"
-            ]
+            "modifiers": ["A", "C", "E", "G", "I", "*"]
         },
         {
             "id": 89,
             "name": "Blckhole",
-            "modifiers": [
-                "B",
-                "D",
-                "F",
-                "H",
-                "J",
-                "*"
-            ]
+            "modifiers": ["B", "D", "F", "H", "J", "*"]
         },
         {
             "id": 90,
             "name": "Meteor9",
-            "modifiers": [
-                "C",
-                "E",
-                "L",
-                "S",
-                "V",
-                "*"
-            ]
+            "modifiers": ["C", "E", "L", "S", "V", "*"]
         },
         {
             "id": 91,
             "name": "Meteor12",
-            "modifiers": [
-                "A",
-                "C",
-                "F",
-                "J",
-                "W",
-                "*"
-            ]
+            "modifiers": ["A", "C", "F", "J", "W", "*"]
         },
         {
             "id": 92,
             "name": "Meteor15",
-            "modifiers": [
-                "D",
-                "G",
-                "H",
-                "R",
-                "Z",
-                "*"
-            ]
+            "modifiers": ["D", "G", "H", "R", "Z", "*"]
         },
         {
             "id": 93,
             "name": "Meteor18",
-            "modifiers": [
-                "B",
-                "G",
-                "I",
-                "K",
-                "O",
-                "*"
-            ]
+            "modifiers": ["B", "G", "I", "K", "O", "*"]
         },
         {
             "id": 94,
             "name": "TimeBom1",
-            "modifiers": [
-                "C",
-                "G",
-                "K",
-                "M",
-                "Z",
-                "*"
-            ]
+            "modifiers": ["C", "G", "K", "M", "Z", "*"]
         },
         {
             "id": 95,
             "name": "TimeBom2",
-            "modifiers": [
-                "F",
-                "G",
-                "K",
-                "O",
-                "Z",
-                "*"
-            ]
+            "modifiers": ["F", "G", "K", "O", "Z", "*"]
         },
         {
             "id": 96,
             "name": "TimeBom3",
-            "modifiers": [
-                "E",
-                "G",
-                "K",
-                "P",
-                "Z",
-                "*"
-            ]
+            "modifiers": ["E", "G", "K", "P", "Z", "*"]
         },
         {
             "id": 97,
             "name": "LilCloud",
-            "modifiers": [
-                "C",
-                "G",
-                "I",
-                "K",
-                "N",
-                "*"
-            ]
+            "modifiers": ["C", "G", "I", "K", "N", "*"]
         },
         {
             "id": 98,
             "name": "MedCloud",
-            "modifiers": [
-                "D",
-                "H",
-                "J",
-                "L",
-                "O",
-                "*"
-            ]
+            "modifiers": ["D", "H", "J", "L", "O", "*"]
         },
         {
             "id": 99,
             "name": "BigCloud",
-            "modifiers": [
-                "Q",
-                "R",
-                "T",
-                "V",
-                "W",
-                "*"
-            ]
+            "modifiers": ["Q", "R", "T", "V", "W", "*"]
         },
         {
             "id": 100,
             "name": "Mine",
-            "modifiers": [
-                "L",
-                "N",
-                "R",
-                "S",
-                "V",
-                "*"
-            ]
+            "modifiers": ["L", "N", "R", "S", "V", "*"]
         },
         {
             "id": 101,
             "name": "FrntSnsr",
-            "modifiers": [
-                "H",
-                "M",
-                "Q",
-                "R",
-                "T",
-                "*"
-            ]
+            "modifiers": ["H", "M", "Q", "R", "T", "*"]
         },
         {
             "id": 102,
             "name": "DblSnsr",
-            "modifiers": [
-                "E",
-                "J",
-                "P",
-                "W",
-                "Y",
-                "*"
-            ]
+            "modifiers": ["E", "J", "P", "W", "Y", "*"]
         },
         {
             "id": 103,
             "name": "Remobit1",
-            "modifiers": [
-                "E",
-                "G",
-                "J",
-                "K",
-                "N",
-                "*"
-            ]
+            "modifiers": ["E", "G", "J", "K", "N", "*"]
         },
         {
             "id": 104,
             "name": "Remobit2",
-            "modifiers": [
-                "B",
-                "F",
-                "I",
-                "R",
-                "U",
-                "*"
-            ]
+            "modifiers": ["B", "F", "I", "R", "U", "*"]
         },
         {
             "id": 105,
             "name": "Remobit3",
-            "modifiers": [
-                "A",
-                "L",
-                "M",
-                "T",
-                "Y",
-                "*"
-            ]
+            "modifiers": ["A", "L", "M", "T", "Y", "*"]
         },
         {
             "id": 106,
             "name": "AquaBall",
-            "modifiers": [
-                "A",
-                "B",
-                "Q",
-                "T",
-                "W",
-                "*"
-            ]
+            "modifiers": ["A", "B", "Q", "T", "W", "*"]
         },
         {
             "id": 107,
             "name": "ElecBall",
-            "modifiers": [
-                "E",
-                "H",
-                "J",
-                "K",
-                "V",
-                "*"
-            ]
+            "modifiers": ["E", "H", "J", "K", "V", "*"]
         },
         {
             "id": 108,
             "name": "HeatBall",
-            "modifiers": [
-                "C",
-                "F",
-                "R",
-                "S",
-                "U",
-                "*"
-            ]
+            "modifiers": ["C", "F", "R", "S", "U", "*"]
         },
         {
             "id": 109,
             "name": "Geyser",
-            "modifiers": [
-                "A",
-                "B",
-                "D",
-                "L",
-                "S",
-                "*"
-            ]
+            "modifiers": ["A", "B", "D", "L", "S", "*"]
         },
         {
             "id": 110,
             "name": "LavaDrag",
-            "modifiers": [
-                "F",
-                "G",
-                "O",
-                "R",
-                "Y",
-                "*"
-            ]
+            "modifiers": ["F", "G", "O", "R", "Y", "*"]
         },
         {
             "id": 111,
             "name": "GodStone",
-            "modifiers": [
-                "E",
-                "I",
-                "L",
-                "Q",
-                "U",
-                "*"
-            ]
+            "modifiers": ["E", "I", "L", "Q", "U", "*"]
         },
         {
             "id": 112,
             "name": "OldWood",
-            "modifiers": [
-                "C",
-                "M",
-                "S",
-                "T",
-                "W",
-                "*"
-            ]
+            "modifiers": ["C", "M", "S", "T", "W", "*"]
         },
         {
             "id": 113,
             "name": "Guard",
-            "modifiers": [
-                "*"
-            ]
+            "modifiers": ["*"]
         },
         {
             "id": 114,
             "name": "PanlOut1",
-            "modifiers": [
-                "A",
-                "B",
-                "D",
-                "L",
-                "S",
-                "*"
-            ]
+            "modifiers": ["A", "B", "D", "L", "S", "*"]
         },
         {
             "id": 115,
             "name": "PanlOut3",
-            "modifiers": [
-                "C",
-                "E",
-                "N",
-                "R",
-                "Y",
-                "*"
-            ]
+            "modifiers": ["C", "E", "N", "R", "Y", "*"]
         },
         {
             "id": 116,
             "name": "LineOut",
-            "modifiers": [
-                "F",
-                "H",
-                "J",
-                "Q",
-                "Y",
-                "*"
-            ]
+            "modifiers": ["F", "H", "J", "Q", "Y", "*"]
         },
         {
             "id": 117,
             "name": "Catcher",
-            "modifiers": [
-                "F",
-                "I",
-                "J",
-                "N",
-                "T",
-                "*"
-            ]
+            "modifiers": ["F", "I", "J", "N", "T", "*"]
         },
         {
             "id": 118,
             "name": "Mindbndr",
-            "modifiers": [
-                "D",
-                "I",
-                "M",
-                "N",
-                "T",
-                "*"
-            ]
+            "modifiers": ["D", "I", "M", "N", "T", "*"]
         },
         {
             "id": 119,
             "name": "Recov10",
-            "modifiers": [
-                "A",
-                "C",
-                "E",
-                "G",
-                "L",
-                "*"
-            ]
+            "modifiers": ["A", "C", "E", "G", "L", "*"]
         },
         {
             "id": 120,
             "name": "Recov30",
-            "modifiers": [
-                "B",
-                "D",
-                "F",
-                "H",
-                "M",
-                "*"
-            ]
+            "modifiers": ["B", "D", "F", "H", "M", "*"]
         },
         {
             "id": 121,
             "name": "Recov50",
-            "modifiers": [
-                "C",
-                "E",
-                "G",
-                "I",
-                "N",
-                "*"
-            ]
+            "modifiers": ["C", "E", "G", "I", "N", "*"]
         },
         {
             "id": 122,
             "name": "Recov80",
-            "modifiers": [
-                "D",
-                "F",
-                "H",
-                "J",
-                "O",
-                "*"
-            ]
+            "modifiers": ["D", "F", "H", "J", "O", "*"]
         },
         {
             "id": 123,
             "name": "Recov120",
-            "modifiers": [
-                "O",
-                "Q",
-                "S",
-                "U",
-                "W",
-                "*"
-            ]
+            "modifiers": ["O", "Q", "S", "U", "W", "*"]
         },
         {
             "id": 124,
             "name": "Recov150",
-            "modifiers": [
-                "N",
-                "P",
-                "R",
-                "T",
-                "V",
-                "*"
-            ]
+            "modifiers": ["N", "P", "R", "T", "V", "*"]
         },
         {
             "id": 125,
             "name": "Recov200",
-            "modifiers": [
-                "M",
-                "N",
-                "U",
-                "V",
-                "W",
-                "*"
-            ]
+            "modifiers": ["M", "N", "U", "V", "W", "*"]
         },
         {
             "id": 126,
             "name": "Recov300",
-            "modifiers": [
-                "O",
-                "R",
-                "V",
-                "W",
-                "Z",
-                "*"
-            ]
+            "modifiers": ["O", "R", "V", "W", "Z", "*"]
         },
         {
             "id": 127,
             "name": "PanlGrab",
-            "modifiers": [
-                "B",
-                "H",
-                "K",
-                "L",
-                "P",
-                "*"
-            ]
+            "modifiers": ["B", "H", "K", "L", "P", "*"]
         },
         {
             "id": 128,
             "name": "AreaGrab",
-            "modifiers": [
-                "E",
-                "L",
-                "R",
-                "S",
-                "Z",
-                "*"
-            ]
+            "modifiers": ["E", "L", "R", "S", "Z", "*"]
         },
         {
             "id": 129,
             "name": "GrabRvng",
-            "modifiers": [
-                "A",
-                "L",
-                "P",
-                "S",
-                "W",
-                "*"
-            ]
+            "modifiers": ["A", "L", "P", "S", "W", "*"]
         },
         {
             "id": 130,
             "name": "Geddon1",
-            "modifiers": [
-                "C",
-                "K",
-                "L",
-                "Q",
-                "S",
-                "*"
-            ]
+            "modifiers": ["C", "K", "L", "Q", "S", "*"]
         },
         {
             "id": 131,
             "name": "Geddon2",
-            "modifiers": [
-                "J",
-                "M",
-                "R",
-                "T",
-                "Z",
-                "*"
-            ]
+            "modifiers": ["J", "M", "R", "T", "Z", "*"]
         },
         {
             "id": 132,
             "name": "Geddon3",
-            "modifiers": [
-                "E",
-                "J",
-                "N",
-                "P",
-                "Y",
-                "*"
-            ]
+            "modifiers": ["E", "J", "N", "P", "Y", "*"]
         },
         {
             "id": 133,
             "name": "Escape",
-            "modifiers": [
-                "F",
-                "H",
-                "J",
-                "L",
-                "N",
-                "*"
-            ]
+            "modifiers": ["F", "H", "J", "L", "N", "*"]
         },
         {
             "id": 134,
             "name": "AirShoes",
-            "modifiers": [
-                "A",
-                "J",
-                "O",
-                "V",
-                "Z",
-                "*"
-            ]
+            "modifiers": ["A", "J", "O", "V", "Z", "*"]
         },
         {
             "id": 135,
             "name": "Repair",
-            "modifiers": [
-                "A",
-                "C",
-                "E",
-                "L",
-                "P",
-                "*"
-            ]
+            "modifiers": ["A", "C", "E", "L", "P", "*"]
         },
         {
             "id": 136,
             "name": "Candle1",
-            "modifiers": [
-                "C",
-                "F",
-                "I",
-                "M",
-                "V",
-                "*"
-            ]
+            "modifiers": ["C", "F", "I", "M", "V", "*"]
         },
         {
             "id": 137,
             "name": "Candle2",
-            "modifiers": [
-                "A",
-                "G",
-                "J",
-                "L",
-                "T",
-                "*"
-            ]
+            "modifiers": ["A", "G", "J", "L", "T", "*"]
         },
         {
             "id": 138,
             "name": "Candle3",
-            "modifiers": [
-                "B",
-                "E",
-                "H",
-                "N",
-                "W",
-                "*"
-            ]
+            "modifiers": ["B", "E", "H", "N", "W", "*"]
         },
         {
             "id": 139,
             "name": "RockCube",
-            "modifiers": [
-                "B",
-                "D",
-                "G",
-                "M",
-                "V",
-                "*"
-            ]
+            "modifiers": ["B", "D", "G", "M", "V", "*"]
         },
         {
             "id": 140,
             "name": "Prism",
-            "modifiers": [
-                "B",
-                "C",
-                "L",
-                "N",
-                "Q",
-                "*"
-            ]
+            "modifiers": ["B", "C", "L", "N", "Q", "*"]
         },
         {
             "id": 141,
             "name": "Guardian",
-            "modifiers": [
-                "O",
-                "P",
-                "U",
-                "V",
-                "Z",
-                "*"
-            ]
+            "modifiers": ["O", "P", "U", "V", "Z", "*"]
         },
         {
             "id": 142,
             "name": "Wind",
-            "modifiers": [
-                "G",
-                "J",
-                "O",
-                "Q",
-                "T",
-                "*"
-            ]
+            "modifiers": ["G", "J", "O", "Q", "T", "*"]
         },
         {
             "id": 143,
             "name": "Fan",
-            "modifiers": [
-                "A",
-                "G",
-                "L",
-                "N",
-                "Y",
-                "*"
-            ]
+            "modifiers": ["A", "G", "L", "N", "Y", "*"]
         },
         {
             "id": 144,
             "name": "Anubis",
-            "modifiers": [
-                "H",
-                "K",
-                "M",
-                "U",
-                "W",
-                "*"
-            ]
+            "modifiers": ["H", "K", "M", "U", "W", "*"]
         },
         {
             "id": 145,
             "name": "SloGauge",
-            "modifiers": [
-                "*"
-            ]
+            "modifiers": ["*"]
         },
         {
             "id": 146,
             "name": "FstGauge",
-            "modifiers": [
-                "*"
-            ]
+            "modifiers": ["*"]
         },
         {
             "id": 147,
             "name": "FullCust",
-            "modifiers": [
-                "*"
-            ]
+            "modifiers": ["*"]
         },
         {
             "id": 148,
             "name": "Invis1",
-            "modifiers": [
-                "A",
-                "F",
-                "L",
-                "R",
-                "U",
-                "*"
-            ]
+            "modifiers": ["A", "F", "L", "R", "U", "*"]
         },
         {
             "id": 149,
             "name": "Invis2",
-            "modifiers": [
-                "B",
-                "H",
-                "M",
-                "Q",
-                "V",
-                "*"
-            ]
+            "modifiers": ["B", "H", "M", "Q", "V", "*"]
         },
         {
             "id": 150,
             "name": "Invis3",
-            "modifiers": [
-                "C",
-                "G",
-                "K",
-                "P",
-                "W",
-                "*"
-            ]
+            "modifiers": ["C", "G", "K", "P", "W", "*"]
         },
         {
             "id": 151,
             "name": "DropDown",
-            "modifiers": [
-                "A",
-                "C",
-                "F",
-                "Q",
-                "S",
-                "*"
-            ]
+            "modifiers": ["A", "C", "F", "Q", "S", "*"]
         },
         {
             "id": 152,
             "name": "PopUp",
-            "modifiers": [
-                "D",
-                "I",
-                "J",
-                "T",
-                "W",
-                "*"
-            ]
+            "modifiers": ["D", "I", "J", "T", "W", "*"]
         },
         {
             "id": 153,
             "name": "StoneBod",
-            "modifiers": [
-                "C",
-                "E",
-                "S",
-                "T",
-                "W",
-                "*"
-            ]
+            "modifiers": ["C", "E", "S", "T", "W", "*"]
         },
         {
             "id": 154,
             "name": "Shadow1",
-            "modifiers": [
-                "B",
-                "G",
-                "H",
-                "L",
-                "R",
-                "*"
-            ]
+            "modifiers": ["B", "G", "H", "L", "R", "*"]
         },
         {
             "id": 155,
             "name": "Shadow2",
-            "modifiers": [
-                "D",
-                "E",
-                "J",
-                "M",
-                "T",
-                "*"
-            ]
+            "modifiers": ["D", "E", "J", "M", "T", "*"]
         },
         {
             "id": 156,
             "name": "Shadow3",
-            "modifiers": [
-                "C",
-                "F",
-                "K",
-                "N",
-                "V",
-                "*"
-            ]
+            "modifiers": ["C", "F", "K", "N", "V", "*"]
         },
         {
             "id": 157,
             "name": "UnderSht",
-            "modifiers": [
-                "H",
-                "J",
-                "N",
-                "R",
-                "W",
-                "*"
-            ]
+            "modifiers": ["H", "J", "N", "R", "W", "*"]
         },
         {
             "id": 158,
             "name": "Barrier",
-            "modifiers": [
-                "B",
-                "E",
-                "L",
-                "S",
-                "T",
-                "*"
-            ]
+            "modifiers": ["B", "E", "L", "S", "T", "*"]
         },
         {
             "id": 159,
             "name": "BblWrap",
-            "modifiers": [
-                "I",
-                "J",
-                "Q",
-                "R",
-                "W",
-                "*"
-            ]
+            "modifiers": ["I", "J", "Q", "R", "W", "*"]
         },
         {
             "id": 160,
             "name": "LeafShld",
-            "modifiers": [
-                "A",
-                "D",
-                "R",
-                "S",
-                "W",
-                "*"
-            ]
+            "modifiers": ["A", "D", "R", "S", "W", "*"]
         },
         {
             "id": 161,
             "name": "AquaAura",
-            "modifiers": [
-                "A",
-                "W",
-                "I",
-                "M",
-                "Q",
-                "*"
-            ]
+            "modifiers": ["A", "W", "I", "M", "Q", "*"]
         },
         {
             "id": 162,
             "name": "FireAura",
-            "modifiers": [
-                "B",
-                "F",
-                "J",
-                "N",
-                "R",
-                "*"
-            ]
+            "modifiers": ["B", "F", "J", "N", "R", "*"]
         },
         {
             "id": 163,
             "name": "WoodAura",
-            "modifiers": [
-                "C",
-                "G",
-                "J",
-                "O",
-                "S",
-                "*"
-            ]
+            "modifiers": ["C", "G", "J", "O", "S", "*"]
         },
         {
             "id": 164,
             "name": "ElecAura",
-            "modifiers": [
-                "D",
-                "H",
-                "L",
-                "P",
-                "T",
-                "*"
-            ]
+            "modifiers": ["D", "H", "L", "P", "T", "*"]
         },
         {
             "id": 165,
             "name": "LifeAur1",
-            "modifiers": [
-                "B",
-                "G",
-                "I",
-                "O",
-                "Q",
-                "*"
-            ]
+            "modifiers": ["B", "G", "I", "O", "Q", "*"]
         },
         {
             "id": 166,
             "name": "LifeAur2",
-            "modifiers": [
-                "D",
-                "F",
-                "J",
-                "N",
-                "R",
-                "*"
-            ]
+            "modifiers": ["D", "F", "J", "N", "R", "*"]
         },
         {
             "id": 167,
             "name": "LifeAur3",
-            "modifiers": [
-                "E",
-                "H",
-                "K",
-                "M",
-                "T",
-                "*"
-            ]
+            "modifiers": ["E", "H", "K", "M", "T", "*"]
         },
         {
             "id": 168,
             "name": "MagLine",
-            "modifiers": [
-                "A",
-                "E",
-                "I",
-                "M",
-                "Q",
-                "*"
-            ]
+            "modifiers": ["A", "E", "I", "M", "Q", "*"]
         },
         {
             "id": 169,
             "name": "LavaLine",
-            "modifiers": [
-                "A",
-                "F",
-                "J",
-                "M",
-                "R",
-                "*"
-            ]
+            "modifiers": ["A", "F", "J", "M", "R", "*"]
         },
         {
             "id": 170,
             "name": "IceLine",
-            "modifiers": [
-                "B",
-                "E",
-                "J",
-                "N",
-                "Q",
-                "*"
-            ]
+            "modifiers": ["B", "E", "J", "N", "Q", "*"]
         },
         {
             "id": 171,
             "name": "GrassLne",
-            "modifiers": [
-                "B",
-                "F",
-                "I",
-                "N",
-                "R",
-                "*"
-            ]
+            "modifiers": ["B", "F", "I", "N", "R", "*"]
         },
         {
             "id": 172,
             "name": "LavaStge",
-            "modifiers": [
-                "D",
-                "H",
-                "M",
-                "U",
-                "V",
-                "*"
-            ]
+            "modifiers": ["D", "H", "M", "U", "V", "*"]
         },
         {
             "id": 173,
             "name": "IceStage",
-            "modifiers": [
-                "A",
-                "C",
-                "E",
-                "I",
-                "S",
-                "*"
-            ]
+            "modifiers": ["A", "C", "E", "I", "S", "*"]
         },
         {
             "id": 174,
             "name": "GrassStg",
-            "modifiers": [
-                "B",
-                "D",
-                "H",
-                "P",
-                "R",
-                "*"
-            ]
+            "modifiers": ["B", "D", "H", "P", "R", "*"]
         },
         {
             "id": 175,
             "name": "HolyPanl",
-            "modifiers": [
-                "C",
-                "E",
-                "H",
-                "L",
-                "R",
-                "*"
-            ]
+            "modifiers": ["C", "E", "H", "L", "R", "*"]
         },
         {
             "id": 176,
             "name": "Jealosy",
-            "modifiers": [
-                "E",
-                "J",
-                "O",
-                "R",
-                "U",
-                "*"
-            ]
+            "modifiers": ["E", "J", "O", "R", "U", "*"]
         },
         {
             "id": 177,
             "name": "AntiFire",
-            "modifiers": [
-                "F",
-                "K",
-                "L",
-                "P",
-                "T",
-                "*"
-            ]
+            "modifiers": ["F", "K", "L", "P", "T", "*"]
         },
         {
             "id": 178,
             "name": "AntiElec",
-            "modifiers": [
-                "E",
-                "H",
-                "N",
-                "U",
-                "Y",
-                "*"
-            ]
+            "modifiers": ["E", "H", "N", "U", "Y", "*"]
         },
         {
             "id": 179,
             "name": "AntiWatr",
-            "modifiers": [
-                "A",
-                "D",
-                "Q",
-                "W",
-                "Z",
-                "*"
-            ]
+            "modifiers": ["A", "D", "Q", "W", "Z", "*"]
         },
         {
             "id": 180,
             "name": "AntiDmg",
-            "modifiers": [
-                "C",
-                "J",
-                "M",
-                "R",
-                "S",
-                "*"
-            ]
+            "modifiers": ["C", "J", "M", "R", "S", "*"]
         },
         {
             "id": 181,
             "name": "AntiSwrd",
-            "modifiers": [
-                "D",
-                "H",
-                "I",
-                "M",
-                "T",
-                "*"
-            ]
+            "modifiers": ["D", "H", "I", "M", "T", "*"]
         },
         {
             "id": 182,
             "name": "AntiNavi",
-            "modifiers": [
-                "K",
-                "L",
-                "O",
-                "T",
-                "X",
-                "*"
-            ]
+            "modifiers": ["K", "L", "O", "T", "X", "*"]
         },
         {
             "id": 183,
             "name": "AntiRecv",
-            "modifiers": [
-                "B",
-                "D",
-                "M",
-                "P",
-                "W"
-            ]
+            "modifiers": ["B", "D", "M", "P", "W"]
         },
         {
             "id": 184,
             "name": "Atk+10",
-            "modifiers": [
-                "*"
-            ]
+            "modifiers": ["*"]
         },
         {
             "id": 185,
             "name": "Atk+20",
-            "modifiers": [
-                "*"
-            ]
+            "modifiers": ["*"]
         },
         {
             "id": 186,
             "name": "Atk+30",
-            "modifiers": [
-                "*"
-            ]
+            "modifiers": ["*"]
         },
         {
             "id": 187,
             "name": "Fire+40",
-            "modifiers": [
-                "*"
-            ]
+            "modifiers": ["*"]
         },
         {
             "id": 188,
             "name": "Aqua+40",
-            "modifiers": [
-                "*"
-            ]
+            "modifiers": ["*"]
         },
         {
             "id": 189,
             "name": "Wood+40",
-            "modifiers": [
-                "*"
-            ]
+            "modifiers": ["*"]
         },
         {
             "id": 190,
             "name": "Elec+40",
-            "modifiers": [
-                "*"
-            ]
+            "modifiers": ["*"]
         },
         {
             "id": 191,
             "name": "Navi+20",
-            "modifiers": [
-                "*"
-            ]
+            "modifiers": ["*"]
         },
         {
             "id": 192,
             "name": "Navi+40",
-            "modifiers": [
-                "*"
-            ]
+            "modifiers": ["*"]
         },
         {
             "id": 193,
             "name": "Roll V1",
-            "modifiers": [
-                "R",
-                "*"
-            ]
+            "modifiers": ["R", "*"]
         },
         {
             "id": 194,
             "name": "Roll V2",
-            "modifiers": [
-                "R",
-                "*"
-            ]
+            "modifiers": ["R", "*"]
         },
         {
             "id": 195,
             "name": "Roll V3",
-            "modifiers": [
-                "R",
-                "*"
-            ]
+            "modifiers": ["R", "*"]
         },
         {
             "id": 196,
             "name": "GutsMan V1",
-            "modifiers": [
-                "G",
-                "*"
-            ]
+            "modifiers": ["G", "*"]
         },
         {
             "id": 197,
             "name": "GutsMan V2",
-            "modifiers": [
-                "G",
-                "*"
-            ]
+            "modifiers": ["G", "*"]
         },
         {
             "id": 198,
             "name": "GutsMan V3",
-            "modifiers": [
-                "G",
-                "*"
-            ]
+            "modifiers": ["G", "*"]
         },
         {
             "id": 199,
             "name": "Protoman V1",
-            "modifiers": [
-                "B",
-                "*"
-            ]
+            "modifiers": ["B", "*"]
         },
         {
             "id": 200,
             "name": "Protoman V2",
-            "modifiers": [
-                "B",
-                "*"
-            ]
+            "modifiers": ["B", "*"]
         },
         {
             "id": 201,
             "name": "Protoman V3",
-            "modifiers": [
-                "B",
-                "*"
-            ]
+            "modifiers": ["B", "*"]
         },
         {
             "id": 202,
             "name": "AirMan V1",
-            "modifiers": [
-                "A",
-                "*"
-            ]
+            "modifiers": ["A", "*"]
         },
         {
             "id": 203,
             "name": "AirMan V2",
-            "modifiers": [
-                "A",
-                "*"
-            ]
+            "modifiers": ["A", "*"]
         },
         {
             "id": 204,
             "name": "AirMan V3",
-            "modifiers": [
-                "A",
-                "*"
-            ]
+            "modifiers": ["A", "*"]
         },
         {
             "id": 205,
             "name": "QuickMan V1",
-            "modifiers": [
-                "Q",
-                "*"
-            ]
+            "modifiers": ["Q", "*"]
         },
         {
             "id": 206,
             "name": "QuickMan V2",
-            "modifiers": [
-                "Q",
-                "*"
-            ]
+            "modifiers": ["Q", "*"]
         },
         {
             "id": 207,
             "name": "QuickMan V3",
-            "modifiers": [
-                "Q",
-                "*"
-            ]
+            "modifiers": ["Q", "*"]
         },
         {
             "id": 208,
             "name": "CutMan V1",
-            "modifiers": [
-                "C",
-                "*"
-            ]
+            "modifiers": ["C", "*"]
         },
         {
             "id": 209,
             "name": "CutMan V2",
-            "modifiers": [
-                "C",
-                "*"
-            ]
+            "modifiers": ["C", "*"]
         },
         {
             "id": 210,
             "name": "CutMan V3",
-            "modifiers": [
-                "C",
-                "*"
-            ]
+            "modifiers": ["C", "*"]
         },
         {
             "id": 211,
             "name": "ShadowMan V1",
-            "modifiers": [
-                "S",
-                "*"
-            ]
+            "modifiers": ["S", "*"]
         },
         {
             "id": 212,
             "name": "ShadowMan V2",
-            "modifiers": [
-                "S",
-                "*"
-            ]
+            "modifiers": ["S", "*"]
         },
         {
             "id": 213,
             "name": "ShadowMan V3",
-            "modifiers": [
-                "S",
-                "*"
-            ]
+            "modifiers": ["S", "*"]
         },
         {
             "id": 214,
             "name": "KnightMan V1",
-            "modifiers": [
-                "K",
-                "*"
-            ]
+            "modifiers": ["K", "*"]
         },
         {
             "id": 215,
             "name": "KnightMan V2",
-            "modifiers": [
-                "K",
-                "*"
-            ]
+            "modifiers": ["K", "*"]
         },
         {
             "id": 216,
             "name": "KnightMan V3",
-            "modifiers": [
-                "K",
-                "*"
-            ]
+            "modifiers": ["K", "*"]
         },
         {
             "id": 217,
             "name": "MagnetMan V1",
-            "modifiers": [
-                "M",
-                "*"
-            ]
+            "modifiers": ["M", "*"]
         },
         {
             "id": 218,
             "name": "MagnetMan V2",
-            "modifiers": [
-                "M",
-                "*"
-            ]
+            "modifiers": ["M", "*"]
         },
         {
             "id": 219,
             "name": "MagnetMan V3",
-            "modifiers": [
-                "M",
-                "*"
-            ]
+            "modifiers": ["M", "*"]
         },
         {
             "id": 220,
             "name": "FreezeMan V1",
-            "modifiers": [
-                "F",
-                "*"
-            ]
+            "modifiers": ["F", "*"]
         },
         {
             "id": 221,
             "name": "FreezeMan V2",
-            "modifiers": [
-                "F",
-                "*"
-            ]
+            "modifiers": ["F", "*"]
         },
         {
             "id": 222,
             "name": "FreezeMan V3",
-            "modifiers": [
-                "F",
-                "*"
-            ]
+            "modifiers": ["F", "*"]
         },
         {
             "id": 223,
             "name": "HeatMan V1",
-            "modifiers": [
-                "H",
-                "*"
-            ]
+            "modifiers": ["H", "*"]
         },
         {
             "id": 224,
             "name": "HeatMan V2",
-            "modifiers": [
-                "H",
-                "*"
-            ]
+            "modifiers": ["H", "*"]
         },
         {
             "id": 225,
             "name": "HeatMan V3",
-            "modifiers": [
-                "H",
-                "*"
-            ]
+            "modifiers": ["H", "*"]
         },
         {
             "id": 226,
             "name": "ToadMan V1",
-            "modifiers": [
-                "T",
-                "*"
-            ]
+            "modifiers": ["T", "*"]
         },
         {
             "id": 227,
             "name": "ToadMan V2",
-            "modifiers": [
-                "T",
-                "*"
-            ]
+            "modifiers": ["T", "*"]
         },
         {
             "id": 228,
             "name": "ToadMan V3",
-            "modifiers": [
-                "T",
-                "*"
-            ]
+            "modifiers": ["T", "*"]
         },
         {
             "id": 229,
             "name": "ThunderMan V1",
-            "modifiers": [
-                "T",
-                "*"
-            ]
+            "modifiers": ["T", "*"]
         },
         {
             "id": 230,
             "name": "ThunderMan V2",
-            "modifiers": [
-                "T",
-                "*"
-            ]
+            "modifiers": ["T", "*"]
         },
         {
             "id": 231,
             "name": "ThunderMan V3",
-            "modifiers": [
-                "T",
-                "*"
-            ]
+            "modifiers": ["T", "*"]
         },
         {
             "id": 232,
             "name": "SnakeMan V1",
-            "modifiers": [
-                "S",
-                "*"
-            ]
+            "modifiers": ["S", "*"]
         },
         {
             "id": 233,
             "name": "SnakeMan V2",
-            "modifiers": [
-                "S",
-                "*"
-            ]
+            "modifiers": ["S", "*"]
         },
         {
             "id": 234,
             "name": "SnakeMan V3",
-            "modifiers": [
-                "S",
-                "*"
-            ]
+            "modifiers": ["S", "*"]
         },
         {
             "id": 235,
             "name": "GateMan V1",
-            "modifiers": [
-                "G",
-                "*"
-            ]
+            "modifiers": ["G", "*"]
         },
         {
             "id": 236,
             "name": "GateMan V2",
-            "modifiers": [
-                "G",
-                "*"
-            ]
+            "modifiers": ["G", "*"]
         },
         {
             "id": 237,
             "name": "GateMan V3",
-            "modifiers": [
-                "G",
-                "*"
-            ]
+            "modifiers": ["G", "*"]
         },
         {
             "id": 238,
             "name": "PharaohMan V1",
-            "modifiers": [
-                "P",
-                "*"
-            ]
+            "modifiers": ["P", "*"]
         },
         {
             "id": 239,
             "name": "PharaohMan V2",
-            "modifiers": [
-                "P",
-                "*"
-            ]
+            "modifiers": ["P", "*"]
         },
         {
             "id": 240,
             "name": "PharaohMan V3",
-            "modifiers": [
-                "P",
-                "*"
-            ]
+            "modifiers": ["P", "*"]
         },
         {
             "id": 241,
             "name": "NapalmMan V1",
-            "modifiers": [
-                "N",
-                "*"
-            ]
+            "modifiers": ["N", "*"]
         },
         {
             "id": 242,
             "name": "NapalmMan V2",
-            "modifiers": [
-                "N",
-                "*"
-            ]
+            "modifiers": ["N", "*"]
         },
         {
             "id": 243,
             "name": "NapalmMan V3",
-            "modifiers": [
-                "N",
-                "*"
-            ]
+            "modifiers": ["N", "*"]
         },
         {
             "id": 244,
             "name": "PlanetMan V1",
-            "modifiers": [
-                "P",
-                "*"
-            ]
+            "modifiers": ["P", "*"]
         },
         {
             "id": 245,
             "name": "PlanetMan V2",
-            "modifiers": [
-                "P",
-                "*"
-            ]
+            "modifiers": ["P", "*"]
         },
         {
             "id": 246,
             "name": "PlanetMan V3",
-            "modifiers": [
-                "P",
-                "*"
-            ]
+            "modifiers": ["P", "*"]
         },
         {
             "id": 247,
             "name": "Bass V1",
-            "modifiers": [
-                "F",
-                "*"
-            ]
+            "modifiers": ["F", "*"]
         },
         {
             "id": 248,
             "name": "Bass V2",
-            "modifiers": [
-                "F",
-                "*"
-            ]
+            "modifiers": ["F", "*"]
         },
         {
             "id": 249,
             "name": "Bass V3",
-            "modifiers": [
-                "X",
-                "*"
-            ]
+            "modifiers": ["X", "*"]
         },
         {
             "id": 250,
             "name": "BgRedWav",
-            "modifiers": [
-                "F",
-                "H",
-                "P",
-                "R",
-                "S",
-                "*"
-            ]
+            "modifiers": ["F", "H", "P", "R", "S", "*"]
         },
         {
             "id": 251,
             "name": "FreezBom",
-            "modifiers": [
-                "A",
-                "I",
-                "J",
-                "Q",
-                "U",
-                "*"
-            ]
+            "modifiers": ["A", "I", "J", "Q", "U", "*"]
         },
         {
             "id": 252,
             "name": "Sparker",
-            "modifiers": [
-                "C",
-                "E",
-                "G",
-                "K",
-                "V",
-                "*"
-            ]
+            "modifiers": ["C", "E", "G", "K", "V", "*"]
         },
         {
             "id": 253,
             "name": "GaiaSwrd",
-            "modifiers": [
-                "D",
-                "L",
-                "N",
-                "W",
-                "Y",
-                "*"
-            ]
+            "modifiers": ["D", "L", "N", "W", "Y", "*"]
         },
         {
             "id": 254,
             "name": "BlkBomb",
-            "modifiers": [
-                "B",
-                "F",
-                "G",
-                "P",
-                "R",
-                "*"
-            ]
+            "modifiers": ["B", "F", "G", "P", "R", "*"]
         },
         {
             "id": 255,
             "name": "FtrSword",
-            "modifiers": [
-                "A",
-                "I",
-                "L",
-                "S",
-                "Y",
-                "*"
-            ]
+            "modifiers": ["A", "I", "L", "S", "Y", "*"]
         },
         {
             "id": 256,
             "name": "KngtSwrd",
-            "modifiers": [
-                "F",
-                "J",
-                "K",
-                "M",
-                "Q",
-                "*"
-            ]
+            "modifiers": ["F", "J", "K", "M", "Q", "*"]
         },
         {
             "id": 257,
             "name": "HeroSwrd",
-            "modifiers": [
-                "E",
-                "N",
-                "O",
-                "T",
-                "Z",
-                "*"
-            ]
+            "modifiers": ["E", "N", "O", "T", "Z", "*"]
         },
         {
             "id": 258,
             "name": "Meteors",
-            "modifiers": [
-                "B",
-                "H",
-                "O",
-                "R",
-                "V",
-                "*"
-            ]
+            "modifiers": ["B", "H", "O", "R", "V", "*"]
         },
         {
             "id": 259,
             "name": "Poltrgst",
-            "modifiers": [
-                "E",
-                "P",
-                "R",
-                "U",
-                "W",
-                "*"
-            ]
+            "modifiers": ["E", "P", "R", "U", "W", "*"]
         },
         {
             "id": 260,
             "name": "FireGspl",
-            "modifiers": [
-                "*"
-            ]
+            "modifiers": ["*"]
         },
         {
             "id": 261,
             "name": "AquaGspl",
-            "modifiers": [
-                "*"
-            ]
+            "modifiers": ["*"]
         },
         {
             "id": 262,
             "name": "ElecGspl",
-            "modifiers": [
-                "*"
-            ]
+            "modifiers": ["*"]
         },
         {
             "id": 263,
             "name": "WoodGspl",
-            "modifiers": [
-                "*"
-            ]
+            "modifiers": ["*"]
         },
         {
             "id": 264,
             "name": "GateSP",
-            "modifiers": [
-                "*"
-            ]
+            "modifiers": ["*"]
         },
         {
             "id": 265,
             "name": "Snctuary",
-            "modifiers": [
-                "*"
-            ]
+            "modifiers": ["*"]
         }
     ]
 }

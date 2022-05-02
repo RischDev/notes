@@ -1,3 +1,5 @@
+/** @format */
+
 import { useState, useCallback, Suspense } from 'react';
 import styles from './styles/Route.Module.css';
 import Menu from './Menu';
@@ -7,7 +9,7 @@ import useMatchMedia from '../../common/Functions';
 import useSuspenseResource from '../../common/useSuspense';
 
 function Route(props) {
-    let path = "";
+    let path = '';
     if (props.match != null) {
         path = props.match.params.routePath;
     }
@@ -34,42 +36,62 @@ function RouteImpl(props) {
     } else {
         notes = props.notesResource.read();
     }
-    const Items = require('../../../resources/' + notes.game + '/ItemNames.json');
+    const Items = require('../../../resources/' +
+        notes.game +
+        '/ItemNames.json');
 
-    let defaultMode = "list";
+    let defaultMode = 'list';
     let defaultTrackerDisplay = true;
     // If on mobile, swap to presenter mode by default, and hide the tracker
     if (useMatchMedia('(max-width: 600px)')) {
-        defaultMode = "presenter";
+        defaultMode = 'presenter';
         defaultTrackerDisplay = false;
     }
 
     const [showNotes, setShowNotes] = useState(true);
     const [showTracker, setShowTracker] = useState(defaultTrackerDisplay);
     const [mode, setMode] = useState(defaultMode);
-    const [foundItems, setFoundItems] = useState(JSON.parse(localStorage.getItem("foundItems-" + notes.game)));
-    const [foundModifiers, setFoundModifiers] = useState(JSON.parse(localStorage.getItem("foundModifiers-" + notes.game)));
+    const [foundItems, setFoundItems] = useState(
+        JSON.parse(localStorage.getItem('foundItems-' + notes.game)),
+    );
+    const [foundModifiers, setFoundModifiers] = useState(
+        JSON.parse(localStorage.getItem('foundModifiers-' + notes.game)),
+    );
 
     // Update foundItems and foundModifiers if nothing was in local storage
     if (foundItems == null || foundItems.length === 0) {
-        setFoundItems(JSON.parse(JSON.stringify(require('../../../resources/' + notes.game + '/DefaultFoundItems.json'))));
+        setFoundItems(
+            JSON.parse(
+                JSON.stringify(
+                    require('../../../resources/' +
+                        notes.game +
+                        '/DefaultFoundItems.json'),
+                ),
+            ),
+        );
     }
 
     if (Items.modifiers && foundModifiers == null) {
-        setFoundModifiers(JSON.parse(JSON.stringify(require('../../../resources/' + notes.game + '/DefaultFoundModifiers.json'))));
+        setFoundModifiers(
+            JSON.parse(
+                JSON.stringify(
+                    require('../../../resources/' +
+                        notes.game +
+                        '/DefaultFoundModifiers.json'),
+                ),
+            ),
+        );
     }
 
-    const changeMode = useCallback(
-        () => {
-            setMode(prevMode => prevMode === "list" ? "presenter" : "list");
-        },
-        []
-    );
+    const changeMode = useCallback(() => {
+        setMode((prevMode) => (prevMode === 'list' ? 'presenter' : 'list'));
+    }, []);
 
     const updateTracker = useCallback(
         (id, modifier) => {
             let newFoundItems = [...foundItems];
-            let newFoundModifiers = foundModifiers !== null ? [...foundModifiers] : null;
+            let newFoundModifiers =
+                foundModifiers !== null ? [...foundModifiers] : null;
             if (modifier == null) {
                 if (newFoundItems.includes(id)) {
                     newFoundItems.splice(newFoundItems.indexOf(id), 1);
@@ -81,7 +103,10 @@ function RouteImpl(props) {
                 }
             } else {
                 if (newFoundModifiers[id].includes(modifier)) {
-                    newFoundModifiers[id].splice(newFoundModifiers[id].indexOf(modifier), 1);
+                    newFoundModifiers[id].splice(
+                        newFoundModifiers[id].indexOf(modifier),
+                        1,
+                    );
                     if (newFoundModifiers[id].length === 0) {
                         newFoundItems.splice(newFoundItems.indexOf(id), 1);
                     }
@@ -96,50 +121,62 @@ function RouteImpl(props) {
             setFoundItems(newFoundItems);
             setFoundModifiers(newFoundModifiers);
 
-            localStorage.setItem("foundItems-" + notes.game, JSON.stringify(newFoundItems));
-            localStorage.setItem("foundModifiers-" + notes.game, JSON.stringify(newFoundModifiers));
+            localStorage.setItem(
+                'foundItems-' + notes.game,
+                JSON.stringify(newFoundItems),
+            );
+            localStorage.setItem(
+                'foundModifiers-' + notes.game,
+                JSON.stringify(newFoundModifiers),
+            );
         },
-        [foundItems, foundModifiers, notes]
+        [foundItems, foundModifiers, notes],
     );
 
-    const resetTracker = useCallback(
-        () => {
-            let newFoundItems = JSON.parse(JSON.stringify(require('../../../resources/' + notes.game + '/DefaultFoundItems.json')));
-            let newFoundModifiers = foundModifiers;
-            if (newFoundModifiers != null)  {
-                newFoundModifiers = JSON.parse(JSON.stringify(require('../../../resources/' + notes.game + '/DefaultFoundModifiers.json')));
-            }
+    const resetTracker = useCallback(() => {
+        let newFoundItems = JSON.parse(
+            JSON.stringify(
+                require('../../../resources/' +
+                    notes.game +
+                    '/DefaultFoundItems.json'),
+            ),
+        );
+        let newFoundModifiers = foundModifiers;
+        if (newFoundModifiers != null) {
+            newFoundModifiers = JSON.parse(
+                JSON.stringify(
+                    require('../../../resources/' +
+                        notes.game +
+                        '/DefaultFoundModifiers.json'),
+                ),
+            );
+        }
 
-            setFoundItems(newFoundItems);
-            setFoundModifiers(newFoundModifiers);
+        setFoundItems(newFoundItems);
+        setFoundModifiers(newFoundModifiers);
 
-            localStorage.setItem("foundItems-" + notes.game, JSON.stringify(newFoundItems));
-            localStorage.setItem("foundModifiers-" + notes.game, JSON.stringify(newFoundModifiers));
-        },
-        [foundModifiers, notes]
-    );
+        localStorage.setItem(
+            'foundItems-' + notes.game,
+            JSON.stringify(newFoundItems),
+        );
+        localStorage.setItem(
+            'foundModifiers-' + notes.game,
+            JSON.stringify(newFoundModifiers),
+        );
+    }, [foundModifiers, notes]);
 
-    const updateNotesDisplay = useCallback(
-        () => {
-            setShowNotes(prevShowNotes => !prevShowNotes);
-        },
-        []
-    );
+    const updateNotesDisplay = useCallback(() => {
+        setShowNotes((prevShowNotes) => !prevShowNotes);
+    }, []);
 
-    const updateTrackerDisplay = useCallback(
-        () => {
-            setShowTracker(prevShowTracker => !prevShowTracker);
-        },
-        []
-    );
+    const updateTrackerDisplay = useCallback(() => {
+        setShowTracker((prevShowTracker) => !prevShowTracker);
+    }, []);
 
-    const swapNotesAndTracker = useCallback(
-        () => {
-            setShowNotes(prevShowNotes => !prevShowNotes);
-            setShowTracker(prevShowTracker => !prevShowTracker);
-        },
-        []
-    );
+    const swapNotesAndTracker = useCallback(() => {
+        setShowNotes((prevShowNotes) => !prevShowNotes);
+        setShowTracker((prevShowTracker) => !prevShowTracker);
+    }, []);
 
     return (
         <div className={`${styles.wrapper}`}>

@@ -1,3 +1,5 @@
+/** @format */
+
 import React from 'react';
 import PreviewImage from './PreviewImage';
 import Icon from '../../../common/Icon';
@@ -11,7 +13,7 @@ class SectionImage extends React.PureComponent {
 
     onChange(e) {
         const image = e.target.files[0];
-        const name = e.target.name.split("-");
+        const name = e.target.name.split('-');
         const sectionId = parseInt(name[1]);
 
         this.getBase64(image, sectionId, this.props.updateImage);
@@ -21,7 +23,7 @@ class SectionImage extends React.PureComponent {
         let reader = new FileReader();
         reader.readAsDataURL(file);
         reader.onload = function () {
-            callback(sectionId, reader.result)
+            callback(sectionId, reader.result);
         };
         reader.onerror = function (error) {
             console.log('Error: ', error);
@@ -29,11 +31,23 @@ class SectionImage extends React.PureComponent {
     }
 
     render() {
-        return(
+        return (
             <div>
-                <label htmlFor={"image-" + this.props.sectionId}>Image: </label>
-                <input type="file" name={"image-" + this.props.sectionId} onChange={this.onChange} />
-                <Icon src="/icons/delete.png" id={"deleteImage-" + this.props.sectionId} size="small" hover={true} hidden={this.props.image == null} altText="X" onClick={this.props.deleteImage} />
+                <label htmlFor={'image-' + this.props.sectionId}>Image: </label>
+                <input
+                    type="file"
+                    name={'image-' + this.props.sectionId}
+                    onChange={this.onChange}
+                />
+                <Icon
+                    src="/icons/delete.png"
+                    id={'deleteImage-' + this.props.sectionId}
+                    size="small"
+                    hover={true}
+                    hidden={this.props.image == null}
+                    altText="X"
+                    onClick={this.props.deleteImage}
+                />
                 <PreviewImage image={this.props.image} />
             </div>
         );

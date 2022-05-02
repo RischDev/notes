@@ -1,3 +1,5 @@
+/** @format */
+
 import React from 'react';
 import Modifiers from './Modifiers';
 import styles from './styles/Item.Module.css';
@@ -9,9 +11,9 @@ class Item extends React.Component {
         super(props);
 
         this.theme = {};
-        if (props.game.includes("MMBN")) {
+        if (props.game.includes('MMBN')) {
             this.theme = themeMMBN;
-        } else if (props.game.includes("MMSF")) {
+        } else if (props.game.includes('MMSF')) {
             this.theme = themeMMSF;
         }
 
@@ -19,8 +21,8 @@ class Item extends React.Component {
             id: props.id,
             name: props.name,
             type: props.type,
-            game: props.game
-        }
+            game: props.game,
+        };
 
         this.updateFound = this.updateFound.bind(this);
     }
@@ -30,16 +32,45 @@ class Item extends React.Component {
     }
 
     render() {
-        if (this.state.id >= this.state.type.low && this.state.id <= this.state.type.high) {
-            const foundClass = this.props.found ? styles.found : "";
+        if (
+            this.state.id >= this.state.type.low &&
+            this.state.id <= this.state.type.high
+        ) {
+            const foundClass = this.props.found ? styles.found : '';
 
-            return(
+            return (
                 <div>
-                    <div id={this.state.id} className={`${styles.item} ${this.theme[this.state.type.id]} ${this.theme.item} ${foundClass}`} onClick={this.updateFound}>
-                        <div className={`${styles.title} ${this.theme.title}`}>{(this.state.id - this.props.low + 1).toString().padStart(3, "0")} {this.state.name}</div>
-                        <img className={`${styles.itemArt} ${this.theme.itemArt}`} src={"/items/" + this.state.game + "/" + this.state.id + ".png"} alt={this.state.name + " art"} />
+                    <div
+                        id={this.state.id}
+                        className={`${styles.item} ${
+                            this.theme[this.state.type.id]
+                        } ${this.theme.item} ${foundClass}`}
+                        onClick={this.updateFound}>
+                        <div className={`${styles.title} ${this.theme.title}`}>
+                            {(this.state.id - this.props.low + 1)
+                                .toString()
+                                .padStart(3, '0')}{' '}
+                            {this.state.name}
+                        </div>
+                        <img
+                            className={`${styles.itemArt} ${this.theme.itemArt}`}
+                            src={
+                                '/items/' +
+                                this.state.game +
+                                '/' +
+                                this.state.id +
+                                '.png'
+                            }
+                            alt={this.state.name + ' art'}
+                        />
                     </div>
-                    <Modifiers id={this.state.id} modifiers={this.props.modifiers} game={this.state.game} updateTracker={this.props.updateTracker} foundModifiers={this.props.foundModifiers} />
+                    <Modifiers
+                        id={this.state.id}
+                        modifiers={this.props.modifiers}
+                        game={this.state.game}
+                        updateTracker={this.props.updateTracker}
+                        foundModifiers={this.props.foundModifiers}
+                    />
                 </div>
             );
         }

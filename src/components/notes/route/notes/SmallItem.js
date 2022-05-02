@@ -1,3 +1,5 @@
+/** @format */
+
 import React from 'react';
 import styles from './styles/SmallItem.Module.css';
 import themeMMBN from './styles/themes/MMBN/MMBN-SmallItem.Module.css';
@@ -9,15 +11,17 @@ class SmallItem extends React.Component {
         super(props);
 
         this.theme = {};
-        if (props.game.includes("MMBN")) {
+        if (props.game.includes('MMBN')) {
             this.theme = themeMMBN;
-        } else if (props.game.includes("MMSF")) {
+        } else if (props.game.includes('MMSF')) {
             this.theme = themeMMSF;
         }
 
-        let Items = require('../../../../resources/' + props.game + '/ItemNames.json');
-        let name = "";
-        let className = "";
+        let Items = require('../../../../resources/' +
+            props.game +
+            '/ItemNames.json');
+        let name = '';
+        let className = '';
         if (Items.Items[props.id] != null) {
             name = Items.Items[props.id].name;
         }
@@ -33,8 +37,8 @@ class SmallItem extends React.Component {
             id: props.id,
             name: name,
             class: className,
-            game: props.game
-        }
+            game: props.game,
+        };
 
         this.updateFound = this.updateFound.bind(this);
     }
@@ -44,14 +48,37 @@ class SmallItem extends React.Component {
     }
 
     render() {
-        const foundClass = this.props.found ? styles.found : "";
-        return(
+        const foundClass = this.props.found ? styles.found : '';
+        return (
             <div>
-                <div id={this.state.id} className={`${styles.item} ${this.theme.item} ${this.theme[this.state.class]} ${foundClass}`} onClick={this.updateFound}>
-                    <div className={`${styles.title} ${this.theme.title}`}>{this.state.name}</div>
-                    <img className={`${styles.itemArt} ${this.theme.itemArt}`} src={"/items/" + this.state.game + "/" + this.state.id + ".png"} alt={this.state.name + " art"} />
+                <div
+                    id={this.state.id}
+                    className={`${styles.item} ${this.theme.item} ${
+                        this.theme[this.state.class]
+                    } ${foundClass}`}
+                    onClick={this.updateFound}>
+                    <div className={`${styles.title} ${this.theme.title}`}>
+                        {this.state.name}
+                    </div>
+                    <img
+                        className={`${styles.itemArt} ${this.theme.itemArt}`}
+                        src={
+                            '/items/' +
+                            this.state.game +
+                            '/' +
+                            this.state.id +
+                            '.png'
+                        }
+                        alt={this.state.name + ' art'}
+                    />
                 </div>
-                <SmallModifiers id={this.state.id} modifiers={this.props.modifiers} game={this.state.game} updateTracker={this.props.updateTracker} foundModifiers={this.props.foundModifiers} />
+                <SmallModifiers
+                    id={this.state.id}
+                    modifiers={this.props.modifiers}
+                    game={this.state.game}
+                    updateTracker={this.props.updateTracker}
+                    foundModifiers={this.props.foundModifiers}
+                />
             </div>
         );
     }

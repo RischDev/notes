@@ -1,3 +1,5 @@
+<!-- @format -->
+
 # TeamBN Notes Tool
 
 This notes tool is designed to allow runners to create routes in a JSON format that can be parsed and displayed in a neat format, and integrate their route with the tracking tool.
@@ -14,7 +16,7 @@ Upload your file into the `public/notes` directory.
 
 ## Step 3: Update routes.json (Optional)
 
-*You may skip this step if you are only updating an existing route.*
+_You may skip this step if you are only updating an existing route._
 
 Update the `src/notes/routes.json` file to include your route.
 

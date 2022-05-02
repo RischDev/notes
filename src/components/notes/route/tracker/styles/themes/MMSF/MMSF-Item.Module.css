@@ -1,3 +1,5 @@
+/** @format */
+
 .item {
     height: 150px;
     font-family: SFBold;
@@ -14,13 +16,13 @@
 }
 
 .Standard {
-	background: #fbba20;
+    background: #fbba20;
 }
 
 .Mega {
-	background: #28aafb;
+    background: #28aafb;
 }
 
 .Giga {
-	background: #db2020;
+    background: #db2020;
 }

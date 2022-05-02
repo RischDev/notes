@@ -1,12 +1,14 @@
-import React, { Suspense} from 'react';
+/** @format */
+
+import React, { Suspense } from 'react';
 import styles from './styles/RouteForm.Module.css';
 import Route from '../route/Route';
 import SectionList from './SectionList';
 import RouteInfo from './RouteInfo';
 import useSuspenseResource from '../../common/useSuspense';
 
-const equal = require("deep-equal");
-const routes = require("../../../notes/routes.json");
+const equal = require('deep-equal');
+const routes = require('../../../notes/routes.json');
 
 function RouteForm(props) {
     const path = props.match.params.path;
@@ -39,19 +41,21 @@ class RouteFormImpl extends React.Component {
         }
 
         let route = {
-            title: "",
-            path: "",
+            title: '',
+            path: '',
             game: gameId,
-            version: "1.0",
+            version: '1.0',
             initialState: initialState,
-            sections: [{
-                id: 0,
-                text: [],
-                items: []
-            }],
+            sections: [
+                {
+                    id: 0,
+                    text: [],
+                    items: [],
+                },
+            ],
             preview: false,
-            numSections: 1
-        }
+            numSections: 1,
+        };
 
         if (path != null) {
             route = props.notesResource.read();
@@ -90,7 +94,7 @@ class RouteFormImpl extends React.Component {
     addSection(e) {
         e.preventDefault();
 
-        const nameParts = e.target.id.split("-");
+        const nameParts = e.target.id.split('-');
         const sectionId = parseInt(nameParts[1]);
 
         let newSections = this.state.sections;
@@ -108,7 +112,7 @@ class RouteFormImpl extends React.Component {
 
         this.setState({
             sections: newSections,
-            numSections: this.state.numSections + 1
+            numSections: this.state.numSections + 1,
         });
     }
 
@@ -116,7 +120,7 @@ class RouteFormImpl extends React.Component {
         let reader = new FileReader();
         reader.readAsDataURL(file);
         reader.onload = function () {
-            callback(reader.result, id)
+            callback(reader.result, id);
         };
         reader.onerror = function (error) {
             console.log('Error: ', error);
@@ -129,13 +133,13 @@ class RouteFormImpl extends React.Component {
         newRoute.sections[id].image = data;
 
         this.setState({
-            route: newRoute
+            route: newRoute,
         });
     }
 
     importText(text) {
-        text = text.replace(/(\r\n|\n|\r)/gm, "\n");
-        const lines = text.split("\n");
+        text = text.replace(/(\r\n|\n|\r)/gm, '\n');
+        const lines = text.split('\n');
         let newSections = [];
 
         let sectionId = 0;
@@ -145,15 +149,15 @@ class RouteFormImpl extends React.Component {
             const section = {
                 id: sectionId,
                 text: [],
-                items: []
-            }
+                items: [],
+            };
 
             let textId = 0;
-            while (line !== "") {
+            while (line !== '') {
                 const text = {
                     id: textId,
-                    text: line
-                }
+                    text: line,
+                };
 
                 section.text.push(text);
                 i++;
@@ -162,7 +166,7 @@ class RouteFormImpl extends React.Component {
                 if (i < lines.length) {
                     line = lines[i];
                 } else {
-                    line = "";
+                    line = '';
                 }
             }
 
@@ -184,7 +188,7 @@ class RouteFormImpl extends React.Component {
 
     handleUpload(file, callback) {
         let reader = new FileReader();
-        reader.readAsText(file, "UTF-8");
+        reader.readAsText(file, 'UTF-8');
         reader.onload = function () {
             callback(reader.result);
         };
@@ -195,20 +199,21 @@ class RouteFormImpl extends React.Component {
 
     handleInputChange(e) {
         const target = e.target;
-        const value = target.type === 'checkbox' ? target.checked : target.value;
+        const value =
+            target.type === 'checkbox' ? target.checked : target.value;
         const name = target.name;
 
         let newRoute = this.state;
 
-        if (name.includes("textImport")) {
+        if (name.includes('textImport')) {
             this.handleUpload(e.target.files[0], this.importText);
-        } else if (name.includes("jsonImport")) {
+        } else if (name.includes('jsonImport')) {
             this.handleUpload(e.target.files[0], this.importJSON);
-        } else if (name.includes("game")) {
+        } else if (name.includes('game')) {
             newRoute[name] = value;
 
             // Reset state for each section, update initial state
-            if (value !== "") {
+            if (value !== '') {
                 newRoute.initialState = routes[value].initialState;
             } else {
                 newRoute.initialState = null;
@@ -220,18 +225,20 @@ class RouteFormImpl extends React.Component {
         this.setState(newRoute);
 
         try {
-            localStorage.setItem("lastRouteEdit", JSON.stringify(newRoute));
-        } catch(e) {
-            console.log("Unable to save route to local storage. Route is likely too large.")
+            localStorage.setItem('lastRouteEdit', JSON.stringify(newRoute));
+        } catch (e) {
+            console.log(
+                'Unable to save route to local storage. Route is likely too large.',
+            );
             console.log(e);
-            localStorage.setItem("lastRouteEdit", null);
+            localStorage.setItem('lastRouteEdit', null);
         }
     }
 
     moveSectionUp(e) {
         e.preventDefault();
 
-        const nameParts = e.target.id.split("-");
+        const nameParts = e.target.id.split('-');
         const sectionId = parseInt(nameParts[1]);
 
         // Stringify then parse JSON to create deep copy.
@@ -246,14 +253,14 @@ class RouteFormImpl extends React.Component {
         newSections[sectionId - 1] = chosenSection;
 
         this.setState({
-            sections: newSections
-        })
+            sections: newSections,
+        });
     }
 
     moveSectionDown(e) {
         e.preventDefault();
 
-        const nameParts = e.target.id.split("-");
+        const nameParts = e.target.id.split('-');
         const sectionId = parseInt(nameParts[1]);
 
         // Stringify then parse JSON to create deep copy.
@@ -268,14 +275,14 @@ class RouteFormImpl extends React.Component {
         newSections[sectionId + 1] = chosenSection;
 
         this.setState({
-            sections: newSections
-        })
+            sections: newSections,
+        });
     }
 
     deleteSection(e) {
         e.preventDefault();
 
-        const nameParts = e.target.id.split("-");
+        const nameParts = e.target.id.split('-');
         const sectionId = parseInt(nameParts[1]);
 
         // JSON stringify, then JSON parse to make a deep copy.
@@ -289,26 +296,30 @@ class RouteFormImpl extends React.Component {
 
         this.setState({
             sections: newSections,
-            numSections: this.state.numSections - 1
+            numSections: this.state.numSections - 1,
         });
     }
 
     updateNumSections() {
-
         this.setState({
-            numSections: Math.min(this.state.numSections + 10, this.state.sections.length)
-        })
+            numSections: Math.min(
+                this.state.numSections + 10,
+                this.state.sections.length,
+            ),
+        });
     }
 
     loadLastRouteEdit(e) {
         e.preventDefault();
 
-        let newRoute = JSON.parse(localStorage.getItem("lastRouteEdit"));
+        let newRoute = JSON.parse(localStorage.getItem('lastRouteEdit'));
 
         if (newRoute != null) {
             this.setState(newRoute);
         } else {
-            alert("Error: No route found in local storage. Either there is nothing to load, or your route may have been too large. When your route gets large, try downloading the JSON file periodically to save your progress.");
+            alert(
+                'Error: No route found in local storage. Either there is nothing to load, or your route may have been too large. When your route gets large, try downloading the JSON file periodically to save your progress.',
+            );
         }
     }
 
@@ -321,12 +332,14 @@ class RouteFormImpl extends React.Component {
             game: this.state.game,
             version: this.state.version,
             initialState: this.state.initialState,
-            sections: this.state.sections
-        }
+            sections: this.state.sections,
+        };
 
         let a = document.createElement('a');
-        a.href = "data:text/json;base64;charset=utf-8," + btoa(JSON.stringify(route));
-        a.download = route.path + ".json";
+        a.href =
+            'data:text/json;base64;charset=utf-8,' +
+            btoa(JSON.stringify(route));
+        a.download = route.path + '.json';
         a.click();
     }
 
@@ -337,30 +350,36 @@ class RouteFormImpl extends React.Component {
         this.setState(newRoute);
 
         try {
-            localStorage.setItem("lastRouteEdit", JSON.stringify(newRoute));
-        } catch(e) {
-            console.log("Unable to save route to local storage. Route is likely too large.")
+            localStorage.setItem('lastRouteEdit', JSON.stringify(newRoute));
+        } catch (e) {
+            console.log(
+                'Unable to save route to local storage. Route is likely too large.',
+            );
             console.log(e);
-            localStorage.setItem("lastRouteEdit", null);
+            localStorage.setItem('lastRouteEdit', null);
         }
     }
 
     swapPreview() {
         this.setState({
             preview: !this.state.preview,
-            numSections: 10
+            numSections: 10,
         });
     }
 
     render() {
         if (this.state.preview) {
-            return(
+            return (
                 <div>
-                    <Route notes={this.state} preview={true} swapPreview={this.swapPreview}  />
+                    <Route
+                        notes={this.state}
+                        preview={true}
+                        swapPreview={this.swapPreview}
+                    />
                 </div>
             );
         } else {
-            return(
+            return (
                 <form className={`${styles.wrapper} ${styles.form}`}>
                     <RouteInfo
                         title={this.state.title}
