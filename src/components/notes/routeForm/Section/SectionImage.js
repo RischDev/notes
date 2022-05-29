@@ -8,6 +8,8 @@ import styles from './styles/SectionImage.Module.css';
 function shouldUpdate(oldProps, newProps) {
     if (oldProps.image !== newProps.image) {
         return false;
+    } else if (oldProps.updateImage !== newProps.updateImage) {
+        return false;
     }
 
     return true;

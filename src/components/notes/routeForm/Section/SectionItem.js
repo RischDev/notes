@@ -13,6 +13,8 @@ function shouldUpdate(oldProps, newProps) {
         return false;
     } else if (oldProps.item.modifier !== newProps.item.modifier) {
         return false;
+    } else if (oldProps.updateItem !== newProps.updateItem) {
+        return false;
     }
 
     return true;

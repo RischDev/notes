@@ -39,7 +39,7 @@ const SectionState = memo((props) => {
                             <input type="text" className={styles.textInput} defaultValue={props.state[key].value} onChange={ (e) => { onStateValueChange(key, e.target.value) } } />
                             <input type="checkbox" className={styles.checkbox} checked={props.state[key].shown} onChange={ (e) => { onStateShownChange(key, e.target.checked) } } />
                         </div>
-                    ))}
+                    )}
                 </div>
                 <div className="col-2">
                     <Button text="Delete State" size="medium" onClick={props.deleteState} />
