@@ -15,6 +15,7 @@ function Menu(props) {
         showTracker,
         mode,
         foundModifiers,
+        folderEditView,
         setContext
     } = useContext(NotesContext);
 
@@ -98,6 +99,11 @@ function Menu(props) {
                 <Button text={showNotesText} size="medium" onClick={updateNotesDisplay} />
                 <Button text={showTrackerText} size="medium" onClick={updateTrackerDisplay} />
                 <Button text={modeText} size="large" onClick={changeMode} />
+                Folder Edit View: <select name="folderEditDisplay" value={folderEditView} onChange={ (e) => setContext({ folderEditView: e.target.value}) }>
+                    <option value="Actions">Actions</option>
+                    <option value="Differences">Differences</option>
+                    <option value="Inputs">Inputs</option>
+                </select>
                 {previewButton}
             </div>
         );

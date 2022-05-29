@@ -1,0 +1,37 @@
+.wrapper {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	align-items: center;
+	width: 100%;
+	text-align: left;
+}
+
+.checkbox {
+    margin: 5px auto;
+    width: 20px;
+    height: 20px;
+    padding: 0 5px;
+}
+
+.select {
+    font-size: 12px;
+    height: 29px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    width: 70px;
+    vertical-align: top;
+}
+
+.itemDropdown {
+    width: 100px;
+}
+
+.spacer {
+    width: 70px;
+    margin-right: 5px;
+}
+
+.btn {
+    margin-right: 5px;
+}

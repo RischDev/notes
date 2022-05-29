@@ -1,8 +1,8 @@
 /** @format */
 
 .icon {
-    margin: 11px 5px;
-    vertical-align: middle;
+    margin: 5px;
+    vertical-align: top;
     display: inline-block;
 }
 
@@ -24,4 +24,12 @@
 
 .hidden {
     visibility: hidden;
+}
+
+.grayscale {
+    filter: grayscale(100%);
+}
+
+.grayscale:hover {
+    filter: none;
 }

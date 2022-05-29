@@ -1,15 +1,18 @@
 /** @format */
 
 .select {
-    width: 150px;
-    height: 32px;
-    margin: 5px;
+    width: 100px;
+    height: 30px;
+    margin-right: 5px;
     border-radius: 5px;
-    font-size: 16px;
+    padding: 0;
+    font-size: 12px;
+    vertical-align: top;
 }
 
 .buffer {
-    width: 150px;
+    width: 100px;
     display: inline-block;
-    margin: 0 5px;
+    margin: 0;
+    margin-right: 5px;
 }

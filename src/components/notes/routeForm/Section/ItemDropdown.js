@@ -3,7 +3,7 @@
 import { useContext, memo } from 'react';
 import GameContext from '../../../common/GameContext';
 import styles from './styles/ItemDropdown.Module.css';
-import Icon from '../../../common/Icon';
+import Button from '../../../common/Button';
 
 function shouldUpdate(oldProps, newProps) {
     if (oldProps.item !== newProps.item) {
@@ -56,7 +56,7 @@ const ItemDropdown = memo((props) => {
         if (props.type === "text") {
             return(
                 <span className={`${styles.buffer}`}>
-                    <Icon src="/icons/add.png" size="small" hover={true} hidden={false} altText="+" onClick={addDropdown} />
+                    <Button text={"Add " + gameInfo.name} size="medium" onClick={addDropdown} />
                 </span>
             );
         }

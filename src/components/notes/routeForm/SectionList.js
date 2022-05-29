@@ -107,12 +107,36 @@ function SectionList(props) {
             state = JSON.parse(JSON.stringify(route.initialState));
         }
 
-        // Setup the previous folder to be the same as the starting folder, and clear the folder edit.
-        state.prevFolder = state.folder;
-        state.folderEdit.value = [];
-        state.folderEdit.shown = false;
-
         return state;
+    }
+
+    const getLastFolderEdit = (id) => {
+        // Check previous sections for the last folder edit value
+        let folderEdit = null;
+        for (let i = id - 1; i >= 0; i--) {
+            if (route.sections[i].folderEdit != null) {
+                folderEdit = JSON.parse(JSON.stringify(route.sections[i].folderEdit));
+                break;
+            }
+        }
+
+        // If no state was found, use initialState
+        if (folderEdit == null) {
+            folderEdit = JSON.parse(JSON.stringify(route.initialFolderEdit));
+        }
+
+        // Setup the previous folder to be the same as the starting folder, and clear the folder edit.
+        folderEdit.prevFolder = folderEdit.folder;
+        folderEdit.value = [{
+            id: 0,
+            action: "",
+            item1: -1,
+            modifier1: "",
+            item2: -1,
+            modifier2: ""
+        }];
+
+        return folderEdit;
     }
 
     return (
@@ -135,6 +159,7 @@ function SectionList(props) {
                         addSection={addSection}
                         deleteSection={deleteSection}
                         getLastState={getLastState}
+                        getLastFolderEdit={getLastFolderEdit}
                     />
                 )}
                 <div className="bottom-buffer"> </div>

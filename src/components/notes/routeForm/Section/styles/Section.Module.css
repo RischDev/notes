@@ -1,20 +1,56 @@
 /** @format */
 
 .wrapper {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	width: 100%;
 }
 
 .section {
     width: 100%;
-    padding: 5px 0;
-    text-align: center;
+    padding: 5px  0;
 }
 
 .header {
     display: inline-block;
-    margin: 10px 5px;
-    font-size: 29px;
+    margin: 10px 0px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.label {
+    font-size: 12px;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.textContainer {
+    min-width: 500px;
+    width: fit-content;
+    flex-grow: 2;
+    margin-bottom: 10px;
+}
+
+.itemsContainer {
+    min-width: 225px;
+    margin-bottom: 10px;
+}
+
+.imageContainer {
+    width: fit-content;
+    max-width: 50%;
+    flex-grow: 1;
+    margin-bottom: 10px;
+}
+
+.stateContainer {
+    width: 225px;
+    flex-grow: 1;
+    margin-bottom: 10px;
+}
+
+.folderEditContainer {
+    width: 225px;
+    margin-bottom: 10px;
 }

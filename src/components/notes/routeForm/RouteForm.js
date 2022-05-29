@@ -42,6 +42,7 @@ const getInitialState = (path, game, route) => {
             game: path != null ? route.game : game,
             version: path != null ? route.version : "1.0",
             initialState: game != null ? gameInfo.initialState : {},
+            initialFolderEdit: game != null ? gameInfo.initialFolderEdit : {},
             sections: path != null ? route.sections : [{
                 id: 0,
                 text: [],

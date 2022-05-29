@@ -1,9 +1,9 @@
 import { useContext}  from 'react';
-//import Icon from '../../../common/Icon';
+import Icon from '../../../common/Icon';
 import Button from '../../../common/Button';
 import GameContext from '../../../common/GameContext';
 import { performFolderEditAction, getNewFolder } from '../../../common/Functions';
-import styles from './styles/SectionState.Module.css';
+import styles from './styles/SectionFolderEdit.Module.css';
 
 function ItemOption(props) {
     const gameInfo = useContext(GameContext);
@@ -27,7 +27,7 @@ function ItemDropdown(props) {
     // For Sort, return a list of the sort types for the game, and a checkbox to reverse the sort.
     if ((props.action.action === "Reg" && props.id === 1) || (props.action.action === "Remove" && props.id === 1) || props.action.action === "Swap" || (props.action.action === "Replace" && props.id === 1)) {
         return (
-            <select value={props.action["item" + props.id]} onChange={ (e) => { props.onUpdate(props.action.id, e.target.value) } }>
+            <select value={props.action["item" + props.id]} className={`${styles.select} ${styles.itemDropdown}`} onChange={ (e) => { props.onUpdate(props.action.id, e.target.value) } }>
                 <option value={-1}> </option>
                 {props.folder.map((item) =>
                     <ItemOption key={item.slot} slot={item.slot} item={item.item} modifier={item.modifier} game={props.game} />
@@ -38,37 +38,40 @@ function ItemDropdown(props) {
         // Generate a list of all items with modifiers
         const itemList = [];
         for (let item of gameInfo.Items) {
-            for (let modifier of item.modifiers) {
+            if (gameInfo.modifiers) {
+                for (let modifier of item.modifiers) {
+                    itemList.push({
+                        id: item.id,
+                        name: item.name,
+                        modifier: modifier
+                    });
+                }
+            } else {
                 itemList.push({
                     id: item.id,
-                    name: item.name,
-                    modifier: modifier
-                });
+                    name: item.name
+                })
             }
         }
         return (
-            <select value={props.action["item" + props.id] + "-" + props.action["modifier" + props.id]} onChange={ (e) => { props.onUpdate(props.action.id, e.target.value) } }>
+            <select value={props.action["item" + props.id] + (gameInfo.modifiers ? ("-" + props.action["modifier" + props.id]) : "")} className={`${styles.select} ${styles.itemDropdown}`} onChange={ (e) => { props.onUpdate(props.action.id, e.target.value) } }>
                 <option value={-1}> </option>
                 {itemList.map((item) =>
-                    <option value={item.id + "-" + item.modifier} key={item.id + item.modifier}>{item.name} {item.modifier}</option>
+                    <option value={item.id + (gameInfo.modifiers ? ("-" + item.modifier) : "")} key={item.id + (gameInfo.modifiers ? item.modifier : "")}>{item.name} {item.modifier}</option>
                 )}
             </select>
         )
     } else if ((props.action.action === "Sort") && props.id === 1) {
         return(
-            <select value={props.action.item1} onChange={ (e) => { props.onUpdate(props.action.id, e.target.value) } }>
+            <select value={props.action.item1 + (props.action.item2 ? "-r" : "")} className={`${styles.select} ${styles.itemDropdown}`} onChange={ (e) => { props.onUpdate(props.action.id, e.target.value) } }>
                 <option value={""}> </option>
                 {gameInfo.sortTypes.map((sortType) =>
                     <option value={sortType}>{sortType}</option>
                 )}
+                {gameInfo.sortTypes.map((sortType) =>
+                    <option value={sortType + "-r"}>R. {sortType}</option>
+                )}
             </select>
-        )
-    } else if ((props.action.action === "Sort") && props.id === 2) {
-        return (
-            <span>
-                <label>Reverse: </label>
-                <input type="checkbox" checked={props.action.item2} onChange={ (e) => { props.onUpdate(props.action.id, e.target.checked) } } />
-            </span>
         )
     }
     return null;
@@ -77,16 +80,28 @@ function ItemDropdown(props) {
 function Action(props) {
     const gameInfo = useContext(GameContext);
 
-    return (
-        <div className={styles.wrapper}>
-            <select value={props.action.action} onChange={ (e) => { props.updateAction(props.action.id, e.target.value) } }>
-                <option value=""> </option>
-                {gameInfo.actionTypes.map((action) =>
-                    <option key={action} value={action}>{action}</option>
-                )}
-            </select>
-            <ItemDropdown action={props.action} id={1} folder={props.folder} onUpdate={props.updateItem1} />
+    // For formatting purposes, add an extra spacer div between the 2 dropdowns for actions that require both.
+    let secondRow;
+    if (props.action.action === "Replace" || props.action.action === "Swap") {
+        secondRow = <div className={`${styles.wrapper}`}>
+            <div className={`${styles.spacer}`} />
             <ItemDropdown action={props.action} id={2} folder={props.folder} onUpdate={props.updateItem2} />
+        </div>;
+    }
+
+    return (
+        <div>
+            <div className={`${styles.wrapper}`}>
+                <select value={props.action.action} className={`${styles.select}`} onChange={ (e) => { props.updateAction(props.action.id, e.target.value) } }>
+                    <option value=""> </option>
+                    {gameInfo.actionTypes.map((action) =>
+                        <option key={action} value={action}>{action}</option>
+                    )}
+                </select>
+                <ItemDropdown action={props.action} id={1} folder={props.folder} onUpdate={props.updateItem1} />
+                <Icon src="/icons/delete.png" id={"deleteAction-" + props.action.id} size="small" altText="X" hover={true} grayscale={true} onClick={ () => { props.deleteAction(props.action.id) } } />
+            </div>
+            {secondRow}
         </div>
     )
 }
@@ -94,11 +109,11 @@ function Action(props) {
 function ActionsList(props) {
     const gameInfo = useContext(GameContext);
     // JSON stringify, then JSON parse to make a deep copy.
-    let tempFolder = JSON.parse(JSON.stringify(props.folder));
+    let tempFolder = JSON.parse(JSON.stringify(props.folderEdit.prevFolder));
     const actionsList = [];
 
     for (const action of props.folderEdit.value) {
-        actionsList.push(<Action key={action.id} action={action} folder={tempFolder} updateAction={props.updateAction} updateItem1={props.updateItem1} updateItem2={props.updateItem2} />)
+        actionsList.push(<Action key={action.id} action={action} folder={tempFolder} updateAction={props.updateAction} updateItem1={props.updateItem1} updateItem2={props.updateItem2} deleteAction={props.deleteAction} />)
 
         tempFolder = performFolderEditAction(tempFolder, action, gameInfo);
     }
@@ -127,7 +142,7 @@ function SectionFolderEdit(props) {
         });
         newFolderEdit.shown = true;
 
-        props.updateFolderEdit(newFolderEdit, props.folder);
+        props.updateFolderEdit(newFolderEdit);
     }
 
     const updateAction = (id, action) => {
@@ -145,53 +160,81 @@ function SectionFolderEdit(props) {
             newFolderEdit.value[id].modifier2 = null;
         }
 
-        const newFolder = getNewFolder(newFolderEdit, props.folder, gameInfo);
+        newFolderEdit.folder = getNewFolder(newFolderEdit, props.folderEdit.prevFolder, gameInfo);
 
-        props.updateFolderEdit(newFolderEdit, newFolder);
+        props.updateFolderEdit(newFolderEdit);
     }
 
     const updateItem1 = (id, item) => {
         const newFolderEdit = JSON.parse(JSON.stringify(props.folderEdit));
         // For the Add action, the value will be a combination of the item's ID and modifier
         if (newFolderEdit.value[id].action === "Add") {
-            const itemParts = item.split("-");
-            newFolderEdit.value[id].item1 = itemParts[0];
-            newFolderEdit.value[id].modifier1 = itemParts[1];
+            if (gameInfo.modifiers) {
+                const itemParts = item.split("-");
+                newFolderEdit.value[id].item1 = itemParts[0];
+                newFolderEdit.value[id].modifier1 = itemParts[1];
+            } else {
+                newFolderEdit.value[id].item1 = item;
+            }
+        } else if (newFolderEdit.value[id].action === "Sort") {
+            if (item.includes("-")) {
+                const itemParts = item.split("-");
+                newFolderEdit.value[id].item1 = itemParts[0];
+                newFolderEdit.value[id].item2 = true;
+            } else {
+                newFolderEdit.value[id].item1 = item;
+                newFolderEdit.value[id].item2 = false;
+            }
         } else {
             newFolderEdit.value[id].item1 = item;
         }
 
-        const newFolder = getNewFolder(newFolderEdit, props.folder, gameInfo);
+        newFolderEdit.folder = getNewFolder(newFolderEdit, props.folderEdit.prevFolder, gameInfo);
 
-        props.updateFolderEdit(newFolderEdit, newFolder)
+        props.updateFolderEdit(newFolderEdit)
     }
 
     const updateItem2 = (id, item) => {
         const newFolderEdit = JSON.parse(JSON.stringify(props.folderEdit));
         // For the Replace action, the value will be a combination of the item's ID and modifier
         if (newFolderEdit.value[id].action === "Replace") {
-            const itemParts = item.split("-");
-            newFolderEdit.value[id].item2 = itemParts[0];
-            newFolderEdit.value[id].modifier2 = itemParts[1];
+            if (gameInfo.modifiers) {
+                const itemParts = item.split("-");
+                newFolderEdit.value[id].item2 = itemParts[0];
+                newFolderEdit.value[id].modifier2 = itemParts[1];
+            } else {
+                newFolderEdit.value[id].item2 = item;
+            }
         } else {
             newFolderEdit.value[id].item2 = item;
         }
 
-        const newFolder = getNewFolder(newFolderEdit, props.folder, gameInfo);
+        newFolderEdit.folder = getNewFolder(newFolderEdit, props.folderEdit.prevFolder, gameInfo);
 
-        props.updateFolderEdit(newFolderEdit, newFolder)
+        props.updateFolderEdit(newFolderEdit)
     }
 
-    if (props.folderEdit.shown) {
+    const deleteAction = (id) => {
+        const newFolderEdit = JSON.parse(JSON.stringify(props.folderEdit));
+        newFolderEdit.value.splice(id, 1);
+
+        newFolderEdit.folder = getNewFolder(newFolderEdit, props.folderEdit.prevFolder, gameInfo);
+
+        props.updateFolderEdit(newFolderEdit);
+    }
+
+    console.log(props.folderEdit);
+    if (props.folderEdit != null) {
         return(
             <div className={styles.wrapper}>
-                <ActionsList folderEdit={props.folderEdit} folder={props.folder} updateAction={updateAction} updateItem1={updateItem1} updateItem2={updateItem2} />
-                <Button text="Add Action" size="medium" onClick={addAction} />
+                <ActionsList folderEdit={props.folderEdit} updateAction={updateAction} updateItem1={updateItem1} updateItem2={updateItem2} deleteAction={deleteAction} />
+                <Button text="Add Action" size="medium" className={`${styles.btn}`} onClick={addAction} />
+                <Button text="Delete Folder Edit" size="medium" className={`${styles.btn}`} onClick={props.deleteFolderEdit} />
             </div>
         );
     }
     return (
-        <Button text="Add Folder Edit" size="medium" onClick={addAction} />
+        <Button text="Add Folder Edit" size="medium" onClick={props.addFolderEdit} />
     );
 }
 

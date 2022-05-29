@@ -49,13 +49,13 @@ const SectionText = memo((props) => {
     }
 
     return(
-        <div>
+        <div className={`${styles.textContainer}`}>
             <textarea className={`${styles.textarea}`} value={props.text.text} placeholder="Text" onChange={onTextUpdate} />
             <ItemDropdown type="text" item={props.text.item} game={game} updateItem={updateItem} />
             <ModifierDropdown type="text" item={props.text.item} modifier={props.text.modifier} updateModifier={updateModifier} />
             <Icon src="/icons/up.png" id={"moveTextUp-" + props.text.id} size="small" hover={true} hidden={props.text.id === 0} altText="Up" onClick={ () => props.moveTextUp(props.text.id) } />
             <Icon src="/icons/down.png" id={"moveTextDown-" + props.text.id} size="small" hover={true} hidden={props.text.id === props.max} altText="Down" onClick={ () => props.moveTextDown(props.text.id) } />
-            <Icon src="/icons/delete.png" id={"deleteText-" + props.text.id} size="small" hover={true} hidden={false} altText="X" onClick={ () => props.deleteText(props.text.id) } />
+            <Icon src="/icons/delete.png" id={"deleteText-" + props.text.id} size="small" hover={true} hidden={false} grayscale={true} altText="X" onClick={ () => props.deleteText(props.text.id) } />
         </div>
     );
 }, shouldUpdate);

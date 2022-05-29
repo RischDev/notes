@@ -61,7 +61,7 @@ const getInitialState = (notes, isMobile) => {
         mode: initialMode,
         foundItems: initialFoundItems,
         foundModifiers: initialFoundModifiers,
-        folderEditView: "Inputs"
+        folderEditView: "Actions"
     }
 }
 

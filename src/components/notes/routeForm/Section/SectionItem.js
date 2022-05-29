@@ -1,6 +1,7 @@
 /** @format */
 
 import React from 'react';
+import styles from'./styles/SectionItem.Module.css';
 import ItemDropdown from './ItemDropdown';
 import ModifierDropdown from './ModifierDropdown';
 import Icon from '../../../common/Icon';
@@ -31,12 +32,12 @@ const SectionItem = React.memo((props) => {
     }
 
     return(
-        <div>
+        <div className={`${styles.itemContainer}`}>
             <ItemDropdown type="section" item={props.item.value} updateItem={updateItem} />
             <ModifierDropdown type="section" item={props.item.value} modifier={props.item.modifier} updateModifier={updateModifier} />
             <Icon src="/icons/up.png" size="small" hover={true} hidden={props.item.id === 0} altText="Up" onClick={ () => props.moveItemUp(props.item.id) } />
             <Icon src="/icons/down.png" size="small" hover={true} hidden={props.item.id === props.max} altText="Down" onClick={ () => props.moveItemDown(props.item.id) } />
-            <Icon src="/icons/delete.png" size="small" hover={true} hidden={false} altText="X" onClick={ () => props.deleteItem(props.item.id) } />
+            <Icon src="/icons/delete.png" size="small" hover={true} hidden={false} grayscale={true} altText="X" onClick={ () => props.deleteItem(props.item.id) } />
         </div>
     );
 }, shouldUpdate);

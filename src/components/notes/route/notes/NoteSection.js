@@ -6,6 +6,7 @@ import Text from './Text';
 import ItemsList from './ItemsList';
 import Image from './Image';
 import State from './State';
+import FolderEdit from './FolderEdit';
 import Icon from '../../../common/Icon';
 import NotesContext from '../../../common/NotesContext';
 import areShallowEqual from 'are-shallow-equal';
@@ -43,6 +44,7 @@ const NoteSection = memo((props) => {
                 <div className="col-6 col-m-12">
                     <Image image={props.section.image} />
                     <State state={props.section.state} game={game} />
+                    <FolderEdit folderEdit={props.section.folderEdit} />
                 </div>
             </div>
         );
@@ -64,6 +66,7 @@ const NoteSection = memo((props) => {
                 <div className="col-6 col-m-12">
                     <Image image={props.section.image} />
                     <State state={props.section.state} game={game} />
+                    <FolderEdit folderEdit={props.section.folderEdit} />
                 </div>
             </div>
         );

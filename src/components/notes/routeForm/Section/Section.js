@@ -9,6 +9,7 @@ import SectionText from './SectionText';
 import SectionItem from './SectionItem';
 import SectionImage from './SectionImage';
 import SectionState from './SectionState';
+import SectionFolderEdit from './SectionFolderEdit';
 
 function Section(props) {
     const gameInfo = useContext(GameContext);
@@ -170,6 +171,27 @@ function Section(props) {
         props.setSection(newSection, props.section.id);
     }, [props]);
 
+    const updateFolderEdit = (folderEdit) => {
+        // JSON stringify, then JSON parse to make a deep copy.
+        let newSection = JSON.parse(JSON.stringify(props.section));
+        newSection.folderEdit = folderEdit;
+        props.setSection(newSection, props.section.id);
+    }
+
+    const addFolderEdit = useCallback((e) => {
+        // Stringify then parse JSON to create deep copy.
+        let newSection = JSON.parse(JSON.stringify(props.section));
+        newSection.folderEdit = props.getLastFolderEdit(props.section.id);
+        props.setSection(newSection, props.section.id);
+    }, [props]);
+
+    const deleteFolderEdit = useCallback((e) => {
+        // Stringify then parse JSON to create deep copy.
+        let newSection = JSON.parse(JSON.stringify(props.section));
+        newSection.folderEdit = null;
+        props.setSection(newSection, props.section.id);
+    }, [props]);
+
     const addStateButton = (!props.section.state && gameInfo) ? <Button text="Add State" size="medium" onClick={addState} /> : "";
 
     return(
@@ -177,9 +199,10 @@ function Section(props) {
             <h3 className={`${styles.header}`}>Section {props.section.id + 1}</h3>
             <Icon src="/icons/up.png" id={"moveSectionUp-" + props.section.id} size="small" altText="Up" hover={true} hidden={props.section.id === 0} onClick={ () => { props.moveSectionUp(props.section.id) } } />
             <Icon src="/icons/down.png" id={"moveSectionDown-" + props.section.id} size="small" altText="Down" hover={true} hidden={props.section.id === props.max} onClick={ () => { props.moveSectionDown(props.section.id) } } />
-            <Icon src="/icons/delete.png" id={"deleteSection-" + props.section.id} size="small" altText="X" hover={true} onClick={ () => { props.deleteSection(props.section.id) } } />
+            <Icon src="/icons/delete.png" id={"deleteSection-" + props.section.id} size="small" altText="X" hover={true} grayscale={true} onClick={ () => { props.deleteSection(props.section.id) } } />
             <div className={`${styles.wrapper}`}>
-                <div className="col-6">
+                <div className={`${styles.textContainer}`}>
+                    <span className={`${styles.label}`}>Text</span>
                     {props.section.text.map((text) =>
                         <SectionText
                             key={"text-" + text.id}
@@ -192,8 +215,10 @@ function Section(props) {
                             deleteText={deleteText}
                         />
                     )}
+                    <Button text="Add Text" size="medium" onClick={addText} />
                 </div>
-                <div className="col-3">
+                <div className={`${styles.itemsContainer}`}>
+                    <span className={`${styles.label}`}>{gameInfo.name}s</span>
                     {props.section.items.map((item) =>
                         <SectionItem
                             key={"item-" + item.id}
@@ -205,21 +230,19 @@ function Section(props) {
                             deleteItem={deleteItem}
                         />
                     )}
+                    <Button text={"Add " + gameInfo.name} size="medium" onClick={addItem} />
                 </div>
-                <div className="col-3">
+                <div className={`${styles.imageContainer}`}>
+                    <span className={`${styles.label}`}>Image</span>
                     <SectionImage image={props.section.image} updateImage={updateImage} deleteImage={deleteImage} />
-                    <SectionState state={props.section.state} updateState={updateState} deleteState={deleteState} />
                 </div>
-            </div>
-            <div className={`${styles.wrapper}`}>
-                <div className="col-6">
-                    <Button text="Add Text" size="medium" onClick={addText} />
+                <div className={`${styles.stateContainer}`}>
+                    <span className={`${styles.label}`}>State</span>
+                    <SectionState state={props.section.state} updateState={updateState} deleteState={deleteState} addState={addState} />
                 </div>
-                <div className="col-3">
-                     <Button text={"Add " + gameInfo.name} size="medium" onClick={addItem} />
-                </div>
-                <div className="col-3">
-                    {addStateButton}
+                <div className={`${styles.folderEditContainer}`}>
+                    <span className={`${styles.label}`}>Folder Edit</span>
+                    <SectionFolderEdit folderEdit={props.section.folderEdit} updateFolderEdit={updateFolderEdit} deleteFolderEdit={deleteFolderEdit} addFolderEdit={addFolderEdit} />
                 </div>
             </div>
             <Button text="Add Section" id={"addSection-" + (props.section.id + 1)} size="medium" onClick={ () => { props.addSection(props.section.id + 1) } } />

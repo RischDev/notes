@@ -3,6 +3,7 @@
 import React from 'react';
 import PreviewImage from './PreviewImage';
 import Icon from '../../../common/Icon';
+import styles from './styles/SectionImage.Module.css';
 
 function shouldUpdate(oldProps, newProps) {
     if (oldProps.image !== newProps.image) {
@@ -24,11 +25,15 @@ const SectionImage = React.memo((props) => {
         };
     }
 
+    let deleteIcon;
+    if (props.image != null) {
+        deleteIcon = <Icon src="/icons/delete.png" size="small" hover={true} grayscale={true} altText="X" onClick={props.deleteImage} />
+    }
+
     return(
-        <div>
-            <label>Image: </label>
+        <div className={`${styles.imageField}`}>
             <input type="file" onChange={ (e) => { getBase64(e.target.files[0], props.updateImage) } } />
-            <Icon src="/icons/delete.png" size="small" hover={true} hidden={props.image == null} altText="X" onClick={props.deleteImage} />
+            {deleteIcon}
             <PreviewImage image={props.image} />
         </div>
     );

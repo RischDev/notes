@@ -174,6 +174,29 @@
             "shown": false
         }
     },
+    "elementOrder": {
+        "none": 1,
+        "elec": 2,
+        "fire": 3,
+        "aqua": 4,
+        "wood": 5
+    },
+    "sortTypes": [
+        "ID",
+        "Alphabet",
+        "Alphabet (JP)",
+        "Code",
+        "Attack",
+        "Element",
+        "Quantity"
+    ],
+    "actionTypes": [
+        "Remove",
+        "Add",
+        "Swap",
+        "Replace",
+        "Sort"
+    ],
     "types": [
         {
             "name": "Battlechips",

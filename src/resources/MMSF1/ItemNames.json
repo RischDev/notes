@@ -2,6 +2,159 @@
     "name": "Card",
     "modifier": false,
     "itemsShown": 5,
+    "initialState": {
+        "keys": ["Max HP", "Zenny", "Cloakers", "Standard", "Mega", "Giga"],
+        "Max HP": {
+            "value": 100,
+            "shown": true
+        },
+        "Zenny": {
+            "value": 0,
+            "shown": true
+        },
+        "Cloakers": {
+            "value": 0,
+            "shown": true
+        },
+        "Standard": {
+            "value": 11,
+            "shown": true
+        },
+        "Mega": {
+            "value": 0,
+            "shown": true
+        },
+        "Giga": {
+            "value": 0,
+            "shown": true
+        },
+        "folder": [
+            {
+                "slot": 0,
+                "item": 0
+            },
+            {
+                "slot": 1,
+                "item": 0
+            },
+            {
+                "slot": 2,
+                "item": 0
+            },
+            {
+                "slot": 3,
+                "item": 3
+            },
+            {
+                "slot": 4,
+                "item": 3
+            },
+            {
+                "slot": 5,
+                "item": 3
+            },
+            {
+                "slot": 6,
+                "item": 9
+            },
+            {
+                "slot": 7,
+                "item": 9
+            },
+            {
+                "slot": 8,
+                "item": 9
+            },
+            {
+                "slot": 9,
+                "item": 13
+            },
+            {
+                "slot": 10,
+                "item": 13
+            },
+            {
+                "slot": 11,
+                "item": 13
+            },
+            {
+                "slot": 12,
+                "item": 22
+            },
+            {
+                "slot": 13,
+                "item": 22
+            },
+            {
+                "slot": 14,
+                "item": 22
+            },
+            {
+                "slot": 15,
+                "item": 23
+            },
+            {
+                "slot": 16,
+                "item": 23
+            },
+            {
+                "slot": 17,
+                "item": 23
+            },
+            {
+                "slot": 18,
+                "item": 24
+            },
+            {
+                "slot": 19,
+                "item": 24
+            },
+            {
+                "slot": 20,
+                "item": 24
+            },
+            {
+                "slot": 21,
+                "item": 126
+            },
+            {
+                "slot": 22,
+                "item": 126
+            },
+            {
+                "slot": 23,
+                "item": 127
+            },
+            {
+                "slot": 24,
+                "item": 127
+            },
+            {
+                "slot": 25,
+                "item": 134
+            },
+            {
+                "slot": 26,
+                "item": 134
+            },
+            {
+                "slot": 27,
+                "item": 148
+            },
+            {
+                "slot": 28,
+                "item": 149
+            },
+            {
+                "slot": 29,
+                "item": 149
+            }
+        ],
+        "folderEdit": {
+            "value": [],
+            "shown": false
+        }
+    },
     "elementOrder": {
         "none": 1,
         "fire": 2,

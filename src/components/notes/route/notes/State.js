@@ -1,4 +1,3 @@
-import FolderEdit from './FolderEdit';
 import styles from './styles/State.Module.css';
 
 function State(props) {
@@ -15,7 +14,6 @@ function State(props) {
                         </div>
                     </div>
                 )}
-                <FolderEdit folderEdit={props.state.folderEdit} prevFolder={props.state.prevFolder} folder={props.state.folder} />
             </div>
         );
     }

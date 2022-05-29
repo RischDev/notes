@@ -507,8 +507,57 @@ export function getFolderEditInputs(folderEdit, game, actionIndex = 0, cursor = 
             }
             inputs[actionIndex] = actionInputs;
         } else if (action.action === "Replace") {
+            // If in folder, find the chip to be replaced, swap to pack, and select the new chip
+            // If in pack, find the new chip, swap to folder, and select the chip to be replaced.
+            if (state === "folder") {
+                state = "pack";
+                const paths = getPathsToSlot(game, cursor, cursorPosition, action.item1);
+                // If multiple paths returned, we need to test which one works better with the rest of the edit.
+                if (paths.length > 1) {
+                    let bestInputs = Number.MAX_VALUE;
+                    let bestPath = {}
+                    for (const path of paths) {
+                        const tempInputs = getFolderEditInputs(folderEdit, game, actionIndex + 1, path.cursor, path.cursorPosition, sortCursor, state);
+                        if (bestInputs > getNumInputs(tempInputs)) {
+                            bestInputs = getNumInputs(tempInputs);
+                            bestPath = path;
+                            inputs = tempInputs;
+                        }
+                    }
+                    actionInputs = actionInputs + bestPath.path + "A ";
+                } else {
+                    actionInputs = actionInputs + paths[0].path + "A ";
+                    inputs = getFolderEditInputs(folderEdit, game, actionIndex + 1, paths[0].cursor, paths[0].cursorPosition, sortCursor, state);
+                }
 
+                actionInputs = actionInputs + "> (Press A on " + gameInfo.Items[action.item2].name + " " + action.modifier2 + ") ";
+            } else if (state === "pack") {
+                state = "folder";
+                actionInputs = actionInputs + "(Press A on " + gameInfo.Items[action.item2].name + " " + action.modifier2 + ") < ";
+
+                const paths = getPathsToSlot(game, cursor, cursorPosition, action.item1);
+                // If multiple paths returned, we need to test which one works better with the rest of the edit.
+                if (paths.length > 1) {
+                    let bestInputs = Number.MAX_VALUE;
+                    let bestPath = {}
+                    for (const path of paths) {
+                        const tempInputs = getFolderEditInputs(folderEdit, game, actionIndex + 1, path.cursor, path.cursorPosition, sortCursor, state);
+                        if (bestInputs > getNumInputs(tempInputs)) {
+                            bestInputs = getNumInputs(tempInputs);
+                            bestPath = path;
+                            inputs = tempInputs;
+                        }
+                    }
+                    actionInputs = actionInputs + bestPath.path + "A ";
+                } else {
+                    actionInputs = actionInputs + paths[0].path + "A ";
+                    inputs = getFolderEditInputs(folderEdit, game, actionIndex + 1, paths[0].cursor, paths[0].cursorPosition, sortCursor, state);
+                }
+            }
+
+            inputs[actionIndex] = actionInputs;
         } else if (action.action === "Reg" || action.action === "Default") {
+            // TODO: BN6 and SF3 have different buttons to press to actually reg a chip/card
             if (state === "pack") {
                 actionInputs = actionInputs + "< ";
                 state = "folder";
@@ -526,6 +575,14 @@ export function getFolderEditInputs(folderEdit, game, actionIndex = 0, cursor = 
                         bestPath = path;
                         inputs = tempInputs;
                     }
+                }
+                // BN6 requires extra inputs after Select. SF3 is instead Y.
+                if (game === "BN6") {
+                    actionInputs = actionInputs + bestPath.path + "Select ";
+                } else if (game === "SF3") {
+                    actionInputs = actionInputs + bestPath.path + "Y ";
+                } else {
+                    actionInputs = actionInputs + bestPath.path + "Select ";
                 }
                 actionInputs = actionInputs + bestPath.path + "Select ";
             } else {
@@ -586,7 +643,8 @@ export function getFolderEditInputs(folderEdit, game, actionIndex = 0, cursor = 
             inputs = getFolderEditInputs(folderEdit, game, actionIndex + 1, cursor, cursorPosition, sortTypes.indexOf(action.item1), state);
             inputs[actionIndex] = actionInputs;
         } else if (action.action === "Favorite") {
-
+            // Currently ignoring Favorite, as the inputs are different between SF1 and 2, and is not currently
+            // super important to optimizing folder edits.
         }
         return inputs;
     } else {
