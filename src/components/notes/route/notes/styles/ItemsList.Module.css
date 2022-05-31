@@ -1,5 +1,6 @@
-.header {
-    text-align: center;
+.label {
+    font-size: 14px;
+    font-weight: bold;
 }
 
 .itemList {

@@ -1,14 +1,25 @@
 .wrapper {
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: center;
+	justify-content: flex-start;
 	align-items: center;
 	width: 100%;
-	margin: 5px 10px;
+	font-size: 12px;
 }
 
 .action {
     display: block;
     width: 100%;
-    text-align: center;
+    margin-bottom: 5px;
+}
+
+.label {
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.folderLabel {
+    font-size: 12px;
+    font-weight: bold;
 }

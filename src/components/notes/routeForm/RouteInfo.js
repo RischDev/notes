@@ -99,7 +99,7 @@ function RouteInfo(props) {
             },
             gameInfo: gameInfo
         })
-    }, [route]);
+    }, [route, setContext]);
 
     return (
         <div className={`${styles.routeInfo}`}>

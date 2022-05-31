@@ -6,3 +6,14 @@
     justify-content: center;
     width: 100%;
 }
+
+.rightColumn {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    overflow-y: none;
+    max-height: 100vh;
+    width: 35%;
+    padding: 0px 10px;
+    box-sizing: border-box;
+}

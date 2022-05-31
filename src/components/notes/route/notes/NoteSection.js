@@ -32,19 +32,27 @@ const NoteSection = memo((props) => {
 
     if (mode === "list") {
         return (
-            <div id={"section-" + props.section.id} className={`${styles.wrapper} card`} ref={props.noteRef}>
-                <div className="col-4 col-m-12">
-                    <ul>
+            <div id={"section-" + props.section.id} className={`${styles.section} card`} ref={props.noteRef}>
+                <div className={`${styles.wrapper}`}>
+                    <div className={`${styles.textContainer} col-m-12`}>
                         {props.section.text.map((text) =>
                             <Text key={"text-" + text.id} text={text} foundItems={foundItems} foundModifiers={foundModifiers} />
                         )}
-                    </ul>
+                    </div>
+                    <div className={`${styles.itemContainer}`}>
+                        <ItemsList items={props.section.items} updateTracker={props.updateTracker} game={game} foundItems={foundItems} foundModifiers={foundModifiers} />
+                    </div>
                 </div>
-                <ItemsList items={props.section.items} updateTracker={props.updateTracker} game={game} foundItems={foundItems} foundModifiers={foundModifiers} />
-                <div className="col-6 col-m-12">
-                    <Image image={props.section.image} />
-                    <State state={props.section.state} game={game} />
-                    <FolderEdit folderEdit={props.section.folderEdit} />
+                <div className={`${styles.wrapper}`}>
+                    <div className={`${styles.imageContainer}`}>
+                        <Image image={props.section.image} />
+                    </div>
+                    <div className={`${styles.stateContainer}`}>
+                        <State state={props.section.state} game={game} />
+                    </div>
+                    <div className={`${styles.folderEditContainer}`}>
+                        <FolderEdit folderEdit={props.section.folderEdit} />
+                    </div>
                 </div>
             </div>
         );

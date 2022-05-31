@@ -129,9 +129,11 @@ function RouteImpl(props) {
     return (
         <div className={`${styles.wrapper}`}>
             <NotesContext.Provider value={getContextValue()}>
-                <Menu preview={routeContext.preview} swapPreview={props.swapPreview} />
-                <Notes  updateTracker={updateTracker} />
-                <Tracker updateTracker={updateTracker} />
+                <Notes updateTracker={updateTracker} />
+                <div className={`${styles.rightColumn}`}>
+                    <Menu preview={routeContext.preview} swapPreview={props.swapPreview} />
+                    <Tracker updateTracker={updateTracker} />
+                </div>
             </NotesContext.Provider>
         </div>
     );

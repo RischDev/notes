@@ -3,15 +3,16 @@
 .tracker {
     overflow-y: scroll;
     overflow-x: hidden;
-    width: 35%;
-    height: 80vh;
+    width: 100%;
     display: flex;
     flex-wrap: wrap;
     justify-content: left;
+    flex-grow: 1;
 }
 
 .section {
-    margin: 5px 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
 }
 
 .fullSize {

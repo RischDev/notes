@@ -51,8 +51,8 @@ function ItemsList(props) {
 
     if (props.items.length > 0) {
         return (
-            <div className="col-2 col-m-12">
-                <div className={styles.header}>
+            <div>
+                <div className={styles.label}>
                     Potential {Items.name + "s"}
                 </div>
                 <div className={styles.itemList}>
@@ -61,9 +61,7 @@ function ItemsList(props) {
            </div>
         );
     }
-    return (
-        <div className="col-2 col-m-12"> </div>
-    );
+    return null;
 }
 
 export default ItemsList;

@@ -192,8 +192,6 @@ function Section(props) {
         props.setSection(newSection, props.section.id);
     }, [props]);
 
-    const addStateButton = (!props.section.state && gameInfo) ? <Button text="Add State" size="medium" onClick={addState} /> : "";
-
     return(
         <div id={"section-" + props.section.id} className={`${styles.section}`}>
             <h3 className={`${styles.header}`}>Section {props.section.id + 1}</h3>

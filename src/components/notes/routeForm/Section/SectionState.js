@@ -1,7 +1,6 @@
 /** @format */
 
 import { memo } from 'react';
-import Icon from '../../../common/Icon';
 import Button from '../../../common/Button';
 import styles from './styles/SectionState.Module.css';
 import areShallowEqual from 'are-shallow-equal';

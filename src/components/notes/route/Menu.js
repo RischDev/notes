@@ -63,7 +63,7 @@ function Menu(props) {
         [showNotes, showTracker, setContext]
     );
 
-    let modeText = mode === "presenter" ? "Swap to List Mode" : "Swap to Presenter Mode";
+    let modeText = mode === "presenter" ? "List Mode" : "Presenter Mode";
 
     let previewButton = '';
     if (props.preview) {
@@ -71,6 +71,7 @@ function Menu(props) {
             <Button
                 text="Edit Route"
                 size="medium"
+                className={`${styles.btn}`}
                 onClick={props.swapPreview}
             />
         );
@@ -88,23 +89,34 @@ function Menu(props) {
             </div>
         );
     } else {
-        let showNotesText = props.showNotes ? 'Hide Notes' : 'Show Notes';
-        let showTrackerText = props.showTracker
+        let showNotesText = showNotes ? 'Hide Notes' : 'Show Notes';
+        let showTrackerText = showTracker
             ? 'Hide Tracker'
             : 'Show Tracker';
 
         return (
             <div className={`card ${styles.menu}`}>
-                <Button text="Reset Tracker" size="medium" onClick={resetTracker} />
-                <Button text={showNotesText} size="medium" onClick={updateNotesDisplay} />
-                <Button text={showTrackerText} size="medium" onClick={updateTrackerDisplay} />
-                <Button text={modeText} size="large" onClick={changeMode} />
-                Folder Edit View: <select name="folderEditDisplay" value={folderEditView} onChange={ (e) => setContext({ folderEditView: e.target.value}) }>
-                    <option value="Actions">Actions</option>
-                    <option value="Differences">Differences</option>
-                    <option value="Inputs">Inputs</option>
-                </select>
-                {previewButton}
+                <div className={`${styles.col}`}>
+                    <Button text={showNotesText} size="medium" className={`${styles.btn}`} onClick={updateNotesDisplay} />
+                    <Button text={showTrackerText} size="medium" className={`${styles.btn}`} onClick={updateTrackerDisplay} />
+                    <Button text="Reset Tracker" size="medium" className={`${styles.btn}`} onClick={resetTracker} />
+                    <Button text={modeText} size="medium" className={`${styles.btn}`} onClick={changeMode} />
+                </div>
+                <div className={`${styles.col}`}>
+                    {previewButton}
+                </div>
+                <div className={`${styles.col}`}>
+                    <div className={`${styles.label}`}>
+                        Folder Edit View
+                    </div>
+                    <div>
+                        <select name="folderEditDisplay" value={folderEditView} className={`${styles.select}`} onChange={ (e) => setContext({ folderEditView: e.target.value}) }>
+                            <option value="Actions">Actions</option>
+                            <option value="Differences">Differences</option>
+                            <option value="Inputs">Inputs</option>
+                        </select>
+                    </div>
+                </div>
             </div>
         );
     }

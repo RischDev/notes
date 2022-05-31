@@ -62,38 +62,51 @@ function FolderEdit(props) {
 
             return (
                 <div className={`${styles.wrapper}`}>
-                    <h3>Folder Edit</h3>
+                    <div className={`${styles.label}`}>
+                        Folder Edit
+                    </div>
                     {actionsList}
                 </div>
             );
         } else if (folderEditView === "Differences") {
             return (
-                <div className={`${styles.wrapper}`}>
-                    <h3 className="col-12">Folder Edit</h3>
-                    <div className="col-5">
-                        <h4>Previous Folder</h4>
-                        {props.folderEdit.prevFolder.map((slot) =>
-                            <div className="col-12">
-                                {(parseInt(slot.slot) + 1).toString().padStart(2, "0")}. {gameInfo.Items[slot.item].name} {gameInfo.modifiers ? slot.modifier : ""}
-                            </div>
-                        )}
+                <div>
+                    <div className={`${styles.label}`}>
+                        Folder Edit
                     </div>
-                    <div className="col-2">
-                        ->
-                    </div>
-                    <div className="col-5">
-                        <h4>Next Folder</h4>
-                        {props.folderEdit.folder.map((slot) =>
-                            <div className="col-12">
-                                {(parseInt(slot.slot) + 1).toString().padStart(2, "0")}. {gameInfo.Items[slot.item].name} {gameInfo.modifiers ? slot.modifier : ""}
+                    <div className={`${styles.wrapper}`}>
+                        <div className="col-5">
+                            <div className={`${styles.label}`}>
+                                Previous
                             </div>
-                        )}
+                            {props.folderEdit.prevFolder.map((slot) =>
+                                <div className="col-12">
+                                    {(parseInt(slot.slot) + 1).toString().padStart(2, "0")}. {gameInfo.Items[slot.item].name} {gameInfo.modifiers ? slot.modifier : ""}
+                                </div>
+                            )}
+                        </div>
+                        <div className="col-2">
+                            ->
+                        </div>
+                        <div className="col-5">
+                            <div className={`${styles.label}`}>
+                                Next
+                            </div>
+                            {props.folderEdit.folder.map((slot) =>
+                                <div className="col-12">
+                                    {(parseInt(slot.slot) + 1).toString().padStart(2, "0")}. {gameInfo.Items[slot.item].name} {gameInfo.modifiers ? slot.modifier : ""}
+                                </div>
+                            )}
+                        </div>
                     </div>
                 </div>
             )
         } else if (folderEditView === "Inputs") {
             return (
                 <div className={`${styles.wrapper}`}>
+                    <div className={`${styles.label}`}>
+                        Folder Edit
+                    </div>
                     {getFolderEditInputs(props.folderEdit.value, game).map((action) =>
                         <div className="col-12">
                             {action}
