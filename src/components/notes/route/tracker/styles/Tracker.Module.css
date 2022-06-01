@@ -13,6 +13,7 @@
 .section {
     margin-right: 10px;
     margin-bottom: 10px;
+    padding: 5px;
 }
 
 .fullSize {
@@ -20,15 +21,13 @@
 }
 
 .header {
-    width: -moz-calc(100% - 15px);
-    width: -webkit-calc(100% - 15px);
-    width: -o-calc(100% - 15px);
-    width: calc(100% - 15px);
-    margin: 5px 15px;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 5px;
 }
 
 .list {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: flex-start;
 }

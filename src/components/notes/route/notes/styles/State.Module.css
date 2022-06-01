@@ -1,3 +1,9 @@
+.stateContainer {
+    flex-basis: 125px;
+    flex-grow: 1;
+    margin: 5px;
+}
+
 .wrapper {
 	display: flex;
 	flex-wrap: wrap;

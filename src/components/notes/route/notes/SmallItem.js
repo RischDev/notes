@@ -37,7 +37,7 @@ function SmallItem(props) {
         }
     }
     return(
-        <div>
+        <div className={`${styles.wrapper}`}>
             <div id={props.id} className={`${styles.item} ${theme.item} ${theme[typeClass]} ${foundClass}`} onClick={updateFound}>
                 <div className={`${styles.title} ${theme.title}`}>{Items.Items[props.id].name}</div>
                 <img className={`${styles.itemArt} ${theme.itemArt}`} src={"/items/" + game + "/" + props.id + ".png"} alt={Items.Items[props.id] + " art"} />

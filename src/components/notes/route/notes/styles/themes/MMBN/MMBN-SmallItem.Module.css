@@ -20,17 +20,31 @@
     background: #dedeef;
 }
 
+.Battlechips:hover,
+.Standard:hover {
+    background: #aeaebf;
+}
+
 .Mega {
     background: #adefef;
 }
 
-.Giga {
+.Mega:hover {
+    background: #7dbfbf;
 }
 
 .Giga {
     background: #f7cee6;
 }
 
+.Giga:hover {
+    background: #c79ea6;
+}
+
 .PAs {
     background: #f7af40;
+}
+
+.PAs:hover {
+    background: #c77f10;
 }

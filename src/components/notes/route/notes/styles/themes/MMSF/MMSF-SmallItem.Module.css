@@ -19,10 +19,22 @@
     background: #fbba20;
 }
 
+.Standard:hover {
+    background: #cb8a00;
+}
+
 .Mega {
     background: #28aafb;
 }
 
+.Mega:hover {
+    background: #007acb;
+}
+
 .Giga {
     background: #db2020;
+}
+
+.Giga:hover {
+    background: #ab0000;
 }

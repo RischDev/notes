@@ -3,7 +3,7 @@ import styles from './styles/State.Module.css';
 function State(props) {
     if (props.state != null) {
         return (
-            <div>
+            <div className={`${styles.stateContainer}`}>
                 <div className={`${styles.label}`}>
                     State
                 </div>

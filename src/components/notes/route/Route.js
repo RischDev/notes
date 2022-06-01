@@ -5,6 +5,7 @@ import styles from './styles/Route.Module.css';
 import Menu from './Menu';
 import Notes from './notes/Notes';
 import Tracker from './tracker/Tracker';
+import LargeImage from './LargeImage';
 import { useMatchMedia } from '../../common/Functions';
 import RouteContext from '../../common/RouteContext';
 import NotesContext from '../../common/NotesContext';
@@ -126,10 +127,18 @@ function RouteImpl(props) {
         [state, setState]
     );
 
+    const fullscreenImage = useCallback(
+        (image) => {
+            setState({ ...state, fullscreenImage: image });
+        },
+        [state, setState]
+    );
+
     return (
         <div className={`${styles.wrapper}`}>
+            <LargeImage image={state.fullscreenImage} fullscreenImage={fullscreenImage} />
             <NotesContext.Provider value={getContextValue()}>
-                <Notes updateTracker={updateTracker} />
+                <Notes updateTracker={updateTracker} fullscreenImage={fullscreenImage} />
                 <div className={`${styles.rightColumn}`}>
                     <Menu preview={routeContext.preview} swapPreview={props.swapPreview} />
                     <Tracker updateTracker={updateTracker} />

@@ -61,7 +61,7 @@ function FolderEdit(props) {
             }
 
             return (
-                <div className={`${styles.wrapper}`}>
+                <div className={`${styles.folderEditContainer}`}>
                     <div className={`${styles.label}`}>
                         Folder Edit
                     </div>
@@ -70,7 +70,7 @@ function FolderEdit(props) {
             );
         } else if (folderEditView === "Differences") {
             return (
-                <div>
+                <div className={`${styles.folderEditContainer}`}>
                     <div className={`${styles.label}`}>
                         Folder Edit
                     </div>
@@ -103,7 +103,7 @@ function FolderEdit(props) {
             )
         } else if (folderEditView === "Inputs") {
             return (
-                <div className={`${styles.wrapper}`}>
+                <div className={`${styles.folderEditContainer}`}>
                     <div className={`${styles.label}`}>
                         Folder Edit
                     </div>

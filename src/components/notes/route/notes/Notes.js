@@ -160,6 +160,7 @@ function Notes(props) {
                             noteRef={sectionRefs[section.id]}
                             section={section}
                             updateTracker={props.updateTracker}
+                            fullscreenImage={props.fullscreenImage}
                         />
                     )}
                 </div>
@@ -176,6 +177,7 @@ function Notes(props) {
                         updateTracker={props.updateTracker}
                         previousSection={previousSection}
                         nextSection={nextSection}
+                        fullscreenImage={props.fullscreenImage}
                     />
                 </div>
             )

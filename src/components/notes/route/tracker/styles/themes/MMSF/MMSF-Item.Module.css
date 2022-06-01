@@ -1,28 +1,31 @@
 /** @format */
 
 .item {
-    height: 150px;
     font-family: SFBold;
     font-variant-ligatures: discretionary-ligatures;
     text-shadow: 1px 1px 0 #414951;
-}
-
-.title {
-    font-size: 16px;
-}
-
-.itemArt {
-    width: 144px;
 }
 
 .Standard {
     background: #fbba20;
 }
 
+.Standard:hover {
+    background: #cb8a00;
+}
+
 .Mega {
     background: #28aafb;
 }
 
+.Mega:hover {
+    background: #007acb;
+}
+
 .Giga {
     background: #db2020;
+}
+
+.Giga:hover {
+    background: #ab0000;
 }

@@ -44,15 +44,9 @@ const NoteSection = memo((props) => {
                     </div>
                 </div>
                 <div className={`${styles.wrapper}`}>
-                    <div className={`${styles.imageContainer}`}>
-                        <Image image={props.section.image} />
-                    </div>
-                    <div className={`${styles.stateContainer}`}>
-                        <State state={props.section.state} game={game} />
-                    </div>
-                    <div className={`${styles.folderEditContainer}`}>
-                        <FolderEdit folderEdit={props.section.folderEdit} />
-                    </div>
+                    <Image image={props.section.image} onClick={props.fullscreenImage} />
+                    <State state={props.section.state} game={game} />
+                    <FolderEdit folderEdit={props.section.folderEdit} />
                 </div>
             </div>
         );

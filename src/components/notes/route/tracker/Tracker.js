@@ -25,7 +25,7 @@ function Tracker(props) {
                 {Items.types.map((type) =>
                     <div key={"type-" + type.name} className={`card ${styles.section}`}>
                         <div className={styles.header}>
-                            <h2>{type.name}</h2>
+                            {type.name}
                         </div>
                         <div id="Items" className={styles.list}>
                             {Items.Items.map((item) =>

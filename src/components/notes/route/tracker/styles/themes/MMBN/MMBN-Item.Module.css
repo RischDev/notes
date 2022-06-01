@@ -3,31 +3,42 @@
 .item {
     font-family: BN6FontBold;
     text-shadow: 1px 1px 0 #414951;
-    height: 162px;
-}
-
-.title {
-    font-size: 18px;
 }
 
 .itemArt {
-    width: 140px;
     border: 2px solid black;
 }
 
-.BattleChip,
+.Battlechips,
 .Standard {
     background: #dedeef;
+}
+
+.Battlechips:hover,
+.Standard:hover {
+    background: #aeaebf;
 }
 
 .Mega {
     background: #adefef;
 }
 
+.Mega:hover {
+    background: #7dbfbf;
+}
+
 .Giga {
     background: #f7cee6;
 }
 
+.Giga:hover {
+    background: #c79ea6;
+}
+
 .PAs {
     background: #f7af40;
+}
+
+.PAs:hover {
+    background: #c77f10;
 }

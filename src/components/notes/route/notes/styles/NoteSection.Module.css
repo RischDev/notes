@@ -1,6 +1,7 @@
 .section {
 	width: 100%;
 	margin: 5px 10px;
+	padding: 5px;
 }
 
 .wrapper {
@@ -8,7 +9,6 @@
 	flex-wrap: wrap;
 	justify-content: flex-start;
 	align-items: flex-start;
-	width: 100%;
 }
 
 .textContainer {
@@ -17,39 +17,16 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    margin: 10px;
-    margin-right: 5px;
+    margin: 5px;
+    margin-bottom: 0px;
 }
 
 .itemContainer {
     flex-grow: 1;
     flex-basis: 250px;
     max-width: 300px;
-    margin: 10px;
-    margin-left: 0;
-}
-
-.imageContainer {
-    flex-basis: 250px;
-    flex-grow: 1;
-    margin: 10px;
-    margin-right: 5px;
-}
-
-.stateContainer {
-    flex-basis: 125px;
-    flex-grow: 1;
-    margin: 10px;
-    margin-left: 5px;
-    margin-right: 5px;
-}
-
-.folderEditContainer {
-    flex-basis: 125px;
-    min-width: 110px;
-    flex-grow: 1;
-    margin: 10px;
-    margin-left: 5px;
+    margin: 5px;
+    margin-bottom: 0px;
 }
 
 /* For mobile phones: */

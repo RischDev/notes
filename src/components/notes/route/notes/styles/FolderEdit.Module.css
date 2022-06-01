@@ -1,11 +1,18 @@
+.folderEditContainer {
+    flex-basis: 125px;
+    min-width: 110px;
+    flex-grow: 1;
+    font-size: 12px;
+    margin: 5px;
+}
+
 .wrapper {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: flex-start;
 	align-items: center;
 	width: 100%;
-	font-size: 12px;
-}
+};
 
 .action {
     display: block;
