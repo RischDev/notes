@@ -16,7 +16,9 @@
         "Battlechips": {
             "value": 12,
             "shown": true
-        },
+        }
+    },
+    "initialFolderEdit": {
         "folder": [
             {
                 "slot": 0,
@@ -169,10 +171,7 @@
                 "modifier": "F"
             }
         ],
-        "folderEdit": {
-            "value": [],
-            "shown": false
-        }
+        "value": []
     },
     "elementOrder": {
         "none": 1,

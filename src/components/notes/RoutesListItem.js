@@ -4,7 +4,7 @@ import React, { Suspense } from 'react';
 import { Link } from 'react-router-dom';
 import styles from './styles/RoutesListItem.Module.css';
 import Icon from '../common/Icon';
-import useSuspenseResource from '../common/useSuspense';
+import useSuspenseResource from '../common/functions/useSuspense';
 
 function RoutesListItem(props) {
     const path = props.path;

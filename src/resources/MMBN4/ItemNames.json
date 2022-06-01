@@ -32,7 +32,9 @@
         "Giga": {
             "value": 0,
             "shown": true
-        },
+        }
+    },
+    "initialFolderEdit": {
         "folder": [
             {
                 "slot": 0,
@@ -185,10 +187,7 @@
                 "modifier": "*"
             }
         ],
-        "folderEdit": {
-            "value": [],
-            "shown": false
-        }
+        "value": []
     },
     "elementOrder": {
         "fire": 1,

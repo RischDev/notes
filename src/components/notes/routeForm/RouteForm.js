@@ -5,7 +5,7 @@ import styles from './styles/RouteForm.Module.css';
 import Route from '../route/Route';
 import SectionList from './SectionList';
 import RouteInfo from './RouteInfo';
-import useSuspenseResource from '../../common/useSuspense';
+import useSuspenseResource from '../../common/functions/useSuspense';
 import RouteContext from '../../common/RouteContext';
 import GameContext from '../../common/GameContext';
 
@@ -30,6 +30,11 @@ function RouteForm(props) {
 }
 
 const getInitialState = (path, game, route) => {
+    // If no game is specified, try setting the game based on the initial route object.
+    if (game == null) {
+        game = route.game
+    }
+
     let gameInfo = require('../../../resources/ItemNames.json');
     if (game !== "" && game != null) {
         gameInfo = require('../../../resources/' + game + '/ItemNames.json');

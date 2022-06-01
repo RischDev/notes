@@ -1,7 +1,8 @@
 import { useContext } from 'react';
 import styles from './styles/FolderEdit.Module.css';
 import NotesContext from '../../../common/NotesContext';
-import { performFolderEditAction, getFolderEditInputs } from '../../../common/Functions';
+import performFolderEditAction from '../../../common/functions/performFolderEditAction';
+import getFolderEditInputs from '../../../common/functions/getFolderEditInputs';
 
 function Action(props) {
     const {
@@ -20,7 +21,7 @@ function Action(props) {
         console.log(props.folder);
         text = "Remove slot " + (parseInt(props.action.item1) + 1) + " (" + gameInfo.Items[props.folder[props.action.item1].item].name + (gameInfo.modifiers ? (" " + props.folder[props.action.item1].modifier) : "") + ")";
     } else if (props.action.action === "Swap") {
-        text = "Swap slot " + (parseInt(props.action.item1) + 1)  + " (" + gameInfo.Items[props.folder[props.action.item1].item].name + (gameInfo.modifiers ? (" " + props.folder[props.action.item1].modifier) : "") + ") with slot " + (parseInt(props.action.item2) + 1)  + " (" + gameInfo.Items[props.folder[props.action.item2].item].name + (gameInfo.modifiers ? (" " + props.folder[props.action.item1].modifier) : "") + ")";
+        text = "Swap slot " + (parseInt(props.action.item1) + 1)  + " (" + gameInfo.Items[props.folder[props.action.item1].item].name + (gameInfo.modifiers ? (" " + props.folder[props.action.item1].modifier) : "") + ") with slot " + (parseInt(props.action.item2) + 1)  + " (" + gameInfo.Items[props.folder[props.action.item2].item].name + (gameInfo.modifiers ? (" " + props.folder[props.action.item2].modifier) : "") + ")";
     } else if (props.action.action === "Replace") {
         text = "Replace slot " + (parseInt(props.action.item1) + 1)  + " (" + gameInfo.Items[props.folder[props.action.item1].item].name + (gameInfo.modifiers ? (" " + props.folder[props.action.item1].modifier) : "") + ") with " + gameInfo.Items[props.action.item2].name + (gameInfo.modifiers ? (" " + props.action.modifier2) : "");
     } else if (props.action.action === "Reg") {
@@ -29,6 +30,8 @@ function Action(props) {
         text = "Default slot " + (parseInt(props.action.item1) + 1)  + " (" + gameInfo.Items[props.folder[props.action.item1].item].name + (gameInfo.modifiers ? (" " + props.folder[props.action.item1].modifier) : "") + ")";
     } else if (props.action.action === "Sort") {
         text = "Sort by " + (props.action.item2 ? "Reverse " : "") + props.action.item1;
+    } else if (props.action.action === "Tag") {
+        text = "Tag slot " + (parseInt(props.action.item1) + 1)  + " (" + gameInfo.Items[props.folder[props.action.item1].item].name + (gameInfo.modifiers ? (" " + props.folder[props.action.item1].modifier) : "") + ") with slot " + (parseInt(props.action.item2) + 1)  + " (" + gameInfo.Items[props.folder[props.action.item2].item].name + (gameInfo.modifiers ? (" " + props.folder[props.action.item2].modifier) : "") + ")";
     }
 
     return (
@@ -69,6 +72,7 @@ function FolderEdit(props) {
                 </div>
             );
         } else if (folderEditView === "Differences") {
+            console.log(props.folderEdit.folder);
             return (
                 <div className={`${styles.folderEditContainer}`}>
                     <div className={`${styles.label}`}>
@@ -80,7 +84,7 @@ function FolderEdit(props) {
                                 Previous
                             </div>
                             {props.folderEdit.prevFolder.map((slot) =>
-                                <div className="col-12">
+                                <div className={`${slot.regged ? styles.regged : ""} ${slot.tagged ? styles.tagged : ""}`}>
                                     {(parseInt(slot.slot) + 1).toString().padStart(2, "0")}. {gameInfo.Items[slot.item].name} {gameInfo.modifiers ? slot.modifier : ""}
                                 </div>
                             )}
@@ -93,7 +97,7 @@ function FolderEdit(props) {
                                 Next
                             </div>
                             {props.folderEdit.folder.map((slot) =>
-                                <div className="col-12">
+                                <div className={`${slot.regged ? styles.regged : ""} ${slot.tagged ? styles.tagged : ""}`}>
                                     {(parseInt(slot.slot) + 1).toString().padStart(2, "0")}. {gameInfo.Items[slot.item].name} {gameInfo.modifiers ? slot.modifier : ""}
                                 </div>
                             )}

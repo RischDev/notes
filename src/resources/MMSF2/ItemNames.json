@@ -27,7 +27,9 @@
         "Giga": {
             "value": 0,
             "shown": true
-        },
+        }
+    },
+    "initialFolderEdit": {
         "folder": [
             {
                 "slot": 0,
@@ -150,10 +152,7 @@
                 "item": 149
             }
         ],
-        "folderEdit": {
-            "value": [],
-            "shown": false
-        }
+        "value": []
     },
     "elementOrder": {
         "none": 1,
@@ -176,8 +175,7 @@
         "Add",
         "Swap",
         "Replace",
-        "Sort",
-        "Favorite"
+        "Sort"
     ],
     "types": [
         {

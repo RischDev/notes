@@ -2,7 +2,8 @@ import { useContext}  from 'react';
 import Icon from '../../../common/Icon';
 import Button from '../../../common/Button';
 import GameContext from '../../../common/GameContext';
-import { performFolderEditAction, getNewFolder } from '../../../common/Functions';
+import performFolderEditAction from '../../../common/functions/performFolderEditAction';
+import getNewFolder from '../../../common/functions/getNewFolder';
 import styles from './styles/SectionFolderEdit.Module.css';
 
 function ItemOption(props) {
@@ -20,12 +21,12 @@ function ItemOption(props) {
 function ItemDropdown(props) {
     const gameInfo = useContext(GameContext);
 
-    // For Reg and Remove, return a list of items in the folder
+    // For Reg/Default and Remove, return a list of items in the folder
     // For Add, return a list of all possible items
-    // For Swap, return 2 lists of items in the folder
+    // For Swap and Tag, return 2 lists of items in the folder
     // For Replace, return a list of items in the folder, and a list of all possible items.
     // For Sort, return a list of the sort types for the game, and a checkbox to reverse the sort.
-    if ((props.action.action === "Reg" && props.id === 1) || (props.action.action === "Remove" && props.id === 1) || props.action.action === "Swap" || (props.action.action === "Replace" && props.id === 1)) {
+    if ((props.action.action === "Reg" && props.id === 1) || (props.action.action === "Default" && props.id === 1) || (props.action.action === "Remove" && props.id === 1) || props.action.action === "Swap" || (props.action.action === "Replace" && props.id === 1) || props.action.action === "Tag") {
         return (
             <select value={props.action["item" + props.id]} className={`${styles.select} ${styles.itemDropdown}`} onChange={ (e) => { props.onUpdate(props.action.id, e.target.value) } }>
                 <option value={-1}> </option>
@@ -82,7 +83,7 @@ function Action(props) {
 
     // For formatting purposes, add an extra spacer div between the 2 dropdowns for actions that require both.
     let secondRow;
-    if (props.action.action === "Replace" || props.action.action === "Swap") {
+    if (props.action.action === "Replace" || props.action.action === "Swap" || props.action.action === "Tag") {
         secondRow = <div className={`${styles.wrapper}`}>
             <div className={`${styles.spacer}`} />
             <ItemDropdown action={props.action} id={2} folder={props.folder} onUpdate={props.updateItem2} />
@@ -223,7 +224,6 @@ function SectionFolderEdit(props) {
         props.updateFolderEdit(newFolderEdit);
     }
 
-    console.log(props.folderEdit);
     if (props.folderEdit != null) {
         return(
             <div className={styles.wrapper}>

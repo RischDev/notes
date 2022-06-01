@@ -6,10 +6,10 @@ import Menu from './Menu';
 import Notes from './notes/Notes';
 import Tracker from './tracker/Tracker';
 import LargeImage from './LargeImage';
-import { useMatchMedia } from '../../common/Functions';
+import useMatchMedia from '../../common/functions/useMatchMedia';
 import RouteContext from '../../common/RouteContext';
 import NotesContext from '../../common/NotesContext';
-import useSuspenseResource from '../../common/useSuspense';
+import useSuspenseResource from '../../common/functions/useSuspense';
 
 function Route(props) {
     let path = '';

@@ -13,6 +13,10 @@
             "value": 0,
             "shown": true
         },
+        "Bugfrags": {
+            "value": 0,
+            "shown": true
+        },
         "Standard": {
             "value": 12,
             "shown": true
@@ -24,7 +28,9 @@
         "Giga": {
             "value": 0,
             "shown": true
-        },
+        }
+    },
+    "initialFolderEdit": {
         "folder": [
             {
                 "slot": 0,
@@ -177,10 +183,7 @@
                 "modifier": "*"
             }
         ],
-        "folderEdit": {
-            "value": [],
-            "shown": false
-        }
+        "value": []
     },
     "elementOrder": {
         "fire": 1,

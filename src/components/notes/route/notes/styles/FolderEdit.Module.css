@@ -1,7 +1,5 @@
 .folderEditContainer {
-    flex-basis: 125px;
-    min-width: 110px;
-    flex-grow: 1;
+    width: 225px;
     font-size: 12px;
     margin: 5px;
 }
@@ -29,4 +27,12 @@
 .folderLabel {
     font-size: 12px;
     font-weight: bold;
+}
+
+.regged {
+    border: 1px solid #d5459a;
+}
+
+.tagged {
+    border: 1px solid green;
 }

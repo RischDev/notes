@@ -3,7 +3,7 @@
 import { useContext, useCallback } from 'react';
 import styles from "./styles/Menu.Module.css";
 import Button from "../../common/Button";
-import { useMatchMedia } from '../../common/Functions';
+import useMatchMedia from '../../common/functions/useMatchMedia';
 import NotesContext from '../../common/NotesContext';
 
 function Menu(props) {
