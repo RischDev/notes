@@ -3,12 +3,24 @@
     "modifiers": false,
     "itemsShown": 5,
     "initialState": {
-        "keys": ["Max HP", "Zenny", "Cloakers", "Standard", "Mega", "Giga"],
+        "keys": [
+            "Max HP",
+            "Zenny",
+            "NoiseFrags",
+            "Cloakers",
+            "Standard",
+            "Mega",
+            "Giga"
+        ],
         "Max HP": {
             "value": 100,
             "shown": true
         },
         "Zenny": {
+            "value": 0,
+            "shown": true
+        },
+        "NoiseFrags": {
             "value": 0,
             "shown": true
         },
