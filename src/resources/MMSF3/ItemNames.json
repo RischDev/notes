@@ -8,6 +8,9 @@
             "Zenny",
             "NoiseFrags",
             "Cloakers",
+            "Unlockers",
+            "SrchEyes",
+            "D. Enrgys",
             "Standard",
             "Mega",
             "Giga"
@@ -25,6 +28,18 @@
             "shown": true
         },
         "Cloakers": {
+            "value": 0,
+            "shown": true
+        },
+        "Unlockers": {
+            "value": 0,
+            "shown": true
+        },
+        "SrchEyes": {
+            "value": 0,
+            "shown": true
+        },
+        "D. Enrgys": {
             "value": 0,
             "shown": true
         },
