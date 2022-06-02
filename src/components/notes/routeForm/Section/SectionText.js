@@ -52,9 +52,9 @@ const SectionText = memo((props) => {
         <div className={`${styles.wrapper}`}>
             <textarea
                 className={`${styles.textarea}`}
-                value={props.text.text}
+                defaultValue={props.text.text}
                 placeholder="Text"
-                onChange={onTextUpdate}
+                onBlur={onTextUpdate}
             />
             <ItemDropdown
                 type="text"

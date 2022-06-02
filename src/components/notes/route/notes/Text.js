@@ -2,6 +2,7 @@
 
 import { useContext } from 'react';
 import NotesContext from '../../../common/NotesContext';
+import ReactMarkdown from 'react-markdown';
 import styles from './styles/Text.Module.css';
 
 function Text(props) {
@@ -14,13 +15,17 @@ function Text(props) {
         ) {
             return (
                 <div className={`${styles.text} ${styles.found}`}>
-                    {props.text.text}
+                    <ReactMarkdown children={props.text.text} />
                 </div>
             );
         }
     }
 
-    return <div className={`${styles.text}`}>{props.text.text}</div>;
+    return (
+        <div className={`${styles.text}`}>
+            <ReactMarkdown children={props.text.text} />
+        </div>
+    );
 }
 
 export default Text;
