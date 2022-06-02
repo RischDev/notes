@@ -65,11 +65,22 @@ function RouteInfo(props) {
             sectionId++;
         }
 
-        setContext({ route: { ...route, sections: newSections } });
+        setContext({
+            route: { ...route, sections: newSections },
+            numSections: Math.min(10, newSections.length),
+        });
     };
 
     const importJSON = (file) => {
-        setContext({ route: JSON.parse(file) });
+        const route = JSON.parse(file);
+        const gameInfo = require('../../../resources/' +
+            route.game +
+            '/ItemNames.json');
+        setContext({
+            route: route,
+            numSections: Math.min(10, route.sections.length),
+            gameInfo: gameInfo,
+        });
     };
 
     const handleUpload = (file, callback) => {

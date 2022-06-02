@@ -8,11 +8,7 @@ import Section from './Section/Section';
 import styles from './styles/SectionList.Module.css';
 
 function SectionList(props) {
-    const { route, setContext } = useContext(RouteContext);
-
-    const [numSections, setNumSections] = useState(
-        Math.min(10, route.sections.length),
-    );
+    const { route, numSections, setContext } = useContext(RouteContext);
 
     const [displayedSections, setDisplayedSections] = useState(
         route.sections.slice(0, numSections),
@@ -24,7 +20,9 @@ function SectionList(props) {
                 Math.min(numSections + 10, route.sections.length),
             ),
         );
-        setNumSections(Math.min(numSections + 10, route.sections.length));
+        setContext({
+            numSections: Math.min(numSections + 10, route.sections.length),
+        });
     };
 
     useEffect(() => {
@@ -53,9 +51,9 @@ function SectionList(props) {
             }
 
             setContext({ route: { ...route, sections: newSections } });
-            setNumSections(numSections + 1);
+            setContext({ numSections: numSections + 1 });
         },
-        [route, setContext, numSections, setNumSections],
+        [route, setContext, numSections],
     );
 
     const moveSectionUp = useCallback(
