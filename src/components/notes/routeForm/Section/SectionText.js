@@ -1,6 +1,6 @@
 /** @format */
 
-import { useContext, memo } from 'react';
+import { useState, useEffect, useRef, useContext, memo } from 'react';
 import styles from './styles/SectionText.Module.css';
 import ItemDropdown from './ItemDropdown';
 import ModifierDropdown from './ModifierDropdown';
@@ -26,7 +26,20 @@ function shouldUpdate(oldProps, newProps) {
 const SectionText = memo((props) => {
     const game = useContext(GameContext);
 
+    const [cursor, setCursor] = useState(null);
+    const ref = useRef(null);
+
+    useEffect(() => {
+        const input = ref.current;
+        if (input) {
+            input.setSelectionRange(cursor, cursor);
+        }
+    }, [ref, cursor, props.text.text]);
+
     const onTextUpdate = (e) => {
+        // Remember cursor position
+        setCursor(e.target.selectionStart);
+
         const newText = JSON.parse(JSON.stringify(props.text));
         newText.text = e.target.value;
         props.updateText(newText, props.text.id);
@@ -51,10 +64,11 @@ const SectionText = memo((props) => {
     return (
         <div className={`${styles.wrapper}`}>
             <textarea
+                ref={ref}
                 className={`${styles.textarea}`}
-                defaultValue={props.text.text}
+                value={props.text.text}
                 placeholder="Text"
-                onBlur={onTextUpdate}
+                onChange={onTextUpdate}
             />
             <ItemDropdown
                 type="text"

@@ -85,6 +85,7 @@ function Section(props) {
             }
 
             newSection.text.splice(id, 1);
+            console.log(newSection.text);
 
             props.setSection(newSection, props.section.id);
         },
