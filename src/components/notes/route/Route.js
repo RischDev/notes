@@ -34,25 +34,43 @@ function Route(props) {
 
 const getInitialState = (notes, isMobile) => {
     let initialTrackerDisplay = true;
-    let initialMode = "list";
+    let initialMode = 'list';
     // If on mobile, swap to presenter mode by default and hide the tracker
     if (isMobile) {
         initialTrackerDisplay = false;
-        initialMode = "presenter"
+        initialMode = 'presenter';
     }
 
-    const Items = require('../../../resources/' + notes.game + '/ItemNames.json');
+    const Items = require('../../../resources/' +
+        notes.game +
+        '/ItemNames.json');
 
-    let initialFoundItems = JSON.parse(localStorage.getItem("foundItems-" + notes.game));
-    let initialFoundModifiers = JSON.parse(localStorage.getItem("foundModifiers-" + notes.game));
+    let initialFoundItems = JSON.parse(
+        localStorage.getItem('foundItems-' + notes.game),
+    );
+    let initialFoundModifiers = JSON.parse(
+        localStorage.getItem('foundModifiers-' + notes.game),
+    );
 
     // Update foundItems and foundModifiers if nothing was in local storage
     if (initialFoundItems == null || initialFoundItems.length === 0) {
-        initialFoundItems = JSON.parse(JSON.stringify(require('../../../resources/' + notes.game + '/DefaultFoundItems.json')));
+        initialFoundItems = JSON.parse(
+            JSON.stringify(
+                require('../../../resources/' +
+                    notes.game +
+                    '/DefaultFoundItems.json'),
+            ),
+        );
     }
 
     if (Items.modifiers && initialFoundModifiers == null) {
-        initialFoundModifiers = JSON.parse(JSON.stringify(require('../../../resources/' + notes.game + '/DefaultFoundModifiers.json')));
+        initialFoundModifiers = JSON.parse(
+            JSON.stringify(
+                require('../../../resources/' +
+                    notes.game +
+                    '/DefaultFoundModifiers.json'),
+            ),
+        );
     }
 
     return {
@@ -62,9 +80,9 @@ const getInitialState = (notes, isMobile) => {
         mode: initialMode,
         foundItems: initialFoundItems,
         foundModifiers: initialFoundModifiers,
-        folderEditView: "Actions"
-    }
-}
+        folderEditView: 'Actions',
+    };
+};
 
 function RouteImpl(props) {
     const routeContext = useContext(RouteContext);
@@ -75,27 +93,32 @@ function RouteImpl(props) {
         notes = props.notesResource.read();
     }
 
-    const [state, setState] = useState(getInitialState(notes, useMatchMedia('(max-width: 600px)')))
+    const [state, setState] = useState(
+        getInitialState(notes, useMatchMedia('(max-width: 600px)')),
+    );
 
     const setContext = useCallback(
-        updates => {
-            setState({...state, ...updates});
+        (updates) => {
+            setState({ ...state, ...updates });
         },
-        [state, setState]
+        [state, setState],
     );
 
     const getContextValue = useCallback(
         () => ({
             ...state,
-            setContext
+            setContext,
         }),
-        [state, setContext]
+        [state, setContext],
     );
 
     const updateTracker = useCallback(
         (id, modifier) => {
             let newFoundItems = [...state.foundItems];
-            let newFoundModifiers = state.foundModifiers !== null ? [...state.foundModifiers] : null;
+            let newFoundModifiers =
+                state.foundModifiers !== null
+                    ? [...state.foundModifiers]
+                    : null;
             if (modifier == null) {
                 if (newFoundItems.includes(id)) {
                     newFoundItems.splice(newFoundItems.indexOf(id), 1);
@@ -107,7 +130,10 @@ function RouteImpl(props) {
                 }
             } else {
                 if (newFoundModifiers[id].includes(modifier)) {
-                    newFoundModifiers[id].splice(newFoundModifiers[id].indexOf(modifier), 1);
+                    newFoundModifiers[id].splice(
+                        newFoundModifiers[id].indexOf(modifier),
+                        1,
+                    );
                     if (newFoundModifiers[id].length === 0) {
                         newFoundItems.splice(newFoundItems.indexOf(id), 1);
                     }
@@ -119,28 +145,47 @@ function RouteImpl(props) {
                 }
             }
 
-            setState({ ...state, foundItems: newFoundItems, foundModifiers: newFoundModifiers });
+            setState({
+                ...state,
+                foundItems: newFoundItems,
+                foundModifiers: newFoundModifiers,
+            });
 
-            localStorage.setItem("foundItems-" + state.notes.game, JSON.stringify(newFoundItems));
-            localStorage.setItem("foundModifiers-" + state.notes.game, JSON.stringify(newFoundModifiers));
+            localStorage.setItem(
+                'foundItems-' + state.notes.game,
+                JSON.stringify(newFoundItems),
+            );
+            localStorage.setItem(
+                'foundModifiers-' + state.notes.game,
+                JSON.stringify(newFoundModifiers),
+            );
         },
-        [state, setState]
+        [state, setState],
     );
 
     const fullscreenImage = useCallback(
         (image) => {
             setState({ ...state, fullscreenImage: image });
         },
-        [state, setState]
+        [state, setState],
     );
 
     return (
         <div className={`${styles.wrapper}`}>
-            <LargeImage image={state.fullscreenImage} fullscreenImage={fullscreenImage} />
+            <LargeImage
+                image={state.fullscreenImage}
+                fullscreenImage={fullscreenImage}
+            />
             <NotesContext.Provider value={getContextValue()}>
-                <Notes updateTracker={updateTracker} fullscreenImage={fullscreenImage} />
+                <Notes
+                    updateTracker={updateTracker}
+                    fullscreenImage={fullscreenImage}
+                />
                 <div className={`${styles.rightColumn}`}>
-                    <Menu preview={routeContext.preview} swapPreview={props.swapPreview} />
+                    <Menu
+                        preview={routeContext.preview}
+                        swapPreview={props.swapPreview}
+                    />
                     <Tracker updateTracker={updateTracker} />
                 </div>
             </NotesContext.Provider>

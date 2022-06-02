@@ -1,37 +1,45 @@
 /** @format */
 
 .wrapper {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-around;
-	align-items: center;
-	width: 100%;
-	text-align: left;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    text-align: left;
+    gap: 5px;
+    margin-bottom: 5px;
 }
 
 .label {
-    font-size: 10px;
+    font-size: 12px;
+    font-weight: bold;
     display: block;
-    margin-bottom: 5px;
 }
 
 .textInput {
-    margin-bottom: 5px;
-    margin-right: 5px;
     width: 40px;
     height: 25px;
     border-radius: 5px;
     font-size: 12px;
+    border: 2px solid #979797;
 }
 
 .checkbox {
     margin: 0;
-    margin-right: 5px;
     width: 15px;
     height: 15px;
     padding: 0 5px;
 }
 
 .stateField {
-    display: inline-block;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.inputs {
+    display: flex;
+    gap: 5px;
+    align-items: center;
 }

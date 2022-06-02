@@ -1,15 +1,25 @@
 /** @format */
 
+.sectionHeader {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    gap: 5px;
+    margin-bottom: 10px;
+}
+
 .wrapper {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: flex-start;
-	width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    gap: 10px;
+    margin-bottom: 10px;
 }
 
 .section {
     width: 100%;
-    padding: 5px  0;
+    padding: 5px 0;
 }
 
 .header {
@@ -29,28 +39,43 @@
     min-width: 500px;
     width: fit-content;
     flex-grow: 2;
-    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
 }
 
 .itemsContainer {
     min-width: 225px;
-    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
 }
 
 .imageContainer {
-    width: fit-content;
     max-width: 50%;
     flex-grow: 1;
-    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
 }
 
 .stateContainer {
     width: 225px;
     flex-grow: 1;
-    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
 }
 
 .folderEditContainer {
     width: 225px;
-    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+h4 {
+    margin: 0px;
+    font-size: 14px;
+    font-weight: 600;
 }

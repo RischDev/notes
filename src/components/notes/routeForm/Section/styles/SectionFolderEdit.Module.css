@@ -1,10 +1,13 @@
+/** @format */
+
 .wrapper {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: flex-start;
-	align-items: center;
-	width: 100%;
-	text-align: left;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    text-align: left;
+    gap: 5px;
 }
 
 .checkbox {
@@ -16,11 +19,11 @@
 
 .select {
     font-size: 12px;
-    height: 29px;
-    margin-right: 5px;
-    margin-bottom: 5px;
+    height: 31px;
     width: 70px;
     vertical-align: top;
+    border-radius: 5px;
+    border: 2px solid #979797;
 }
 
 .itemDropdown {
@@ -29,9 +32,4 @@
 
 .spacer {
     width: 70px;
-    margin-right: 5px;
-}
-
-.btn {
-    margin-right: 5px;
 }

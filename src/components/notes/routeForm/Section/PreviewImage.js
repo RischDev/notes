@@ -10,13 +10,7 @@ class PreviewImage extends React.Component {
         }
 
         return (
-            <div>
-                <img
-                    className={`${styles.img}`}
-                    src={this.props.image}
-                    alt=""
-                />
-            </div>
+            <img className={`${styles.img}`} src={this.props.image} alt="" />
         );
     }
 }

@@ -20,22 +20,38 @@ const SectionImage = React.memo((props) => {
         let reader = new FileReader();
         reader.readAsDataURL(file);
         reader.onload = function () {
-            callback(reader.result)
+            callback(reader.result);
         };
         reader.onerror = function (error) {
             console.log('Error: ', error);
         };
-    }
+    };
 
     let deleteIcon;
     if (props.image != null) {
-        deleteIcon = <Icon src="/icons/delete.png" size="small" hover={true} grayscale={true} altText="X" onClick={props.deleteImage} />
+        deleteIcon = (
+            <Icon
+                src="/icons/delete.png"
+                size="small"
+                hover={true}
+                grayscale={true}
+                altText="X"
+                onClick={props.deleteImage}
+            />
+        );
     }
 
-    return(
-        <div className={`${styles.imageField}`}>
-            <input type="file" onChange={ (e) => { getBase64(e.target.files[0], props.updateImage) } } />
-            {deleteIcon}
+    return (
+        <div className={`${styles.wrapper}`}>
+            <div className={`${styles.input}`}>
+                <input
+                    type="file"
+                    onChange={(e) => {
+                        getBase64(e.target.files[0], props.updateImage);
+                    }}
+                />
+                {deleteIcon}
+            </div>
             <PreviewImage image={props.image} />
         </div>
     );

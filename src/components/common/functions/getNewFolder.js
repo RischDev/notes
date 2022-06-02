@@ -1,3 +1,5 @@
+/** @format */
+
 import performFolderEditAction from './performFolderEditAction';
 
 export default function getNewFolder(folderEdit, folder, gameInfo) {

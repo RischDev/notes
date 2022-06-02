@@ -2,7 +2,7 @@
 
 import { useContext } from 'react';
 import GameContext from '../../../common/GameContext';
-import styles from "./styles/ModifierDropdown.Module.css";
+import styles from './styles/ModifierDropdown.Module.css';
 
 function ModifierDropdown(props) {
     const gameInfo = useContext(GameContext);
@@ -10,7 +10,7 @@ function ModifierDropdown(props) {
     const onModifierUpdate = (e) => {
         let value = e.target.value;
         props.updateModifier(value);
-    }
+    };
 
     if (!gameInfo.modifiers) {
         return null;
@@ -18,26 +18,32 @@ function ModifierDropdown(props) {
 
     if (props.item != null) {
         if (gameInfo.Items[props.item] == null) {
-            return(
-                <select className={`${styles.select}`} value={props.modifier} onChange={onModifierUpdate}>
+            return (
+                <select
+                    className={`${styles.select}`}
+                    value={props.modifier}
+                    onChange={onModifierUpdate}>
                     <option value=""> </option>
                 </select>
             );
         }
 
-        return(
-            <select className={`${styles.select}`} value={props.modifier} onChange={onModifierUpdate}>
+        return (
+            <select
+                className={`${styles.select}`}
+                value={props.modifier}
+                onChange={onModifierUpdate}>
                 <option value=""> </option>
-                {gameInfo.Items[props.item].modifiers.map((modifier) =>
-                    <option value={modifier} key={"text-modifier-" + modifier}>{modifier}</option>
-                )}
+                {gameInfo.Items[props.item].modifiers.map((modifier) => (
+                    <option value={modifier} key={'text-modifier-' + modifier}>
+                        {modifier}
+                    </option>
+                ))}
             </select>
         );
     }
 
-    return(
-        <span className={`${styles.buffer}`} />
-    );
+    return <span className={`${styles.buffer}`} />;
 }
 
 export default ModifierDropdown;

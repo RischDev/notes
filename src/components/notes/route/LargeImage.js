@@ -1,11 +1,13 @@
+/** @format */
+
 import styles from './styles/LargeImage.Module.css';
 
 function LargeImage(props) {
     const onClick = (e) => {
-        if (e.target.tagName !== "IMG") {
+        if (e.target.tagName !== 'IMG') {
             props.fullscreenImage(null);
         }
-    }
+    };
 
     if (props.image != null) {
         return (

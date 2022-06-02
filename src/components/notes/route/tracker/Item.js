@@ -9,15 +9,13 @@ import themeMMSF from './styles/themes/MMSF/MMSF-Item.Module.css';
 
 function Item(props) {
     const {
-        notes: {
-            game
-        }
+        notes: { game },
     } = useContext(NotesContext);
 
     let theme = {};
-    if (game.includes("MMBN")) {
+    if (game.includes('MMBN')) {
         theme = themeMMBN;
-    } else if (game.includes("MMSF")) {
+    } else if (game.includes('MMSF')) {
         theme = themeMMSF;
     }
 
@@ -26,15 +24,31 @@ function Item(props) {
     };
 
     if (props.id >= props.type.low && props.id <= props.type.high) {
-        const foundClass = props.found ? styles.found : "";
+        const foundClass = props.found ? styles.found : '';
 
-        return(
+        return (
             <div>
-                <div id={props.id} className={`${styles.item} ${theme[props.type.id]} ${theme.item} ${foundClass}`} onClick={updateFound}>
-                    <div className={`${styles.title} ${theme.title}`}>{(props.id - props.low + 1).toString().padStart(3, "0")} {props.name}</div>
-                    <img className={`${styles.itemArt} ${theme.itemArt}`} src={"/items/" + game + "/" + props.id + ".png"} alt={props.name + " art"} />
+                <div
+                    id={props.id}
+                    className={`${styles.item} ${theme[props.type.id]} ${
+                        theme.item
+                    } ${foundClass}`}
+                    onClick={updateFound}>
+                    <div className={`${styles.title} ${theme.title}`}>
+                        {(props.id - props.low + 1).toString().padStart(3, '0')}{' '}
+                        {props.name}
+                    </div>
+                    <img
+                        className={`${styles.itemArt} ${theme.itemArt}`}
+                        src={'/items/' + game + '/' + props.id + '.png'}
+                        alt={props.name + ' art'}
+                    />
                 </div>
-                <Modifiers id={props.id} modifiers={props.modifiers} updateTracker={props.updateTracker} />
+                <Modifiers
+                    id={props.id}
+                    modifiers={props.modifiers}
+                    updateTracker={props.updateTracker}
+                />
             </div>
         );
     }

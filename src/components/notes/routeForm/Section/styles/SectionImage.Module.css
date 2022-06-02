@@ -1,3 +1,13 @@
-.imageField {
-    margin-bottom: 5px;
+/** @format */
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.input {
+    display: flex;
+    gap: 5px;
+    align-items: center;
 }

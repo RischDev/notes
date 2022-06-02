@@ -170,14 +170,7 @@
         "Element",
         "Number"
     ],
-    "actionTypes": [
-        "Remove",
-        "Add",
-        "Swap",
-        "Replace",
-        "Sort",
-        "Default"
-    ],
+    "actionTypes": ["Remove", "Add", "Swap", "Replace", "Sort", "Default"],
     "types": [
         {
             "name": "Standard",

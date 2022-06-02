@@ -189,13 +189,7 @@
         "Element",
         "Quantity"
     ],
-    "actionTypes": [
-        "Remove",
-        "Add",
-        "Swap",
-        "Replace",
-        "Sort"
-    ],
+    "actionTypes": ["Remove", "Add", "Swap", "Replace", "Sort"],
     "types": [
         {
             "name": "Battlechips",

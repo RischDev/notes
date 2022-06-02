@@ -9,7 +9,7 @@ import useSuspenseResource from '../../common/functions/useSuspense';
 import RouteContext from '../../common/RouteContext';
 import GameContext from '../../common/GameContext';
 
-const equal = require("deep-equal");
+const equal = require('deep-equal');
 
 function RouteForm(props) {
     const path = props.match.params.path;
@@ -32,33 +32,38 @@ function RouteForm(props) {
 const getInitialState = (path, game, route) => {
     // If no game is specified, try setting the game based on the initial route object.
     if (game == null) {
-        game = route.game
+        game = route.game;
     }
 
     let gameInfo = require('../../../resources/ItemNames.json');
-    if (game !== "" && game != null) {
+    if (game !== '' && game != null) {
         gameInfo = require('../../../resources/' + game + '/ItemNames.json');
     }
 
     return {
         route: {
-            title: path != null ? route.title : "",
+            title: path != null ? route.title : '',
             path: path,
             game: path != null ? route.game : game,
-            version: path != null ? route.version : "1.0",
+            version: path != null ? route.version : '1.0',
             initialState: game != null ? gameInfo.initialState : {},
             initialFolderEdit: game != null ? gameInfo.initialFolderEdit : {},
-            sections: path != null ? route.sections : [{
-                id: 0,
-                text: [],
-                items: []
-            }],
+            sections:
+                path != null
+                    ? route.sections
+                    : [
+                          {
+                              id: 0,
+                              text: [],
+                              items: [],
+                          },
+                      ],
         },
         gameInfo: gameInfo,
         preview: false,
-        numSections: path != null ? Math.min(10, route.sections.length) : 1
-    }
-}
+        numSections: path != null ? Math.min(10, route.sections.length) : 1,
+    };
+};
 
 function RouteFormImpl(props) {
     let initialPath = props.match.params.path;
@@ -68,22 +73,26 @@ function RouteFormImpl(props) {
         initialRoute = props.notesResource.read();
     }
 
-    const [state, setState] = useState(getInitialState(initialPath, initialGame, initialRoute));
-    const gameContext = useMemo(() => { return(state.gameInfo) }, [state.gameInfo]);
+    const [state, setState] = useState(
+        getInitialState(initialPath, initialGame, initialRoute),
+    );
+    const gameContext = useMemo(() => {
+        return state.gameInfo;
+    }, [state.gameInfo]);
 
     const setContext = useCallback(
-        updates => {
-            setState({...state, ...updates});
+        (updates) => {
+            setState({ ...state, ...updates });
         },
-        [state, setState]
+        [state, setState],
     );
 
     const getContextValue = useCallback(
         () => ({
             ...state,
-            setContext
+            setContext,
         }),
-        [state, setContext]
+        [state, setContext],
     );
 
     const setNewRoute = (newRoute) => {
@@ -98,7 +107,7 @@ function RouteFormImpl(props) {
         }
 
         setState({ ...state, route: newRoute });
-    }
+    };
 
     const loadLastRouteEdit = (e) => {
         e.preventDefault();
@@ -112,25 +121,25 @@ function RouteFormImpl(props) {
                 'Error: No route found in local storage. Either there is nothing to load, or your route may have been too large. When your route gets large, try downloading the JSON file periodically to save your progress.',
             );
         }
-    }
+    };
 
     const swapPreview = () => {
-        setState(prevState => ({
+        setState((prevState) => ({
             ...state,
-            preview: !prevState.preview
+            preview: !prevState.preview,
         }));
-    }
+    };
 
     if (state.preview) {
-        return(
+        return (
             <div>
                 <RouteContext.Provider value={getContextValue()}>
-                    <Route swapPreview={swapPreview}  />
+                    <Route swapPreview={swapPreview} />
                 </RouteContext.Provider>
             </div>
         );
     } else {
-        return(
+        return (
             <form className={`${styles.wrapper} ${styles.form}`}>
                 <RouteContext.Provider value={getContextValue()}>
                     <GameContext.Provider value={gameContext}>
@@ -139,9 +148,7 @@ function RouteFormImpl(props) {
                             swapPreview={swapPreview}
                         />
 
-                        <SectionList
-                            sections={state.route.sections}
-                        />
+                        <SectionList sections={state.route.sections} />
                     </GameContext.Provider>
                 </RouteContext.Provider>
             </form>

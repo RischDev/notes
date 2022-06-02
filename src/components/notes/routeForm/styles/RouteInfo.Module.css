@@ -9,7 +9,6 @@
     padding: 20px;
     width: 22%;
     height: 94vh;
-    padding-right: -1px;
     text-align: left;
 }
 
@@ -34,6 +33,7 @@
     border-radius: 5px;
     padding: 0 5px;
     font-size: 12px;
+    border: 2px solid #979797;
 }
 
 .select {
@@ -44,6 +44,7 @@
     border-radius: 5px;
     font-size: 12px;
     display: block;
+    border: 2px solid #979797;
 }
 
 .fileInput {

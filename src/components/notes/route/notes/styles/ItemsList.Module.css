@@ -1,3 +1,5 @@
+/** @format */
+
 .label {
     font-size: 14px;
     font-weight: bold;
@@ -5,7 +7,7 @@
 }
 
 .itemList {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: flex-start;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
 }

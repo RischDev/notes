@@ -7,40 +7,48 @@ import NotesContext from '../../../common/NotesContext';
 
 function Modifier(props) {
     const {
-        notes: {
-            game
-        },
-        foundModifiers
+        notes: { game },
+        foundModifiers,
     } = useContext(NotesContext);
 
-    const foundClass = foundModifiers[props.id].includes(props.modifier) ? styles.found : "";
-    return(
-        <div id={"modifier-" + props.id + "-" + props.modifier} className={`${styles.modifier} ${styles[game]} ${foundClass}`} onClick={ () => props.updateFound(props.modifier) }>{props.modifier}</div>
+    const foundClass = foundModifiers[props.id].includes(props.modifier)
+        ? styles.found
+        : '';
+    return (
+        <div
+            id={'modifier-' + props.id + '-' + props.modifier}
+            className={`${styles.modifier} ${styles[game]} ${foundClass}`}
+            onClick={() => props.updateFound(props.modifier)}>
+            {props.modifier}
+        </div>
     );
 }
 
 function SmallModifiers(props) {
     const {
-        notes: {
-            game
-        }
+        notes: { game },
     } = useContext(NotesContext);
 
     let theme = {};
-    if (game.includes("MMBN")) {
+    if (game.includes('MMBN')) {
         theme = themeMMBN;
     }
 
     const updateFound = (modifier) => {
         props.updateTracker(props.id, modifier);
-    }
+    };
 
     if (props.modifiers != null && props.modifiers.length > 0) {
-        return(
+        return (
             <div className={`${styles.modifiers} ${theme.modifiers}`}>
-                {props.modifiers.map((modifier) =>
-                    <Modifier key={"small-modifier-" + modifier} id={props.id} modifier={modifier} updateFound={updateFound} />
-                )}
+                {props.modifiers.map((modifier) => (
+                    <Modifier
+                        key={'small-modifier-' + modifier}
+                        id={props.id}
+                        modifier={modifier}
+                        updateFound={updateFound}
+                    />
+                ))}
             </div>
         );
     }

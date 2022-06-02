@@ -1,5 +1,7 @@
+/** @format */
+
 import { createContext } from 'react';
 
-const GameContext = createContext("")
+const GameContext = createContext('');
 
 export default GameContext;

@@ -1,15 +1,14 @@
 /** @format */
 
-.textContainer {
+.wrapper {
     display: flex;
-    margin-bottom: 5px;
     justify-content: flex-start;
-    align-items: flex-start;
+    align-items: center;
+    gap: 5px;
 }
 
 .textarea {
     margin: 0;
-    margin-right: 5px;
     min-width: 300px;
     width: fit-content;
     flex-grow: 1;
@@ -19,4 +18,5 @@
     font-size: 12px;
     vertical-align: top;
     resize: vertical;
+    border: 2px solid #979797;
 }

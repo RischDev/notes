@@ -8,18 +8,24 @@ import Section from './Section/Section';
 import styles from './styles/SectionList.Module.css';
 
 function SectionList(props) {
-    const {
-        route,
-        setContext
-    } = useContext(RouteContext);
+    const { route, setContext } = useContext(RouteContext);
 
-    const [numSections, setNumSections] = useState(Math.min(10, route.sections.length));
+    const [numSections, setNumSections] = useState(
+        Math.min(10, route.sections.length),
+    );
 
-    const [displayedSections, setDisplayedSections] = useState(route.sections.slice(0, numSections));
+    const [displayedSections, setDisplayedSections] = useState(
+        route.sections.slice(0, numSections),
+    );
     const addMoreSections = () => {
-        setDisplayedSections(route.sections.slice(0, Math.min(numSections + 10, route.sections.length)))
+        setDisplayedSections(
+            route.sections.slice(
+                0,
+                Math.min(numSections + 10, route.sections.length),
+            ),
+        );
         setNumSections(Math.min(numSections + 10, route.sections.length));
-    }
+    };
 
     useEffect(() => {
         setDisplayedSections(route.sections.slice(0, numSections));
@@ -29,68 +35,80 @@ function SectionList(props) {
         const newSections = [...route.sections];
         newSections[id] = section;
         setContext({ route: { ...route, sections: newSections } });
-    }
+    };
 
-    const addSection = useCallback((id) => {
-        let newSections = [...route.sections];
-        let newSection = {
-            id: id,
-            text: [],
-            items: [],
-        };
+    const addSection = useCallback(
+        (id) => {
+            let newSections = [...route.sections];
+            let newSection = {
+                id: id,
+                text: [],
+                items: [],
+            };
 
-        newSections.splice(id, 0, newSection);
+            newSections.splice(id, 0, newSection);
 
-        for (let i = id + 1; i < newSections.length; i++) {
-            newSections[i].id++;
-        }
+            for (let i = id + 1; i < newSections.length; i++) {
+                newSections[i].id++;
+            }
 
-        setContext({ route: { ...route, sections: newSections } });
-        setNumSections(numSections + 1);
-    }, [route, setContext, numSections, setNumSections]);
+            setContext({ route: { ...route, sections: newSections } });
+            setNumSections(numSections + 1);
+        },
+        [route, setContext, numSections, setNumSections],
+    );
 
-    const moveSectionUp = useCallback((id) => {
-        // Stringify then parse JSON to create deep copy.
-        let newSections = JSON.parse(JSON.stringify(route.sections));
+    const moveSectionUp = useCallback(
+        (id) => {
+            // Stringify then parse JSON to create deep copy.
+            let newSections = JSON.parse(JSON.stringify(route.sections));
 
-        let chosenSection = newSections[id];
-        chosenSection.id = id - 1;
-        let aboveSection = newSections[id - 1];
-        aboveSection.id = id;
+            let chosenSection = newSections[id];
+            chosenSection.id = id - 1;
+            let aboveSection = newSections[id - 1];
+            aboveSection.id = id;
 
-        newSections[id] = aboveSection;
-        newSections[id - 1] = chosenSection;
+            newSections[id] = aboveSection;
+            newSections[id - 1] = chosenSection;
 
-        setContext({ route: { ...route, sections: newSections } });
-    }, [route, setContext]);
+            setContext({ route: { ...route, sections: newSections } });
+        },
+        [route, setContext],
+    );
 
-    const moveSectionDown = useCallback((id) => {
-        // Stringify then parse JSON to create deep copy.
-        let newSections = JSON.parse(JSON.stringify(route.sections));
+    const moveSectionDown = useCallback(
+        (id) => {
+            // Stringify then parse JSON to create deep copy.
+            let newSections = JSON.parse(JSON.stringify(route.sections));
 
-        let chosenSection = newSections[id];
-        chosenSection.id = id + 1;
-        let belowSection = newSections[id + 1];
-        belowSection.id = id;
+            let chosenSection = newSections[id];
+            chosenSection.id = id + 1;
+            let belowSection = newSections[id + 1];
+            belowSection.id = id;
 
-        newSections[id] = belowSection;
-        newSections[id + 1] = chosenSection;
+            newSections[id] = belowSection;
+            newSections[id + 1] = chosenSection;
 
-        setContext({ route: { ...route, sections: newSections } });
-    }, [route, setContext]);
+            setContext({ route: { ...route, sections: newSections } });
+        },
+        [route, setContext],
+    );
 
-    const deleteSection = useCallback((id) => {
-        // JSON stringify, then JSON parse to make a deep copy.
-        let newSections = JSON.parse(JSON.stringify(route.sections));
+    const deleteSection = useCallback(
+        (id) => {
+            // JSON stringify, then JSON parse to make a deep copy.
+            let newSections = JSON.parse(JSON.stringify(route.sections));
 
-        for (let i = id + 1; i < newSections.length; i++) {
-            newSections[i].id--;
-        }
+            for (let i = id + 1; i < newSections.length; i++) {
+                newSections[i].id--;
+            }
 
-        newSections.splice(id, 1);
+            newSections.splice(id, 1);
 
-        setContext({ route: { ...route, sections: newSections } });
-    }, [route, setContext]);
+            setContext({ route: { ...route, sections: newSections } });
+        },
+        [route, setContext],
+    );
 
     const getLastState = (id) => {
         // Check previous sections for the last state value
@@ -108,14 +126,16 @@ function SectionList(props) {
         }
 
         return state;
-    }
+    };
 
     const getLastFolderEdit = (id) => {
         // Check previous sections for the last folder edit value
         let folderEdit = null;
         for (let i = id - 1; i >= 0; i--) {
             if (route.sections[i].folderEdit != null) {
-                folderEdit = JSON.parse(JSON.stringify(route.sections[i].folderEdit));
+                folderEdit = JSON.parse(
+                    JSON.stringify(route.sections[i].folderEdit),
+                );
                 break;
             }
         }
@@ -127,17 +147,19 @@ function SectionList(props) {
 
         // Setup the previous folder to be the same as the starting folder, and clear the folder edit.
         folderEdit.prevFolder = folderEdit.folder;
-        folderEdit.value = [{
-            id: 0,
-            action: "",
-            item1: -1,
-            modifier1: "",
-            item2: -1,
-            modifier2: ""
-        }];
+        folderEdit.value = [
+            {
+                id: 0,
+                action: '',
+                item1: -1,
+                modifier1: '',
+                item2: -1,
+                modifier2: '',
+            },
+        ];
 
         return folderEdit;
-    }
+    };
 
     return (
         <div id="scrollableDiv" className={`${styles.sectionList}`}>
@@ -145,12 +167,11 @@ function SectionList(props) {
                 dataLength={displayedSections}
                 next={addMoreSections}
                 hasMore={route.sections.length > displayedSections.length}
-                loader={"Loading..."}
-                scrollableTarget={"scrollableDiv"}
-            >
-                {displayedSections.map((section) =>
+                loader={'Loading...'}
+                scrollableTarget={'scrollableDiv'}>
+                {displayedSections.map((section) => (
                     <Section
-                        key={"section-" + section.id}
+                        key={'section-' + section.id}
                         section={section}
                         setSection={setSection}
                         max={route.sections.length - 1}
@@ -161,7 +182,7 @@ function SectionList(props) {
                         getLastState={getLastState}
                         getLastFolderEdit={getLastFolderEdit}
                     />
-                )}
+                ))}
                 <div className="bottom-buffer"> </div>
             </InfiniteScroll>
         </div>
