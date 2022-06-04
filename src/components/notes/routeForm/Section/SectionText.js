@@ -16,7 +16,7 @@ function shouldUpdate(oldProps, newProps) {
         return false;
     } else if (oldProps.text.modifier !== newProps.text.modifier) {
         return false;
-    } else if (oldProps.updateText !== newProps.updateText) {
+    } else if (oldProps.max !== newProps.max) {
         return false;
     }
 
@@ -42,7 +42,7 @@ const SectionText = memo((props) => {
 
         const newText = JSON.parse(JSON.stringify(props.text));
         newText.text = e.target.value;
-        props.updateText(newText, props.text.id);
+        props.updateText.current(newText, props.text.id);
     };
 
     const updateItem = (item) => {
@@ -52,14 +52,18 @@ const SectionText = memo((props) => {
         } else {
             newText.item = null;
         }
-        props.updateText(newText, props.text.id);
+        props.updateText.current(newText, props.text.id);
     };
+    const updateItemRef = useRef();
+    updateItemRef.current = updateItem;
 
     const updateModifier = (modifier) => {
         const newText = JSON.parse(JSON.stringify(props.text));
         newText.modifier = modifier;
-        props.updateText(newText, props.text.id);
+        props.updateText.current(newText, props.text.id);
     };
+    const updateModifierRef = useRef();
+    updateModifierRef.current = updateModifier;
 
     return (
         <div className={`${styles.wrapper}`}>
@@ -74,13 +78,13 @@ const SectionText = memo((props) => {
                 type="text"
                 item={props.text.item}
                 game={game}
-                updateItem={updateItem}
+                updateItem={updateItemRef}
             />
             <ModifierDropdown
                 type="text"
                 item={props.text.item}
                 modifier={props.text.modifier}
-                updateModifier={updateModifier}
+                updateModifier={updateModifierRef}
             />
             <Icon
                 src="/icons/up.png"
@@ -89,7 +93,7 @@ const SectionText = memo((props) => {
                 hover={true}
                 hidden={props.text.id === 0}
                 altText="Up"
-                onClick={() => props.moveTextUp(props.text.id)}
+                onClick={() => props.moveTextUp.current(props.text.id)}
             />
             <Icon
                 src="/icons/down.png"
@@ -98,7 +102,7 @@ const SectionText = memo((props) => {
                 hover={true}
                 hidden={props.text.id === props.max}
                 altText="Down"
-                onClick={() => props.moveTextDown(props.text.id)}
+                onClick={() => props.moveTextDown.current(props.text.id)}
             />
             <Icon
                 src="/icons/delete.png"
@@ -108,7 +112,7 @@ const SectionText = memo((props) => {
                 hidden={false}
                 grayscale={true}
                 altText="X"
-                onClick={() => props.deleteText(props.text.id)}
+                onClick={() => props.deleteText.current(props.text.id)}
             />
         </div>
     );

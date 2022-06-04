@@ -1,6 +1,6 @@
 /** @format */
 
-import { useState, useEffect, useCallback, useContext } from 'react';
+import { useState, useEffect, useCallback, useRef, useContext } from 'react';
 import RouteContext from '../../common/RouteContext';
 import InfiniteScroll from 'react-infinite-scroll-component';
 import Section from './Section/Section';
@@ -34,6 +34,8 @@ function SectionList(props) {
         newSections[id] = section;
         setContext({ route: { ...route, sections: newSections } });
     };
+    const setSectionRef = useRef();
+    setSectionRef.current = setSection;
 
     const addSection = useCallback(
         (id) => {
@@ -50,11 +52,15 @@ function SectionList(props) {
                 newSections[i].id++;
             }
 
-            setContext({ route: { ...route, sections: newSections } });
-            setContext({ numSections: numSections + 1 });
+            setContext({
+                route: { ...route, sections: newSections },
+                numSections: numSections + 1,
+            });
         },
         [route, setContext, numSections],
     );
+    const addSectionRef = useRef();
+    addSectionRef.current = addSection;
 
     const moveSectionUp = useCallback(
         (id) => {
@@ -73,6 +79,8 @@ function SectionList(props) {
         },
         [route, setContext],
     );
+    const moveSectionUpRef = useRef();
+    moveSectionUpRef.current = moveSectionUp;
 
     const moveSectionDown = useCallback(
         (id) => {
@@ -91,6 +99,8 @@ function SectionList(props) {
         },
         [route, setContext],
     );
+    const moveSectionDownRef = useRef();
+    moveSectionDownRef.current = moveSectionDown;
 
     const deleteSection = useCallback(
         (id) => {
@@ -107,57 +117,71 @@ function SectionList(props) {
         },
         [route, setContext],
     );
+    const deleteSectionRef = useRef();
+    deleteSectionRef.current = deleteSection;
 
-    const getLastState = (id) => {
-        // Check previous sections for the last state value
-        let state = null;
-        for (let i = id - 1; i >= 0; i--) {
-            if (route.sections[i].state != null) {
-                state = JSON.parse(JSON.stringify(route.sections[i].state));
-                break;
+    const getLastState = useCallback(
+        (id) => {
+            // Check previous sections for the last state value
+            let state = null;
+            for (let i = id - 1; i >= 0; i--) {
+                if (route.sections[i].state != null) {
+                    state = JSON.parse(JSON.stringify(route.sections[i].state));
+                    break;
+                }
             }
-        }
 
-        // If no state was found, use initialState
-        if (state == null) {
-            state = JSON.parse(JSON.stringify(route.initialState));
-        }
+            // If no state was found, use initialState
+            if (state == null) {
+                state = JSON.parse(JSON.stringify(route.initialState));
+            }
 
-        return state;
-    };
+            return state;
+        },
+        [route],
+    );
+    const getLastStateRef = useRef();
+    getLastStateRef.current = getLastState;
 
-    const getLastFolderEdit = (id) => {
-        // Check previous sections for the last folder edit value
-        let folderEdit = null;
-        for (let i = id - 1; i >= 0; i--) {
-            if (route.sections[i].folderEdit != null) {
+    const getLastFolderEdit = useCallback(
+        (id) => {
+            // Check previous sections for the last folder edit value
+            let folderEdit = null;
+            for (let i = id - 1; i >= 0; i--) {
+                if (route.sections[i].folderEdit != null) {
+                    folderEdit = JSON.parse(
+                        JSON.stringify(route.sections[i].folderEdit),
+                    );
+                    break;
+                }
+            }
+
+            // If no state was found, use initialState
+            if (folderEdit == null) {
                 folderEdit = JSON.parse(
-                    JSON.stringify(route.sections[i].folderEdit),
+                    JSON.stringify(route.initialFolderEdit),
                 );
-                break;
             }
-        }
 
-        // If no state was found, use initialState
-        if (folderEdit == null) {
-            folderEdit = JSON.parse(JSON.stringify(route.initialFolderEdit));
-        }
+            // Setup the previous folder to be the same as the starting folder, and clear the folder edit.
+            folderEdit.prevFolder = folderEdit.folder;
+            folderEdit.value = [
+                {
+                    id: 0,
+                    action: '',
+                    item1: -1,
+                    modifier1: '',
+                    item2: -1,
+                    modifier2: '',
+                },
+            ];
 
-        // Setup the previous folder to be the same as the starting folder, and clear the folder edit.
-        folderEdit.prevFolder = folderEdit.folder;
-        folderEdit.value = [
-            {
-                id: 0,
-                action: '',
-                item1: -1,
-                modifier1: '',
-                item2: -1,
-                modifier2: '',
-            },
-        ];
-
-        return folderEdit;
-    };
+            return folderEdit;
+        },
+        [route],
+    );
+    const getLastFolderEditRef = useRef();
+    getLastFolderEditRef.current = getLastFolderEdit;
 
     return (
         <div id="scrollableDiv" className={`${styles.sectionList}`}>
@@ -171,14 +195,14 @@ function SectionList(props) {
                     <Section
                         key={'section-' + section.id}
                         section={section}
-                        setSection={setSection}
+                        setSection={setSectionRef}
                         max={route.sections.length - 1}
-                        moveSectionUp={moveSectionUp}
-                        moveSectionDown={moveSectionDown}
-                        addSection={addSection}
-                        deleteSection={deleteSection}
-                        getLastState={getLastState}
-                        getLastFolderEdit={getLastFolderEdit}
+                        moveSectionUp={moveSectionUpRef}
+                        moveSectionDown={moveSectionDownRef}
+                        addSection={addSectionRef}
+                        deleteSection={deleteSectionRef}
+                        getLastState={getLastStateRef}
+                        getLastFolderEdit={getLastFolderEditRef}
                     />
                 ))}
                 <div className="bottom-buffer"> </div>

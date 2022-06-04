@@ -1,6 +1,6 @@
 /** @format */
 
-import { useCallback, useContext } from 'react';
+import { useCallback, useRef, useContext, memo } from 'react';
 import styles from './styles/Section.Module.css';
 import GameContext from '../../../common/GameContext';
 import Button from '../../../common/Button';
@@ -10,8 +10,17 @@ import SectionItem from './SectionItem';
 import SectionImage from './SectionImage';
 import SectionState from './SectionState';
 import SectionFolderEdit from './SectionFolderEdit';
+import areShallowEqual from 'are-shallow-equal';
 
-function Section(props) {
+function shouldUpdate(oldProps, newProps) {
+    if (areShallowEqual(oldProps.section, newProps.section)) {
+        return true;
+    }
+
+    return false;
+}
+
+const Section = memo((props) => {
     const gameInfo = useContext(GameContext);
 
     const updateText = useCallback(
@@ -19,10 +28,12 @@ function Section(props) {
             // Stringify then parse JSON to create deep copy.
             let newSection = JSON.parse(JSON.stringify(props.section));
             newSection.text[id] = text;
-            props.setSection(newSection, props.section.id);
+            props.setSection.current(newSection, props.section.id);
         },
         [props],
     );
+    const updateTextRef = useRef();
+    updateTextRef.current = updateText;
 
     const addText = useCallback(
         (e) => {
@@ -34,7 +45,7 @@ function Section(props) {
                 id: newSection.text.length,
                 text: '',
             });
-            props.setSection(newSection, props.section.id);
+            props.setSection.current(newSection, props.section.id);
         },
         [props],
     );
@@ -52,10 +63,12 @@ function Section(props) {
             newSection.text[id] = aboveText;
             newSection.text[id - 1] = chosenText;
 
-            props.setSection(newSection, props.section.id);
+            props.setSection.current(newSection, props.section.id);
         },
         [props],
     );
+    const moveTextUpRef = useRef();
+    moveTextUpRef.current = moveTextUp;
 
     const moveTextDown = useCallback(
         (id) => {
@@ -70,10 +83,12 @@ function Section(props) {
             newSection.text[id] = belowText;
             newSection.text[id + 1] = chosenText;
 
-            props.setSection(newSection, props.section.id);
+            props.setSection.current(newSection, props.section.id);
         },
         [props],
     );
+    const moveTextDownRef = useRef();
+    moveTextDownRef.current = moveTextDown;
 
     const deleteText = useCallback(
         (id) => {
@@ -85,22 +100,25 @@ function Section(props) {
             }
 
             newSection.text.splice(id, 1);
-            console.log(newSection.text);
 
-            props.setSection(newSection, props.section.id);
+            props.setSection.current(newSection, props.section.id);
         },
         [props],
     );
+    const deleteTextRef = useRef();
+    deleteTextRef.current = deleteText;
 
     const updateItem = useCallback(
         (item, id) => {
             // Stringify then parse JSON to create deep copy.
             const newSection = JSON.parse(JSON.stringify(props.section));
             newSection.items[id] = item;
-            props.setSection(newSection, props.section.id);
+            props.setSection.current(newSection, props.section.id);
         },
         [props],
     );
+    const updateItemRef = useRef();
+    updateItemRef.current = updateItem;
 
     const addItem = useCallback(() => {
         // Stringify then parse JSON to create deep copy.
@@ -109,7 +127,7 @@ function Section(props) {
             id: newSection.items.length,
             value: 0,
         });
-        props.setSection(newSection, props.section.id);
+        props.setSection.current(newSection, props.section.id);
     }, [props]);
 
     const moveItemUp = useCallback(
@@ -125,10 +143,12 @@ function Section(props) {
             newSection.items[id] = aboveItem;
             newSection.items[id - 1] = chosenItem;
 
-            props.setSection(newSection, props.section.id);
+            props.setSection.current(newSection, props.section.id);
         },
         [props],
     );
+    const moveItemUpRef = useRef();
+    moveItemUpRef.current = moveItemUp;
 
     const moveItemDown = useCallback(
         (id) => {
@@ -143,10 +163,12 @@ function Section(props) {
             newSection.items[id] = belowItem;
             newSection.items[id + 1] = chosenItem;
 
-            props.setSection(newSection, props.section.id);
+            props.setSection.current(newSection, props.section.id);
         },
         [props],
     );
+    const moveItemDownRef = useRef();
+    moveItemDownRef.current = moveItemDown;
 
     const deleteItem = useCallback(
         (id) => {
@@ -159,17 +181,19 @@ function Section(props) {
 
             newSection.items.splice(id, 1);
 
-            props.setSection(newSection, props.section.id);
+            props.setSection.current(newSection, props.section.id);
         },
         [props],
     );
+    const deleteItemRef = useRef();
+    deleteItemRef.current = deleteItem;
 
     const updateImage = useCallback(
         (image) => {
             // Stringify then parse JSON to create deep copy.
             let newSection = JSON.parse(JSON.stringify(props.section));
             newSection.image = image;
-            props.setSection(newSection, props.section.id);
+            props.setSection.current(newSection, props.section.id);
         },
         [props],
     );
@@ -178,7 +202,7 @@ function Section(props) {
         // Stringify then parse JSON to create deep copy.
         let newSection = JSON.parse(JSON.stringify(props.section));
         newSection.image = null;
-        props.setSection(newSection, props.section.id);
+        props.setSection.current(newSection, props.section.id);
     }, [props]);
 
     const updateState = useCallback(
@@ -186,7 +210,7 @@ function Section(props) {
             // Stringify then parse JSON to create deep copy.
             let newSection = JSON.parse(JSON.stringify(props.section));
             newSection.state = state;
-            props.setSection(newSection, props.section.id);
+            props.setSection.current(newSection, props.section.id);
         },
         [props],
     );
@@ -195,8 +219,8 @@ function Section(props) {
         (e) => {
             // Stringify then parse JSON to create deep copy.
             let newSection = JSON.parse(JSON.stringify(props.section));
-            newSection.state = props.getLastState(props.section.id);
-            props.setSection(newSection, props.section.id);
+            newSection.state = props.getLastState.current(props.section.id);
+            props.setSection.current(newSection, props.section.id);
         },
         [props],
     );
@@ -205,22 +229,24 @@ function Section(props) {
         // Stringify then parse JSON to create deep copy.
         let newSection = JSON.parse(JSON.stringify(props.section));
         newSection.state = null;
-        props.setSection(newSection, props.section.id);
+        props.setSection.current(newSection, props.section.id);
     }, [props]);
 
     const updateFolderEdit = (folderEdit) => {
         // JSON stringify, then JSON parse to make a deep copy.
         let newSection = JSON.parse(JSON.stringify(props.section));
         newSection.folderEdit = folderEdit;
-        props.setSection(newSection, props.section.id);
+        props.setSection.current(newSection, props.section.id);
     };
 
     const addFolderEdit = useCallback(
         (e) => {
             // Stringify then parse JSON to create deep copy.
             let newSection = JSON.parse(JSON.stringify(props.section));
-            newSection.folderEdit = props.getLastFolderEdit(props.section.id);
-            props.setSection(newSection, props.section.id);
+            newSection.folderEdit = props.getLastFolderEdit.current(
+                props.section.id,
+            );
+            props.setSection.current(newSection, props.section.id);
         },
         [props],
     );
@@ -230,7 +256,14 @@ function Section(props) {
             // Stringify then parse JSON to create deep copy.
             let newSection = JSON.parse(JSON.stringify(props.section));
             newSection.folderEdit = null;
-            props.setSection(newSection, props.section.id);
+            props.setSection.current(newSection, props.section.id);
+        },
+        [props],
+    );
+
+    const insertSection = useCallback(
+        (e) => {
+            props.addSection.current(props.section.id + 1);
         },
         [props],
     );
@@ -249,7 +282,7 @@ function Section(props) {
                     hover={true}
                     hidden={props.section.id === 0}
                     onClick={() => {
-                        props.moveSectionUp(props.section.id);
+                        props.moveSectionUp.current(props.section.id);
                     }}
                 />
                 <Icon
@@ -260,7 +293,7 @@ function Section(props) {
                     hover={true}
                     hidden={props.section.id === props.max}
                     onClick={() => {
-                        props.moveSectionDown(props.section.id);
+                        props.moveSectionDown.current(props.section.id);
                     }}
                 />
                 <Icon
@@ -271,7 +304,7 @@ function Section(props) {
                     hover={true}
                     grayscale={true}
                     onClick={() => {
-                        props.deleteSection(props.section.id);
+                        props.deleteSection.current(props.section.id);
                     }}
                 />
             </div>
@@ -284,10 +317,10 @@ function Section(props) {
                             sectionId={props.section.id}
                             text={text}
                             max={props.section.text.length - 1}
-                            updateText={updateText}
-                            moveTextUp={moveTextUp}
-                            moveTextDown={moveTextDown}
-                            deleteText={deleteText}
+                            updateText={updateTextRef}
+                            moveTextUp={moveTextUpRef}
+                            moveTextDown={moveTextDownRef}
+                            deleteText={deleteTextRef}
                         />
                     ))}
                     <Button text="Add Text" size="medium" onClick={addText} />
@@ -299,10 +332,10 @@ function Section(props) {
                             key={'item-' + item.id}
                             item={item}
                             max={props.section.items.length - 1}
-                            updateItem={updateItem}
-                            moveItemUp={moveItemUp}
-                            moveItemDown={moveItemDown}
-                            deleteItem={deleteItem}
+                            updateItem={updateItemRef}
+                            moveItemUp={moveItemUpRef}
+                            moveItemDown={moveItemDownRef}
+                            deleteItem={deleteItemRef}
                         />
                     ))}
                     <Button
@@ -344,12 +377,10 @@ function Section(props) {
                 text="Add Section"
                 id={'addSection-' + (props.section.id + 1)}
                 size="medium"
-                onClick={() => {
-                    props.addSection(props.section.id + 1);
-                }}
+                onClick={insertSection}
             />
         </div>
     );
-}
+}, shouldUpdate);
 
 export default Section;

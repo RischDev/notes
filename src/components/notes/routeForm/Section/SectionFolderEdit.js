@@ -1,12 +1,21 @@
 /** @format */
 
-import { useContext } from 'react';
+import { useContext, memo } from 'react';
 import Icon from '../../../common/Icon';
 import Button from '../../../common/Button';
 import GameContext from '../../../common/GameContext';
 import performFolderEditAction from '../../../common/functions/performFolderEditAction';
 import getNewFolder from '../../../common/functions/getNewFolder';
 import styles from './styles/SectionFolderEdit.Module.css';
+import areShallowEqual from 'are-shallow-equal';
+
+function shouldUpdate(oldProps, newProps) {
+    if (areShallowEqual(oldProps, newProps)) {
+        return true;
+    }
+
+    return false;
+}
 
 function ItemOption(props) {
     const gameInfo = useContext(GameContext);
@@ -117,10 +126,14 @@ function ItemDropdown(props) {
                 }}>
                 <option value={''}> </option>
                 {gameInfo.sortTypes.map((sortType) => (
-                    <option value={sortType}>{sortType}</option>
+                    <option value={sortType} key={sortType}>
+                        {sortType}
+                    </option>
                 ))}
                 {gameInfo.sortTypes.map((sortType) => (
-                    <option value={sortType + '-r'}>R. {sortType}</option>
+                    <option value={sortType + '-r'} key={sortType + '-r'}>
+                        R. {sortType}
+                    </option>
                 ))}
             </select>
         );
@@ -209,7 +222,7 @@ function ActionsList(props) {
     return <div className={styles.wrapper}>{actionsList}</div>;
 }
 
-function SectionFolderEdit(props) {
+const SectionFolderEdit = memo((props) => {
     const gameInfo = useContext(GameContext);
 
     const addAction = () => {
@@ -349,6 +362,6 @@ function SectionFolderEdit(props) {
             onClick={props.addFolderEdit}
         />
     );
-}
+}, shouldUpdate);
 
 export default SectionFolderEdit;

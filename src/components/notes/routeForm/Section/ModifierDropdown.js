@@ -9,7 +9,7 @@ function ModifierDropdown(props) {
 
     const onModifierUpdate = (e) => {
         let value = e.target.value;
-        props.updateModifier(value);
+        props.updateModifier.current(value);
     };
 
     if (!gameInfo.modifiers) {

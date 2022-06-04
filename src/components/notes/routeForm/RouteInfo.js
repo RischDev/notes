@@ -107,6 +107,8 @@ function RouteInfo(props) {
                 route: {
                     ...route,
                     game: newGame,
+                    initialState: gameInfo.initialState,
+                    initialFolderEdit: gameInfo.initialFolderEdit,
                 },
                 gameInfo: gameInfo,
             });

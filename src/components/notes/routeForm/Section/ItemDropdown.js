@@ -8,8 +8,6 @@ import Button from '../../../common/Button';
 function shouldUpdate(oldProps, newProps) {
     if (oldProps.item !== newProps.item) {
         return false;
-    } else if (oldProps.updateItem !== newProps.updateItem) {
-        return false;
     }
 
     return true;
@@ -25,13 +23,13 @@ const ItemDropdown = memo((props) => {
             value = parseInt(value);
         }
 
-        props.updateItem(value);
+        props.updateItem.current(value);
     };
 
     const addDropdown = (e) => {
         e.preventDefault();
 
-        props.updateItem(0);
+        props.updateItem.current(0);
     };
 
     if (props.item != null) {

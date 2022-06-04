@@ -1,6 +1,6 @@
 /** @format */
 
-import React from 'react';
+import { useRef, memo } from 'react';
 import styles from './styles/SectionItem.Module.css';
 import ItemDropdown from './ItemDropdown';
 import ModifierDropdown from './ModifierDropdown';
@@ -13,38 +13,42 @@ function shouldUpdate(oldProps, newProps) {
         return false;
     } else if (oldProps.item.modifier !== newProps.item.modifier) {
         return false;
-    } else if (oldProps.updateItem !== newProps.updateItem) {
+    } else if (oldProps.max !== newProps.max) {
         return false;
     }
 
     return true;
 }
 
-const SectionItem = React.memo((props) => {
+const SectionItem = memo((props) => {
     const updateItem = (item) => {
         const newItem = JSON.parse(JSON.stringify(props.item));
         newItem.value = item;
-        props.updateItem(newItem, props.item.id);
+        props.updateItem.current(newItem, props.item.id);
     };
+    const updateItemRef = useRef();
+    updateItemRef.current = updateItem;
 
     const updateModifier = (modifier) => {
         const newItem = JSON.parse(JSON.stringify(props.item));
         newItem.modifier = modifier;
-        props.updateItem(newItem, props.item.id);
+        props.updateItem.current(newItem, props.item.id);
     };
+    const updateModifierRef = useRef();
+    updateModifierRef.current = updateModifier;
 
     return (
         <div className={`${styles.wrapper}`}>
             <ItemDropdown
                 type="section"
                 item={props.item.value}
-                updateItem={updateItem}
+                updateItem={updateItemRef}
             />
             <ModifierDropdown
                 type="section"
                 item={props.item.value}
                 modifier={props.item.modifier}
-                updateModifier={updateModifier}
+                updateModifier={updateModifierRef}
             />
             <Icon
                 src="/icons/up.png"
@@ -52,7 +56,7 @@ const SectionItem = React.memo((props) => {
                 hover={true}
                 hidden={props.item.id === 0}
                 altText="Up"
-                onClick={() => props.moveItemUp(props.item.id)}
+                onClick={() => props.moveItemUp.current(props.item.id)}
             />
             <Icon
                 src="/icons/down.png"
@@ -60,7 +64,7 @@ const SectionItem = React.memo((props) => {
                 hover={true}
                 hidden={props.item.id === props.max}
                 altText="Down"
-                onClick={() => props.moveItemDown(props.item.id)}
+                onClick={() => props.moveItemDown.current(props.item.id)}
             />
             <Icon
                 src="/icons/delete.png"
@@ -69,7 +73,7 @@ const SectionItem = React.memo((props) => {
                 hidden={false}
                 grayscale={true}
                 altText="X"
-                onClick={() => props.deleteItem(props.item.id)}
+                onClick={() => props.deleteItem.current(props.item.id)}
             />
         </div>
     );
