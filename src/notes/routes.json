@@ -475,6 +475,10 @@
         },
         "routes": [
             {
+                "title": "Doicm's Any%",
+                "path": "doicm_mmsf3_any"
+            },
+            {
                 "title": "Risch's Crimson Dragon SP",
                 "path": "risch_mmsf3_cdsp"
             }
