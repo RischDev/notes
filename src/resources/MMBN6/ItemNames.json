@@ -6,15 +6,24 @@
     "initialState": {
         "keys": [
             "Max HP",
+            "RegMem",
             "Zenny",
+            "FullEnrg",
             "Bugfrags",
             "Sneakruns",
+            "Untrap",
+            "Unlocker",
+            "LocEnemy",
             "Standard",
             "Mega",
             "Giga"
         ],
         "Max HP": {
             "value": 100,
+            "shown": true
+        },
+        "RegMem": {
+            "value": 4,
             "shown": true
         },
         "Zenny": {
@@ -25,7 +34,23 @@
             "value": 0,
             "shown": true
         },
+        "FullEnrg": {
+            "value": 0,
+            "shown": true
+        },
         "Sneakruns": {
+            "value": 0,
+            "shown": true
+        },
+        "Untrap": {
+            "value": 0,
+            "shown": true
+        },
+        "Unlocker": {
+            "value": 0,
+            "shown": true
+        },
+        "LocEnemy": {
             "value": 0,
             "shown": true
         },

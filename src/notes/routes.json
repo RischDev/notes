@@ -28,40 +28,6 @@
     },
     "MMBN4": {
         "name": "Mega Man Battle Network 4",
-        "initialState": {
-            "keys": [
-                "Max HP",
-                "Zenny",
-                "Sneakruns",
-                "Standard",
-                "Mega",
-                "Giga"
-            ],
-            "Max HP": {
-                "value": 100,
-                "shown": true
-            },
-            "Zenny": {
-                "value": 0,
-                "shown": true
-            },
-            "Sneakruns": {
-                "value": 0,
-                "shown": true
-            },
-            "Standard": {
-                "value": 12,
-                "shown": true
-            },
-            "Mega": {
-                "value": 0,
-                "shown": true
-            },
-            "Giga": {
-                "value": 0,
-                "shown": true
-            }
-        },
         "routes": [
             {
                 "title": "BN4",
@@ -71,40 +37,6 @@
     },
     "MMBN5": {
         "name": "Mega Man Battle Network 5",
-        "initialState": {
-            "keys": [
-                "Max HP",
-                "Zenny",
-                "Sneakruns",
-                "Standard",
-                "Mega",
-                "Giga"
-            ],
-            "Max HP": {
-                "value": 100,
-                "shown": true
-            },
-            "Zenny": {
-                "value": 0,
-                "shown": true
-            },
-            "Sneakruns": {
-                "value": 0,
-                "shown": true
-            },
-            "Standard": {
-                "value": 12,
-                "shown": true
-            },
-            "Mega": {
-                "value": 0,
-                "shown": true
-            },
-            "Giga": {
-                "value": 0,
-                "shown": true
-            }
-        },
         "routes": [
             {
                 "title": "BN5 Colonel Any% No ASE",
@@ -114,226 +46,6 @@
     },
     "MMBN6": {
         "name": "Mega Man Battle Network 6",
-        "initialState": {
-            "keys": [
-                "Max HP",
-                "Zenny",
-                "Sneakruns",
-                "Standard",
-                "Mega",
-                "Giga"
-            ],
-            "Max HP": {
-                "value": 100,
-                "shown": true
-            },
-            "Zenny": {
-                "value": 0,
-                "shown": true
-            },
-            "Sneakruns": {
-                "value": 0,
-                "shown": true
-            },
-            "Standard": {
-                "value": 12,
-                "shown": true
-            },
-            "Mega": {
-                "value": 0,
-                "shown": true
-            },
-            "Giga": {
-                "value": 0,
-                "shown": true
-            },
-            "folder": [
-                {
-                    "slot": 0,
-                    "item": 0,
-                    "modifier": "A",
-                    "regged": false
-                },
-                {
-                    "slot": 1,
-                    "item": 0,
-                    "modifier": "A",
-                    "regged": false
-                },
-                {
-                    "slot": 2,
-                    "item": 0,
-                    "modifier": "B",
-                    "regged": false
-                },
-                {
-                    "slot": 3,
-                    "item": 0,
-                    "modifier": "B",
-                    "regged": false
-                },
-                {
-                    "slot": 4,
-                    "item": 3,
-                    "modifier": "*",
-                    "regged": false
-                },
-                {
-                    "slot": 5,
-                    "item": 3,
-                    "modifier": "*",
-                    "regged": false
-                },
-                {
-                    "slot": 6,
-                    "item": 4,
-                    "modifier": "D",
-                    "regged": false
-                },
-                {
-                    "slot": 7,
-                    "item": 4,
-                    "modifier": "D",
-                    "regged": false
-                },
-                {
-                    "slot": 8,
-                    "item": 4,
-                    "modifier": "D",
-                    "regged": false
-                },
-                {
-                    "slot": 9,
-                    "item": 57,
-                    "modifier": "B",
-                    "regged": false
-                },
-                {
-                    "slot": 10,
-                    "item": 57,
-                    "modifier": "B",
-                    "regged": false
-                },
-                {
-                    "slot": 11,
-                    "item": 57,
-                    "modifier": "L",
-                    "regged": false
-                },
-                {
-                    "slot": 12,
-                    "item": 57,
-                    "modifier": "L",
-                    "regged": false
-                },
-                {
-                    "slot": 13,
-                    "item": 69,
-                    "modifier": "S",
-                    "regged": false
-                },
-                {
-                    "slot": 14,
-                    "item": 69,
-                    "modifier": "S",
-                    "regged": false
-                },
-                {
-                    "slot": 15,
-                    "item": 69,
-                    "modifier": "S",
-                    "regged": false
-                },
-                {
-                    "slot": 16,
-                    "item": 69,
-                    "modifier": "S",
-                    "regged": false
-                },
-                {
-                    "slot": 17,
-                    "item": 70,
-                    "modifier": "S",
-                    "regged": false
-                },
-                {
-                    "slot": 18,
-                    "item": 70,
-                    "modifier": "S",
-                    "regged": false
-                },
-                {
-                    "slot": 19,
-                    "item": 176,
-                    "modifier": "*",
-                    "regged": false
-                },
-                {
-                    "slot": 20,
-                    "item": 87,
-                    "modifier": "*",
-                    "regged": false
-                },
-                {
-                    "slot": 21,
-                    "item": 87,
-                    "modifier": "*",
-                    "regged": false
-                },
-                {
-                    "slot": 22,
-                    "item": 155,
-                    "modifier": "A",
-                    "regged": false
-                },
-                {
-                    "slot": 23,
-                    "item": 155,
-                    "modifier": "A",
-                    "regged": false
-                },
-                {
-                    "slot": 24,
-                    "item": 155,
-                    "modifier": "L",
-                    "regged": false
-                },
-                {
-                    "slot": 25,
-                    "item": 155,
-                    "modifier": "L",
-                    "regged": false
-                },
-                {
-                    "slot": 26,
-                    "item": 164,
-                    "modifier": "S",
-                    "regged": false
-                },
-                {
-                    "slot": 27,
-                    "item": 195,
-                    "modifier": "*",
-                    "regged": false
-                },
-                {
-                    "slot": 28,
-                    "item": 195,
-                    "modifier": "*",
-                    "regged": false
-                },
-                {
-                    "slot": 29,
-                    "item": 191,
-                    "modifier": "*",
-                    "regged": false
-                }
-            ],
-            "folderEdit": {
-                "value": [],
-                "shown": false
-            }
-        },
         "routes": [
             {
                 "title": "Test Battle Network 6 Route",
@@ -347,33 +59,6 @@
     },
     "MMSF1": {
         "name": "Mega Man Star Force",
-        "initialState": {
-            "keys": ["Max HP", "Zenny", "Cloakers", "Standard", "Mega", "Giga"],
-            "Max HP": {
-                "value": 100,
-                "shown": true
-            },
-            "Zenny": {
-                "value": 0,
-                "shown": true
-            },
-            "Cloakers": {
-                "value": 0,
-                "shown": true
-            },
-            "Standard": {
-                "value": 12,
-                "shown": true
-            },
-            "Mega": {
-                "value": 0,
-                "shown": true
-            },
-            "Giga": {
-                "value": 0,
-                "shown": true
-            }
-        },
         "routes": [
             {
                 "title": "Risch's Andromeda Infinity - Card Trader Manip, Gold MW Manip",
@@ -383,60 +68,6 @@
     },
     "MMSF2": {
         "name": "Mega Man Star Force 2",
-        "initialState": {
-            "keys": [
-                "Max HP",
-                "Zenny",
-                "Cloakers",
-                "FireSrch",
-                "AquaSrch",
-                "ElecSrch",
-                "WoodSrch",
-                "Standard",
-                "Mega",
-                "Giga"
-            ],
-            "Max HP": {
-                "value": 100,
-                "shown": true
-            },
-            "Zenny": {
-                "value": 0,
-                "shown": true
-            },
-            "Cloakers": {
-                "value": 0,
-                "shown": true
-            },
-            "FireSrch": {
-                "value": 0,
-                "shown": true
-            },
-            "AquaSrch": {
-                "value": 0,
-                "shown": true
-            },
-            "ElecSrch": {
-                "value": 0,
-                "shown": true
-            },
-            "WoodSrch": {
-                "value": 0,
-                "shown": true
-            },
-            "Standard": {
-                "value": 12,
-                "shown": true
-            },
-            "Mega": {
-                "value": 0,
-                "shown": true
-            },
-            "Giga": {
-                "value": 0,
-                "shown": true
-            }
-        },
         "routes": [
             {
                 "title": "Risch's Rogue SX",
@@ -446,33 +77,6 @@
     },
     "MMSF3": {
         "name": "Mega Man Star Force 3",
-        "initialState": {
-            "keys": ["Max HP", "Zenny", "Cloakers", "Standard", "Mega", "Giga"],
-            "Max HP": {
-                "value": 100,
-                "shown": true
-            },
-            "Zenny": {
-                "value": 0,
-                "shown": true
-            },
-            "Cloakers": {
-                "value": 0,
-                "shown": true
-            },
-            "Standard": {
-                "value": 12,
-                "shown": true
-            },
-            "Mega": {
-                "value": 0,
-                "shown": true
-            },
-            "Giga": {
-                "value": 0,
-                "shown": true
-            }
-        },
         "routes": [
             {
                 "title": "Doicm's Any%",
@@ -486,21 +90,6 @@
     },
     "OSS": {
         "name": "Rockman EXE Operate Shooting Star",
-        "initialState": {
-            "keys": ["Max HP", "Zenny", "Battlechips"],
-            "Max HP": {
-                "value": 100,
-                "shown": true
-            },
-            "Zenny": {
-                "value": 0,
-                "shown": true
-            },
-            "Battlechips": {
-                "value": 12,
-                "shown": true
-            }
-        },
         "routes": []
     }
 }
