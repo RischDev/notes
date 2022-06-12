@@ -40,6 +40,27 @@ const getInitialState = (path, game, route) => {
         gameInfo = require('../../../resources/' + game + '/ItemNames.json');
     }
 
+    // If initial state is different, the state variables need to be updated in the route.
+    if (
+        route.game != null &&
+        !equal(route.initialState, gameInfo.initialState)
+    ) {
+        route.initialState = gameInfo.initialState;
+
+        // Update state variables in each section to add new keys.
+        for (const section of route.sections) {
+            if (section.state) {
+                for (let key of gameInfo.initialState.keys) {
+                    if (!section.state.keys.includes(key)) {
+                        section.state[key] = gameInfo.initialState[key];
+                    }
+                }
+
+                section.state.keys = gameInfo.initialState.keys;
+            }
+        }
+    }
+
     return {
         route: {
             title: path != null ? route.title : '',
@@ -103,7 +124,19 @@ function RouteFormImpl(props) {
         if (!equal(newRoute.initialState, state.gameInfo.initialState)) {
             newRoute.initialState = state.gameInfo.initialState;
 
-            // TODO: Update state variables in each section to add new keys.
+            // Update state variables in each section to add new keys.
+            for (const section of newRoute.sections) {
+                if (section.state) {
+                    for (let key of state.gameInfo.initialState.keys) {
+                        if (!section.state.keys.includes(key)) {
+                            section.state[key] =
+                                state.gameInfo.initialState[key];
+                        }
+                    }
+
+                    section.state.keys = state.gameInfo.initialState.keys;
+                }
+            }
         }
 
         setState({ ...state, route: newRoute });

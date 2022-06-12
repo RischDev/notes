@@ -6,6 +6,8 @@ import styles from './styles/RouteInfo.Module.css';
 import RouteContext from '../../common/RouteContext';
 import Button from '../../common/Button';
 
+const equal = require('deep-equal');
+
 function RouteInfo(props) {
     const { route, preview, setContext } = useContext(RouteContext);
 
@@ -76,6 +78,24 @@ function RouteInfo(props) {
         const gameInfo = require('../../../resources/' +
             route.game +
             '/ItemNames.json');
+
+        // If initial state is different, the state variables need to be updated
+        if (!equal(route.initialState, gameInfo.initialState)) {
+            route.initialState = gameInfo.initialState;
+
+            for (const section of route.sections) {
+                if (section.state) {
+                    for (let key of gameInfo.initialState.keys) {
+                        if (!section.state.keys.includes(key)) {
+                            section.state[key] = gameInfo.initialState[key];
+                        }
+                    }
+
+                    section.state.keys = gameInfo.initialState.keys;
+                }
+            }
+        }
+
         setContext({
             route: route,
             numSections: Math.min(10, route.sections.length),
