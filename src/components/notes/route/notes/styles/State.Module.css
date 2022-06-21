@@ -1,8 +1,9 @@
 /** @format */
 
 .stateContainer {
-    flex-basis: 125px;
+    min-width: 25%;
     flex-grow: 1;
+    max-width: 30%;
     margin: 5px;
 }
 
@@ -35,4 +36,12 @@
 
 .hidden {
     display: none;
+}
+
+/* For mobile phones: */
+@media only screen and (max-width: 600px) {
+    .stateContainer {
+        width: 45%;
+        max-width: 45%;
+    }
 }

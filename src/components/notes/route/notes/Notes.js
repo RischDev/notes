@@ -58,10 +58,16 @@ function Notes(props) {
 
     useEffect(() => {
         if (mode === 'list' && showNotes) {
-            sectionRefs[state.section].current.scrollIntoView({
-                behavior: 'instant',
-            });
+            // TODO: Find a solution to scroll to the expected section when switching from presenter to list mode.
+            if (sectionRefs[state.section].current != null) {
+                sectionRefs[state.section].current.scrollIntoView({
+                    behavior: 'instant',
+                });
+            } else {
+                setState({ ...state, section: 0 });
+            }
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [mode, showNotes]);
 
     useEffect(() => {

@@ -1,5 +1,13 @@
 /** @format */
 
+.itemContainer {
+    flex-grow: 1;
+    min-width: 25%;
+    max-width: 30%;
+    margin: 5px;
+    margin-bottom: 0px;
+}
+
 .label {
     font-size: 14px;
     font-weight: bold;
@@ -10,4 +18,12 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
+}
+
+/* For mobile phones: */
+@media only screen and (max-width: 600px) {
+    .itemContainer {
+        width: 100%;
+        max-width: 100%;
+    }
 }

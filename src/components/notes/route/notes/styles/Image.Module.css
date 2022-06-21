@@ -1,13 +1,25 @@
 /** @format */
 
 .imageContainer {
-    flex-basis: 250px;
-    flex-grow: 1;
-    margin: 5px;
-    max-width: 50%;
+    min-width: 45%;
+    flex-grow: 2;
+    padding: 5px;
+    max-width: 45%;
     display: flex;
 }
 
 .image {
     width: 100%;
+}
+
+.image:hover {
+    cursor: zoom-in;
+}
+
+/* For mobile phones: */
+@media only screen and (max-width: 600px) {
+    .imageContainer {
+        width: 100%;
+        max-width: 100%;
+    }
 }

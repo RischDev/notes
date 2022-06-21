@@ -177,10 +177,6 @@ function RouteImpl(props) {
                 fullscreenImage={fullscreenImage}
             />
             <NotesContext.Provider value={getContextValue()}>
-                <Notes
-                    updateTracker={updateTracker}
-                    fullscreenImage={fullscreenImage}
-                />
                 <div className={`${styles.rightColumn}`}>
                     <Menu
                         preview={routeContext.preview}
@@ -188,6 +184,10 @@ function RouteImpl(props) {
                     />
                     <Tracker updateTracker={updateTracker} />
                 </div>
+                <Notes
+                    updateTracker={updateTracker}
+                    fullscreenImage={fullscreenImage}
+                />
             </NotesContext.Provider>
         </div>
     );

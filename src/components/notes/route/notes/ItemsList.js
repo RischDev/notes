@@ -69,7 +69,7 @@ function ItemsList(props) {
 
     if (props.items.length > 0) {
         return (
-            <div>
+            <div className={styles.itemContainer}>
                 <div className={styles.label}>Potential {Items.name + 's'}</div>
                 <div className={styles.itemList}>{itemsList}</div>
             </div>

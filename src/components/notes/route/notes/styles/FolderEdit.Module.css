@@ -1,7 +1,9 @@
 /** @format */
 
 .folderEditContainer {
-    width: 225px;
+    min-width: 25%;
+    flex-grow: 1;
+    max-width: 30%;
     font-size: 12px;
     margin: 5px;
 }
@@ -37,4 +39,12 @@
 
 .tagged {
     border: 1px solid green;
+}
+
+/* For mobile phones: */
+@media only screen and (max-width: 600px) {
+    .folderEditContainer {
+        width: 45%;
+        max-width: 45%;
+    }
 }

@@ -3,8 +3,10 @@
 .notes {
     overflow-y: scroll;
     overflow-x: hidden;
-    width: 65%;
-    height: 100vh;
+    width: calc(65% - 10px);
+    height: calc(100vh - 20px);
+    margin: 10px;
+    margin-right: 0;
     display: flex;
     flex-wrap: wrap;
     justify-content: left;
@@ -13,4 +15,11 @@
 
 .fullSize {
     width: 100%;
+}
+
+@media only screen and (max-width: 600px) {
+    .notes {
+        margin: 0 10px;
+        height: calc(80vh - 40px);
+    }
 }

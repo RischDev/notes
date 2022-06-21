@@ -83,21 +83,41 @@ function Menu(props) {
 
     // If on mobile, use a different button layout where users can only swap notes and tracker.
     if (useMatchMedia('(max-width: 600px)')) {
-        let notesText = props.showNotes ? 'Show Tracker' : 'Show Notes';
+        let notesText = showNotes ? 'Show Tracker' : 'Show Notes';
         return (
             <div className={`card ${styles.menu}`}>
                 <Button
                     text="Reset Tracker"
-                    size="medium"
+                    className={`${styles.btn}`}
                     onClick={resetTracker}
                 />
                 <Button
                     text={notesText}
-                    size="medium"
+                    className={`${styles.btn}`}
                     onClick={swapNotesAndTracker}
                 />
-                <Button text={modeText} size="large" onClick={changeMode} />
+                <Button
+                    text={modeText}
+                    className={`${styles.btn}`}
+                    onClick={changeMode}
+                />
                 {previewButton}
+                <div className={styles.buffer} />
+                <div className={`${styles.row}`}>
+                    <div className={`${styles.label}`}>Folder Edit View</div>
+                    <select
+                        name="folderEditDisplay"
+                        value={folderEditView}
+                        className={`${styles.select}`}
+                        onChange={(e) =>
+                            setContext({ folderEditView: e.target.value })
+                        }>
+                        <option value="Actions">Actions</option>
+                        <option value="Differences">Differences</option>
+                        <option value="Inputs">Inputs</option>
+                    </select>
+                </div>
+                <div className={styles.buffer} />
             </div>
         );
     } else {
@@ -132,8 +152,7 @@ function Menu(props) {
                         onClick={changeMode}
                     />
                 </div>
-                <div className={`${styles.col}`}>{previewButton}</div>
-                <div className={`${styles.col}`}>
+                <div className={`${styles.dropdown}`}>
                     <div className={`${styles.label}`}>Folder Edit View</div>
                     <div>
                         <select
@@ -149,6 +168,7 @@ function Menu(props) {
                         </select>
                     </div>
                 </div>
+                <div className={`${styles.col}`}>{previewButton}</div>
             </div>
         );
     }

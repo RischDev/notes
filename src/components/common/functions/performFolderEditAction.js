@@ -43,7 +43,7 @@ export default function performFolderEditAction(folder, action, gameInfo) {
             newFolder[action.item1].regged = true;
         } else if (action.action === 'Tag') {
             // Tag only does something if 2 items are selected.
-            if (action.item1 != -1 && action.item2 != -1) {
+            if (action.item1 !== -1 && action.item2 !== -1) {
                 // Untag everything else
                 for (let i = 0; i < newFolder.length; i++) {
                     newFolder[i].tagged = false;

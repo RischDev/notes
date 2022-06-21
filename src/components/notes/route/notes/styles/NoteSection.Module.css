@@ -1,39 +1,37 @@
 /** @format */
 
 .section {
-    width: 100%;
-    margin: 5px 10px;
-    padding: 5px;
-}
-
-.wrapper {
     display: flex;
     flex-wrap: wrap;
+    width: 100%;
+    height: fit-content;
+    margin: 0px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    padding: 5px;
     justify-content: flex-start;
-    align-items: flex-start;
+    align-content: flex-start;
 }
 
 .textContainer {
-    flex-basis: 250px;
-    flex-grow: 1;
+    min-width: 45%;
+    max-width: 52%;
+    flex-grow: 2;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    margin: 5px;
-    margin-bottom: 0px;
-}
-
-.itemContainer {
-    flex-grow: 1;
-    flex-basis: 250px;
-    max-width: 300px;
-    margin: 5px;
+    padding: 5px;
     margin-bottom: 0px;
 }
 
 /* For mobile phones: */
 @media only screen and (max-width: 600px) {
-    .wrapper {
-        align-items: flex-start;
+    .section {
+        margin-right: 0px;
+    }
+
+    .textContainer {
+        width: 100%;
+        max-width: 100%;
     }
 }

@@ -30,11 +30,3 @@
 .large {
     width: 200px;
 }
-
-/* For mobile phones: */
-@media only screen and (max-width: 600px) {
-    .btn {
-        width: 75%;
-        height: 40px;
-    }
-}

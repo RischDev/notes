@@ -16,7 +16,6 @@ function shouldUpdate(oldProps, newProps) {
         return true;
     }
 
-    console.log('test');
     return false;
 }
 
@@ -34,42 +33,36 @@ const NoteSection = memo((props) => {
                 id={'section-' + props.section.id}
                 className={`${styles.section} card`}
                 ref={props.noteRef}>
-                <div className={`${styles.wrapper}`}>
-                    <div className={`${styles.textContainer} col-m-12`}>
-                        {props.section.text.map((text) => (
-                            <Text
-                                key={'text-' + text.id}
-                                text={text}
-                                foundItems={foundItems}
-                                foundModifiers={foundModifiers}
-                            />
-                        ))}
-                    </div>
-                    <div className={`${styles.itemContainer}`}>
-                        <ItemsList
-                            items={props.section.items}
-                            updateTracker={props.updateTracker}
-                            game={game}
+                <div className={`${styles.textContainer} col-m-12`}>
+                    {props.section.text.map((text) => (
+                        <Text
+                            key={'text-' + text.id}
+                            text={text}
                             foundItems={foundItems}
                             foundModifiers={foundModifiers}
                         />
-                    </div>
+                    ))}
                 </div>
-                <div className={`${styles.wrapper}`}>
-                    <Image
-                        image={props.section.image}
-                        onClick={props.fullscreenImage}
-                    />
-                    <State state={props.section.state} game={game} />
-                    <FolderEdit folderEdit={props.section.folderEdit} />
-                </div>
+                <Image
+                    image={props.section.image}
+                    onClick={props.fullscreenImage}
+                />
+                <ItemsList
+                    items={props.section.items}
+                    updateTracker={props.updateTracker}
+                    game={game}
+                    foundItems={foundItems}
+                    foundModifiers={foundModifiers}
+                />
+                <State state={props.section.state} game={game} />
+                <FolderEdit folderEdit={props.section.folderEdit} />
             </div>
         );
     } else if (mode === 'presenter') {
         return (
             <div
                 id={'section-' + props.section.id}
-                className={`${styles.wrapper} card`}
+                className={`${styles.section} card`}
                 ref={props.noteRef}>
                 <div className="col-12 col-m-12">
                     <Icon
@@ -90,18 +83,20 @@ const NoteSection = memo((props) => {
                         onClick={props.nextSection}
                     />
                 </div>
-                <div className="col-4 col-m-12">
-                    <ul>
-                        {props.section.text.map((text) => (
-                            <Text
-                                key={'text-' + text.id}
-                                text={text}
-                                foundItems={foundItems}
-                                foundModifiers={foundModifiers}
-                            />
-                        ))}
-                    </ul>
+                <div className={`${styles.textContainer} col-m-12`}>
+                    {props.section.text.map((text) => (
+                        <Text
+                            key={'text-' + text.id}
+                            text={text}
+                            foundItems={foundItems}
+                            foundModifiers={foundModifiers}
+                        />
+                    ))}
                 </div>
+                <Image
+                    image={props.section.image}
+                    onClick={props.fullscreenImage}
+                />
                 <ItemsList
                     items={props.section.items}
                     updateTracker={props.updateTracker}
@@ -109,11 +104,8 @@ const NoteSection = memo((props) => {
                     foundItems={foundItems}
                     foundModifiers={foundModifiers}
                 />
-                <div className="col-6 col-m-12">
-                    <Image image={props.section.image} />
-                    <State state={props.section.state} game={game} />
-                    <FolderEdit folderEdit={props.section.folderEdit} />
-                </div>
+                <State state={props.section.state} game={game} />
+                <FolderEdit folderEdit={props.section.folderEdit} />
             </div>
         );
     }
