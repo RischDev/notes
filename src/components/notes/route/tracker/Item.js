@@ -13,7 +13,7 @@ function Item(props) {
     } = useContext(NotesContext);
 
     let theme = {};
-    if (game.includes('MMBN')) {
+    if (game.includes('MMBN') || game.includes('OSS')) {
         theme = themeMMBN;
     } else if (game.includes('MMSF')) {
         theme = themeMMSF;

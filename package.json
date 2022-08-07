@@ -9,6 +9,7 @@
         "@testing-library/user-event": "^12.8.3",
         "are-shallow-equal": "^1.1.1",
         "deep-equal": "^2.0.5",
+        "puppeteer": "^16.0.0",
         "react": "^17.0.2",
         "react-dom": "^17.0.2",
         "react-file-base64": "^1.0.3",

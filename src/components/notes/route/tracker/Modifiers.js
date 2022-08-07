@@ -26,7 +26,7 @@ function Modifiers(props) {
     } = useContext(NotesContext);
 
     let theme = {};
-    if (game.includes('MMBN')) {
+    if (game.includes('MMBN') || game.includes('OSS')) {
         theme = themeMMBN;
     }
 
