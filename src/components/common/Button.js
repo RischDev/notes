@@ -8,6 +8,11 @@ class Button extends React.Component {
         return (
             <button
                 id={this.props.id}
+                data-id={
+                    process.env.NODE_ENV === 'development'
+                        ? this.props.testId
+                        : null
+                }
                 className={`${styles.btn} ${styles[this.props.size]} ${
                     this.props.className
                 }`}

@@ -16,7 +16,14 @@ function Modifier(props) {
         : '';
     return (
         <div
-            id={'modifier-' + props.id + '-' + props.modifier}
+            id={
+                'section-' +
+                props.sectionId +
+                '-modifier-' +
+                props.id +
+                '-' +
+                props.modifier
+            }
             className={`${styles.modifier} ${styles[game]} ${foundClass}`}
             onClick={() => props.updateFound(props.modifier)}>
             {props.modifier}
@@ -45,6 +52,7 @@ function SmallModifiers(props) {
                     <Modifier
                         key={'small-modifier-' + modifier}
                         id={props.id}
+                        sectionId={props.sectionId}
                         modifier={modifier}
                         updateFound={updateFound}
                     />

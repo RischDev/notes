@@ -11,7 +11,7 @@ function Modifier(props) {
         : '';
     return (
         <div
-            id={'modifier-' + props.id + '-' + props.modifier}
+            id={'tracker-modifier-' + props.id + '-' + props.modifier}
             className={`${styles.modifier} ${styles[props.game]} ${foundClass}`}
             onClick={() => props.updateFound(props.modifier)}>
             {props.modifier}{' '}

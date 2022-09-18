@@ -49,6 +49,7 @@ function ItemsList(props) {
             <SmallItem
                 key={'small-item-' + item.value}
                 id={item.value}
+                sectionId={props.sectionId}
                 updateTracker={props.updateTracker}
                 modifiers={item.modifiers}
                 found={foundItems.includes(item.value)}
@@ -60,6 +61,7 @@ function ItemsList(props) {
             <SmallItem
                 key={'small-item-' + item.value}
                 id={item.value}
+                sectionId={props.sectionId}
                 updateTracker={props.updateTracker}
                 found={foundItems.includes(item.value)}
                 foundModifiers={foundModifiers}

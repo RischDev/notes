@@ -32,11 +32,11 @@ function RoutesListItemImpl(props) {
     const notes = props.notesResource.read();
 
     return (
-        <div className={styles.wrapper}>
+        <div id={'route-' + props.path} className={styles.wrapper}>
             <Link
                 to={'/notes/game/' + props.gameId + '/route/' + props.path}
                 className={`${styles.link} col-5 col-m-6`}>
-                <div>{notes.title}</div>
+                <div id={'route-title-' + props.path}>{notes.title}</div>
             </Link>
             <Link
                 to={'/notes/game/' + props.gameId + '/route/' + props.path}
@@ -57,6 +57,7 @@ function RoutesListItemImpl(props) {
                 to={'/notes/editRoute/' + props.path}
                 className={`${styles.link} col-1 col-m-2`}>
                 <Icon
+                    id={'route-edit-' + props.path}
                     src="/icons/edit.png"
                     size="small"
                     altText="Edit"

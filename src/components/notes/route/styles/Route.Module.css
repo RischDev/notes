@@ -13,7 +13,8 @@
     flex-direction: column;
     align-items: stretch;
     overflow-y: none;
-    max-height: 100vh;
+    margin-top: 10px;
+    max-height: calc(100vh - 10px);
     width: 35%;
     padding: 0px 10px;
     box-sizing: border-box;

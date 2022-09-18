@@ -37,7 +37,7 @@ function SmallItem(props) {
     return (
         <div className={`${styles.wrapper}`}>
             <div
-                id={props.id}
+                id={'section-' + props.sectionId + '-item-' + props.id}
                 className={`${styles.item} ${theme.item} ${theme[typeClass]} ${foundClass}`}
                 onClick={updateFound}>
                 <div className={`${styles.title} ${theme.title}`}>
@@ -51,6 +51,7 @@ function SmallItem(props) {
             </div>
             <SmallModifiers
                 id={props.id}
+                sectionId={props.sectionId}
                 modifiers={props.modifiers}
                 updateTracker={props.updateTracker}
             />

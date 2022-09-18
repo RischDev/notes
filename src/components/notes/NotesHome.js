@@ -33,11 +33,14 @@ class NotesHome extends React.Component {
                                     to={'/notes/game/' + gameId}
                                     className={`${styles.link}`}>
                                     <img
+                                        id={'gameArt-' + gameId}
                                         className={`${styles.img}`}
                                         src={'/gameArt/' + gameId + '.png'}
                                         alt={gameId + '.png'}
                                     />
-                                    <h4 className="gameLink">
+                                    <h4
+                                        id={'gameTitle-' + gameId}
+                                        className="gameLink">
                                         {routes[gameId].name}
                                     </h4>
                                 </Link>
@@ -45,6 +48,7 @@ class NotesHome extends React.Component {
                         ))}
                     </div>
                     <Button
+                        id="create-route-button"
                         text="Create New Route"
                         size="medium"
                         onClick={this.createRoute}

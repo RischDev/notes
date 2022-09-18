@@ -144,7 +144,15 @@ function FolderEdit(props) {
             }
 
             return (
-                <div className={`${styles.folderEditContainer}`}>
+                <div
+                    data-id={
+                        process.env.NODE_ENV === 'development'
+                            ? 'section-' +
+                              props.sectionId +
+                              '-folder-edit-actions'
+                            : null
+                    }
+                    className={`${styles.folderEditContainer}`}>
                     <div className={`${styles.label}`}>Folder Edit</div>
                     {actionsList}
                 </div>
@@ -152,7 +160,15 @@ function FolderEdit(props) {
         } else if (folderEditView === 'Differences') {
             console.log(props.folderEdit.folder);
             return (
-                <div className={`${styles.folderEditContainer}`}>
+                <div
+                    data-id={
+                        process.env.NODE_ENV === 'development'
+                            ? 'section-' +
+                              props.sectionId +
+                              '-folder-edit-differences'
+                            : null
+                    }
+                    className={`${styles.folderEditContainer}`}>
                     <div className={`${styles.label}`}>Folder Edit</div>
                     <div className={`${styles.wrapper}`}>
                         <div className="col-5">
@@ -191,7 +207,15 @@ function FolderEdit(props) {
             );
         } else if (folderEditView === 'Inputs') {
             return (
-                <div className={`${styles.folderEditContainer}`}>
+                <div
+                    data-id={
+                        process.env.NODE_ENV === 'development'
+                            ? 'section-' +
+                              props.sectionId +
+                              '-folder-edit-inputs'
+                            : null
+                    }
+                    className={`${styles.folderEditContainer}`}>
                     <div className={`${styles.label}`}>Folder Edit</div>
                     {getFolderEditInputs(props.folderEdit.value, game).map(
                         (action) => (

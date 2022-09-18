@@ -128,24 +128,28 @@ function Menu(props) {
             <div className={`card ${styles.menu}`}>
                 <div className={`${styles.col}`}>
                     <Button
+                        testId="notes-display-button"
                         text={showNotesText}
                         size="medium"
                         className={`${styles.btn}`}
                         onClick={updateNotesDisplay}
                     />
                     <Button
+                        testId="tracker-display-button"
                         text={showTrackerText}
                         size="medium"
                         className={`${styles.btn}`}
                         onClick={updateTrackerDisplay}
                     />
                     <Button
+                        testId="reset-tracker-button"
                         text="Reset Tracker"
                         size="medium"
                         className={`${styles.btn}`}
                         onClick={resetTracker}
                     />
                     <Button
+                        testId="mode-button"
                         text={modeText}
                         size="medium"
                         className={`${styles.btn}`}
@@ -157,6 +161,11 @@ function Menu(props) {
                     <div>
                         <select
                             name="folderEditDisplay"
+                            data-id={
+                                process.env.NODE_ENV === 'development'
+                                    ? 'folder-edit-display-dropdown'
+                                    : null
+                            }
                             value={folderEditView}
                             className={`${styles.select}`}
                             onChange={(e) =>

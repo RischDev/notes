@@ -14,7 +14,16 @@ function Text(props) {
             foundModifiers[props.text.item].includes(props.text.modifier)
         ) {
             return (
-                <div className={`${styles.text} ${styles.found}`}>
+                <div
+                    data-id={
+                        process.env.NODE_ENV === 'development'
+                            ? 'section-' +
+                              props.sectionId +
+                              '-text-' +
+                              props.text.id
+                            : null
+                    }
+                    className={`${styles.text} ${styles.found}`}>
                     <ReactMarkdown children={props.text.text} />
                 </div>
             );
@@ -22,7 +31,13 @@ function Text(props) {
     }
 
     return (
-        <div className={`${styles.text}`}>
+        <div
+            data-id={
+                process.env.NODE_ENV === 'development'
+                    ? 'section-' + props.sectionId + '-text-' + props.text.id
+                    : null
+            }
+            className={`${styles.text}`}>
             <ReactMarkdown children={props.text.text} />
         </div>
     );

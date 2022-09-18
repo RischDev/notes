@@ -206,6 +206,11 @@ function Notes(props) {
         if (mode === 'list') {
             return (
                 <div
+                    data-id={
+                        process.env.NODE_ENV === 'development'
+                            ? 'notes-container'
+                            : null
+                    }
                     onScroll={onScroll}
                     onKeyDown={handleKeyPress}
                     className={`${styles.notes} ${fullSizeClass}`}
@@ -227,6 +232,11 @@ function Notes(props) {
 
             return (
                 <div
+                    data-id={
+                        process.env.NODE_ENV === 'development'
+                            ? 'notes-container'
+                            : null
+                    }
                     onKeyDown={handleKeyPress}
                     className={`${styles.notes} ${fullSizeClass}`}
                     ref={notesRef}

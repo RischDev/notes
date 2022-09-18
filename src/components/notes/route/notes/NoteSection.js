@@ -37,6 +37,7 @@ const NoteSection = memo((props) => {
                     {props.section.text.map((text) => (
                         <Text
                             key={'text-' + text.id}
+                            sectionId={props.section.id}
                             text={text}
                             foundItems={foundItems}
                             foundModifiers={foundModifiers}
@@ -49,13 +50,17 @@ const NoteSection = memo((props) => {
                 />
                 <ItemsList
                     items={props.section.items}
+                    sectionId={props.section.id}
                     updateTracker={props.updateTracker}
                     game={game}
                     foundItems={foundItems}
                     foundModifiers={foundModifiers}
                 />
                 <State state={props.section.state} game={game} />
-                <FolderEdit folderEdit={props.section.folderEdit} />
+                <FolderEdit
+                    folderEdit={props.section.folderEdit}
+                    sectionId={props.section.id}
+                />
             </div>
         );
     } else if (mode === 'presenter') {
@@ -99,13 +104,17 @@ const NoteSection = memo((props) => {
                 />
                 <ItemsList
                     items={props.section.items}
+                    sectionId={props.section.id}
                     updateTracker={props.updateTracker}
                     game={game}
                     foundItems={foundItems}
                     foundModifiers={foundModifiers}
                 />
                 <State state={props.section.state} game={game} />
-                <FolderEdit folderEdit={props.section.folderEdit} />
+                <FolderEdit
+                    folderEdit={props.section.folderEdit}
+                    sectionId={props.section.id}
+                />
             </div>
         );
     }

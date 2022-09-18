@@ -29,7 +29,7 @@ function Item(props) {
         return (
             <div>
                 <div
-                    id={props.id}
+                    id={'tracker-item-' + props.id}
                     className={`${styles.item} ${theme[props.type.id]} ${
                         theme.item
                     } ${foundClass}`}

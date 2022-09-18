@@ -6,7 +6,8 @@
     justify-content: flex-start;
     width: calc(100% - 20px);
     height: fill-content;
-    margin: 1vh 0px;
+    margin: 0px;
+    margin-bottom: 10px;
     padding: 0;
     text-align: center;
     gap: 10px;

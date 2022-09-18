@@ -60,6 +60,7 @@ class RoutesList extends React.Component {
                             />
                         ))}
                         <Button
+                            id="create-route-button"
                             text="Create New Route"
                             size="medium"
                             onClick={this.createRoute}

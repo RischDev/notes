@@ -19,7 +19,14 @@ function Tracker(props) {
 
     if (showTracker) {
         return (
-            <div className={`${styles.tracker} ${fullSizeClass}`}>
+            <div
+                data-id={
+                    process.env.NODE_ENV === 'development'
+                        ? 'tracker-container'
+                        : null
+                }
+                className={`${styles.tracker}
+                ${fullSizeClass}`}>
                 {Items.types.map((type) => (
                     <div
                         key={'type-' + type.name}
