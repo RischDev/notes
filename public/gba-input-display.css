@@ -125,7 +125,7 @@ start and select buttons. */
     width: 90px;
     height: 90px;
     opacity: 0;
-    position:absolute;
+    position: absolute;
 }
 .custom .back.pressed,
 .custom .start.pressed {
@@ -169,12 +169,12 @@ start and select buttons. */
 .custom .x {
     top: 80px;
     left: 0;
-    display:none;
+    display: none;
 }
 .custom .y {
     top: 0;
     left: 102px;
-    display:none;
+    display: none;
 }
 /* Analog sticks follow the same principles as the triggers in terms of positioning
 Note that the rotation of the sticks in hard coded with javascript, so it applies 
