@@ -11,13 +11,13 @@
     and you can observe it as an example. The sticks, buttons, and directional arrows are missing
     because their appropriate elements will be incorperated when their styling is defined below.
     The entirity of the skin's visual styling is done via background images and CSS sprites. */
-    background: url(https://i.imgur.com/qYcJzcb.png);
+    background: url(https://i.imgur.com/CsryCLF.png);
     height: 276px;
     width: 669px;
 }
 .custom.disconnected {
     /* This class shows an image when the controller is disconnected */
-    background: url(https://i.imgur.com/qYcJzcb.png);
+    background: url(https://i.imgur.com/CsryCLF.png);
 }
 /* This hides the controller's button when disconnected so only the background image remains */
 .custom.disconnected div {
@@ -56,7 +56,7 @@ placement */
 .custom .bumper {
     width: 240px;
     height: 33px;
-    background: url(https://i.imgur.com/gWLVbnx.png);
+    background: url(https://i.imgur.com/sWH76LR.png);
     opacity: 0;
 }
 .custom .bumpers {
@@ -121,7 +121,7 @@ start and select buttons. */
 /* Setting the size and CSS sprite for the start adn select buttons */
 .custom .back,
 .custom .start {
-    background: url(https://i.imgur.com/fFsRT7e.png);
+    background: url(https://i.imgur.com/e7V1LJu.png);
     width: 90px;
     height: 90px;
     opacity: 0;
@@ -152,7 +152,7 @@ start and select buttons. */
     position: absolute;
     width: 90px;
     height: 90px;
-    background: url(https://i.imgur.com/fFsRT7e.png);
+    background: url(https://i.imgur.com/e7V1LJu.png);
     opacity: 0;
 }
 .custom .button.pressed {
@@ -219,36 +219,36 @@ the CSS inline. */
     opacity: 0;
 }
 .custom .face.up {
-    background: url(https://i.imgur.com/lv75jJG.png);
-    left: 94px;
-    top: 121px;
+    background: url(https://i.imgur.com/L3jWoSN.png);
+    left: 96.5px;
+    top: 124.5px;
     /*background-position: 74px 14px;*/
-    width: 35px;
-    height: 63.701px;
+    width: 29px;
+    height: 62px;
 }
 .custom .face.down {
-    background: url(https://i.imgur.com/Ah1rL2f.png);
-    left: 94px;
+    background: url(https://i.imgur.com/0x8mMaR.png);
+    left: 96.5px;
     top: 186px;
     /*background-position: 74px 138px;*/
-    width: 35px;
-    height: 63px;
+    width: 29px;
+    height: 62px;
 }
 .custom .face.left {
-    background: url(https://i.imgur.com/fWpwdVu.png);
-    top: 169px;
-    left: 47px;
+    background: url(https://i.imgur.com/035A7a9.png);
+    top: 171.5px;
+    left: 48.5px;
     /*background-position: 13px 75px;*/
     width: 63px;
-    height: 35px;
+    height: 29px;
 }
 .custom .face.right {
-    background: url(https://i.imgur.com/e8iTTgq.png);
-    top: 169px;
-    left: 111px;
+    background: url(https://i.imgur.com/6SQLmBK.png);
+    top: 171.5px;
+    left: 110.294px;
     /*background-position: 138px 75px;*/
     width: 63px;
-    height: 35px;
+    height: 29px;
 }
 .custom .face.pressed {
     opacity: 1;
