@@ -2,7 +2,7 @@
 
 import { useContext, memo } from 'react';
 import GameContext from '../../../common/GameContext';
-import styles from './styles/ItemDropdown.Module.css';
+import styles from './styles/ItemDropdown.module.css';
 import Button from '../../../common/Button';
 
 function shouldUpdate(oldProps, newProps) {

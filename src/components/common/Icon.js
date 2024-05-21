@@ -1,7 +1,7 @@
 /** @format */
 
 import React from 'react';
-import styles from './styles/Icon.Module.css';
+import styles from './styles/Icon.module.css';
 
 class Icon extends React.Component {
     render() {

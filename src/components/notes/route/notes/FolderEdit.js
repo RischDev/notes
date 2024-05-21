@@ -1,7 +1,7 @@
 /** @format */
 
 import { useContext } from 'react';
-import styles from './styles/FolderEdit.Module.css';
+import styles from './styles/FolderEdit.module.css';
 import NotesContext from '../../../common/NotesContext';
 import performFolderEditAction from '../../../common/functions/performFolderEditAction';
 import getFolderEditInputs from '../../../common/functions/getFolderEditInputs';

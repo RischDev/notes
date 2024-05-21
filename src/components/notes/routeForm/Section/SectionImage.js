@@ -3,7 +3,7 @@
 import React from 'react';
 import PreviewImage from './PreviewImage';
 import Icon from '../../../common/Icon';
-import styles from './styles/SectionImage.Module.css';
+import styles from './styles/SectionImage.module.css';
 
 function shouldUpdate(oldProps, newProps) {
     if (oldProps.image !== newProps.image) {

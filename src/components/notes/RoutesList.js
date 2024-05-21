@@ -1,7 +1,7 @@
 /** @format */
 
 import React from 'react';
-import styles from './styles/RoutesList.Module.css';
+import styles from './styles/RoutesList.module.css';
 import RoutesListItem from './RoutesListItem';
 import Button from '../common/Button';
 

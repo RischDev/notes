@@ -2,8 +2,8 @@
 
 import { useContext } from 'react';
 import NotesContext from '../../../common/NotesContext';
-import styles from './styles/Modifiers.Module.css';
-import themeMMBN from './styles/themes/MMBN/MMBN-Modifiers.Module.css';
+import styles from './styles/Modifiers.module.css';
+import themeMMBN from './styles/themes/MMBN/MMBN-Modifiers.module.css';
 
 function Modifier(props) {
     const foundClass = props.foundModifiers[props.id].includes(props.modifier)

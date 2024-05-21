@@ -1,7 +1,7 @@
 /** @format */
 
 import { useState, useCallback, useContext, Suspense } from 'react';
-import styles from './styles/Route.Module.css';
+import styles from './styles/Route.module.css';
 import Menu from './Menu';
 import Notes from './notes/Notes';
 import Tracker from './tracker/Tracker';

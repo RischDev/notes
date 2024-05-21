@@ -1,6 +1,6 @@
 /** @format */
 
-import styles from './styles/State.Module.css';
+import styles from './styles/State.module.css';
 
 function State(props) {
     if (props.state != null) {

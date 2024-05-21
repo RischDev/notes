@@ -1,6 +1,6 @@
 /** @format */
 
-import styles from './styles/Image.Module.css';
+import styles from './styles/Image.module.css';
 
 function Image(props) {
     if (props.image != null) {

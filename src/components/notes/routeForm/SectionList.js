@@ -5,7 +5,7 @@ import RouteContext from '../../common/RouteContext';
 import InfiniteScroll from 'react-infinite-scroll-component';
 import Section from './Section/Section';
 
-import styles from './styles/SectionList.Module.css';
+import styles from './styles/SectionList.module.css';
 
 function SectionList(props) {
     const { route, numSections, setContext } = useContext(RouteContext);

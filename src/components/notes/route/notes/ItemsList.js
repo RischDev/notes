@@ -3,7 +3,7 @@
 import { useContext } from 'react';
 import SmallItem from './SmallItem';
 import NotesContext from '../../../common/NotesContext';
-import styles from './styles/ItemsList.Module.css';
+import styles from './styles/ItemsList.module.css';
 
 function ItemsList(props) {
     const {

@@ -1,7 +1,7 @@
 /** @format */
 
 import { useState, useCallback, useMemo, Suspense } from 'react';
-import styles from './styles/RouteForm.Module.css';
+import styles from './styles/RouteForm.module.css';
 import Route from '../route/Route';
 import SectionList from './SectionList';
 import RouteInfo from './RouteInfo';

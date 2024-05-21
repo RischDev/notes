@@ -1,7 +1,7 @@
 /** @format */
 
 import { useContext } from 'react';
-import styles from './styles/Tracker.Module.css';
+import styles from './styles/Tracker.module.css';
 import Item from './Item';
 import NotesContext from '../../../common/NotesContext';
 

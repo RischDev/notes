@@ -1,9 +1,9 @@
 /** @format */
 
 import { useContext } from 'react';
-import styles from './styles/SmallItem.Module.css';
-import themeMMBN from './styles/themes/MMBN/MMBN-SmallItem.Module.css';
-import themeMMSF from './styles/themes/MMSF/MMSF-SmallItem.Module.css';
+import styles from './styles/SmallItem.module.css';
+import themeMMBN from './styles/themes/MMBN/MMBN-SmallItem.module.css';
+import themeMMSF from './styles/themes/MMSF/MMSF-SmallItem.module.css';
 import SmallModifiers from './SmallModifiers';
 import NotesContext from '../../../common/NotesContext';
 

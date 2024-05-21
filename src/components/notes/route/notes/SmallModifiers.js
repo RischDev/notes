@@ -1,8 +1,8 @@
 /** @format */
 
 import { useContext } from 'react';
-import styles from './styles/SmallModifiers.Module.css';
-import themeMMBN from './styles/themes/MMBN/MMBN-SmallModifiers.Module.css';
+import styles from './styles/SmallModifiers.module.css';
+import themeMMBN from './styles/themes/MMBN/MMBN-SmallModifiers.module.css';
 import NotesContext from '../../../common/NotesContext';
 
 function Modifier(props) {

@@ -1,7 +1,7 @@
 /** @format */
 
 import { useContext, useCallback } from 'react';
-import styles from './styles/Menu.Module.css';
+import styles from './styles/Menu.module.css';
 import Button from '../../common/Button';
 import useMatchMedia from '../../common/functions/useMatchMedia';
 import NotesContext from '../../common/NotesContext';

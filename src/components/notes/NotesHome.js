@@ -1,7 +1,7 @@
 /** @format */
 
 import React from 'react';
-import styles from './styles/NotesHome.Module.css';
+import styles from './styles/NotesHome.module.css';
 import { Link } from 'react-router-dom';
 import Button from '../common/Button';
 

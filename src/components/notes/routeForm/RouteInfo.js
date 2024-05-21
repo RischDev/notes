@@ -2,7 +2,7 @@
 
 import { useCallback, useContext } from 'react';
 import { Buffer } from 'buffer';
-import styles from './styles/RouteInfo.Module.css';
+import styles from './styles/RouteInfo.module.css';
 import RouteContext from '../../common/RouteContext';
 import Button from '../../common/Button';
 

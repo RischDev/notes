@@ -1,7 +1,7 @@
 /** @format */
 
 import React from 'react';
-import styles from './styles/Button.Module.css';
+import styles from './styles/Button.module.css';
 
 class Button extends React.Component {
     render() {

@@ -1,6 +1,6 @@
 /** @format */
 
-import styles from './styles/LargeImage.Module.css';
+import styles from './styles/LargeImage.module.css';
 
 function LargeImage(props) {
     const onClick = (e) => {

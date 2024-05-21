@@ -2,7 +2,7 @@
 
 import { useContext } from 'react';
 import GameContext from '../../../common/GameContext';
-import styles from './styles/ModifierDropdown.Module.css';
+import styles from './styles/ModifierDropdown.module.css';
 
 function ModifierDropdown(props) {
     const gameInfo = useContext(GameContext);

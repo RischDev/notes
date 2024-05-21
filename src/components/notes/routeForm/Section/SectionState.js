@@ -2,7 +2,7 @@
 
 import { memo } from 'react';
 import Button from '../../../common/Button';
-import styles from './styles/SectionState.Module.css';
+import styles from './styles/SectionState.module.css';
 import areShallowEqual from 'are-shallow-equal';
 
 function shouldUpdate(oldProps, newProps) {

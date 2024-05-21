@@ -6,7 +6,7 @@ import Button from '../../../common/Button';
 import GameContext from '../../../common/GameContext';
 import performFolderEditAction from '../../../common/functions/performFolderEditAction';
 import getNewFolder from '../../../common/functions/getNewFolder';
-import styles from './styles/SectionFolderEdit.Module.css';
+import styles from './styles/SectionFolderEdit.module.css';
 import areShallowEqual from 'are-shallow-equal';
 
 function shouldUpdate(oldProps, newProps) {

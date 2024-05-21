@@ -1,7 +1,7 @@
 /** @format */
 
 import React from 'react';
-import styles from './styles/PreviewImage.Module.css';
+import styles from './styles/PreviewImage.module.css';
 
 class PreviewImage extends React.Component {
     render() {

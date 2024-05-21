@@ -3,9 +3,9 @@
 import { useContext } from 'react';
 import Modifiers from './Modifiers';
 import NotesContext from '../../../common/NotesContext';
-import styles from './styles/Item.Module.css';
-import themeMMBN from './styles/themes/MMBN/MMBN-Item.Module.css';
-import themeMMSF from './styles/themes/MMSF/MMSF-Item.Module.css';
+import styles from './styles/Item.module.css';
+import themeMMBN from './styles/themes/MMBN/MMBN-Item.module.css';
+import themeMMSF from './styles/themes/MMSF/MMSF-Item.module.css';
 
 function Item(props) {
     const {

@@ -1,7 +1,7 @@
 /** @format */
 
 import { useRef, memo } from 'react';
-import styles from './styles/SectionItem.Module.css';
+import styles from './styles/SectionItem.module.css';
 import ItemDropdown from './ItemDropdown';
 import ModifierDropdown from './ModifierDropdown';
 import Icon from '../../../common/Icon';

@@ -3,7 +3,7 @@
 import { useContext } from 'react';
 import NotesContext from '../../../common/NotesContext';
 import ReactMarkdown from 'react-markdown';
-import styles from './styles/Text.Module.css';
+import styles from './styles/Text.module.css';
 
 function Text(props) {
     const { foundItems, foundModifiers } = useContext(NotesContext);

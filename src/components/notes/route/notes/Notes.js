@@ -10,7 +10,7 @@ import {
 } from 'react';
 import NoteSection from './NoteSection';
 import NotesContext from '../../../common/NotesContext';
-import styles from './styles/Notes.Module.css';
+import styles from './styles/Notes.module.css';
 
 function Notes(props) {
     const { notes, showNotes, showTracker, mode } = useContext(NotesContext);

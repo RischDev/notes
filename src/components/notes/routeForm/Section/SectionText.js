@@ -1,7 +1,7 @@
 /** @format */
 
 import { useState, useEffect, useRef, useContext, memo } from 'react';
-import styles from './styles/SectionText.Module.css';
+import styles from './styles/SectionText.module.css';
 import ItemDropdown from './ItemDropdown';
 import ModifierDropdown from './ModifierDropdown';
 import Icon from '../../../common/Icon';

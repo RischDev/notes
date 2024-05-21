@@ -1,7 +1,7 @@
 /** @format */
 
 import { useCallback, useRef, useContext, memo } from 'react';
-import styles from './styles/Section.Module.css';
+import styles from './styles/Section.module.css';
 import GameContext from '../../../common/GameContext';
 import Button from '../../../common/Button';
 import Icon from '../../../common/Icon';

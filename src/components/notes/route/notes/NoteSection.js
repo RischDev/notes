@@ -1,7 +1,7 @@
 /** @format */
 
 import { useContext, memo } from 'react';
-import styles from './styles/NoteSection.Module.css';
+import styles from './styles/NoteSection.module.css';
 import Text from './Text';
 import ItemsList from './ItemsList';
 import Image from './Image';
